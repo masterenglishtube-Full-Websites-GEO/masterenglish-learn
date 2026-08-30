@@ -326,6 +326,43 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 .prose .callout strong { font-family: var(--font-head); display: block; margin-bottom: 6px; }
 
+/* Standalone price line — keeps Western-numeral prices off an Arabic prose line */
+.price-line {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  padding: 8px 22px;
+  border-radius: var(--radius-sm);
+  margin: 14px 0;
+}
+.price-line.price-line-compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: baseline;
+  background: none;
+  padding: 0;
+}
+.price-line-compare .price-was {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--gold);
+}
+.price-line-compare .price-now {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  padding: 6px 18px;
+  border-radius: var(--radius-sm);
+}
+
 .faq-block { margin-top: 50px; border-top: 1px solid var(--border); padding-top: 40px; }
 .faq-block h2 { margin-top: 0; }
 .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
