@@ -62,6 +62,8 @@
       <a href="../courses.html">الكورسات</a>
       <a href="../videos.html">الفيديوهات</a>
       <a href="../articles/index.html">المقالات</a>
+      <a href="../testimonials.html">آراء الطلاب</a>
+      <a href="../search.html">بحث</a>
       <a href="../index.html#about">من أنا؟</a>
     </nav>
     <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
@@ -147,12 +149,18 @@
         </blockquote>
       </div>
 
-      <div class="article-cta">
+      <div class="article-cta" data-price-slug="pronunciation">
         <h3>ابدأ رحلة تصحيح نطقك</h3>
         <p>٤٤ درساً، وصول مدى الحياة.</p>
         <p class="price-line">79 دولار</p>
-        <p>الدفع المباشر عبر الموقع قيد التجهيز حالياً، سجّل اهتمامك وسنراسلك فور فتح باب التسجيل.</p>
-        <a href="https://buy.stripe.com/test_eVqeVe7Ja7RGgJS0IX6EU00" target="_blank" rel="noopener" class="btn btn-primary btn-lg">اشترِ الآن</a>
+        <div id="checkoutStep1">
+          <label for="checkoutEmail" style="display:block; font-weight:700; margin-bottom:8px;">أدخل بريدك الإلكتروني للمتابعة إلى الدفع</label>
+          <input type="email" id="checkoutEmail" required placeholder="example@email.com" style="width:100%; max-width:340px; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body); font-size:15px; margin-bottom:14px; background:var(--paper);">
+          <br>
+          <button type="button" id="checkoutStartBtn" class="btn btn-primary btn-lg">المتابعة للدفع</button>
+          <p id="checkoutError" style="color:#b23b3b; font-size:14px; margin-top:10px;"></p>
+        </div>
+        <div id="checkoutMount" style="display:none; margin-top:20px;"></div>
       </div>
 
       <div class="article-cta" style="margin-top:20px; background:transparent; border:2px solid var(--border); padding:28px;">
@@ -173,6 +181,7 @@
     </div>
   </section>
 <div id="meShareBox"></div>
+<div id="meNewsletterBox"></div>
 </main>
 
 <footer class="site-footer">
@@ -201,7 +210,7 @@
     </div>
     <p>أنشأت أتقن الإنجليزية لتدريبك على اللغة الإنجليزية عبر الإنترنت ولإلهامك وتثقيفك وتدريبك على كيفية بناء الشجاعة والثقة التي تحتاجها لتكون ناجحًا في اللغة الإنجليزية للعمل والحياة اليومية.</p>
     <p class="footer-links">
-      <a href="#">Terms of Service</a> · <a href="#">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a>
     </p>
   </div>
 </footer>
@@ -209,5 +218,8 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/track.js"></script>
 <script src="../assets/js/contact-widget.js"></script>
+<script src="../assets/js/help-bot.js"></script>
+<script src="../assets/js/newsletter.js"></script>
+<script src="../assets/js/checkout.js"></script>
 </body>
 </html>

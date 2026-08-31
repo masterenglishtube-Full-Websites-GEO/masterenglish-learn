@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ما هو الكورس المناسب لك؟ | Master English أتقن الإنجليزية</title>
+<meta name="description" content="أجب عن سؤالين بسيطين ونساعدك تختار الكورس الأنسب لهدفك في تعلم اللغة الإنجليزية.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/quiz.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .quiz-wrap { max-width: 620px; margin: 0 auto; }
+  .quiz-progress { display: flex; gap: 8px; justify-content: center; margin-bottom: 30px; }
+  .quiz-progress span { width: 40px; height: 4px; border-radius: 999px; background: var(--border); }
+  .quiz-progress span.done { background: var(--accent); }
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; }
+  .quiz-options { display: grid; gap: 14px; margin-top: 28px; }
+  .quiz-option {
+    display: block; width: 100%; text-align: right; background: var(--paper);
+    border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 18px 22px;
+    font-family: var(--font-body); font-size: 16px; color: var(--ink); cursor: pointer;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .quiz-option:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .quiz-result-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 30px; text-align: center; margin-top: 20px;
+  }
+  .quiz-result-card .card-icon { font-size: 40px; margin-bottom: 10px; }
+  .quiz-result-card h3 { margin: 0 0 10px; font-size: 22px; }
+  .quiz-result-card p { color: var(--ink-soft); margin: 0 0 24px; }
+  .quiz-restart { display: block; text-align: center; margin-top: 20px; color: var(--ink-soft); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/profile.jpg" alt="Master English أتقن الإنجليزية" class="brand-avatar">
+      <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="courses.html">الكورسات</a>
+      <a href="videos.html">الفيديوهات</a>
+      <a href="articles/index.html">المقالات</a>
+      <a href="testimonials.html">آراء الطلاب</a>
+      <a href="search.html">بحث</a>
+      <a href="index.html#about">من أنا؟</a>
+      <a href="index.html#contact">تواصل معي</a>
+    </nav>
+    <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <button class="nav-toggle" id="navToggle" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:50px;">
+    <div class="wrap quiz-wrap">
+      <span class="eyebrow center">دليلك السريع</span>
+      <h1 style="text-align:center;">ما هو الكورس المناسب لك؟</h1>
+      <p class="hero-sub" style="text-align:center; margin-inline:auto;">أجب عن سؤالين بسيطين، ونرشح لك نقطة البداية الأنسب لهدفك.</p>
+
+      <div class="quiz-progress" id="quizProgress">
+        <span id="progDot1"></span>
+        <span id="progDot2"></span>
+      </div>
+
+      <div class="quiz-step active" id="step1">
+        <h2 style="text-align:center; font-size:20px;">ما هو هدفك الأساسي الآن؟</h2>
+        <div class="quiz-options">
+          <button type="button" class="quiz-option" data-answer="pronunciation">🗣️ أريد نطقاً أوضح وأقرب للأمريكي</button>
+          <button type="button" class="quiz-option" data-answer="work">💼 أحتاج إنجليزية أقوى للعمل (اجتماعات، عروض، مقابلات)</button>
+          <button type="button" class="quiz-option" data-answer="vocabulary-diet">📝 أريد توسيع مفرداتي بسرعة وبساطة</button>
+          <button type="button" class="quiz-option" data-answer="commuter-challenge">🚗 أريد التدرب أثناء تنقلي اليومي بدون وقت إضافي</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" id="step2">
+        <h2 style="text-align:center; font-size:20px;">أي جانب من العمل هو الأصعب عليك؟</h2>
+        <div class="quiz-options">
+          <button type="button" class="quiz-option" data-answer="presentations">🎤 تقديم عروض تقديمية احترافية</button>
+          <button type="button" class="quiz-option" data-answer="interview">💼 مقابلات العمل</button>
+          <button type="button" class="quiz-option" data-answer="ramadan-audio-club">🌙 المحادثات والاجتماعات اليومية في العمل</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" id="stepResult">
+        <div class="quiz-result-card" id="resultCard"></div>
+        <a href="#" class="quiz-restart" id="quizRestart">إعادة الإجابة من جديد</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>أنشأت أتقن الإنجليزية لتدريبك على اللغة الإنجليزية عبر الإنترنت ولإلهامك وتثقيفك وتدريبك على كيفية بناء الشجاعة والثقة التي تحتاجها لتكون ناجحًا في اللغة الإنجليزية للعمل والحياة اليومية.</p>
+    <p class="footer-links">
+      <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/track.js"></script>
+<script src="assets/js/contact-widget.js"></script>
+<script src="assets/js/help-bot.js"></script>
+<script>
+  const RESULTS = {
+    "pronunciation": {
+      icon: "🗣️", title: "أسرار النطق الأمريكي", url: "products/pronunciation.html",
+      desc: "٤٤ درساً لتصحيح نطقك خطوة بخطوة حتى تتحدث بوضوح وثقة.",
+    },
+    "vocabulary-diet": {
+      icon: "📝", title: "قائمة دايت المفردات", url: "products/vocabulary-diet.html",
+      desc: "٥٠ كلمة بسيطة بدلاً من ١٠٠٠ كلمة معقدة، لتتحدث بطلاقة فوراً.",
+    },
+    "commuter-challenge": {
+      icon: "🚗", title: "The Commuter Challenge", url: "products/commuter-challenge.html",
+      desc: "نظام صوتي تفاعلي تتدرب فيه أثناء تنقلك اليومي، بدون كتب ولا شاشة.",
+    },
+    "presentations": {
+      icon: "🎤", title: "أتقن العروض التقديمية", url: "products/presentations.html",
+      desc: "اكتسب الثقة والوضوح لتقديم عروض احترافية بالإنجليزية في ١٠ أيام.",
+    },
+    "interview": {
+      icon: "💼", title: "من التوتر إلى التميز", url: "products/interview.html",
+      desc: "دليلك للتحضير الذكي والمكثف لمقابلات العمل بالإنجليزية.",
+    },
+    "ramadan-audio-club": {
+      icon: "🌙", title: "The Ramadan Shift Audio Club", url: "products/ramadan-audio-club.html",
+      desc: "مسلسل صوتي لتعلم إنجليزية الأعمال عبر قصة درامية شيّقة.",
+    },
+  };
+
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
+  const stepResult = document.getElementById("stepResult");
+  const progDot1 = document.getElementById("progDot1");
+  const progDot2 = document.getElementById("progDot2");
+
+  function showResult(slug) {
+    const r = RESULTS[slug];
+    document.getElementById("resultCard").innerHTML = `
+      <div class="card-icon">${r.icon}</div>
+      <h3>${r.title}</h3>
+      <p>${r.desc}</p>
+      <a href="${r.url}" class="btn btn-primary btn-lg">اكتشف الكورس</a>
+    `;
+    step1.classList.remove("active");
+    step2.classList.remove("active");
+    stepResult.classList.add("active");
+  }
+
+  step1.querySelectorAll(".quiz-option").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const answer = btn.dataset.answer;
+      progDot1.classList.add("done");
+      if (answer === "work") {
+        step1.classList.remove("active");
+        step2.classList.add("active");
+      } else {
+        showResult(answer);
+      }
+    });
+  });
+
+  step2.querySelectorAll(".quiz-option").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      progDot2.classList.add("done");
+      showResult(btn.dataset.answer);
+    });
+  });
+
+  document.getElementById("quizRestart").addEventListener("click", (e) => {
+    e.preventDefault();
+    progDot1.classList.remove("done");
+    progDot2.classList.remove("done");
+    stepResult.classList.remove("active");
+    step2.classList.remove("active");
+    step1.classList.add("active");
+  });
+</script>
+
+</body>
+</html>

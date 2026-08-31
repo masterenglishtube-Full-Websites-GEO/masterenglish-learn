@@ -64,6 +64,32 @@
       <tbody></tbody>
     </table>
   </div>
+
+  <div class="admin-section">
+    <h2>عروض إضافية بعد الشراء (Upsell)</h2>
+    <p style="color:var(--ink-soft); font-size:14px; margin-top:-8px;">عند شراء "المنتج الأساسي"، سيُعرض على العميل "العرض الإضافي" بضغطة واحدة بعد الدفع مباشرة. الترتيب يحدد أي عرض يظهر أولاً إذا كان هناك أكثر من عرض لنفس المنتج.</p>
+    <table id="upsellRulesTable">
+      <thead><tr><th>المنتج الأساسي</th><th>العرض الإضافي</th><th>الترتيب</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end; margin-top:18px; padding-top:18px; border-top:1px solid var(--border);">
+      <div>
+        <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink-soft); margin-bottom:4px;">عند شراء</label>
+        <select id="upsellPrimarySelect" style="padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body);"></select>
+      </div>
+      <div>
+        <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink-soft); margin-bottom:4px;">اعرض عليه</label>
+        <select id="upsellOfferSelect" style="padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body);"></select>
+      </div>
+      <div>
+        <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink-soft); margin-bottom:4px;">الترتيب</label>
+        <input type="number" id="upsellPositionInput" value="1" min="1" style="width:70px; padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body);">
+      </div>
+      <button type="button" id="upsellAddBtn" class="btn btn-primary" style="padding:10px 22px;">إضافة</button>
+    </div>
+    <p id="upsellRuleError" style="color:#b23b3b; font-size:14px; margin-top:10px;"></p>
+  </div>
 </div>
 
 <div class="detail-panel" id="detailPanel">
@@ -88,6 +114,16 @@
     return res.json();
   }
 
+  async function apiSend(path, method, body) {
+    const res = await fetch(API + path, {
+      method,
+      headers: { Authorization: "Bearer " + getToken(), "Content-Type": "application/json" },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (res.status === 401) { clearToken(); showSignIn(); throw new Error("unauthorized"); }
+    return res.json();
+  }
+
   function showSignIn() {
     document.getElementById("signinBox").style.display = "block";
     document.getElementById("dashboard").style.display = "none";
@@ -100,6 +136,7 @@
     document.getElementById("signOutBtn").style.display = "block";
     loadOverview();
     loadCustomers("");
+    loadProductsAndUpsellRules();
   }
 
   function money(cents) { return ((cents || 0) / 100).toFixed(2) + " $"; }
@@ -166,6 +203,63 @@
     document.getElementById("detailContent").innerHTML = html;
     document.getElementById("detailPanel").classList.add("open");
   }
+
+  let productNameBySlug = {};
+
+  async function loadProductsAndUpsellRules() {
+    const productsData = await api("/admin/api/products");
+    const products = productsData.products || [];
+    productNameBySlug = {};
+    products.forEach((p) => { productNameBySlug[p.slug] = p.name; });
+
+    const primarySelect = document.getElementById("upsellPrimarySelect");
+    const offerSelect = document.getElementById("upsellOfferSelect");
+    const optionsHtml = products.map((p) => `<option value="${p.slug}">${p.name} (${money(p.price_cents)})</option>`).join("");
+    primarySelect.innerHTML = optionsHtml;
+    offerSelect.innerHTML = optionsHtml;
+
+    await loadUpsellRules();
+  }
+
+  async function loadUpsellRules() {
+    const data = await api("/admin/api/upsell-rules");
+    const tbody = document.querySelector("#upsellRulesTable tbody");
+    tbody.innerHTML = "";
+    (data.rules || []).forEach((r) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${productNameBySlug[r.primary_slug] || r.primary_slug}</td>
+        <td>${productNameBySlug[r.upsell_slug] || r.upsell_slug}</td>
+        <td>${r.position}</td>
+        <td><button type="button" class="delete-rule-btn" data-id="${r.id}" style="background:none; border:none; color:#b23b3b; cursor:pointer; font-size:13px;">حذف</button></td>
+      `;
+      tr.querySelector(".delete-rule-btn").addEventListener("click", async () => {
+        await apiSend("/admin/api/upsell-rules?id=" + r.id, "DELETE");
+        loadUpsellRules();
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  document.getElementById("upsellAddBtn").addEventListener("click", async () => {
+    const errorEl = document.getElementById("upsellRuleError");
+    errorEl.textContent = "";
+    const primary_slug = document.getElementById("upsellPrimarySelect").value;
+    const upsell_slug = document.getElementById("upsellOfferSelect").value;
+    const position = parseInt(document.getElementById("upsellPositionInput").value, 10) || 1;
+
+    if (primary_slug === upsell_slug) {
+      errorEl.textContent = "لا يمكن أن يكون المنتج الأساسي والعرض الإضافي نفس المنتج.";
+      return;
+    }
+
+    const data = await apiSend("/admin/api/upsell-rules", "POST", { primary_slug, upsell_slug, position });
+    if (!data.ok) {
+      errorEl.textContent = "حدث خطأ أثناء الإضافة.";
+      return;
+    }
+    loadUpsellRules();
+  });
 
   document.getElementById("closeDetail").addEventListener("click", () => {
     document.getElementById("detailPanel").classList.remove("open");

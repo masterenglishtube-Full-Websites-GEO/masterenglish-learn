@@ -511,6 +511,131 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 .me-share button:hover { border-color: var(--accent); color: var(--accent-dark); }
 
+/* Testimonial wall page */
+.wall-section { padding: 50px 0 90px; }
+.wall-intro { max-width: 640px; margin: 0 auto 50px; text-align: center; }
+.wall-intro h1 { font-size: clamp(28px, 4vw, 38px); margin: 10px 0 16px; }
+.wall-intro p { color: var(--ink-soft); font-size: 17px; }
+.wall-filters { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+.wall-filters button {
+  border: 1px solid var(--border); background: var(--paper); color: var(--ink-soft);
+  border-radius: 999px; padding: 9px 20px; font-size: 14px; font-family: var(--font-head);
+  font-weight: 700; cursor: pointer; transition: all .15s ease;
+}
+.wall-filters button:hover { border-color: var(--accent); color: var(--accent-dark); }
+.wall-filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.wall-grid {
+  column-count: 3; column-gap: 22px;
+}
+@media (max-width: 900px) { .wall-grid { column-count: 2; } }
+@media (max-width: 620px) { .wall-grid { column-count: 1; } }
+
+.wall-card {
+  break-inside: avoid; margin-bottom: 22px;
+  background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 22px 24px; border-inline-start: 4px solid var(--accent);
+}
+.wall-card p { margin: 0 0 12px; color: var(--ink); font-size: 15px; line-height: 1.75; }
+.wall-card footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.wall-card cite { font-family: var(--font-head); font-weight: 700; font-style: normal; color: var(--accent-dark); font-size: 13.5px; }
+.wall-card .wall-source {
+  font-size: 12px; color: var(--ink-soft); background: var(--paper-soft);
+  padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.wall-grid .wall-card:nth-child(3n+2) { border-inline-start-color: var(--terracotta); }
+.wall-grid .wall-card:nth-child(3n+2) cite { color: var(--terracotta); }
+.wall-grid .wall-card:nth-child(3n+3) { border-inline-start-color: var(--plum); }
+.wall-grid .wall-card:nth-child(3n+3) cite { color: var(--plum); }
+.wall-grid .wall-card:nth-child(4n+4) { border-inline-start-color: var(--gold); }
+.wall-grid .wall-card:nth-child(4n+4) cite { color: var(--gold-dark); }
+
+.wall-cta { text-align: center; margin-top: 60px; padding-top: 50px; border-top: 1px solid var(--border); }
+.wall-cta h2 { font-size: 24px; margin: 0 0 12px; }
+.wall-cta p { color: var(--ink-soft); margin: 0 0 24px; }
+
+/* Newsletter signup */
+.me-newsletter {
+  background: var(--gradient-primary); color: #fff; border-radius: var(--radius);
+  padding: 32px 34px; margin: 40px 0; text-align: center;
+}
+.me-newsletter h3 { margin: 0 0 8px; font-size: 21px; }
+.me-newsletter p { margin: 0 0 20px; color: rgba(255,255,255,0.88); font-size: 14.5px; }
+.me-newsletter-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+.me-newsletter-form input {
+  flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 999px; border: none;
+  font-family: var(--font-body); font-size: 14.5px;
+}
+.me-newsletter-form button {
+  background: var(--gold); color: #fff; border: none; padding: 12px 26px; border-radius: 999px;
+  font-family: var(--font-head); font-weight: 800; cursor: pointer;
+}
+.me-newsletter-form button:disabled { opacity: 0.7; cursor: default; }
+#meNewsletterStatus { font-size: 13.5px; margin: 12px 0 0; min-height: 16px; color: #fff; }
+.me-newsletter-error { color: #ffd7d7 !important; }
+
+/* Floating AI help bot widget (bottom-right) */
+#meHelpBotBtn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 58px; height: 58px; border-radius: 50%; border: none;
+  background: var(--gradient-primary); color: #fff; font-size: 24px; cursor: pointer;
+  box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease;
+}
+#meHelpBotBtn:hover { transform: scale(1.06); }
+
+#meHelpBotPanel {
+  position: fixed; bottom: 92px; right: 24px; z-index: 999;
+  width: min(360px, calc(100vw - 48px)); height: min(480px, calc(100vh - 140px));
+  background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+  display: none; flex-direction: column;
+}
+#meHelpBotPanel.open { display: flex; }
+
+.me-helpbot-head {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--gradient-primary); color: #fff; padding: 14px 18px;
+  font-family: var(--font-head); font-weight: 700; font-size: 14px;
+}
+.me-helpbot-head button {
+  background: none; border: none; color: #fff; font-size: 22px; line-height: 1; cursor: pointer;
+}
+.me-helpbot-body { padding: 16px 18px; display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.me-helpbot-hint { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
+#meHelpBotEmailStep { display: flex; flex-direction: column; gap: 10px; }
+#meHelpBotEmail {
+  font-family: var(--font-body); font-size: 14px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--paper-soft);
+}
+#meHelpBotStart {
+  background: var(--gold); color: #fff; border: none; border-radius: 999px;
+  padding: 11px; font-weight: 800; cursor: pointer; font-family: var(--font-head);
+}
+#meHelpBotChatStep { flex-direction: column; flex: 1; min-height: 0; }
+#meHelpBotMessages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+.me-helpbot-msg { max-width: 85%; padding: 9px 14px; border-radius: 14px; font-size: 14px; line-height: 1.6; }
+.me-helpbot-msg-bot { align-self: flex-start; background: var(--paper-soft); color: var(--ink); }
+.me-helpbot-msg-user { align-self: flex-end; background: var(--accent-light); color: var(--accent-dark); }
+.me-helpbot-escalate {
+  background: var(--paper-soft); border: 1px dashed var(--border); border-radius: var(--radius-sm);
+  padding: 10px 12px; font-size: 13px;
+}
+.me-helpbot-escalate p { margin: 0 0 8px; color: var(--ink-soft); }
+.me-helpbot-escalate-btn {
+  background: var(--accent); color: #fff; border: none; border-radius: 999px;
+  padding: 7px 16px; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: var(--font-head);
+}
+#meHelpBotForm { display: flex; gap: 8px; }
+#meHelpBotQuestion {
+  flex: 1; font-family: var(--font-body); font-size: 14px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--paper-soft);
+}
+#meHelpBotForm button[type="submit"] {
+  background: var(--accent); color: #fff; border: none; border-radius: 999px;
+  padding: 10px 18px; font-weight: 700; cursor: pointer; font-family: var(--font-head); font-size: 13px;
+}
+
 /* Bold color CTA band */
 .cta-band {
   background: var(--gradient-primary);

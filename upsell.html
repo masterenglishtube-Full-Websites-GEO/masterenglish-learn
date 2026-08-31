@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عرض خاص لك | Master English أتقن الإنجليزية</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/profile.jpg" alt="Master English أتقن الإنجليزية" class="brand-avatar">
+      <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" id="upsellLoading">
+    <div class="wrap" style="max-width:560px;">
+      <span class="eyebrow">✅ تم الدفع بنجاح</span>
+      <h1>لحظة واحدة...</h1>
+      <p class="hero-sub">نتحقق من طلبك.</p>
+    </div>
+  </section>
+
+  <section class="page-hero" id="upsellOffer" style="display:none;">
+    <div class="wrap" style="max-width:560px;">
+      <span class="eyebrow">🎁 عرض خاص لمرة واحدة فقط</span>
+      <h1 id="upsellTitle">عرض إضافي</h1>
+      <p class="hero-sub">أضفه الآن بضغطة واحدة، بدون إدخال بيانات الدفع مرة أخرى.</p>
+
+      <div class="hero-cta" style="justify-content:center; flex-direction:column; align-items:center;">
+        <button type="button" id="upsellAcceptBtn" class="btn btn-primary btn-lg" style="width:100%; max-width:340px; justify-content:center;">نعم، أضف هذا العرض</button>
+        <a href="#" id="upsellSkipLink" style="margin-top:16px; color:var(--ink-soft); font-size:14px;">لا شكراً، أكمل بدون هذا العرض</a>
+      </div>
+      <p id="upsellError" style="color:#b23b3b; margin-top:14px;"></p>
+    </div>
+  </section>
+
+  <section class="page-hero" id="upsellSuccess" style="display:none;">
+    <div class="wrap" style="max-width:560px;">
+      <span class="eyebrow">✅ تمت الإضافة بنجاح</span>
+      <h1 id="upsellSuccessTitle">رائع! تمت الإضافة</h1>
+      <p class="hero-sub">ستصلك رسالة بريد إلكتروني منفصلة تحتوي على تفاصيل هذا الطلب أيضاً.</p>
+      <div class="hero-cta" style="justify-content:center;">
+        <a href="#" id="upsellContinueLink" class="btn btn-primary">متابعة</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>أنشأت أتقن الإنجليزية لتدريبك على اللغة الإنجليزية عبر الإنترنت ولإلهامك وتثقيفك وتدريبك على كيفية بناء الشجاعة والثقة التي تحتاجها لتكون ناجحًا في اللغة الإنجليزية للعمل والحياة اليومية.</p>
+  </div>
+</footer>
+
+<script src="assets/js/track.js"></script>
+<script src="assets/js/contact-widget.js"></script>
+<script>
+  const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const params = new URLSearchParams(location.search);
+  const sessionId = params.get("session_id");
+  const thankYouUrl = `thank-you.html?session_id=${encodeURIComponent(sessionId || "")}`;
+
+  document.getElementById("upsellSkipLink").href = thankYouUrl;
+  document.getElementById("upsellContinueLink").href = thankYouUrl;
+
+  let upsellQueue = [];
+  let currentIndex = 0;
+
+  function money(cents) {
+    return ((cents || 0) / 100).toFixed(0) + " دولار";
+  }
+
+  function showOffer() {
+    if (currentIndex >= upsellQueue.length) {
+      location.href = thankYouUrl;
+      return;
+    }
+    const offer = upsellQueue[currentIndex];
+    document.getElementById("upsellTitle").textContent = `أضف ${offer.name} مقابل ${money(offer.price_cents)} فقط`;
+    document.getElementById("upsellAcceptBtn").textContent = `نعم، أضف هذا العرض مقابل ${money(offer.price_cents)}`;
+    document.getElementById("upsellLoading").style.display = "none";
+    document.getElementById("upsellSuccess").style.display = "none";
+    document.getElementById("upsellOffer").style.display = "";
+  }
+
+  async function init() {
+    if (!sessionId) {
+      location.href = thankYouUrl;
+      return;
+    }
+    try {
+      const res = await fetch(`${API}/checkout/session?session_id=${encodeURIComponent(sessionId)}`);
+      const data = await res.json();
+      if (!res.ok || !data.paid || !data.upsells || data.upsells.length === 0) {
+        location.href = thankYouUrl;
+        return;
+      }
+      upsellQueue = data.upsells;
+      showOffer();
+    } catch (e) {
+      location.href = thankYouUrl;
+    }
+  }
+
+  document.getElementById("upsellSkipLink").addEventListener("click", (e) => {
+    e.preventDefault();
+    currentIndex += 1;
+    showOffer();
+  });
+
+  document.getElementById("upsellAcceptBtn").addEventListener("click", async () => {
+    const btn = document.getElementById("upsellAcceptBtn");
+    const errorEl = document.getElementById("upsellError");
+    const offer = upsellQueue[currentIndex];
+    btn.disabled = true;
+    btn.textContent = "جارِ الإضافة...";
+    errorEl.textContent = "";
+
+    try {
+      const res = await fetch(`${API}/checkout/upsell`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ session_id: sessionId, upsell_slug: offer.slug }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "failed");
+
+      document.getElementById("upsellSuccessTitle").textContent = `رائع! تم إضافة ${offer.name}`;
+      document.getElementById("upsellOffer").style.display = "none";
+      document.getElementById("upsellSuccess").style.display = "";
+      currentIndex += 1;
+      document.getElementById("upsellContinueLink").onclick = (e) => {
+        e.preventDefault();
+        showOffer();
+      };
+    } catch (e) {
+      errorEl.textContent = "تعذّرت عملية الإضافة، يمكنك المتابعة والتواصل معنا لاحقاً.";
+      btn.disabled = false;
+      btn.textContent = `نعم، أضف هذا العرض مقابل ${money(offer.price_cents)}`;
+    }
+  });
+
+  init();
+</script>
+
+</body>
+</html>

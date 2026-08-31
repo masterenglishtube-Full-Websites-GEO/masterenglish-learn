@@ -1,0 +1,125 @@
+// Floating AI help bot (bottom-right). Clearly labeled as automated.
+// Requires an email before chatting (so every conversation is tied to a real
+// person in the CRM, same pattern as the contact widget and newsletter signup).
+// Proactively offers to forward the conversation to Noor by email.
+(function () {
+  const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+
+  let visitorEmail = null;
+  let lastQuestion = "";
+  let lastAnswer = "";
+
+  const btn = document.createElement("button");
+  btn.id = "meHelpBotBtn";
+  btn.setAttribute("aria-label", "مساعد آلي");
+  btn.innerHTML = "&#129302;";
+
+  const panel = document.createElement("div");
+  panel.id = "meHelpBotPanel";
+  panel.innerHTML = `
+    <div class="me-helpbot-head">
+      <span>مساعد آلي &middot; ليس نور شخصياً</span>
+      <button type="button" id="meHelpBotClose" aria-label="إغلاق">&times;</button>
+    </div>
+    <div class="me-helpbot-body">
+      <div id="meHelpBotEmailStep">
+        <p class="me-helpbot-hint">هذا مساعد آلي يجيب عن أسئلة شائعة حول الكورسات والأسعار. أدخل بريدك الإلكتروني لبدء المحادثة.</p>
+        <input type="email" id="meHelpBotEmail" placeholder="بريدك الإلكتروني">
+        <button type="button" id="meHelpBotStart">ابدأ المحادثة</button>
+      </div>
+      <div id="meHelpBotChatStep" style="display:none;">
+        <div id="meHelpBotMessages"></div>
+        <form id="meHelpBotForm">
+          <input type="text" id="meHelpBotQuestion" placeholder="اكتب سؤالك هنا..." autocomplete="off">
+          <button type="submit">إرسال</button>
+        </form>
+      </div>
+    </div>
+  `;
+
+  function addMessage(text, who) {
+    const msgs = panel.querySelector("#meHelpBotMessages");
+    const el = document.createElement("div");
+    el.className = "me-helpbot-msg me-helpbot-msg-" + who;
+    el.textContent = text;
+    msgs.appendChild(el);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function addEscalateOffer() {
+    const msgs = panel.querySelector("#meHelpBotMessages");
+    const wrap = document.createElement("div");
+    wrap.className = "me-helpbot-escalate";
+    wrap.innerHTML = `
+      <p>هل تريد إرسال هذا السؤال إلى نور مباشرة عبر البريد الإلكتروني؟</p>
+      <button type="button" class="me-helpbot-escalate-btn">نعم، أرسله إلى نور</button>
+    `;
+    wrap.querySelector("button").addEventListener("click", async () => {
+      wrap.innerHTML = "<p>جارِ الإرسال...</p>";
+      try {
+        await fetch(API + "/help/escalate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: visitorEmail, question: lastQuestion, answer: lastAnswer }),
+        });
+        wrap.innerHTML = "<p>تم الإرسال. سترد عليك نور عبر بريدك الإلكتروني قريباً.</p>";
+      } catch (e) {
+        wrap.innerHTML = "<p>حدث خطأ، راسلينا مباشرة على noor@masterenglish.me</p>";
+      }
+    });
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.appendChild(btn);
+    document.body.appendChild(panel);
+
+    btn.addEventListener("click", () => panel.classList.toggle("open"));
+    panel.querySelector("#meHelpBotClose").addEventListener("click", () => panel.classList.remove("open"));
+
+    panel.querySelector("#meHelpBotStart").addEventListener("click", () => {
+      const email = panel.querySelector("#meHelpBotEmail").value.trim();
+      if (!email || !email.includes("@")) {
+        panel.querySelector("#meHelpBotEmail").focus();
+        return;
+      }
+      visitorEmail = email;
+      panel.querySelector("#meHelpBotEmailStep").style.display = "none";
+      panel.querySelector("#meHelpBotChatStep").style.display = "flex";
+      addMessage("مرحباً! أنا مساعد آلي وليس نور شخصياً. اسألني عن الكورسات أو الأسعار أو سياسة الاسترجاع، وإذا لم أستطع الإجابة يمكنني إرسال سؤالك إلى نور مباشرة.", "bot");
+      panel.querySelector("#meHelpBotQuestion").focus();
+    });
+
+    panel.querySelector("#meHelpBotForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const input = panel.querySelector("#meHelpBotQuestion");
+      const question = input.value.trim();
+      if (!question) return;
+      input.value = "";
+      addMessage(question, "user");
+      lastQuestion = question;
+
+      const thinking = document.createElement("div");
+      thinking.className = "me-helpbot-msg me-helpbot-msg-bot";
+      thinking.textContent = "...";
+      panel.querySelector("#meHelpBotMessages").appendChild(thinking);
+
+      try {
+        const res = await fetch(API + "/help/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: visitorEmail, question }),
+        });
+        const data = await res.json();
+        thinking.remove();
+        lastAnswer = data.answer || "عذراً، حدث خطأ.";
+        addMessage(lastAnswer, "bot");
+        addEscalateOffer();
+      } catch (err) {
+        thinking.remove();
+        addMessage("حدث خطأ تقني. حاول مرة أخرى أو راسلينا على noor@masterenglish.me", "bot");
+      }
+    });
+  });
+})();
