@@ -14,6 +14,14 @@
   btn.setAttribute("aria-label", "مساعد آلي");
   btn.innerHTML = "&#129302;";
 
+  const tooltip = document.createElement("span");
+  tooltip.className = "me-fab-tooltip-right";
+  tooltip.textContent = "مساعد آلي فوري";
+
+  const nudge = document.createElement("div");
+  nudge.className = "me-helpbot-nudge";
+  nudge.innerHTML = `<span>👋 كيف يمكنني مساعدتك؟</span><button type="button" class="me-nudge-close" aria-label="إغلاق">&times;</button>`;
+
   const panel = document.createElement("div");
   panel.id = "meHelpBotPanel";
   panel.innerHTML = `
@@ -73,9 +81,32 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(btn);
+    document.body.appendChild(tooltip);
     document.body.appendChild(panel);
+    document.body.appendChild(nudge);
 
-    btn.addEventListener("click", () => panel.classList.toggle("open"));
+    // Proactively offer help after 5s if the visitor hasn't opened the chat yet.
+    let nudgeDismissed = false;
+    const nudgeTimer = setTimeout(() => {
+      if (!nudgeDismissed && !panel.classList.contains("open")) nudge.classList.add("show");
+    }, 5000);
+
+    function dismissNudge() {
+      nudgeDismissed = true;
+      clearTimeout(nudgeTimer);
+      nudge.classList.remove("show");
+    }
+
+    nudge.addEventListener("click", (e) => {
+      if (e.target.closest(".me-nudge-close")) {
+        dismissNudge();
+        return;
+      }
+      dismissNudge();
+      panel.classList.add("open");
+    });
+
+    btn.addEventListener("click", () => { dismissNudge(); panel.classList.toggle("open"); });
     panel.querySelector("#meHelpBotClose").addEventListener("click", () => panel.classList.remove("open"));
 
     panel.querySelector("#meHelpBotStart").addEventListener("click", () => {
@@ -102,8 +133,10 @@
 
       const thinking = document.createElement("div");
       thinking.className = "me-helpbot-msg me-helpbot-msg-bot";
-      thinking.textContent = "...";
-      panel.querySelector("#meHelpBotMessages").appendChild(thinking);
+      thinking.innerHTML = `<span class="me-helpbot-typing"><span></span><span></span><span></span></span>`;
+      const msgsEl = panel.querySelector("#meHelpBotMessages");
+      msgsEl.appendChild(thinking);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
 
       try {
         const res = await fetch(API + "/help/ask", {

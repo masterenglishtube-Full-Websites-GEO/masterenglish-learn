@@ -26,6 +26,13 @@
   th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--border); }
   th { color: var(--ink-soft); font-weight: 700; font-size: 12.5px; }
   #searchBox { padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; width: 100%; max-width: 320px; margin-bottom: 14px; font-family: var(--font-body); }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-bottom: 16px; padding: 14px; background: var(--paper-soft); border-radius: var(--radius-sm); }
+  .filter-field { display: flex; flex-direction: column; gap: 4px; }
+  .filter-field label { font-size: 11.5px; font-weight: 700; color: var(--ink-soft); }
+  .filter-field input, .filter-field select { padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 13.5px; }
+  .filter-field.date-range { flex-direction: row; align-items: flex-end; gap: 6px; }
+  .filter-bar .btn-clear { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 9px 14px; cursor: pointer; font-size: 13px; }
+  #customersMeta { font-size: 12.5px; color: var(--ink-soft); margin: -8px 0 12px; }
   .detail-panel { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
   .detail-panel.open { display: flex; }
   .detail-card { background: var(--paper); border-radius: var(--radius); padding: 24px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; }
@@ -59,8 +66,56 @@
   <div class="admin-section">
     <h2>العملاء</h2>
     <input type="text" id="searchBox" placeholder="ابحث بالبريد أو الاسم...">
+
+    <div class="filter-bar">
+      <div class="filter-field">
+        <label>المنتج المشترى</label>
+        <select id="filterProduct"><option value="">الكل</option></select>
+      </div>
+      <div class="filter-field">
+        <label>المصدر</label>
+        <select id="filterSource">
+          <option value="">الكل</option>
+          <option value="stripe">شراء فعلي (Stripe)</option>
+          <option value="checkout_lead">بدأ الدفع ولم يكمل</option>
+          <option value="checkout_abandoned">دفع متروك</option>
+          <option value="podia">من Podia (قديم)</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>رقم الهاتف</label>
+        <select id="filterHasPhone">
+          <option value="">الكل</option>
+          <option value="yes">لديه رقم</option>
+          <option value="no">بدون رقم</option>
+        </select>
+      </div>
+      <div class="filter-field date-range">
+        <div><label>انضم من</label><input type="date" id="filterJoinedFrom"></div>
+        <div><label>إلى</label><input type="date" id="filterJoinedTo"></div>
+      </div>
+      <div class="filter-field">
+        <label>أدنى إنفاق ($)</label>
+        <input type="number" id="filterMinSpent" min="0" step="1" style="width:90px;">
+      </div>
+      <div class="filter-field">
+        <label>الترتيب</label>
+        <select id="filterSort">
+          <option value="created_desc">الأحدث انضمامًا</option>
+          <option value="created_asc">الأقدم انضمامًا</option>
+          <option value="spent_desc">الأعلى إنفاقًا</option>
+          <option value="last_purchase_desc">آخر عملية شراء</option>
+          <option value="last_seen_desc">آخر ظهور</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" id="applyFiltersBtn" style="padding:9px 20px;">تطبيق</button>
+      <button type="button" class="btn-clear" id="clearFiltersBtn">مسح الفلاتر</button>
+    </div>
+
+    <p id="customersMeta"></p>
+
     <table id="customersTable">
-      <thead><tr><th>البريد</th><th>الاسم</th><th>المصدر</th><th>عدد الطلبات</th><th>إجمالي الإنفاق</th><th>آخر ظهور</th></tr></thead>
+      <thead><tr><th>البريد</th><th>الاسم</th><th>الهاتف</th><th>المصدر</th><th>المنتجات المشتراة</th><th>عدد الطلبات</th><th>إجمالي الإنفاق</th><th>آخر شراء</th><th>آخر ظهور</th></tr></thead>
       <tbody></tbody>
     </table>
   </div>
@@ -135,6 +190,7 @@
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("signOutBtn").style.display = "block";
     loadOverview();
+    populateProductFilter();
     loadCustomers("");
     loadProductsAndUpsellRules();
   }
@@ -158,18 +214,44 @@
     });
   }
 
+  function buildCustomersQuery(q) {
+    const params = new URLSearchParams();
+    params.set("q", q || "");
+    params.set("limit", "200");
+    const product = document.getElementById("filterProduct").value;
+    const source = document.getElementById("filterSource").value;
+    const hasPhone = document.getElementById("filterHasPhone").value;
+    const joinedFrom = document.getElementById("filterJoinedFrom").value;
+    const joinedTo = document.getElementById("filterJoinedTo").value;
+    const minSpent = document.getElementById("filterMinSpent").value;
+    const sort = document.getElementById("filterSort").value;
+    if (product) params.set("product", product);
+    if (source) params.set("source", source);
+    if (hasPhone) params.set("has_phone", hasPhone);
+    if (joinedFrom) params.set("joined_from", joinedFrom);
+    if (joinedTo) params.set("joined_to", joinedTo + " 23:59:59");
+    if (minSpent) params.set("min_spent", minSpent);
+    if (sort) params.set("sort", sort);
+    return params.toString();
+  }
+
   async function loadCustomers(q) {
-    const data = await api("/admin/api/customers?q=" + encodeURIComponent(q) + "&limit=100");
+    const data = await api("/admin/api/customers?" + buildCustomersQuery(q));
     const tbody = document.querySelector("#customersTable tbody");
     tbody.innerHTML = "";
-    (data.customers || []).forEach((c) => {
+    const list = data.customers || [];
+    document.getElementById("customersMeta").textContent = `${list.length} نتيجة`;
+    list.forEach((c) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="row-link" data-id="${c.id}">${c.email}</td>
         <td>${c.name || "-"}</td>
+        <td>${c.phone || "-"}</td>
         <td>${c.source}</td>
+        <td>${c.products_bought || "-"}</td>
         <td>${c.purchase_count}</td>
         <td>${money(c.total_spent_cents)}</td>
+        <td>${c.last_purchase_at || "-"}</td>
         <td>${c.last_seen ? c.last_seen : "-"}</td>
       `;
       tr.querySelector(".row-link").addEventListener("click", () => openDetail(c.id));
@@ -177,10 +259,21 @@
     });
   }
 
+  async function populateProductFilter() {
+    const data = await api("/admin/api/products");
+    const select = document.getElementById("filterProduct");
+    (data.products || []).forEach((p) => {
+      const opt = document.createElement("option");
+      opt.value = p.slug;
+      opt.textContent = p.name;
+      select.appendChild(opt);
+    });
+  }
+
   async function openDetail(id) {
     const data = await api("/admin/api/customer?id=" + id);
     const c = data.customer;
-    let html = `<h3>${c.email}</h3><p>${c.name || ""} &middot; مصدر: ${c.source} &middot; منذ: ${c.created_at}</p>`;
+    let html = `<h3>${c.email}</h3><p>${c.name || ""} &middot; هاتف: ${c.phone || "-"} &middot; مصدر: ${c.source} &middot; منذ: ${c.created_at}</p>`;
 
     html += "<h4>الطلبات</h4><table><thead><tr><th>المنتج</th><th>المبلغ</th><th>التاريخ</th></tr></thead><tbody>";
     (data.purchases || []).forEach((p) => {
@@ -267,6 +360,21 @@
 
   document.getElementById("searchBox").addEventListener("input", (e) => {
     loadCustomers(e.target.value);
+  });
+
+  document.getElementById("applyFiltersBtn").addEventListener("click", () => {
+    loadCustomers(document.getElementById("searchBox").value);
+  });
+
+  document.getElementById("clearFiltersBtn").addEventListener("click", () => {
+    document.getElementById("filterProduct").value = "";
+    document.getElementById("filterSource").value = "";
+    document.getElementById("filterHasPhone").value = "";
+    document.getElementById("filterJoinedFrom").value = "";
+    document.getElementById("filterJoinedTo").value = "";
+    document.getElementById("filterMinSpent").value = "";
+    document.getElementById("filterSort").value = "created_desc";
+    loadCustomers(document.getElementById("searchBox").value);
   });
 
   document.getElementById("signOutBtn").addEventListener("click", () => {

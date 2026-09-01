@@ -462,6 +462,15 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 #meContactBtn:hover { transform: scale(1.06); background: var(--accent-dark); }
 
+.me-fab-tooltip {
+  position: fixed; bottom: 34px; left: 90px; z-index: 998;
+  background: var(--ink); color: #fff; font-size: 12.5px; font-family: var(--font-body);
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
+}
+#meContactBtn:hover + .me-fab-tooltip,
+#meContactBtn.tooltip-active + .me-fab-tooltip { opacity: 1; }
+
 #meContactPanel {
   position: fixed; bottom: 92px; left: 24px; z-index: 999;
   width: min(340px, calc(100vw - 48px)); background: var(--paper);
@@ -583,6 +592,39 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
   transition: transform 0.2s ease;
 }
 #meHelpBotBtn:hover { transform: scale(1.06); }
+
+.me-fab-tooltip-right {
+  position: fixed; bottom: 34px; right: 90px; z-index: 998;
+  background: var(--ink); color: #fff; font-size: 12.5px; font-family: var(--font-body);
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
+}
+#meHelpBotBtn:hover + .me-fab-tooltip-right { opacity: 1; }
+
+.me-helpbot-nudge {
+  position: fixed; bottom: 92px; right: 24px; z-index: 998;
+  max-width: 220px; background: var(--paper); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow);
+  padding: 12px 14px; font-size: 13.5px; font-family: var(--font-body); color: var(--ink);
+  display: none; align-items: center; gap: 8px; cursor: pointer;
+}
+.me-helpbot-nudge.show { display: flex; animation: meNudgeIn 0.25s ease; }
+.me-helpbot-nudge .me-nudge-close {
+  background: none; border: none; color: var(--ink-soft); font-size: 16px; cursor: pointer; line-height: 1; padding: 0 0 0 4px;
+}
+@keyframes meNudgeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.me-helpbot-typing { display: inline-flex; gap: 4px; align-items: center; padding: 4px 2px; }
+.me-helpbot-typing span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--ink-soft);
+  animation: meTypingBounce 1.2s infinite ease-in-out;
+}
+.me-helpbot-typing span:nth-child(2) { animation-delay: 0.15s; }
+.me-helpbot-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes meTypingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
 
 #meHelpBotPanel {
   position: fixed; bottom: 92px; right: 24px; z-index: 999;

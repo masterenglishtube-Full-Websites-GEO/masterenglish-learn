@@ -7,6 +7,10 @@
   btn.setAttribute("aria-label", "راسلنا");
   btn.innerHTML = "&#128172;";
 
+  const tooltip = document.createElement("span");
+  tooltip.className = "me-fab-tooltip";
+  tooltip.textContent = "راسلي نور مباشرة";
+
   const panel = document.createElement("div");
   panel.id = "meContactPanel";
   panel.innerHTML = `
@@ -29,6 +33,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(btn);
+    document.body.appendChild(tooltip);
     document.body.appendChild(panel);
 
     btn.addEventListener("click", () => {

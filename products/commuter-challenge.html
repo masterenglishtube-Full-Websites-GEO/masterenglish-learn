@@ -135,13 +135,19 @@
         </div>
       </div>
 
-      <div class="article-cta">
+      <div class="article-cta" data-price-slug="commuter-challenge">
         <h3>حوّل وقت الطريق إلى تدريب حقيقي</h3>
         <p>٣٠ تمريناً، تحميل فوري.</p>
         <p class="price-line">27 دولار</p>
-        <p>الدفع المباشر عبر الموقع قيد التجهيز حالياً، سجّل اهتمامك وسنراسلك فور فتح باب الشراء.</p>
-        <a href="https://buy.stripe.com/test_4gMbJ2e7y4Fu1OY63h6EU01" target="_blank" rel="noopener" class="btn btn-primary btn-lg">اشترِ الآن</a>
-      </div>
+        <div id="checkoutStep1">
+          <label for="checkoutEmail" style="display:block; font-weight:700; margin-bottom:8px;">أدخل بريدك الإلكتروني للمتابعة إلى الدفع</label>
+          <input type="email" id="checkoutEmail" required placeholder="example@email.com" style="width:100%; max-width:340px; padding:12px 16px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body); font-size:15px; margin-bottom:14px; background:var(--paper);">
+          <br>
+          <button type="button" id="checkoutStartBtn" class="btn btn-primary btn-lg">المتابعة للدفع</button>
+          <p id="checkoutError" style="color:#b23b3b; font-size:14px; margin-top:10px;"></p>
+        </div>
+        <div id="checkoutMount" style="display:none; margin-top:20px;"></div>
+</div>
 
       <div class="article-cta" style="margin-top:20px; background:transparent; border:2px solid var(--border); padding:28px;">
         <h3>تصفح باقي الكورسات</h3>
@@ -200,5 +206,6 @@
 <script src="../assets/js/contact-widget.js"></script>
 <script src="../assets/js/help-bot.js"></script>
 <script src="../assets/js/newsletter.js"></script>
+<script src="../assets/js/checkout.js"></script>
 </body>
 </html>
