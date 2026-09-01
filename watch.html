@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشاهدة الكورس | Master English أتقن الإنجليزية</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .watch-wrap { display: grid; grid-template-columns: 320px 1fr; gap: 30px; align-items: start; }
+  @media (max-width: 900px) { .watch-wrap { grid-template-columns: 1fr; } }
+  .watch-sidebar {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    max-height: 75vh; overflow-y: auto; padding: 10px;
+  }
+  .watch-section-title {
+    font-family: var(--font-head); font-weight: 800; font-size: 13.5px; color: var(--ink-soft);
+    padding: 14px 12px 6px;
+  }
+  .watch-lesson-btn {
+    display: block; width: 100%; text-align: right; background: none; border: none;
+    padding: 11px 12px; border-radius: var(--radius-sm); cursor: pointer;
+    font-family: var(--font-body); font-size: 14.5px; color: var(--ink);
+  }
+  .watch-lesson-btn:hover { background: var(--paper-soft); }
+  .watch-lesson-btn.active { background: var(--accent-light); color: var(--accent-dark); font-weight: 700; }
+  .watch-player-wrap {
+    background: #000; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    aspect-ratio: 16/9; position: relative;
+  }
+  .watch-player-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .watch-current-title { font-family: var(--font-head); font-weight: 800; font-size: 20px; margin: 20px 0 0; }
+  .watch-loading, .watch-error { text-align: center; padding: 80px 20px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/profile.jpg" alt="Master English أتقن الإنجليزية" class="brand-avatar">
+      <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:20px;">
+    <div class="wrap">
+      <span class="eyebrow">✅ وصولك للكورس</span>
+      <h1 id="watchPageTitle">دروسك</h1>
+    </div>
+  </section>
+
+  <section style="padding-bottom:80px;">
+    <div class="wrap">
+      <div id="watchLoading" class="watch-loading">جارِ تحميل الدروس...</div>
+      <div id="watchError" class="watch-error" style="display:none;">
+        الرابط غير صالح أو منتهي الصلاحية. راسلينا على <a href="mailto:noor@masterenglish.me">noor@masterenglish.me</a> وسنساعدك.
+      </div>
+      <div id="watchContent" class="watch-wrap" style="display:none;">
+        <div class="watch-sidebar" id="watchSidebar"></div>
+        <div>
+          <div class="watch-player-wrap">
+            <iframe id="watchPlayer" src="" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen></iframe>
+          </div>
+          <h2 class="watch-current-title" id="watchCurrentTitle"></h2>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>أنشأت أتقن الإنجليزية لتدريبك على اللغة الإنجليزية عبر الإنترنت ولإلهامك وتثقيفك وتدريبك على كيفية بناء الشجاعة والثقة التي تحتاجها لتكون ناجحًا في اللغة الإنجليزية للعمل والحياة اليومية.</p>
+  </div>
+</footer>
+
+<script>
+  const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token");
+
+  const PRODUCT_TITLES = {
+    "pronunciation": "أسرار النطق الأمريكي",
+    "presentations": "أتقن العروض التقديمية بالإنجليزية في ١٠ أيام",
+  };
+
+  async function init() {
+    if (!token) {
+      document.getElementById("watchLoading").style.display = "none";
+      document.getElementById("watchError").style.display = "block";
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API}/watch/session?token=${encodeURIComponent(token)}`);
+      const data = await res.json();
+      if (!res.ok || !data.lessons || data.lessons.length === 0) {
+        throw new Error("no lessons");
+      }
+
+      document.getElementById("watchPageTitle").textContent = PRODUCT_TITLES[data.product_slug] || "دروسك";
+      document.title = (PRODUCT_TITLES[data.product_slug] || "دروسك") + " | Master English";
+
+      const sidebar = document.getElementById("watchSidebar");
+      let lastSection = null;
+      data.lessons.forEach((lesson, i) => {
+        if (lesson.section_title && lesson.section_title !== lastSection) {
+          const h = document.createElement("div");
+          h.className = "watch-section-title";
+          h.textContent = lesson.section_title;
+          sidebar.appendChild(h);
+          lastSection = lesson.section_title;
+        }
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "watch-lesson-btn";
+        btn.dataset.index = i;
+        btn.textContent = lesson.lesson_title;
+        btn.addEventListener("click", () => selectLesson(i));
+        sidebar.appendChild(btn);
+      });
+
+      window.__lessons = data.lessons;
+      selectLesson(0);
+
+      document.getElementById("watchLoading").style.display = "none";
+      document.getElementById("watchContent").style.display = "grid";
+    } catch (e) {
+      document.getElementById("watchLoading").style.display = "none";
+      document.getElementById("watchError").style.display = "block";
+    }
+  }
+
+  function selectLesson(index) {
+    const lesson = window.__lessons[index];
+    document.getElementById("watchPlayer").src = lesson.iframe_src;
+    document.getElementById("watchCurrentTitle").textContent = lesson.lesson_title;
+    document.querySelectorAll(".watch-lesson-btn").forEach((b) => {
+      b.classList.toggle("active", parseInt(b.dataset.index, 10) === index);
+    });
+  }
+
+  init();
+</script>
+
+</body>
+</html>
