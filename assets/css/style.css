@@ -408,10 +408,14 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
   border-radius: var(--radius-sm);
 }
 
-.faq-block { margin-top: 50px; border-top: 1px solid var(--border); padding-top: 40px; }
+.faq-block { margin-top: 0; }
 .faq-block h2 { margin-top: 0; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
-.faq-item h3 { margin: 0 0 10px; font-size: 17px; }
+.faq-item {
+  background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow-sm);
+}
+.faq-item h3 { margin: 0 0 10px; font-size: 17px; display: flex; gap: 10px; align-items: flex-start; }
+.faq-item h3::before { content: "❓"; font-size: 15px; flex-shrink: 0; }
 .faq-item p { margin: 0; color: var(--ink-soft); }
 
 .article-cta {
@@ -426,6 +430,83 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .related-links ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .related-links a { color: var(--accent-dark); font-weight: 600; }
 .related-links a:hover { text-decoration: underline; }
+
+/* Full-bleed alternating section bands (product/article pages) — replaces the old
+   flat single-background prose flow with the color-blocked rhythm real course
+   landing pages use, without introducing new colors (reuses the existing tint tokens). */
+.content-section { padding: 46px 0; }
+.content-section > .wrap { max-width: 760px; }
+.content-section.tint-accent { background: var(--accent-light); }
+.content-section.tint-terracotta { background: var(--terracotta-light); }
+.content-section.tint-plum { background: var(--plum-light); }
+.content-section.tint-blue { background: var(--blue-light); }
+.content-section .prose { max-width: none; }
+.content-section:first-of-type { padding-top: 10px; }
+
+/* Instructor trust line — short credibility badge near the hero */
+.trust-line {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--paper-soft);
+  border: 1px solid var(--border); border-radius: 999px; padding: 8px 18px 8px 8px;
+  font-size: 13.5px; color: var(--ink-soft); margin-top: 6px;
+}
+.trust-line img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
+.trust-line strong { color: var(--ink); font-weight: 700; }
+
+/* Quick-facts strip — duration/level/lessons/access at a glance, before the sales copy */
+.quick-facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px;
+  background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  overflow: hidden; margin: 24px 0;
+}
+.quick-facts .fact { background: var(--paper); padding: 16px 14px; text-align: center; }
+.quick-facts .fact .fact-icon { font-size: 20px; display: block; margin-bottom: 6px; }
+.quick-facts .fact .fact-label { font-size: 12px; color: var(--ink-soft); display: block; }
+.quick-facts .fact .fact-value { font-family: var(--font-head); font-weight: 800; font-size: 15px; color: var(--ink); }
+
+/* Itemized "what's included" list — icon-led, replaces a dense paragraph */
+.included-list { list-style: none; margin: 20px 0; padding: 0; display: grid; gap: 12px; }
+.included-list li {
+  display: flex; align-items: flex-start; gap: 12px; background: var(--paper);
+  border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px;
+}
+.included-list .item-icon {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+
+/* Fit / not-fit two-column comparison block */
+.fit-check {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0;
+}
+@media (max-width: 640px) { .fit-check { grid-template-columns: 1fr; } }
+.fit-check .fit-col { border-radius: var(--radius-sm); padding: 20px 22px; }
+.fit-check .fit-yes { background: var(--accent-light); border-inline-start: 4px solid var(--accent); }
+.fit-check .fit-no { background: var(--paper-soft); border-inline-start: 4px solid var(--ink-soft); }
+.fit-check h4 { margin: 0 0 12px; font-family: var(--font-head); font-size: 15.5px; }
+.fit-check ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.fit-check li { display: flex; align-items: flex-start; gap: 8px; font-size: 14.5px; color: var(--ink); }
+.fit-check .fit-yes li::before { content: "✓"; color: var(--accent-dark); font-weight: 800; flex-shrink: 0; }
+.fit-check .fit-no li::before { content: "✕"; color: var(--ink-soft); font-weight: 800; flex-shrink: 0; }
+
+/* Testimonial cards with avatar initials */
+.testimonial { position: relative; padding-top: 44px; }
+.testimonial .avatar {
+  position: absolute; top: 20px; inset-inline-start: 20px;
+  width: 32px; height: 32px; border-radius: 50%; background: var(--accent);
+  color: #fff; font-family: var(--font-head); font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.testimonial-grid .testimonial:nth-child(3n+2) .avatar { background: var(--terracotta); }
+.testimonial-grid .testimonial:nth-child(3n+3) .avatar { background: var(--plum); }
+
+/* Real-comment style card — lightly framed to read as an authentic screenshot,
+   distinct from the polished written testimonials above. */
+.real-comment-card {
+  background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 16px 18px; font-size: 14px; color: var(--ink);
+}
+.real-comment-card .rc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 12.5px; color: var(--ink-soft); }
+.real-comment-card .rc-platform { font-size: 14px; }
 
 /* Article index / hub grid */
 .article-index-grid {
