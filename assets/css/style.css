@@ -694,6 +694,9 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
   background: none; border: none; color: var(--ink-soft); font-size: 16px; cursor: pointer; line-height: 1; padding: 0 0 0 4px;
 }
 @keyframes meNudgeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .me-helpbot-nudge.show { display: none; }
+}
 
 .me-helpbot-typing { display: inline-flex; gap: 4px; align-items: center; padding: 4px 2px; }
 .me-helpbot-typing span {
