@@ -1,9 +1,8 @@
 // Embedded Stripe Checkout with an email-capture step first.
 // Looks for a container with [data-price-slug], containing:
 //   #checkoutStep1 (email input + start button) and #checkoutMount (embed target).
-// TEST MODE ONLY for now (see worker.js handleCheckoutCreate TODO).
 (function () {
-  const STRIPE_PUBLISHABLE_KEY = "pk_test_k951fpjEb2tzuvPASFVnxp3Y00hXvDET21";
+  const STRIPE_PUBLISHABLE_KEY = "pk_live_YhbsS2Srfbdv7v0W7FLpQmp600ozhyFpLL";
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
 
   document.addEventListener("DOMContentLoaded", () => {
