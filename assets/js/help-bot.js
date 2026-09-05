@@ -45,11 +45,40 @@
     </div>
   `;
 
+  const PAGE_LABELS = {
+    "quiz.html": "دليل الكورس السريع",
+    "courses.html": "صفحة الكورسات",
+    "videos.html": "الفيديوهات",
+    "testimonials.html": "آراء الطلاب",
+    "search.html": "البحث",
+  };
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // The bot's answer text (from AutoRAG) often references site pages by their
+  // relative path in quotes (e.g. "articles/where-to-start.html") -- turn those
+  // into real clickable links instead of leaving visitors to copy/retype a path,
+  // which is exactly what caused 404s when people dropped the "articles/" folder.
+  function linkifyPaths(text) {
+    const escaped = escapeHtml(text);
+    const pathPattern = /['"`]?((?:articles|products)\/[a-zA-Z0-9_-]+\.html|quiz\.html|courses\.html|videos\.html|testimonials\.html|search\.html)['"`]?/g;
+    return escaped.replace(pathPattern, (match, path) => {
+      const label = PAGE_LABELS[path] || path;
+      return `<a href="/${path}">${label}</a>`;
+    });
+  }
+
   function addMessage(text, who) {
     const msgs = panel.querySelector("#meHelpBotMessages");
     const el = document.createElement("div");
     el.className = "me-helpbot-msg me-helpbot-msg-" + who;
-    el.textContent = text;
+    if (who === "bot") {
+      el.innerHTML = linkifyPaths(text);
+    } else {
+      el.textContent = text;
+    }
     msgs.appendChild(el);
     msgs.scrollTop = msgs.scrollHeight;
   }
