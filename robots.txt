@@ -44,4 +44,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/sitemap.xml
+Sitemap: https://learn.masterenglish.me/sitemap.xml
