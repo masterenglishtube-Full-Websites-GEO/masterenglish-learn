@@ -9,6 +9,55 @@
   let lastQuestion = "";
   let lastAnswer = "";
 
+  // Known-good questions the bot can reliably answer (knowledge base covers
+  // these directly), in Arabic and English. When the live AutoRAG answer
+  // looks like a "couldn't find it" fallback, we guess intent from the
+  // visitor's own words and offer the 3 closest matches as clickable chips,
+  // instead of just pushing straight to "email Noor".
+  const QUESTIONS_BANK = [
+    { text: "كم سعر كورس أسرار النطق الأمريكي؟", keywords: ["سعر", "نطق", "امريكي", "كم", "تكلفة", "دولار", "price", "pronunciation", "cost"] },
+    { text: "How much does the pronunciation course cost?", keywords: ["price", "pronunciation", "cost", "how much", "dollar"] },
+    { text: "ما هي سياسة استرجاع الأموال؟", keywords: ["استرجاع", "استرداد", "الغاء", "فلوس", "مال", "refund", "cancel", "money back"] },
+    { text: "What is your refund policy?", keywords: ["refund", "cancel", "money back", "policy"] },
+    { text: "من أين أبدأ إذا كنت مبتدئاً؟", keywords: ["ابدأ", "مبتدئ", "بداية", "وين", "start", "beginner", "level"] },
+    { text: "Where should I start as a beginner?", keywords: ["start", "beginner", "where", "level", "new"] },
+    { text: "هل الوصول للكورس مدى الحياة؟", keywords: ["مدى الحياة", "وصول", "اشتراك", "شهري", "lifetime", "access", "subscription"] },
+    { text: "Is course access lifetime or a subscription?", keywords: ["lifetime", "access", "subscription", "expire"] },
+    { text: "ماذا يتضمن كورس The Commuter Challenge؟", keywords: ["commuter", "مواصلات", "سيارة", "قيادة", "تنقل"] },
+    { text: "What's included in The Commuter Challenge?", keywords: ["commuter", "challenge", "driving", "included"] },
+    { text: "ماذا يتضمن دليل مقابلة العمل من التوتر إلى التميز؟", keywords: ["مقابلة", "عمل", "وظيفة", "interview", "job"] },
+    { text: "What does the job interview guide cover?", keywords: ["interview", "job", "guide", "cover"] },
+    { text: "كيف أختار الكورس المناسب لي؟", keywords: ["اختار", "مناسب", "كورس", "choose", "which course", "right course"] },
+    { text: "How do I choose the right course for me?", keywords: ["choose", "which course", "right", "suitable"] },
+    { text: "هل يوجد كود خصم؟", keywords: ["خصم", "كود", "كوبون", "discount", "coupon", "code"] },
+    { text: "Is there a discount code?", keywords: ["discount", "coupon", "code", "promo"] },
+    { text: "ما هي طرق الدفع المتاحة؟", keywords: ["دفع", "بطاقة", "فيزا", "payment", "card", "visa", "pay"] },
+    { text: "What payment methods do you accept?", keywords: ["payment", "card", "visa", "pay", "accept"] },
+    { text: "كيف أتواصل مع نور مباشرة؟", keywords: ["تواصل", "نور", "مباشرة", "contact", "reach", "email noor"] },
+    { text: "How can I contact Noor directly?", keywords: ["contact", "reach", "email", "noor"] },
+  ];
+
+  function normalizeWords(s) {
+    return (s.toLowerCase().match(/[a-z؀-ۿ]+/g) || []);
+  }
+
+  function suggestQuestions(userText) {
+    const words = new Set(normalizeWords(userText));
+    if (!words.size) return [];
+    const scored = QUESTIONS_BANK.map((q) => {
+      const score = q.keywords.reduce((acc, kw) => acc + (words.has(kw) || userText.toLowerCase().includes(kw) ? 1 : 0), 0);
+      return { q, score };
+    }).filter((x) => x.score > 0);
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, 3).map((x) => x.q.text);
+  }
+
+  function looksLikeFallback(answer) {
+    const a = answer.toLowerCase();
+    return a.includes("لم أتمكن من إيجاد إجابة") || a.includes("حدث خطأ تقني") ||
+      a.includes("couldn't find an answer") || a.includes("technical error");
+  }
+
   const btn = document.createElement("button");
   btn.id = "meHelpBotBtn";
   btn.setAttribute("aria-label", "مساعد آلي");
@@ -108,6 +157,33 @@
     msgs.scrollTop = msgs.scrollHeight;
   }
 
+  // When the bot can't confidently answer, guess intent from the visitor's
+  // own wording and offer the 3 closest questions we CAN answer, as
+  // clickable chips, instead of only pushing straight to "email Noor".
+  function addSuggestedQuestions(suggestions) {
+    const msgs = panel.querySelector("#meHelpBotMessages");
+    const wrap = document.createElement("div");
+    wrap.className = "me-helpbot-suggestions";
+    const label = document.createElement("p");
+    label.textContent = "ربما تقصد أحد هذه الأسئلة:";
+    wrap.appendChild(label);
+    suggestions.forEach((s) => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "me-helpbot-suggestion-chip";
+      chip.textContent = s;
+      chip.addEventListener("click", () => {
+        wrap.remove();
+        const input = panel.querySelector("#meHelpBotQuestion");
+        input.value = s;
+        panel.querySelector("#meHelpBotForm").requestSubmit();
+      });
+      wrap.appendChild(chip);
+    });
+    msgs.appendChild(wrap);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(btn);
     document.body.appendChild(tooltip);
@@ -177,6 +253,10 @@
         thinking.remove();
         lastAnswer = data.answer || "عذراً، حدث خطأ.";
         addMessage(lastAnswer, "bot");
+        if (looksLikeFallback(lastAnswer)) {
+          const suggestions = suggestQuestions(question);
+          if (suggestions.length) addSuggestedQuestions(suggestions);
+        }
         addEscalateOffer();
       } catch (err) {
         thinking.remove();

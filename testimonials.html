@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="hide-floating-widgets">
 
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
@@ -51,13 +51,6 @@
         <span class="eyebrow center">آراء حقيقية</span>
         <h1>آلاف الطلاب، قصة واحدة تتكرر: الثقة</h1>
         <p>هذه آراء حقيقية من طلاب وطالبات تعلموا معي، من تعليقات يوتيوب وفيسبوك وتجارب طلاب الكورسات. لم يتم تعديل أي رأي، هذه كلماتهم كما كتبوها. مئات التعليقات أدناه مأخوذة مباشرة من تعليقات القناة.</p>
-      </div>
-
-      <div class="wall-filters" id="wallFilters">
-        <button type="button" class="active" data-filter="all">الكل</button>
-        <button type="button" data-filter="youtube">يوتيوب</button>
-        <button type="button" data-filter="facebook">فيسبوك</button>
-        <button type="button" data-filter="courses">طلاب الكورسات</button>
       </div>
 
       <div class="wall-grid" id="wallGrid">
@@ -190,24 +183,6 @@
 <script src="assets/js/contact-widget.js"></script>
 <script src="assets/js/help-bot.js"></script>
 <script>
-  const filterBtns = document.querySelectorAll('#wallFilters button');
-  let currentFilter = 'all';
-
-  function applyFilter() {
-    document.querySelectorAll('#wallGrid .wall-card').forEach((card) => {
-      card.style.display = (currentFilter === 'all' || card.dataset.source === currentFilter) ? '' : 'none';
-    });
-  }
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.dataset.filter;
-      applyFilter();
-    });
-  });
-
   // Real comments wall: render every single entry at once, on purpose --
   // this page is meant to be a long, scroll-heavy wall of real proof, not
   // a paginated widget.
@@ -229,7 +204,6 @@
         frag.appendChild(el);
       });
       grid.appendChild(frag);
-      applyFilter();
       countLabel.textContent = `${pool.length} رأي حقيقي من طلاب ومتابعين حقيقيين`;
     }
 
