@@ -136,7 +136,6 @@
       </div>
 
       <div class="center" style="margin:10px 0 40px;">
-        <button type="button" id="wallLoadMore" class="btn btn-outline" hidden>عرض المزيد من الآراء ←</button>
         <p id="wallLoadCount" class="section-sub" style="margin-top:10px;"></p>
       </div>
 
@@ -209,43 +208,34 @@
     });
   });
 
-  // Real comments wall: fetched once, rendered in batches so the initial
-  // page load stays light even with hundreds of entries.
+  // Real comments wall: render every single entry at once, on purpose --
+  // this page is meant to be a long, scroll-heavy wall of real proof, not
+  // a paginated widget.
   (function () {
     const grid = document.getElementById('wallGrid');
-    const loadMoreBtn = document.getElementById('wallLoadMore');
     const countLabel = document.getElementById('wallLoadCount');
-    const BATCH_SIZE = 30;
-    let pool = [];
-    let shown = 0;
 
     function escapeHtml(s) {
       return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
-    function renderBatch() {
-      const next = pool.slice(shown, shown + BATCH_SIZE);
-      next.forEach((item) => {
+    function renderAll(pool) {
+      const frag = document.createDocumentFragment();
+      pool.forEach((item) => {
         const el = document.createElement('blockquote');
         el.className = 'wall-card';
         el.dataset.source = 'youtube';
         el.innerHTML = `<p>"${escapeHtml(item.text)}"</p><footer><cite>${escapeHtml(item.author)}</cite><span class="wall-source">يوتيوب</span></footer>`;
-        grid.appendChild(el);
+        frag.appendChild(el);
       });
-      shown += next.length;
+      grid.appendChild(frag);
       applyFilter();
-      countLabel.textContent = `تم عرض ${shown} من ${pool.length} رأي حقيقي`;
-      loadMoreBtn.hidden = shown >= pool.length;
+      countLabel.textContent = `${pool.length} رأي حقيقي من طلاب ومتابعين حقيقيين`;
     }
-
-    loadMoreBtn.addEventListener('click', renderBatch);
 
     fetch('assets/data/testimonials-wall.json')
       .then((r) => r.json())
-      .then((data) => {
-        pool = data;
-        renderBatch();
-      })
+      .then(renderAll)
       .catch(() => {});
   })();
 </script>
