@@ -148,7 +148,13 @@
 
   <div class="admin-section">
     <h2>الشركاء (Affiliates)</h2>
-    <p style="color:var(--ink-soft); font-size:14px; margin-top:-8px;">كل شريك يحصل على رابط بصيغة <code>?ref=CODE</code>. العمولات تبقى "قيد الانتظار" ٣٠ يوماً (لاستيعاب أي استرجاع)، ثم تصبح "مستحقة" تلقائياً. لا يتم دفع أي شيء تلقائياً — أنت من يرسل المبلغ يدوياً ثم يضغط "تم الدفع" هنا.</p>
+    <p style="color:var(--ink-soft); font-size:14px; margin-top:-8px; line-height:1.9;">
+      كل شريك يحصل على رابط بصيغة <code>?ref=CODE</code>. <strong>لا أحد يربح شيئاً عند التسجيل</strong> — العمولة تبدأ ٠٪ وترتفع تلقائياً فقط بعد إثبات جدية حقيقية بدون أي استرجاع:
+      <br>• ٢٠ عملية بيع خلال أول ١٥ يوماً ← ٣٠٪ (مدة انتظار ٦٠ يوماً)
+      <br>• ١٠٠ عملية بيع خلال ٣٠ يوماً ← ٤٠٪ (مدة انتظار ٤٥ يوماً)
+      <br>• ٤٠٠ عملية بيع خلال ٦٠ يوماً ← ٥٠٪ (مدة انتظار ٣٠ يوماً)
+      <br>أي عملية استرجاع توقف الترقية للمستوى التالي، و٣ عمليات استرجاع فأكثر توقف الشريك تلقائياً (يمكنك إعادة تفعيله يدوياً من هنا). لا يتم دفع أي شيء تلقائياً بأي حال — أنت من يرسل المبلغ يدوياً ثم يضغط "تم الدفع" هنا.
+    </p>
 
     <table id="affiliatesTable">
       <thead><tr><th>الاسم</th><th>الرمز</th><th>العمولة</th><th>الحالة</th><th>قيد الانتظار</th><th>مستحقة</th><th>مدفوعة</th><th>رابط اللوحة</th></tr></thead>
@@ -170,7 +176,7 @@
       </div>
       <div>
         <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink-soft); margin-bottom:4px;">نسبة العمولة %</label>
-        <input type="number" id="affRateInput" value="30" min="0" max="100" style="width:80px; padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body);">
+        <input type="number" id="affRateInput" value="0" min="0" max="100" style="width:80px; padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font-body);">
       </div>
       <button type="button" id="affAddBtn" class="btn btn-primary" style="padding:10px 22px;">إضافة شريك</button>
     </div>

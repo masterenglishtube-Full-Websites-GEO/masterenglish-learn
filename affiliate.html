@@ -51,6 +51,8 @@
       <div class="aff-link-box" id="affLinkBox"></div>
     </div>
 
+    <div id="affTierProgress" style="display:none; background:var(--paper-soft); border-radius:var(--radius-sm); padding:16px 18px; margin-bottom:24px;"></div>
+
     <div class="aff-stats" id="affStats" style="display:none;">
       <div class="aff-stat"><strong id="affPending">-</strong><span>قيد الانتظار (لم تصبح مستحقة بعد)</span></div>
       <div class="aff-stat"><strong id="affEligible">-</strong><span>مستحقة الآن (بانتظار الدفع)</span></div>
@@ -119,6 +121,20 @@
       const link = `https://learn.masterenglish.me/?ref=${data.code}`;
       document.getElementById("affLinkBox").textContent = link;
       document.getElementById("affLinkSection").style.display = "block";
+
+      if (data.tier_progress) {
+        const c = data.tier_progress.checks[0];
+        const remaining = Math.max(0, c.need - c.have);
+        const nextPct = Math.round(data.tier_progress.next_rate * 100);
+        const box = document.getElementById("affTierProgress");
+        box.innerHTML = data.commission_rate === 0
+          ? `<strong>لم تصل بعد لأول مستوى.</strong> تحتاج ${c.need} عملية بيع خلال أول ${c.within_days} يوماً من انضمامك (بدون أي استرجاع) لتبدأ بربح ${nextPct}% — لديك حتى الآن ${c.have} من ${c.need}. باقي ${remaining} عملية.`
+          : `عمولتك الحالية ${Math.round(data.commission_rate * 100)}%. تحتاج ${c.need} عملية بيع خلال ${c.within_days} يوماً من انضمامك لترتفع إلى ${nextPct}% — لديك حتى الآن ${c.have} من ${c.need}.`;
+        box.style.display = "block";
+      } else if (data.commission_rate > 0) {
+        document.getElementById("affTierProgress").innerHTML = `<strong>وصلت لأعلى مستوى (${Math.round(data.commission_rate * 100)}%)!</strong> استمر بالعمل الجيد.`;
+        document.getElementById("affTierProgress").style.display = "block";
+      }
 
       document.getElementById("affPending").textContent = fmtMoney(data.pending_cents);
       document.getElementById("affEligible").textContent = fmtMoney(data.eligible_cents);
