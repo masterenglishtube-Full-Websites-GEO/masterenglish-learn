@@ -1,3 +1,17 @@
+// Affiliate referral capture -- a visitor can land on any page (article,
+// video page, homepage) before eventually reaching a product's checkout, so
+// this runs site-wide and remembers the code in localStorage until purchase.
+// Last-touch attribution: a newer ?ref= always overwrites an older one.
+(function captureAffiliateRef() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const ref = params.get('ref');
+    if (ref && /^[a-zA-Z0-9_-]{2,40}$/.test(ref)) {
+      localStorage.setItem('me_ref_code', ref.toUpperCase());
+    }
+  } catch (e) {}
+})();
+
 // Sticky header shadow on scroll
 const header = document.getElementById('siteHeader');
 if (header) {

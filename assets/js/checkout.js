@@ -31,12 +31,14 @@
       startBtn.textContent = "جارِ التحضير...";
 
       const siteRoot = location.href.replace(/products\/[^/]*$/, "");
+      let refCode = null;
+      try { refCode = localStorage.getItem("me_ref_code"); } catch (e) {}
 
       try {
         const res = await fetch(API + "/checkout/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slug, email, origin: siteRoot }),
+          body: JSON.stringify({ slug, email, origin: siteRoot, ref_code: refCode || undefined }),
         });
         const data = await res.json();
         if (!res.ok || !data.client_secret) {
