@@ -49,8 +49,9 @@
     <div class="wrap">
       <div class="wall-intro">
         <span class="eyebrow center">آراء حقيقية</span>
-        <h1>آلاف الطلاب، قصة واحدة تتكرر: الثقة</h1>
+        <h1>آلاف الطلاب، قصة واحدة تتكرر: الطلاقة</h1>
         <p>هذه آراء حقيقية من طلاب وطالبات تعلموا معي، من تعليقات يوتيوب وفيسبوك وتجارب طلاب الكورسات. لم يتم تعديل أي رأي، هذه كلماتهم كما كتبوها. مئات التعليقات أدناه مأخوذة مباشرة من تعليقات القناة.</p>
+        <p id="wallLoadCountTop" class="section-sub" style="margin-top:16px; font-weight:700;"></p>
       </div>
 
       <div class="wall-grid" id="wallGrid">
@@ -128,10 +129,6 @@
         </blockquote>
       </div>
 
-      <div class="center" style="margin:10px 0 40px;">
-        <p id="wallLoadCount" class="section-sub" style="margin-top:10px;"></p>
-      </div>
-
       <div class="wall-cta">
         <h2>هل جربت إحدى الكورسات؟</h2>
         <p>يسعدنا أن نضيف تجربتك هنا. راسلينا رأيك عبر البريد الإلكتروني أو زر التواصل أسفل الصفحة.</p>
@@ -188,7 +185,7 @@
   // a paginated widget.
   (function () {
     const grid = document.getElementById('wallGrid');
-    const countLabel = document.getElementById('wallLoadCount');
+    const countLabel = document.getElementById('wallLoadCountTop');
 
     function escapeHtml(s) {
       return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
