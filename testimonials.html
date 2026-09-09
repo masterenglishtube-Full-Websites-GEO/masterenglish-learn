@@ -204,7 +204,10 @@
         frag.appendChild(el);
       });
       grid.appendChild(frag);
-      countLabel.textContent = `${pool.length} رأي حقيقي من طلاب ومتابعين حقيقيين`;
+      const toArabicDigits = (n) => String(n)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        .replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+      countLabel.textContent = `${toArabicDigits(pool.length)} رأي حقيقي من ٣٦٬٨٥٤ طالب ومتابع حقيقي`;
     }
 
     fetch('assets/data/testimonials-wall.json')
