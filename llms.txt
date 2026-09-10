@@ -25,7 +25,7 @@
 
 ### مقالات مختارة (مكتبة متنامية، أكثر من 20 مقال)
 - كيف تفهم الإنجليزية المحكية بسرعة؟ 4 قواعد ذهبية (/articles/understand-fast-english.html، ونسخة نصية عند /articles/understand-fast-english.md)
-- 100 سؤال وجواب لإتقان أساسيات المحادثة بالإنجليزية (/articles/conversation-basics-100-qa.html)
+- أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية (/articles/conversation-basics-100-qa.html)
 - أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟ (/articles/american-accent-secrets.html)
 - كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟ (/articles/job-interview-english.html)
 - كيف تصل إلى الطلاقة خلال أشهر لا سنوات؟ (/articles/fluency-in-months-not-years.html)
