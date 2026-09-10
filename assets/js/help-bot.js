@@ -149,6 +149,7 @@
           body: JSON.stringify({ email: visitorEmail, question: lastQuestion, answer: lastAnswer }),
         });
         wrap.innerHTML = "<p>تم الإرسال. سترد عليك نور عبر بريدك الإلكتروني قريباً.</p>";
+        document.dispatchEvent(new CustomEvent("me:escalate-requested"));
       } catch (e) {
         wrap.innerHTML = "<p>حدث خطأ، راسلينا مباشرة على noor@masterenglish.me</p>";
       }
@@ -235,6 +236,7 @@
       input.value = "";
       addMessage(question, "user");
       lastQuestion = question;
+      document.dispatchEvent(new CustomEvent("me:question-asked"));
 
       const thinking = document.createElement("div");
       thinking.className = "me-helpbot-msg me-helpbot-msg-bot";

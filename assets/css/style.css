@@ -796,6 +796,30 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
    sitting on top of content the entire way down -- hide them there only. */
 body.hide-floating-widgets #meContactBtn,
 body.hide-floating-widgets #meHelpBotBtn,
+body.hide-floating-widgets #meWhatsappBtn,
 body.hide-floating-widgets .me-fab-tooltip,
 body.hide-floating-widgets .me-fab-tooltip-right,
+body.hide-floating-widgets .me-wa-tooltip,
 body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
+
+/* Floating WhatsApp button (bottom-left, stacked above the contact button).
+   Only shown to visitors who've shown real intent -- see whatsapp-widget.js --
+   so it stays invisible (opacity/pointer-events off) until it gets .show. */
+#meWhatsappBtn {
+  position: fixed; bottom: 96px; left: 24px; z-index: 999;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #25d366; box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+#meWhatsappBtn.show { opacity: 1; pointer-events: auto; transform: scale(1); }
+#meWhatsappBtn:hover { filter: brightness(1.05); }
+
+.me-wa-tooltip {
+  position: fixed; bottom: 106px; left: 84px; z-index: 998;
+  background: var(--ink); color: #fff; font-size: 12.5px; font-family: var(--font-body);
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
+}
+#meWhatsappBtn.show:hover + .me-wa-tooltip { opacity: 1; }
