@@ -155,6 +155,12 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .hero-sub { color: var(--ink-soft); font-size: 18px; max-width: 520px; margin: 0 0 32px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 46px; }
 
+/* Short, genuine English-language summary for AI/search crawlers that query in
+   English even when the visitor's own question was in Arabic -- see
+   deferred-improvements.md's GEO recheck notes. Visible, not hidden/cloaked,
+   just small and secondary to the Arabic-first design. */
+.en-note { color: var(--ink-soft); font-size: 13.5px; direction: ltr; text-align: left; max-width: 520px; margin: -20px 0 28px; line-height: 1.6; }
+
 .stats-row { display: flex; gap: 36px; flex-wrap: wrap; }
 .stat { display: flex; flex-direction: column; }
 .stat strong { font-family: var(--font-head); font-size: 26px; color: var(--accent-dark); }
