@@ -543,6 +543,44 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
   }
 }
 
+/* Header login widget */
+#meAuthBtn {
+  background: none; border: 1px solid var(--border); color: var(--ink);
+  border-radius: 999px; padding: 8px 16px; font-family: var(--font-body); font-size: 13.5px;
+  cursor: pointer; white-space: nowrap; flex-shrink: 0;
+}
+#meAuthBtn:hover { border-color: var(--accent); color: var(--accent-dark); }
+#meAuthBtn.me-auth-logged-in { border-color: var(--accent); color: var(--accent-dark); font-weight: 700; }
+
+#meAuthPanel {
+  position: fixed; z-index: 1000; top: 74px; inset-inline-end: 20px;
+  width: min(300px, calc(100vw - 32px)); background: var(--paper);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 18px; display: none;
+}
+#meAuthPanel.open { display: block; }
+.me-auth-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.me-auth-head strong { font-family: var(--font-head); font-size: 14.5px; }
+.me-auth-head button { background: none; border: none; font-size: 20px; line-height: 1; cursor: pointer; color: var(--ink-soft); }
+#meAuthGoogleBtn { display: flex; justify-content: center; min-height: 40px; margin-bottom: 12px; }
+.me-auth-divider { text-align: center; color: var(--ink-soft); font-size: 12px; margin: 4px 0 12px; }
+#meAuthEmailForm input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  margin-bottom: 10px; font-family: var(--font-body); font-size: 13.5px; background: var(--paper-soft); color: var(--ink);
+}
+#meAuthEmailForm button {
+  width: 100%; background: var(--gold); color: var(--ink); border: none; border-radius: 999px;
+  padding: 10px; font-weight: 800; cursor: pointer; font-family: var(--font-head); font-size: 13.5px;
+}
+#meAuthEmailForm button:disabled { opacity: 0.65; cursor: default; }
+#meAuthStatus { font-size: 12.5px; margin-top: 10px; min-height: 15px; }
+.me-auth-success { color: var(--accent-dark); }
+.me-auth-error { color: #b23b3b; }
+.me-auth-menu { display: none; }
+.me-auth-menu.open { display: block; }
+.me-auth-menu button { width: 100%; text-align: right; background: none; border: none; padding: 8px 4px; font-family: var(--font-body); font-size: 13px; color: var(--ink-soft); cursor: pointer; }
+.me-auth-menu button:hover { color: #b23b3b; }
+
 /* Floating contact widget */
 #meContactBtn {
   position: fixed; bottom: 24px; left: 24px; z-index: 999;

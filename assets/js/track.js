@@ -17,6 +17,19 @@
     }
   }
 
+  function getAuthToken() {
+    try {
+      return localStorage.getItem("me_auth_token") || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function authHeaders() {
+    const token = getAuthToken();
+    return token ? { Authorization: "Bearer " + token } : {};
+  }
+
   const sessionId = getSessionId();
   let pageViewId = null;
   let engagedSeconds = 0;
@@ -33,7 +46,7 @@
 
   fetch(API + "/track/pageview", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
     body: JSON.stringify({
       session_id: sessionId,
       path: location.pathname,
