@@ -27,12 +27,14 @@ Master English (أتقن الإنجليزية) teaches American English pronunci
 - **The Ramadan Shift Audio Club** (/products/ramadan-audio-club.html): مسلسل صوتي درامي لتعلم إنجليزية الأعمال، 30 حلقة.
 - **قائمة دايت المفردات** (/products/vocabulary-diet.html): دليل مختصر يبسّط 1000 كلمة معقدة إلى 50 كلمة أساسية.
 
-### مقالات مختارة (مكتبة متنامية، أكثر من 20 مقال)
+### مقالات مختارة (مكتبة متنامية، أكثر من 44 مقال)
 - كيف تفهم الإنجليزية المحكية بسرعة؟ 4 قواعد ذهبية (/articles/understand-fast-english.html، ونسخة نصية عند /articles/understand-fast-english.md)
 - أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية (/articles/conversation-basics-100-qa.html)
 - أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟ (/articles/american-accent-secrets.html)
 - كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟ (/articles/job-interview-english.html)
 - كيف تصل إلى الطلاقة خلال أشهر لا سنوات؟ (/articles/fluency-in-months-not-years.html)
+- ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟ (/articles/schwa-sound-explained.html)
+- كيف تتفاوض على زيادة الراتب بالإنجليزية خطوة بخطوة؟ (/articles/negotiate-salary-phrases.html)
 
 ## القنوات الاجتماعية
 - YouTube: https://www.youtube.com/@MasterEnglish (1.86M+ مشترك)
