@@ -148,7 +148,7 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: visitorEmail, question: lastQuestion, answer: lastAnswer }),
         });
-        wrap.innerHTML = "<p>تم الإرسال. سترد عليك نور عبر بريدك الإلكتروني قريباً.</p>";
+        wrap.innerHTML = "<p>تم الإرسال. سترد عليك نور عبر بريدك الإلكتروني قريباً (تحقق من مجلد Spam إذا تأخر الرد يوماً أو يومين).</p>";
         document.dispatchEvent(new CustomEvent("me:escalate-requested"));
       } catch (e) {
         wrap.innerHTML = "<p>حدث خطأ، راسلينا مباشرة على noor@masterenglish.me</p>";

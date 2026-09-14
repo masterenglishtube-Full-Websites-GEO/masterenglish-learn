@@ -67,7 +67,7 @@
           body: JSON.stringify({ email, message, path: location.pathname }),
         });
         if (!res.ok) throw new Error("failed");
-        status.textContent = "تم الإرسال. سنرد عليك قريباً عبر بريدك الإلكتروني.";
+        status.textContent = "تم الإرسال. سنرد عليك قريباً عبر بريدك الإلكتروني (تحقق من مجلد Spam إذا تأخر الرد يوماً أو يومين).";
         status.className = "me-contact-success";
         panel.querySelector("#meContactForm").reset();
       } catch (err) {

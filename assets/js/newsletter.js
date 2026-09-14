@@ -35,7 +35,7 @@
           body: JSON.stringify({ email, path: location.pathname }),
         });
         if (!res.ok) throw new Error("failed");
-        status.textContent = "تم الاشتراك بنجاح! تحقق من بريدك الإلكتروني.";
+        status.textContent = "تم الاشتراك بنجاح! تحقق من بريدك خلال دقائق، ولا تنس مراجعة مجلد الرسائل غير المرغوب فيها (Spam). لم تجده؟ راسلنا على noor@masterenglish.me.";
         status.className = "me-newsletter-success";
         box.querySelector("#meNewsletterForm").reset();
       } catch (err) {

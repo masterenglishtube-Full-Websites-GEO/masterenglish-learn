@@ -236,7 +236,7 @@
           statusEl.textContent = data.detail || "حدث خطأ، حاول مرة أخرى";
           statusEl.className = "me-auth-error";
         } else {
-          statusEl.textContent = `أرسلنا رابط الدخول إلى ${email}، تحقق من بريدك ✉️`;
+          statusEl.textContent = `أرسلنا رابط الدخول إلى ${email} ✉️ لم يصلك خلال دقائق؟ تحقق من مجلد الرسائل غير المرغوب فيها (Spam)، وإذا لم تجده هناك أيضاً راسلنا على noor@masterenglish.me.`;
           statusEl.className = "me-auth-success";
           emailForm.reset();
         }
