@@ -24,7 +24,7 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - **The Commuter Challenge (تحدي الطريق)** (/products/commuter-challenge.html): نظام صوتي تفاعلي لتدريب النطق والمحادثة أثناء القيادة أو المشي.
 - **أتقن العروض التقديمية بالإنجليزية في 10 أيام** (/products/presentations.html): كورس لتعلّم تقديم عروض احترافية بالإنجليزية، 8 وحدات و30 درساً.
 - **من التوتر إلى التميز** (/products/interview.html): دليل التحضير لمقابلات العمل بالإنجليزية.
-- **The 30-Day Fluency Challenge** (/products/ramadan-audio-club.html): مسلسل صوتي درامي يعلّم الإنجليزية الحقيقية للعمل والحياة اليومية عبر قصة "عمر وسارة"، 30 حلقة.
+- **The 30-Day Fluency Challenge: A Ramadan Story** (/products/ramadan-audio-club.html): مسلسل صوتي درامي يعلّم الإنجليزية الحقيقية للعمل والحياة اليومية عبر قصة "عمر وسارة"، 30 حلقة.
 - **قائمة دايت المفردات** (/products/vocabulary-diet.html): دليل مختصر يبسّط 1000 كلمة معقدة إلى 50 كلمة أساسية.
 
 ### مقالات مختارة (مكتبة متنامية، أكثر من 44 مقال)
