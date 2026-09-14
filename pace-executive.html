@@ -21,6 +21,18 @@
   .pace-form label { display: block; font-weight: 700; font-size: 13.5px; margin-bottom: 6px; }
   .pace-form input, .pace-form textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); margin-bottom: 16px; }
   #paceResult { font-size: 14px; margin-top: 12px; }
+  .pace-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 34px 0; }
+  @media (max-width: 560px) { .pace-pillars { grid-template-columns: 1fr; } }
+  .pace-pillar { background: var(--paper-soft); border-radius: var(--radius); padding: 20px 22px; }
+  .pace-pillar-letter {
+    display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800;
+    font-family: var(--font-head); margin-bottom: 10px; font-size: 14px;
+  }
+  .pace-pillar h3 { margin: 0 0 8px; font-size: 17px; }
+  .pace-pillar h3 .pace-pillar-ar { font-weight: 500; color: var(--ink-soft); font-size: 14px; }
+  .pace-pillar p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--ink-soft); }
+  .pace-proof-heading { margin: 44px 0 18px; font-size: 20px; }
 </style>
 </head>
 <body>
@@ -46,8 +58,31 @@
 <main>
   <div class="pace-wrap">
     <span class="eyebrow">بالتقديم فقط · Private Briefing</span>
-    <h1>PACE — تدريب تنفيذي فردي مباشر معي</h1>
-    <p class="section-sub">هذا ليس كورساً. PACE هو تدريب فردي مكثف، مباشر معي بالكامل (وتُسجَّل كل جلسة لك لمراجعة تقدمك لاحقاً)، لعدد محدود جداً من القياديين والمدراء التنفيذيين الناطقين بالعربية الذين وصلوا لمرحلة يحتاجون فيها إجادة تامة للتحدث بالإنجليزية في الاجتماعات عالية المستوى — وليس المزيد من الدروس.</p>
+    <h1>PACE: تدريب تنفيذي فردي مباشر معي</h1>
+    <p class="section-sub">هذا ليس كورساً. PACE هو تدريب فردي مكثف، مباشر معي بالكامل (وتُسجَّل كل جلسة لك لمراجعة تقدمك لاحقاً)، لعدد محدود جداً من القياديين والمدراء التنفيذيين الناطقين بالعربية الذين وصلوا لمرحلة يحتاجون فيها إجادة تامة للتحدث بالإنجليزية في الاجتماعات عالية المستوى، لا المزيد من الدروس.</p>
+
+    <div class="pace-pillars">
+      <div class="pace-pillar">
+        <span class="pace-pillar-letter">P</span>
+        <h3>Presence <span class="pace-pillar-ar">الحضور</span></h3>
+        <p>أن يشعر من حولك أنك موجود فعلاً في الغرفة، لا شخص ينتظر دوره ليتحدث بإنجليزية صحيحة نحوياً. الحضور يعني نبرة صوت واثقة، إيقاع كلام لا يتسارع من التوتر، وصمت مقصود بدل ملء كل فراغ بـ "um" و"ah".</p>
+      </div>
+      <div class="pace-pillar">
+        <span class="pace-pillar-letter">A</span>
+        <h3>Authority <span class="pace-pillar-ar">المهابة</span></h3>
+        <p>أن تُسمع كلماتك بوزنها الحقيقي، لا أن تضيع في صياغة ملتوية أو اعتذار زائد عن كل رأي تطرحه. المهابة تُبنى من وضوح الجملة الأولى، لا من تعقيد المفردات.</p>
+      </div>
+      <div class="pace-pillar">
+        <span class="pace-pillar-letter">C</span>
+        <h3>Command <span class="pace-pillar-ar">السيطرة</span></h3>
+        <p>القدرة على قيادة اتجاه الاجتماع أو المحادثة بدل الانجراف خلفها. أن تلخّص فكرة معقدة في نقطة واحدة، وترد على سؤال مفاجئ دون أن تفقد خيط حديثك.</p>
+      </div>
+      <div class="pace-pillar">
+        <span class="pace-pillar-letter">E</span>
+        <h3>Execution <span class="pace-pillar-ar">التنفيذ</span></h3>
+        <p>كل ما سبق بلا قيمة إن بقي حبيساً غرفة التدريب. الهدف أن تستخدمه فعلياً في اجتماعك القادم أو عرضك القادم أو مفاوضتك القادمة، لا أن تحسّن لغتك نظرياً فقط.</p>
+      </div>
+    </div>
 
     <div class="pace-criteria">
       <h3>هذا البرنامج ليس لكل شخص</h3>
@@ -59,6 +94,26 @@
         <li>مستعدون لالتزام ثلاثة أشهر من الجلسات المباشرة المكثفة (كل جلسة تُسجَّل لك لمتابعة تقدمك).</li>
       </ul>
       <p>إذا كان هذا يصفك، أرسل طلبك أدناه وسأراجعه شخصياً. إذا كان مناسباً، سنتواصل معك لتفاصيل أكثر.</p>
+    </div>
+
+    <h2 class="pace-proof-heading">ماذا يقول من أنهى البرنامج؟</h2>
+    <p class="section-sub">آراء حقيقية من قياديين شاركوا في PACE، منشورة بشكل مجهّل الهوية بالكامل دون أي تفاصيل تكشف عنهم.</p>
+    <div class="testimonial-grid">
+      <blockquote class="testimonial">
+        <span class="avatar">م</span>
+        <p>حاسس إني بقيت أحسن، أكتر ثقة بصراحة. واللي بيحصل في التدريب ده هو فعلاً نفس اللي بيحصل معايا في الشغل، كل الاجتماعات فيها تحديات حوالين الـ KPIs أو تخفيض التكاليف أو مراجعة الميزانية.</p>
+        <cite>مدير ميزانية وعمليات في شركة صناعية كبرى</cite>
+      </blockquote>
+      <blockquote class="testimonial">
+        <span class="avatar">م</span>
+        <p>حسّيت حالي منيح وواثق وأنا عم جاوب على أسئلة صعبة قدام حدا عم يمثّل مدير تنفيذي رفيع المستوى، وصراحة في تحسن واضح من بداية الجلسة لهلأ.</p>
+        <cite>مدرّب تنفيذي محترف</cite>
+      </blockquote>
+      <blockquote class="testimonial">
+        <span class="avatar">م</span>
+        <p>اليوم صار عنا مشكلة، مستخدم ما قدر يتصل، وقلت مباشرة للزملاء الصينيين: "رح أتأكد مع الفريق المختص." استخدمتها كتير مرات نفس اليوم، وحسيت بثقة، كنت مبسوطة بصراحة.</p>
+        <cite>مهندسة شبكات واتصالات</cite>
+      </blockquote>
     </div>
 
     <div class="pace-form">

@@ -128,8 +128,8 @@
         const nextPct = Math.round(data.tier_progress.next_rate * 100);
         const box = document.getElementById("affTierProgress");
         box.innerHTML = data.commission_rate === 0
-          ? `<strong>لم تصل بعد لأول مستوى.</strong> تحتاج ${c.need} عملية بيع خلال أول ${c.within_days} يوماً من انضمامك (بدون أي استرجاع) لتبدأ بربح ${nextPct}% — لديك حتى الآن ${c.have} من ${c.need}. باقي ${remaining} عملية.`
-          : `عمولتك الحالية ${Math.round(data.commission_rate * 100)}%. تحتاج ${c.need} عملية بيع خلال ${c.within_days} يوماً من انضمامك لترتفع إلى ${nextPct}% — لديك حتى الآن ${c.have} من ${c.need}.`;
+          ? `<strong>لم تصل بعد لأول مستوى.</strong> تحتاج ${c.need} عملية بيع خلال أول ${c.within_days} يوماً من انضمامك (بدون أي استرجاع) لتبدأ بربح ${nextPct}%. لديك حتى الآن ${c.have} من ${c.need}. باقي ${remaining} عملية.`
+          : `عمولتك الحالية ${Math.round(data.commission_rate * 100)}%. تحتاج ${c.need} عملية بيع خلال ${c.within_days} يوماً من انضمامك لترتفع إلى ${nextPct}%. لديك حتى الآن ${c.have} من ${c.need}.`;
         box.style.display = "block";
       } else if (data.commission_rate > 0) {
         document.getElementById("affTierProgress").innerHTML = `<strong>وصلت لأعلى مستوى (${Math.round(data.commission_rate * 100)}%)!</strong> استمر بالعمل الجيد.`;
