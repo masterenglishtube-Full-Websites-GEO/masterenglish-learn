@@ -45,6 +45,18 @@
   .timestamp-list { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 8px; }
   .timestamp-list a { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 16px; color: var(--ink); text-decoration: none; }
   .timestamp-list a:hover { border-color: var(--accent); }
+  .quick-ref-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .quick-ref-table th { background: var(--accent); color: #fff; padding: 10px 14px; text-align: right; font-weight: 700; }
+  .quick-ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .quick-ref-table tr:nth-child(even) td { background: var(--paper-soft); }
+  .quick-ref-table .spoken { color: var(--accent-dark); font-weight: 700; }
+  .table-note { color: var(--ink-soft); font-size: 14px; margin-top: 4px; }
+  .path-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+  @media (max-width: 700px) { .path-cards { grid-template-columns: 1fr; } }
+  .path-card { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; text-align: center; }
+  .path-tag { display: inline-block; font-size: 13px; color: var(--accent-dark); background: var(--paper-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 10px; }
+  .path-card h3 { margin: 0 0 8px; font-size: 18px; }
+  .path-card p { color: var(--ink-soft); font-size: 14px; margin: 0 0 16px; }
 </style>
 <script type="application/ld+json">
 {
@@ -131,6 +143,24 @@
         <li><a href="https://youtu.be/t0NNhn3MJh4?t=687" target="_blank" rel="noopener">(١١:٢٧) كيف تتدرب يومياً؟ (الحل العملي)</a></li>
       </ul>
 
+      <h2>الملخص السريع: الأسرار الأربعة بالأمثلة</h2>
+      <table class="quick-ref-table">
+        <thead>
+          <tr><th>القاعدة</th><th>الكتابة</th><th>كما تُنطق فعلياً</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>N + T تختفي</td><td>Internet · Center · Interview · Twenty</td><td class="spoken">Innernet · Cener · Innerview · Twenny</td></tr>
+          <tr><td>Flap T (دال خفيفة سريعة)</td><td>Water · Better · Computer · Put it away</td><td class="spoken">Wa-der · Bedder · Compyuder · Pud-id-away</td></tr>
+          <tr><td>صوت الشوا (Schwa)</td><td>Tomato · Today · Tonight · Police</td><td class="spoken">Tuh-may-duh · Tuh-day · Tuh-night · Puh-lease</td></tr>
+          <tr><td>اختفاء and</td><td>Rock and Roll</td><td class="spoken">Rock n' Roll</td></tr>
+          <tr><td>القطار: ساكن + متحرك</td><td>Hold on</td><td class="spoken">Hol-don</td></tr>
+          <tr><td>القطار: متحرك + متحرك</td><td>Go away · I ask</td><td class="spoken">Go-(w)-away · I-(y)-ask</td></tr>
+          <tr><td>تحدي القطار</td><td>Pick it up</td><td class="spoken">Pikitup</td></tr>
+          <tr><td>الاختصارات الشائعة</td><td>going to</td><td class="spoken">gonna</td></tr>
+        </tbody>
+      </table>
+      <p class="table-note">هذا الجدول للمراجعة السريعة فقط. الأمثلة أوضح بكثير بصوت نور نفسها، فشاهد الفيديو أعلى الصفحة لتسمعها جميعاً منطوقة بشكل حقيقي قبل أن تتدرب عليها.</p>
+
       <h2>السر الأول: الحرف "الكاذب" (The Vanishing T)</h2>
       <p>حرف T هو أكبر كاذب في اللهجة الأمريكية. نادراً ما يُنطق كحرف T حقيقي وواضح، لسببين مختلفين حسب مكانه في الكلمة.</p>
 
@@ -161,6 +191,7 @@
         <strong>✅ ما تسمعه فعلياً:</strong> Tuh-day · Tuh-night · Puh-lease
       </div>
       <p>الأهم من ذلك هو ما يحدث للكلمات الوظيفية الصغيرة مثل to وfor وof وand، فهي لا تأخذ أي وزن في الكلام الطبيعي. مثال واضح: <strong>"Rock and Roll"</strong> لا تُنطق أبداً بشكل كامل، بل تسمعها دائماً <strong>"Rock n' Roll"</strong>، حيث تختفي كلمة and بالكامل ولا يبقى منها سوى حرف N.</p>
+      <p>صوت الشوا تحديداً يستحق تعمقاً إضافياً لأنه الأكثر تكراراً في الإنجليزية الأمريكية كلها. إذا أردت شرحاً كاملاً مخصصاً له، اقرأ <a href="schwa-sound-explained.html">ما هو صوت الشوا ولماذا هو أهم صوت في الإنجليزية الأمريكية؟</a></p>
 
       <h2>السر الثالث: القطار (Linking)</h2>
       <p>الأمريكيون لا يتوقفون بين الكلمات أبداً. القاعدة الذهبية هنا: ساكن + متحرك يندمجان في كلمة واحدة.</p>
@@ -182,7 +213,27 @@
       <h2>لماذا يواجه المتحدث العربي هذه المشكلة أكثر من غيره؟</h2>
       <p>اللغة العربية لا تملك صوت الـ Schwa كصوت مستقل، لذلك يميل المتعلم العربي لنطق كل مقطع بوضوح كامل بدل تخفيفه، وهذا عكس ما يفعله المتحدث الأصلي تماماً. كذلك صوت Flap T غريب على أذن اعتادت حرف التاء واضحاً ومنفصلاً، فيميل المتعلم لنطق T بقوة زائدة بدل تخفيفها. معرفة هذا الفرق تحديداً هي ما يجعل التدريب المسموع اليومي أكثر فعالية من حفظ القواعد النظرية وحدها.</p>
 
-      <p>المعرفة النظرية بهذه القواعد لا تكفي وحدها. أذنك تحتاج تدريباً يومياً لتتعود على هذه السرعة، ولسانك يحتاج تدريباً ليقلدها فعلياً بدل أن يبقى حبيس الفهم النظري. إذا كنت مشغولاً وتريد تدريباً عملياً قصيراً أثناء تنقلك اليومي، هذا بالضبط ما صُمم من أجله <a href="../products/commuter-challenge.html">The Commuter Challenge</a>. وإذا أردت إتقان اللهجة الأمريكية بعمق أكاديمي كامل، فالخطوة التالية هي <a href="../products/pronunciation.html">كورس أسرار النطق الأمريكي</a>.</p>
+      <blockquote class="wall-card">
+        <p>"صراحة يا مس، أنا ما كنت أسمع خالص قبل هيك، بس هلأ صرت كثير مهتمة وبدي أطبق. حسيت حالي تغيرت، الحمد لله. قبل ما كان يثبت معي إشي بالمرة."</p>
+        <footer><cite>متدربة في تدريب فردي مباشر</cite><span class="wall-source">طالبة كورس</span></footer>
+      </blockquote>
+
+      <p>المعرفة النظرية بهذه القواعد لا تكفي وحدها. أذنك تحتاج تدريباً يومياً لتتعود على هذه السرعة، ولسانك يحتاج تدريباً ليقلدها فعلياً بدل أن يبقى حبيس الفهم النظري. أمامك طريقان حسب وضعك:</p>
+
+      <div class="path-cards">
+        <div class="path-card">
+          <span class="path-tag">🚗 مشغول؟</span>
+          <h3>The Commuter Challenge</h3>
+          <p>تدريب صوتي يومي قصير (دقيقة إلى ثلاث دقائق) تسمعه في السيارة أو أثناء التنقل، بدون كتب ولا شاشة.</p>
+          <a href="../products/commuter-challenge.html" class="btn btn-outline">اكتشف التحدي ←</a>
+        </div>
+        <div class="path-card">
+          <span class="path-tag">🎓 تريد الإتقان الكامل؟</span>
+          <h3>أسرار النطق الأمريكي</h3>
+          <p>دراسة أكاديمية معمقة لكل قواعد النطق والربط والتنغيم، حتى تصل لمستوى قريب من المتحدث الأصلي.</p>
+          <a href="../products/pronunciation.html" class="btn btn-outline">اكتشف الكورس ←</a>
+        </div>
+      </div>
 
       <h2>اختبر نفسك</h2>
       <p>خمسة أسئلة سريعة للتأكد أنك فهمت الأسرار الأربعة فعلياً، لا أنك قرأتها فقط.</p>

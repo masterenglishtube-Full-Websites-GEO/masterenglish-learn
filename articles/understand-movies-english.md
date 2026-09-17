@@ -9,11 +9,26 @@
 
 ## تصفح الدرس حسب الوقت
 
-- (٠١:٥٥) السر الأول: الحرف "الكاذب" — https://youtu.be/t0NNhn3MJh4?t=115
-- (٠٣:٠٨) قاعدة Flap T — https://youtu.be/t0NNhn3MJh4?t=188
-- (٠٤:٣٧) السر الثاني: صوت الشوا — https://youtu.be/t0NNhn3MJh4?t=277
-- (٠٧:٢٤) السر الثالث: القطار (Linking) — https://youtu.be/t0NNhn3MJh4?t=444
-- (٠٩:٥٠) السر الرابع: الاختصارات (Gonna, Wanna) — https://youtu.be/t0NNhn3MJh4?t=590
+- (٠١:٥٥) السر الأول: الحرف "الكاذب" · https://youtu.be/t0NNhn3MJh4?t=115
+- (٠٣:٠٨) قاعدة Flap T · https://youtu.be/t0NNhn3MJh4?t=188
+- (٠٤:٣٧) السر الثاني: صوت الشوا · https://youtu.be/t0NNhn3MJh4?t=277
+- (٠٧:٢٤) السر الثالث: القطار (Linking) · https://youtu.be/t0NNhn3MJh4?t=444
+- (٠٩:٥٠) السر الرابع: الاختصارات (Gonna, Wanna) · https://youtu.be/t0NNhn3MJh4?t=590
+
+## الملخص السريع (جدول مرجعي)
+
+| القاعدة | الكتابة | كما تُنطق فعلياً |
+|---|---|---|
+| N + T تختفي | Internet / Center / Interview / Twenty | Innernet / Cener / Innerview / Twenny |
+| Flap T | Water / Better / Computer / Put it away | Wa-der / Bedder / Compyuder / Pud-id-away |
+| صوت الشوا (Schwa) | Tomato / Today / Tonight / Police | Tuh-may-duh / Tuh-day / Tuh-night / Puh-lease |
+| اختفاء and | Rock and Roll | Rock n' Roll |
+| القطار: ساكن+متحرك | Hold on | Hol-don |
+| القطار: متحرك+متحرك | Go away / I ask | Go-(w)-away / I-(y)-ask |
+| تحدي القطار | Pick it up | Pikitup |
+| الاختصارات الشائعة | going to | gonna |
+
+الأمثلة أوضح بكثير بصوت نور نفسها: شاهد الفيديو لتسمعها منطوقة فعلياً قبل التدرب عليها.
 
 ## السر الأول: الحرف "الكاذب" (The Vanishing T)
 
@@ -36,6 +51,12 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 ## لماذا يواجه المتحدث العربي هذه المشكلة أكثر؟
 
 العربية لا تملك صوت الـ Schwa كصوت مستقل، فيميل المتعلم لنطق كل مقطع بوضوح كامل بدل تخفيفه. كذلك Flap T غريب على أذن اعتادت حرف التاء واضحاً، فيميل المتعلم لنطقه بقوة زائدة. معرفة هذا الفرق تجعل التدريب المسموع اليومي أكثر فعالية من حفظ القواعد النظرية وحدها.
+
+صوت الشوا تحديداً يستحق تعمقاً إضافياً: [ما هو صوت الشوا ولماذا هو أهم صوت في الإنجليزية الأمريكية؟](schwa-sound-explained.html)
+
+## شهادة طالبة حقيقية
+
+"صراحة يا مس، أنا ما كنت أسمع خالص قبل هيك، بس هلأ صرت كثير مهتمة وبدي أطبق. حسيت حالي تغيرت، الحمد لله. قبل ما كان يثبت معي إشي بالمرة." (متدربة في تدريب فردي مباشر)
 
 ## التدريب العملي
 
