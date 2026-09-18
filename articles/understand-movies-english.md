@@ -4,6 +4,8 @@
 
 **الخلاصة المباشرة:** في الحديث الأمريكي الحقيقي، الكلمات لا تبقى منفصلة كما في الكتاب. يبتلع المتحدثون نصف الحروف، يحولون الحروف المتحركة الضعيفة لصوت واحد كسول، ويدمجون الكلمات المتجاورة في كلمة واحدة متصلة، وهذا ما تسميه نور "الكلمات الشبحية" (Ghost Words). أربعة أسرار: الحرف المختفي، صوت الكسل (Schwa)، القطار (Linking)، والاختصارات الشائعة.
 
+مثال الافتتاح مأخوذ من مشهد حقيقي (مارك روفالو، Shutter Island) عند 00:19 (https://youtu.be/t0NNhn3MJh4?t=19).
+
 فيديو الشرح: https://www.youtube.com/watch?v=t0NNhn3MJh4
 صفحة الدرس الكاملة مع الاختبار وملف PDF: https://learn.masterenglish.me/articles/understand-movies-english.html
 
@@ -32,17 +34,17 @@
 
 ## السر الأول: الحرف "الكاذب" (The Vanishing T)
 
-إذا جاء حرف N ثم حرف T مباشرة، يموت T تماماً: Internet → Innernet، Center → Cener، Interview → Innerview، Twenty → Twenny.
+إذا جاء حرف N ثم حرف T مباشرة، يموت T تماماً: Internet → Innernet، Center → Cener، Interview → Innerview، Twenty → Twenny. مثال حقيقي في الفيديو: Chiwetel Ejiofor يقول "Plenty of time" عند 02:37 (https://youtu.be/t0NNhn3MJh4?t=157).
 
-إذا جاء T بين حرفين متحركين، يتحول لصوت D خفيف وسريع (Flap T): Water → Wa-der، Better → Bedder، Computer → Compyuder. حتى بين كلمتين: "Put it away" → "Pud-id-away".
+إذا جاء T بين حرفين متحركين، يتحول لصوت D خفيف وسريع (Flap T): Water → Wa-der، Better → Bedder، Computer → Compyuder. حتى بين كلمتين: "Put it away" → "Pud-id-away". مثال حقيقي: روبرت دي نيرو يقولها في فيلم Brazil عند 03:30 (https://youtu.be/t0NNhn3MJh4?t=210).
 
 ## السر الثاني: صوت الكسل (The Schwa Sound)
 
-المقاطع غير المشدّدة تضعف لصوت واحد غامض (Schwa): Tomato → Tuh-may-duh، Today → Tuh-day، Tonight → Tuh-night، Police → Puh-lease. وكلمات وظيفية مثل and تختفي شبه كلياً: "Rock and Roll" تُسمع دائماً "Rock n' Roll".
+المقاطع غير المشدّدة تضعف لصوت واحد غامض (Schwa): Tomato → Tuh-may-duh، Today → Tuh-day، Tonight → Tuh-night، Police → Puh-lease. وكلمات وظيفية مثل and تختفي شبه كلياً: "Rock and Roll" تُسمع دائماً "Rock n' Roll". مثال حقيقي: ستيف كارِل ورين ويلسون في The Office عند 06:31 (https://youtu.be/t0NNhn3MJh4?t=391).
 
 ## السر الثالث: القطار (Linking)
 
-ساكن + متحرك يندمجان: "Hold on" → "Hol-don". متحرك + متحرك يستدعي صوت شبح رابط: "Go away" → "Go-(w)-away"، "I ask" → "I-(y)-ask". والتحدي الأصعب: "Pick it up" → "Pikitup"، ثلاث كلمات منفصلة تصبح كلمة واحدة.
+ساكن + متحرك يندمجان: "Hold on" → "Hol-don". متحرك + متحرك يستدعي صوت شبح رابط: "Go away" → "Go-(w)-away"، "I ask" → "I-(y)-ask". والتحدي الأصعب: "Pick it up" → "Pikitup"، ثلاث كلمات منفصلة تصبح كلمة واحدة. مثال حقيقي: فيلم الرسوم المتحركة Early Man عند 08:22 (https://youtu.be/t0NNhn3MJh4?t=502).
 
 ## السر الرابع: الاختصارات الشائعة (Reductions)
 
