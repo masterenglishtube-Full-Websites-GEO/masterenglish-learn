@@ -17,6 +17,23 @@
     }
   }
 
+  // Long-lived visitor id, separate from the session id above: this one
+  // persists indefinitely (until the visitor clears storage) so a return
+  // visit is still recognizable as "the same person" before they ever log
+  // in, when me_sid alone would otherwise look like a brand-new visitor.
+  function getVisitorId() {
+    try {
+      let id = localStorage.getItem("me_vid");
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem("me_vid", id);
+      }
+      return id;
+    } catch (e) {
+      return null;
+    }
+  }
+
   function getAuthToken() {
     try {
       return localStorage.getItem("me_auth_token") || null;
@@ -31,10 +48,28 @@
   }
 
   const sessionId = getSessionId();
+  const visitorId = getVisitorId();
   let pageViewId = null;
   let engagedSeconds = 0;
   let lastActiveAt = Date.now();
   let visible = document.visibilityState === "visible";
+  let maxScrollPct = 0;
+
+  function computeScrollPct() {
+    const doc = document.documentElement;
+    const scrollable = Math.max(1, doc.scrollHeight - doc.clientHeight);
+    const pct = Math.round(((window.scrollY || doc.scrollTop) / scrollable) * 100);
+    return Math.max(0, Math.min(100, pct));
+  }
+  let scrollTicking = false;
+  window.addEventListener("scroll", () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      maxScrollPct = Math.max(maxScrollPct, computeScrollPct());
+      scrollTicking = false;
+    });
+  }, { passive: true });
 
   document.addEventListener("visibilitychange", () => {
     visible = document.visibilityState === "visible";
@@ -49,6 +84,7 @@
     headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
     body: JSON.stringify({
       session_id: sessionId,
+      visitor_id: visitorId,
       path: location.pathname,
       referrer: document.referrer || "",
     }),
@@ -63,6 +99,7 @@
       page_view_id: pageViewId,
       session_id: sessionId,
       engaged_seconds: Math.round(engagedSeconds),
+      scroll_pct: Math.max(maxScrollPct, computeScrollPct()),
     });
     if (useBeacon && navigator.sendBeacon) {
       navigator.sendBeacon(API + "/track/heartbeat", new Blob([payload], { type: "application/json" }));

@@ -37,6 +37,20 @@
   .close-detail { float: left; background: none; border: none; font-size: 22px; cursor: pointer; }
   .row-link { cursor: pointer; color: var(--accent-dark); text-decoration: underline; }
   #signOutBtn { position: fixed; top: 16px; left: 16px; background: var(--paper); border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; cursor: pointer; font-size: 13px; }
+  .an-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+  .an-tab-btn { padding: 8px 18px; border: 1px solid var(--border); background: var(--paper); border-radius: 999px; cursor: pointer; font-size: 13.5px; font-family: var(--font-body); }
+  .an-tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .an-panel { display: none; }
+  .an-panel.active { display: block; }
+  .heatmap-wrap { overflow-x: auto; }
+  .heatmap-grid { display: grid; grid-template-columns: 70px repeat(24, 26px); gap: 2px; font-size: 10.5px; direction: ltr; }
+  .heatmap-grid .hm-label { direction: rtl; text-align: right; padding-right: 6px; font-size: 11px; color: var(--ink-soft); display: flex; align-items: center; justify-content: flex-end; }
+  .heatmap-grid .hm-hour-label { text-align: center; color: var(--ink-soft); font-size: 9.5px; }
+  .heatmap-cell { width: 26px; height: 22px; border-radius: 3px; background: var(--accent-light); }
+  .heatmap-cell[title] { cursor: default; }
+  .an-summary-line { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 14px; }
+  .sortable { cursor: pointer; user-select: none; }
+  .sortable:hover { color: var(--accent-dark); }
 </style>
 </head>
 <body>
@@ -58,6 +72,54 @@
   <div class="admin-section">
     <h2>الصفحات الأكثر زيارة (آخر 7 أيام)</h2>
     <table id="topPagesTable"><thead><tr><th>الصفحة</th><th>عدد الزيارات</th><th>وقت التفاعل</th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="admin-section">
+    <h2>التحليلات المتقدمة</h2>
+    <div class="filter-bar">
+      <div class="filter-field date-range">
+        <div><label>من</label><input type="date" id="anFrom"></div>
+        <div><label>إلى</label><input type="date" id="anTo"></div>
+      </div>
+      <button type="button" class="btn btn-primary" id="anApplyBtn" style="padding:9px 20px;">تطبيق</button>
+      <button type="button" class="btn-clear" id="anClearBtn">آخر 30 يوماً (افتراضي)</button>
+    </div>
+
+    <div class="an-tabs">
+      <button type="button" class="an-tab-btn active" data-tab="pages">الصفحات</button>
+      <button type="button" class="an-tab-btn" data-tab="visitors">الزوار</button>
+      <button type="button" class="an-tab-btn" data-tab="heatmap">خريطة الأوقات</button>
+    </div>
+
+    <div class="an-panel active" id="anPanelPages">
+      <table id="anPagesTable">
+        <thead><tr>
+          <th>الصفحة</th><th class="sortable" data-sort="views">الزيارات</th><th class="sortable" data-sort="unique_visitors">زوار فريدون</th><th class="sortable" data-sort="avg_engaged">متوسط التفاعل</th><th class="sortable" data-sort="avg_scroll">متوسط التمرير</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="an-panel" id="anPanelVisitors">
+      <input type="text" id="anVisitorSearch" placeholder="ابحث بالبريد الإلكتروني...">
+      <table id="anVisitorsTable" style="margin-top:14px;">
+        <thead><tr>
+          <th>الهوية</th><th>الدولة</th><th>صفحات مختلفة</th><th>إجمالي الزيارات</th><th>إجمالي التفاعل</th><th>أول ظهور</th><th>آخر ظهور</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="an-panel" id="anPanelHeatmap">
+      <div class="filter-field" style="margin-bottom:14px; max-width:320px;">
+        <label>صفحة محددة (اختياري)</label>
+        <select id="anHeatmapPath"><option value="">كل الصفحات</option></select>
+      </div>
+      <p class="an-summary-line">التوقيت بتوقيت بيروت التقريبي. كل خلية = عدد الزيارات في تلك الساعة من ذلك اليوم خلال المدة المحددة.</p>
+      <div class="heatmap-wrap">
+        <div class="heatmap-grid" id="heatmapGrid"></div>
+      </div>
+    </div>
   </div>
 
   <div class="admin-section">
@@ -232,6 +294,7 @@
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("signOutBtn").style.display = "block";
     loadOverview();
+    loadAnalyticsPages();
     populateProductFilter();
     loadCustomers("");
     loadProductsAndUpsellRules();
@@ -257,6 +320,200 @@
       tbody.appendChild(tr);
     });
   }
+
+  // ---------------------------------------------------------------------
+  // Advanced analytics: pages / visitors / hour-of-week heatmap
+  // ---------------------------------------------------------------------
+
+  let anLastPages = [];
+  let anSortKey = "views";
+  let anSortDir = "desc";
+
+  function anRangeQuery() {
+    const params = new URLSearchParams();
+    const from = document.getElementById("anFrom").value;
+    const to = document.getElementById("anTo").value;
+    if (from) params.set("from", from);
+    if (to) params.set("to", to);
+    return params;
+  }
+
+  function fmtPct(n) { return Math.round(n || 0) + "%"; }
+  function fmtSecs(n) { return Math.round((n || 0) / 60 * 10) / 10 + " د"; }
+  function identityLabel(row) {
+    if (row.email) return row.email;
+    const key = String(row.visitor_key || row.key || "");
+    return "زائر #" + key.slice(0, 8);
+  }
+
+  async function loadAnalyticsPages() {
+    const data = await api("/admin/api/analytics/pages?" + anRangeQuery().toString());
+    anLastPages = data.pages || [];
+    renderAnalyticsPages();
+    populateHeatmapPathFilter();
+  }
+
+  function renderAnalyticsPages() {
+    const sorted = [...anLastPages].sort((a, b) => {
+      const va = a[anSortKey] || 0, vb = b[anSortKey] || 0;
+      return anSortDir === "desc" ? vb - va : va - vb;
+    });
+    const tbody = document.querySelector("#anPagesTable tbody");
+    tbody.innerHTML = "";
+    sorted.forEach((p) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="row-link">${p.path}</td>
+        <td>${p.views}</td>
+        <td>${p.unique_visitors}</td>
+        <td>${fmtSecs(p.avg_engaged)}</td>
+        <td>${fmtPct(p.avg_scroll)}</td>
+      `;
+      tr.querySelector(".row-link").addEventListener("click", () => openPageDetail(p.path));
+      tbody.appendChild(tr);
+    });
+  }
+
+  document.querySelectorAll("#anPagesTable .sortable").forEach((th) => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      if (anSortKey === key) { anSortDir = anSortDir === "desc" ? "asc" : "desc"; }
+      else { anSortKey = key; anSortDir = "desc"; }
+      renderAnalyticsPages();
+    });
+  });
+
+  async function openPageDetail(path) {
+    const data = await api("/admin/api/analytics/page?path=" + encodeURIComponent(path) + "&" + anRangeQuery().toString());
+    const s = data.summary || {};
+    let html = `<h3>${path}</h3>`;
+    html += `<p class="an-summary-line">${s.views || 0} زيارة &middot; ${s.unique_visitors || 0} زائر فريد &middot; متوسط تفاعل ${fmtSecs(s.avg_engaged)} &middot; متوسط تمرير ${fmtPct(s.avg_scroll)}</p>`;
+    html += "<h4>الزيارات</h4><table><thead><tr><th>الهوية</th><th>الدولة</th><th>التاريخ</th><th>التفاعل</th><th>التمرير</th></tr></thead><tbody>";
+    (data.visits || []).forEach((v) => {
+      html += `<tr><td>${v.email || "زائر مجهول"}</td><td>${v.country || "-"}</td><td>${v.entered_at}</td><td>${fmtSecs(v.engaged_seconds)}</td><td>${fmtPct(v.scroll_pct)}</td></tr>`;
+    });
+    html += "</tbody></table>";
+    document.getElementById("detailContent").innerHTML = html;
+    document.getElementById("detailPanel").classList.add("open");
+  }
+
+  async function loadAnalyticsVisitors(q) {
+    const params = anRangeQuery();
+    if (q) params.set("q", q);
+    const data = await api("/admin/api/analytics/visitors?" + params.toString());
+    const tbody = document.querySelector("#anVisitorsTable tbody");
+    tbody.innerHTML = "";
+    (data.visitors || []).forEach((v) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="row-link">${identityLabel(v)}</td>
+        <td>${v.country || "-"}</td>
+        <td>${v.distinct_pages}</td>
+        <td>${v.pageviews}</td>
+        <td>${fmtSecs(v.total_engaged)}</td>
+        <td>${v.first_seen || "-"}</td>
+        <td>${v.last_seen || "-"}</td>
+      `;
+      tr.querySelector(".row-link").addEventListener("click", () => openVisitorDetail(v.visitor_key));
+      tbody.appendChild(tr);
+    });
+  }
+
+  async function openVisitorDetail(key) {
+    const data = await api("/admin/api/analytics/visitor?key=" + encodeURIComponent(key));
+    const id = data.identity || {};
+    let html = `<h3>${id.email || "زائر مجهول"}</h3>`;
+    html += `<p class="an-summary-line">${id.name || ""} ${id.country ? "&middot; " + id.country : ""} &middot; أول ظهور: ${id.first_seen || "-"} &middot; آخر ظهور: ${id.last_seen || "-"}</p>`;
+    html += "<h4>الصفحات التي شاهدها</h4><table><thead><tr><th>الصفحة</th><th>التاريخ</th><th>التفاعل</th><th>التمرير</th></tr></thead><tbody>";
+    (data.visits || []).forEach((v) => {
+      html += `<tr><td>${v.path}</td><td>${v.entered_at}</td><td>${fmtSecs(v.engaged_seconds)}</td><td>${fmtPct(v.scroll_pct)}</td></tr>`;
+    });
+    html += "</tbody></table>";
+    document.getElementById("detailContent").innerHTML = html;
+    document.getElementById("detailPanel").classList.add("open");
+  }
+
+  function populateHeatmapPathFilter() {
+    const select = document.getElementById("anHeatmapPath");
+    const current = select.value;
+    select.innerHTML = '<option value="">كل الصفحات</option>';
+    anLastPages.slice(0, 100).forEach((p) => {
+      const opt = document.createElement("option");
+      opt.value = p.path;
+      opt.textContent = p.path;
+      select.appendChild(opt);
+    });
+    select.value = current;
+  }
+
+  const DOW_LABELS = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+
+  async function loadHeatmap() {
+    const params = anRangeQuery();
+    const path = document.getElementById("anHeatmapPath").value;
+    if (path) params.set("path", path);
+    const data = await api("/admin/api/analytics/heatmap?" + params.toString());
+    const cells = {};
+    let max = 1;
+    (data.cells || []).forEach((c) => {
+      cells[c.dow + "_" + c.hour] = c.views;
+      if (c.views > max) max = c.views;
+    });
+
+    const grid = document.getElementById("heatmapGrid");
+    grid.innerHTML = "";
+    grid.appendChild(document.createElement("div"));
+    for (let h = 0; h < 24; h++) {
+      const el = document.createElement("div");
+      el.className = "hm-hour-label";
+      el.textContent = h;
+      grid.appendChild(el);
+    }
+    for (let d = 0; d < 7; d++) {
+      const label = document.createElement("div");
+      label.className = "hm-label";
+      label.textContent = DOW_LABELS[d];
+      grid.appendChild(label);
+      for (let h = 0; h < 24; h++) {
+        const views = cells[d + "_" + h] || 0;
+        const alpha = views ? 0.15 + 0.85 * (views / max) : 0;
+        const cell = document.createElement("div");
+        cell.className = "heatmap-cell";
+        cell.style.background = views ? `rgba(31,122,92,${alpha.toFixed(2)})` : "var(--paper-soft)";
+        cell.title = `${DOW_LABELS[d]} ${h}:00، ${views} زيارة`;
+        grid.appendChild(cell);
+      }
+    }
+  }
+
+  function anSwitchTab(tab) {
+    document.querySelectorAll(".an-tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
+    document.querySelectorAll(".an-panel").forEach((p) => p.classList.remove("active"));
+    document.getElementById("anPanel" + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add("active");
+    if (tab === "visitors") loadAnalyticsVisitors(document.getElementById("anVisitorSearch").value);
+    if (tab === "heatmap") loadHeatmap();
+  }
+
+  document.querySelectorAll(".an-tab-btn").forEach((btn) => {
+    btn.addEventListener("click", () => anSwitchTab(btn.dataset.tab));
+  });
+
+  document.getElementById("anApplyBtn").addEventListener("click", () => {
+    loadAnalyticsPages();
+    loadAnalyticsVisitors(document.getElementById("anVisitorSearch").value);
+    loadHeatmap();
+  });
+  document.getElementById("anClearBtn").addEventListener("click", () => {
+    document.getElementById("anFrom").value = "";
+    document.getElementById("anTo").value = "";
+    loadAnalyticsPages();
+    loadAnalyticsVisitors("");
+    loadHeatmap();
+  });
+  document.getElementById("anVisitorSearch").addEventListener("input", (e) => {
+    loadAnalyticsVisitors(e.target.value);
+  });
+  document.getElementById("anHeatmapPath").addEventListener("change", loadHeatmap);
 
   function buildCustomersQuery(q) {
     const params = new URLSearchParams();
