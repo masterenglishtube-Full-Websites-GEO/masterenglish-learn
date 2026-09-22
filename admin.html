@@ -51,6 +51,13 @@
   .an-summary-line { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 14px; }
   .sortable { cursor: pointer; user-select: none; }
   .sortable:hover { color: var(--accent-dark); }
+  .chart-wrap { display: flex; align-items: flex-end; gap: 4px; height: 220px; padding: 10px 0; border-bottom: 1px solid var(--border); overflow-x: auto; }
+  .chart-bar-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 22px; height: 100%; }
+  .chart-bar { width: 14px; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; }
+  .chart-bar-label { font-size: 9px; color: var(--ink-soft); margin-top: 6px; white-space: nowrap; transform: rotate(-45deg); transform-origin: top right; }
+  .chart-legend { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; display: flex; gap: 18px; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .chart-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 </style>
 </head>
 <body>
@@ -89,6 +96,8 @@
       <button type="button" class="an-tab-btn active" data-tab="pages">الصفحات</button>
       <button type="button" class="an-tab-btn" data-tab="visitors">الزوار</button>
       <button type="button" class="an-tab-btn" data-tab="heatmap">خريطة الأوقات</button>
+      <button type="button" class="an-tab-btn" data-tab="trend">الاتجاه الزمني</button>
+      <button type="button" class="an-tab-btn" data-tab="sources">مصادر الزيارات</button>
     </div>
 
     <div class="an-panel active" id="anPanelPages">
@@ -119,6 +128,25 @@
       <div class="heatmap-wrap">
         <div class="heatmap-grid" id="heatmapGrid"></div>
       </div>
+    </div>
+
+    <div class="an-panel" id="anPanelTrend">
+      <div class="filter-field" style="margin-bottom:14px; max-width:320px;">
+        <label>صفحة محددة (اختياري)</label>
+        <select id="anTrendPath"><option value="">كل الصفحات</option></select>
+      </div>
+      <div class="chart-legend">
+        <span><span class="dot" style="background:var(--accent);"></span> الزيارات (يومياً)</span>
+      </div>
+      <div class="chart-wrap" id="trendChart"></div>
+    </div>
+
+    <div class="an-panel" id="anPanelSources">
+      <p class="an-summary-line">من أين يأتي الزوار (بحسب الموقع المُحيل)، للمدة المحددة أعلاه.</p>
+      <table id="anSourcesTable">
+        <thead><tr><th>المصدر</th><th>عدد الجلسات</th><th>عدد الزيارات</th><th>متوسط التفاعل</th></tr></thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
 
@@ -486,34 +514,94 @@
     }
   }
 
+  async function loadTrend() {
+    const params = anRangeQuery();
+    const path = document.getElementById("anTrendPath").value;
+    if (path) params.set("path", path);
+    const data = await api("/admin/api/analytics/timeseries?" + params.toString());
+    const days = data.days || [];
+    const max = Math.max(1, ...days.map((d) => d.views));
+    const chart = document.getElementById("trendChart");
+    chart.innerHTML = "";
+    days.forEach((d) => {
+      const col = document.createElement("div");
+      col.className = "chart-bar-col";
+      const bar = document.createElement("div");
+      bar.className = "chart-bar";
+      bar.style.height = Math.max(2, Math.round((d.views / max) * 170)) + "px";
+      bar.title = `${d.day}: ${d.views} زيارة، ${d.unique_visitors} زائر فريد، متوسط تفاعل ${fmtSecs(d.avg_engaged)}`;
+      const label = document.createElement("div");
+      label.className = "chart-bar-label";
+      label.textContent = d.day.slice(5);
+      col.appendChild(bar);
+      col.appendChild(label);
+      chart.appendChild(col);
+    });
+  }
+
+  function populateTrendPathFilter() {
+    const select = document.getElementById("anTrendPath");
+    const current = select.value;
+    select.innerHTML = '<option value="">كل الصفحات</option>';
+    anLastPages.slice(0, 100).forEach((p) => {
+      const opt = document.createElement("option");
+      opt.value = p.path;
+      opt.textContent = p.path;
+      select.appendChild(opt);
+    });
+    select.value = current;
+  }
+
+  async function loadSources() {
+    const data = await api("/admin/api/analytics/sources?" + anRangeQuery().toString());
+    const tbody = document.querySelector("#anSourcesTable tbody");
+    tbody.innerHTML = "";
+    (data.sources || []).forEach((s) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${s.source}</td><td>${s.sessions}</td><td>${s.pageviews}</td><td>${fmtSecs(s.avg_engaged)}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
   function anSwitchTab(tab) {
     document.querySelectorAll(".an-tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
     document.querySelectorAll(".an-panel").forEach((p) => p.classList.remove("active"));
     document.getElementById("anPanel" + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add("active");
     if (tab === "visitors") loadAnalyticsVisitors(document.getElementById("anVisitorSearch").value);
     if (tab === "heatmap") loadHeatmap();
+    if (tab === "trend") { populateTrendPathFilter(); loadTrend(); }
+    if (tab === "sources") loadSources();
   }
 
   document.querySelectorAll(".an-tab-btn").forEach((btn) => {
     btn.addEventListener("click", () => anSwitchTab(btn.dataset.tab));
   });
 
-  document.getElementById("anApplyBtn").addEventListener("click", () => {
+  function anActiveTab() {
+    const active = document.querySelector(".an-tab-btn.active");
+    return active ? active.dataset.tab : "pages";
+  }
+
+  function anRefreshActiveTab() {
     loadAnalyticsPages();
-    loadAnalyticsVisitors(document.getElementById("anVisitorSearch").value);
-    loadHeatmap();
-  });
+    const tab = anActiveTab();
+    if (tab === "visitors") loadAnalyticsVisitors(document.getElementById("anVisitorSearch").value);
+    if (tab === "heatmap") loadHeatmap();
+    if (tab === "trend") loadTrend();
+    if (tab === "sources") loadSources();
+  }
+
+  document.getElementById("anApplyBtn").addEventListener("click", anRefreshActiveTab);
   document.getElementById("anClearBtn").addEventListener("click", () => {
     document.getElementById("anFrom").value = "";
     document.getElementById("anTo").value = "";
-    loadAnalyticsPages();
-    loadAnalyticsVisitors("");
-    loadHeatmap();
+    anRefreshActiveTab();
   });
   document.getElementById("anVisitorSearch").addEventListener("input", (e) => {
     loadAnalyticsVisitors(e.target.value);
   });
   document.getElementById("anHeatmapPath").addEventListener("change", loadHeatmap);
+  document.getElementById("anTrendPath").addEventListener("change", loadTrend);
 
   function buildCustomersQuery(q) {
     const params = new URLSearchParams();
