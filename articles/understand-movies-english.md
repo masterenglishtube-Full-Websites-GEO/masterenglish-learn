@@ -62,7 +62,7 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ## التدريب العملي
 
-المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html).
+المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html). ولتبسيط اختيار كلماتك بشكل عام: [قائمة دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html).
 
 ## أسئلة شائعة
 

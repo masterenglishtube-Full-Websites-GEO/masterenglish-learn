@@ -66,4 +66,4 @@ hit a snag أكثر طبيعية وتصف عقبة صغيرة ومؤقتة، و�
 ملف PDF مرجعي قابل للتحميل: /assets/downloads/travel-story-idioms-cheatsheet.pdf
 اختبار تفاعلي من ٥ أسئلة متاح على الصفحة الكاملة: /articles/travel-story-english-idioms.html
 
-مصادر أخرى ذات صلة: [The Commuter Challenge](/products/commuter-challenge.html) · [The 30-Day Fluency Challenge: A Ramadan Story](/products/ramadan-audio-club.html)
+مصادر أخرى ذات صلة: [The Commuter Challenge](/products/commuter-challenge.html) · [The 30-Day Fluency Challenge: A Ramadan Story](/products/ramadan-audio-club.html) · [قائمة دايت المفردات](/products/vocabulary-diet.html)
