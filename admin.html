@@ -525,6 +525,41 @@
     return "زائر #" + key.slice(0, 8);
   }
 
+  let arRegionNames = null;
+  try { arRegionNames = new Intl.DisplayNames(["ar"], { type: "region" }); } catch (e) { arRegionNames = null; }
+  function countryName(code) {
+    if (!code) return "-";
+    if (!arRegionNames) return code;
+    try { return arRegionNames.of(code) || code; } catch (e) { return code; }
+  }
+
+  // Generic click-to-sort binder for a <table> whose <th> carry data-sort
+  // keys: re-sorts `rows` by that key and calls render() with the result.
+  function bindSortableTable(tableEl, rows, render, defaultKey, defaultDir) {
+    let sortKey = defaultKey, sortDir = defaultDir || "desc";
+    function apply() {
+      const sorted = [...rows].sort((a, b) => {
+        const va = a[sortKey], vb = b[sortKey];
+        const na = typeof va === "number" ? va : String(va || "").toLowerCase();
+        const nb = typeof vb === "number" ? vb : String(vb || "").toLowerCase();
+        if (na < nb) return sortDir === "desc" ? 1 : -1;
+        if (na > nb) return sortDir === "desc" ? -1 : 1;
+        return 0;
+      });
+      render(sorted);
+    }
+    tableEl.querySelectorAll("th[data-sort]").forEach((th) => {
+      th.classList.add("sortable");
+      th.addEventListener("click", () => {
+        const key = th.dataset.sort;
+        if (sortKey === key) { sortDir = sortDir === "desc" ? "asc" : "desc"; }
+        else { sortKey = key; sortDir = "desc"; }
+        apply();
+      });
+    });
+    apply();
+  }
+
   async function loadAnalyticsPages() {
     const data = await api("/admin/api/analytics/pages?" + anRangeQuery().toString());
     anLastPages = data.pages || [];
@@ -562,18 +597,58 @@
     });
   });
 
-  async function openPageDetail(path) {
-    const data = await api("/admin/api/analytics/page?path=" + encodeURIComponent(path) + "&" + anRangeQuery().toString());
-    const s = data.summary || {};
-    let html = `<h3>${path}</h3>`;
-    html += `<p class="an-summary-line">${s.views || 0} زيارة &middot; ${s.unique_visitors || 0} زائر فريد &middot; متوسط تفاعل ${fmtSecs(s.avg_engaged)} &middot; متوسط تمرير ${fmtPct(s.avg_scroll)}</p>`;
-    html += "<h4>الزيارات</h4><table><thead><tr><th>الهوية</th><th>الدولة</th><th>التاريخ</th><th>التفاعل</th><th>التمرير</th></tr></thead><tbody>";
-    (data.visits || []).forEach((v) => {
-      html += `<tr><td>${v.email || "زائر مجهول"}</td><td>${v.country || "-"}</td><td>${v.entered_at}</td><td>${fmtSecs(v.engaged_seconds)}</td><td>${fmtPct(v.scroll_pct)}</td></tr>`;
+  function nextPathLabel(next_path) {
+    if (!next_path) return `<span style="color:var(--ink-soft);">— لا يوجد نشاط لاحق مسجَّل (قد يكون غادر الموقع، أو ما زال على هذه الصفحة) —</span>`;
+    return `→ ${next_path}`;
+  }
+
+  function openPageDetail(path) {
+    api("/admin/api/analytics/page?path=" + encodeURIComponent(path) + "&" + anRangeQuery().toString()).then((data) => {
+      const s = data.summary || {};
+      const visits = data.visits || [];
+
+      // Where people went next, aggregated across all visits to this page.
+      const nextCounts = {};
+      visits.forEach((v) => {
+        const k = v.next_path || "__none__";
+        nextCounts[k] = (nextCounts[k] || 0) + 1;
+      });
+      const nextSorted = Object.entries(nextCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+      const total = visits.length || 1;
+      let exitHtml = '<h4>ماذا فعلوا بعدها</h4><div style="display:flex; flex-direction:column; gap:6px; margin-bottom:10px;">';
+      nextSorted.forEach(([k, n]) => {
+        const pct = Math.round((n / total) * 100);
+        const label = k === "__none__" ? "لا يوجد نشاط لاحق مسجَّل (غادر/توقف)" : k;
+        const color = k === "__none__" ? "var(--terracotta)" : "var(--accent)";
+        exitHtml += `
+          <div style="display:flex; align-items:center; gap:10px; font-size:13px;">
+            <div style="flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${label}</div>
+            <div style="width:120px; background:var(--paper-soft); border-radius:6px; overflow:hidden; height:8px;"><div style="width:${pct}%; background:${color}; height:100%;"></div></div>
+            <div style="width:40px; text-align:left; color:var(--ink-soft);">${pct}%</div>
+          </div>`;
+      });
+      exitHtml += "</div>";
+
+      let html = `<h3>${path}</h3>`;
+      html += `<p class="an-summary-line">${s.views || 0} زيارة &middot; ${s.unique_visitors || 0} زائر فريد &middot; متوسط تفاعل ${fmtSecs(s.avg_engaged)} &middot; متوسط تمرير ${fmtPct(s.avg_scroll)}</p>`;
+      html += exitHtml;
+      html += `<h4>الزيارات</h4><table id="pageDetailTable"><thead><tr>
+        <th data-sort="email">الهوية</th><th data-sort="country">الدولة</th><th data-sort="entered_at">التاريخ</th>
+        <th data-sort="engaged_seconds">التفاعل</th><th data-sort="scroll_pct">التمرير</th><th>الصفحة التالية</th>
+      </tr></thead><tbody></tbody></table>`;
+      document.getElementById("detailContent").innerHTML = html;
+      document.getElementById("detailPanel").classList.add("open");
+
+      const tbody = document.querySelector("#pageDetailTable tbody");
+      bindSortableTable(document.getElementById("pageDetailTable"), visits, (sorted) => {
+        tbody.innerHTML = "";
+        sorted.forEach((v) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${v.email || "زائر مجهول"}</td><td>${countryName(v.country)}</td><td>${v.entered_at}</td><td>${fmtSecs(v.engaged_seconds)}</td><td>${fmtPct(v.scroll_pct)}</td><td>${nextPathLabel(v.next_path)}</td>`;
+          tbody.appendChild(tr);
+        });
+      }, "entered_at", "desc");
     });
-    html += "</tbody></table>";
-    document.getElementById("detailContent").innerHTML = html;
-    document.getElementById("detailPanel").classList.add("open");
   }
 
   async function loadAnalyticsVisitors(q) {
@@ -586,7 +661,7 @@
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="row-link">${identityLabel(v)}</td>
-        <td>${v.country || "-"}</td>
+        <td>${countryName(v.country)}</td>
         <td>${v.distinct_pages}</td>
         <td>${v.pageviews}</td>
         <td>${fmtSecs(v.total_engaged)}</td>
@@ -602,7 +677,7 @@
     const data = await api("/admin/api/analytics/visitor?key=" + encodeURIComponent(key));
     const id = data.identity || {};
     let html = `<h3>${id.email || "زائر مجهول"}</h3>`;
-    html += `<p class="an-summary-line">${id.name || ""} ${id.country ? "&middot; " + id.country : ""} &middot; أول ظهور: ${id.first_seen || "-"} &middot; آخر ظهور: ${id.last_seen || "-"}</p>`;
+    html += `<p class="an-summary-line">${id.name || ""} ${id.country ? "&middot; " + countryName(id.country) : ""} &middot; أول ظهور: ${id.first_seen || "-"} &middot; آخر ظهور: ${id.last_seen || "-"}</p>`;
     html += "<h4>الصفحات التي شاهدها</h4><table><thead><tr><th>الصفحة</th><th>التاريخ</th><th>التفاعل</th><th>التمرير</th></tr></thead><tbody>";
     (data.visits || []).forEach((v) => {
       html += `<tr><td>${v.path}</td><td>${v.entered_at}</td><td>${fmtSecs(v.engaged_seconds)}</td><td>${fmtPct(v.scroll_pct)}</td></tr>`;
