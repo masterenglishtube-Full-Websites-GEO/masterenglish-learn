@@ -37,6 +37,6 @@
 
 ---
 
-كورس ذو صلة: [أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html), 44 درساً تعالج أخطاء النطق التي تنتقل من العربية.
+كورس ذو صلة: [أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html), 44 درساً تعالج أخطاء النطق التي تنتقل من العربية.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

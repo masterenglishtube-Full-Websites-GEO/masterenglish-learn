@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن نبرة التواصل المهني الصحيحة](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html), أتقن العروض التقديمية يعطيك الأدوات للتواصل بثقة ووضوح في أي سياق مهني.
+كورس ذو صلة: [أتقن نبرة التواصل المهني الصحيحة](https://learn.masterenglish.me/products/presentations.html), أتقن العروض التقديمية يعطيك الأدوات للتواصل بثقة ووضوح في أي سياق مهني.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

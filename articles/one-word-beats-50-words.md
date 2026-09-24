@@ -31,7 +31,7 @@
 
 ## خطوتك التالية بعد إتقان هذا المبدأ
 
-هذا المبدأ حجر الأساس الذي بُني عليه [دليل دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html): خمسون كلمة عملية فقط مختارة لأنها الأكثر تكراراً ومرونة.
+هذا المبدأ حجر الأساس الذي بُني عليه [دليل دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html): خمسون كلمة عملية فقط مختارة لأنها الأكثر تكراراً ومرونة.
 
 ## أسئلة شائعة
 
@@ -46,6 +46,6 @@
 
 ---
 
-كورس ذو صلة: [دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html), 50 كلمة تغنيك عن 1000 كلمة معقدة.
+كورس ذو صلة: [دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html), 50 كلمة تغنيك عن 1000 كلمة معقدة.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

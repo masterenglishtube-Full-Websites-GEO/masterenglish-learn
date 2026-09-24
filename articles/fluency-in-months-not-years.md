@@ -37,6 +37,6 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html) و[أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html).
+كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) و[أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html).
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/) · [تصفح جميع المقالات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/articles/index.html)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/) · [تصفح جميع المقالات](https://learn.masterenglish.me/articles/index.html)

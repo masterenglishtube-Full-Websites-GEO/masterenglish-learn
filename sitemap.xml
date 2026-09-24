@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://learn.masterenglish.me/</loc><lastmod>2026-08-30</lastmod><priority>1.0</priority></url>
-  <url><loc>https://learn.masterenglish.me/courses.html</loc><lastmod>2026-08-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://learn.masterenglish.me/</loc><lastmod>2026-09-24</lastmod><priority>1.0</priority></url>
+  <url><loc>https://learn.masterenglish.me/courses.html</loc><lastmod>2026-09-24</lastmod><priority>0.9</priority></url>
   <url><loc>https://learn.masterenglish.me/videos.html</loc><lastmod>2026-08-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/index.html</loc><lastmod>2026-08-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/index.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
 
-  <url><loc>https://learn.masterenglish.me/products/pronunciation.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://learn.masterenglish.me/products/commuter-challenge.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://learn.masterenglish.me/products/presentations.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://learn.masterenglish.me/products/interview.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://learn.masterenglish.me/products/ramadan-audio-club.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://learn.masterenglish.me/products/vocabulary-diet.html</loc><lastmod>2026-08-30</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/pronunciation.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/commuter-challenge.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/presentations.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/interview.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/ramadan-audio-club.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/products/vocabulary-diet.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
 
-  <url><loc>https://learn.masterenglish.me/articles/understand-fast-english.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/conversation-basics-100-qa.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/two-words-instead-of-vocabulary.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/stop-one-word-answers.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/understand-fast-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/conversation-basics-100-qa.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/two-words-instead-of-vocabulary.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/stop-one-word-answers.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/one-word-beats-50-words.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/leadership-language-at-work.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/think-in-english.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/understand-movies-english.html</loc><lastmod>2026-09-18</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/leadership-language-at-work.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/think-in-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/understand-movies-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/know-but-cant-speak.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/stop-memorizing-words.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/learn-english-ramadan.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/american-accent-secrets.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/job-interview-english.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/business-presentation-english.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/american-vs-british-accent.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/start-conversation-confidently.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/learn-english-while-driving.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/business-meetings-english.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/learn-english-ramadan.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/american-accent-secrets.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/job-interview-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/business-presentation-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/american-vs-british-accent.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/start-conversation-confidently.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/learn-english-while-driving.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/business-meetings-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/common-arabic-speaker-mistakes.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/fluency-in-months-not-years.html</loc><lastmod>2026-08-30</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/stop-saying-um-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/schwa-sound-explained.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/schwa-sound-explained.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/professional-email-writing.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/cefr-levels-explained.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/first-day-at-work-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/american-flap-t-rules.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/first-day-at-work-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/american-flap-t-rules.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/negotiate-salary-phrases.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/present-perfect-vs-past-simple.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/remote-meetings-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/practice-speaking-alone.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/glottal-stop-american-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/glottal-stop-american-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/self-correction-while-speaking.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/describing-charts-presentations.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/describing-charts-presentations.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/ielts-speaking-part-2-framework.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/formal-vs-informal-workplace.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/cultural-humor-idioms-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/tech-support-phrases-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/reading-books-without-dictionary.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/soften-arabic-accent-english.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://learn.masterenglish.me/articles/salary-expectations-interview-answer.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/reading-books-without-dictionary.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/soften-arabic-accent-english.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/salary-expectations-interview-answer.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/pronunciation-course-comparison-guide.html</loc><lastmod>2026-09-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://learn.masterenglish.me/articles/travel-story-english-idioms.html</loc><lastmod>2026-09-16</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/testimonials.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/become-affiliate.html</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/where-to-start.html</loc><lastmod>2026-09-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/my-story.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://learn.masterenglish.me/articles/prepositions-mistakes.html</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
 </urlset>

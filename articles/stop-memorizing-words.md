@@ -20,7 +20,7 @@
 
 ## المبدأ الثالث: تعلم عبارات لا كلمات مفردة
 
-المتحدث الذكي يتعلم "make a decision" ككتلة واحدة، لا "make" و"decision" منفصلتين. هذا نفس المنطق في [مقال كلمتان تغنيك عن حفظ 50 كلمة](two-words-instead-of-vocabulary.html).
+المتحدث الذكي يتعلم "make a decision" ككتلة واحدة، لا "make" و"decision" منفصلتين. هذا نفس المنطق في [مقال «كلمتان تُغنيانك عن حفظ 50 كلمة»](two-words-instead-of-vocabulary.html).
 
 ## نصيحة عملية
 
@@ -28,7 +28,7 @@
 
 ## كيف تبني نظاماً عملياً لهذا النهج؟
 
-ركّز على مجموعة محدودة من الكلمات والعبارات عالية الفائدة. هذا ما يقدمه [دليل دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html): خمسون كلمة مختارة لأنها الأكثر استخداماً.
+ركّز على مجموعة محدودة من الكلمات والعبارات عالية الفائدة. هذا ما يقدمه [دليل دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html): خمسون كلمة مختارة لأنها الأكثر استخداماً.
 
 ## أسئلة شائعة
 
@@ -43,6 +43,6 @@
 
 ---
 
-كورس ذو صلة: [دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html), 50 كلمة عملية فقط.
+كورس ذو صلة: [دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html), 50 كلمة عملية فقط.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

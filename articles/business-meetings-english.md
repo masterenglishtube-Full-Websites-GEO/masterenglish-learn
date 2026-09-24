@@ -35,10 +35,10 @@
 استخدم عبارات تخفف الحدة: I see your point, but have we considered...
 
 **لم أفهم ما قاله أحدهم في الاجتماع، هل يصح أن أطلب إعادة الشرح؟**
-نعم، حتى بين الناطقين الأصليين. قل: Sorry, could you clarify what you meant by that؟
+نعم، حتى بين الناطقين الأصليين. قل: Sorry, could you clarify what you meant by that?
 
 ---
 
-كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html), يشمل وحدة كاملة عن التعامل مع النقاش الحي.
+كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html), يشمل درساً كاملاً عن التعامل مع النقاش الحي.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

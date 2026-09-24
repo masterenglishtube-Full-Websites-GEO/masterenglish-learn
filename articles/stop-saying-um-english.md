@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [درّب استرجاعك السريع أثناء التنقل](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), The Commuter Challenge نظام صوتي يدربك على الرد الفوري في مواقف محادثة حقيقية، بدون تردد.
+كورس ذو صلة: [درّب استرجاعك السريع أثناء التنقل](https://learn.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge نظام صوتي يدربك على الرد الفوري في مواقف محادثة حقيقية، بدون تردد.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

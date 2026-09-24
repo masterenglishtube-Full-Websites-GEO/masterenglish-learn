@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [مفردات وقواعد عملية بدون تعقيد](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات عملية للتحدث بثقة دون الغرق في تفاصيل نحوية.
+كورس ذو صلة: [مفردات وقواعد عملية بدون تعقيد](https://learn.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات عملية للتحدث بثقة دون الغرق في تفاصيل نحوية.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

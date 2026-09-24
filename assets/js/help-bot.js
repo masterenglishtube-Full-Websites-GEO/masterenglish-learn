@@ -151,7 +151,7 @@
         wrap.innerHTML = "<p>تم الإرسال. سترد عليك نور عبر بريدك الإلكتروني قريباً (تحقق من مجلد Spam إذا تأخر الرد يوماً أو يومين).</p>";
         document.dispatchEvent(new CustomEvent("me:escalate-requested"));
       } catch (e) {
-        wrap.innerHTML = "<p>حدث خطأ، راسلينا مباشرة على noor@masterenglish.me</p>";
+        wrap.innerHTML = "<p>حدث خطأ، راسلنا مباشرة على noor@masterenglish.me</p>";
       }
     });
     msgs.appendChild(wrap);
@@ -262,7 +262,7 @@
         addEscalateOffer();
       } catch (err) {
         thinking.remove();
-        addMessage("حدث خطأ تقني. حاول مرة أخرى أو راسلينا على noor@masterenglish.me", "bot");
+        addMessage("حدث خطأ تقني. حاول مرة أخرى أو راسلنا على noor@masterenglish.me", "bot");
       }
     });
   });

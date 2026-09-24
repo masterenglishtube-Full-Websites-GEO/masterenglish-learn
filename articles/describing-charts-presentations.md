@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [قدّم بياناتك وأرقامك بثقة واحترافية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html), أتقن العروض التقديمية يشمل وحدة كاملة عن لغة البيانات وشرح الرسوم البيانية بوضوح.
+كورس ذو صلة: [قدّم بياناتك وأرقامك بثقة واحترافية](https://learn.masterenglish.me/products/presentations.html), كورس أتقن العروض التقديمية يعطيك العبارات الجاهزة لكل مرحلة من عرضك، من المقدمة وصلب العرض إلى جلسة الأسئلة.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

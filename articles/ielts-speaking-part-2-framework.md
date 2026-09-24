@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [ابنِ الطلاقة التي تحتاجها لأي اختبار أو موقف](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/courses.html), اكتشف الكورس المناسب لهدفك: من النطق إلى الطلاقة الكاملة تحت الضغط.
+كورس ذو صلة: [ابنِ الطلاقة التي تحتاجها لأي اختبار أو موقف](https://learn.masterenglish.me/courses.html), اكتشف الكورس المناسب لهدفك: من النطق إلى الطلاقة الكاملة تحت الضغط.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

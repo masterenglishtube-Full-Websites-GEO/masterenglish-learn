@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن التواصل المهني بالإنجليزية بالكامل](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/courses.html), اكتشف كورساتنا المتخصصة في إنجليزية العمل: المقابلات، العروض التقديمية، والاجتماعات.
+كورس ذو صلة: [أتقن التواصل المهني بالإنجليزية بالكامل](https://learn.masterenglish.me/courses.html), اكتشف كورساتنا المتخصصة في إنجليزية العمل: المقابلات، العروض التقديمية، والاجتماعات.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

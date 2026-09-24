@@ -15,7 +15,7 @@
 - **الدقيقة الأولى:** انظر حولك وسمِّ كل شيء تراه بالإنجليزية: "table, phone, window, cup". لا تترجم.
 - **الدقيقة الثانية والثالثة:** صف ما تفعله الآن بجمل قصيرة: "I'm walking to the kitchen. I'm making coffee. It smells good."
 - **الدقيقة الرابعة:** فكر في خطتك القادمة خلال الساعة القادمة: "I need to check my email. Then I'll call my colleague."
-- **الدقيقة الخامسة:** اطرح على نفسك سؤالاً وأجب عليه فوراً: "?What am I looking forward to today"
+- **الدقيقة الخامسة:** اطرح على نفسك سؤالاً وأجب عليه فوراً: "What am I looking forward to today?"
 
 ## لماذا يعمل هذا التمرين تحديداً؟
 
@@ -27,7 +27,7 @@
 
 ## كيف تحوّل هذا التمرين لعادة يومية دائمة؟
 
-المفتاح هو تكرارها في سياق حياتك الحقيقي: أثناء التنقل، الطبخ، الانتظار. [نظام The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html) يقدم بالضبط هذا: تمارين تدفعك للتفكير والرد الفوري بالإنجليزية.
+المفتاح هو تكرارها في سياق حياتك الحقيقي: أثناء التنقل، الطبخ، الانتظار. [نظام The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) يقدم بالضبط هذا: تمارين تدفعك للتفكير والرد الفوري بالإنجليزية.
 
 ## أسئلة شائعة
 
@@ -42,6 +42,6 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), يدربك على التفكير والرد الفوري بالإنجليزية.
+كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), يدربك على التفكير والرد الفوري بالإنجليزية.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

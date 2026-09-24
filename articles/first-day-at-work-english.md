@@ -19,7 +19,7 @@
 ## أسئلة شائعة
 
 **ماذا لو لم أفهم لهجة زميل معين؟**
-اطلب التوضيح بأدب ومباشرة: "Sorry, I'm not familiar with your accent yet, could you repeat that a bit slower?". معظم الناس يقدّرون الصراحة أكثر من التظاهر بالفهم ثم الوقوع في خطأ لاحقاً بسبب سوء فهم.
+اطلب التوضيح بأدب ومباشرة: "Sorry, could you say that again a little more slowly?". معظم الناس يقدّرون الصراحة أكثر من التظاهر بالفهم ثم الوقوع في خطأ لاحقاً بسبب سوء فهم.
 
 **هل من الطبيعي أن أكون متوتراً رغم إجادتي للغة؟**
 نعم تماماً، حتى المتحدثين الأصليين يتوترون في أول يوم عمل جديد لأسباب اجتماعية لا لغوية. التوتر سيقل تلقائياً خلال الأسبوع الأول مع تكرار نفس المواقف والعبارات.
@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [جاهز لأي موقف مهني بثقة](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/interview.html), من التوتر إلى التميز: دليلك للتحضير الذكي للمواقف المهنية الحاسمة بالإنجليزية.
+كورس ذو صلة: [جاهز لأي موقف مهني بثقة](https://learn.masterenglish.me/products/interview.html), من التوتر إلى التميز: دليلك للتحضير الذكي للمواقف المهنية الحاسمة بالإنجليزية.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

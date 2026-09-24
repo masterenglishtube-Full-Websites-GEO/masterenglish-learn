@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [مفردات عملية لأي موقف مهني](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات لغوية عملية تستخدمها فوراً في العمل، دون حشو نظري.
+كورس ذو صلة: [مفردات عملية لأي موقف مهني](https://learn.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات لغوية عملية تستخدمها فوراً في العمل، دون حشو نظري.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

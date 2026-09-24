@@ -1,6 +1,6 @@
 # لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟
 
-"?How was your trip" يسألك أحدهم، فتجيب "Good" وتصمت. المحادثة تموت في تلك اللحظة بالضبط. ليست المشكلة في لغتك، المشكلة أن إجابة الكلمة الواحدة لا تعطي الطرف الآخر أي شيء يبني عليه سؤالاً جديداً.
+"How was your trip?" يسألك أحدهم، فتجيب "Good" وتصمت. المحادثة تموت في تلك اللحظة بالضبط. ليست المشكلة في لغتك، المشكلة أن إجابة الكلمة الواحدة لا تعطي الطرف الآخر أي شيء يبني عليه سؤالاً جديداً.
 
 **الخلاصة المباشرة:** الإجابات المقتضبة من كلمة واحدة مثل "Good" تُنهي المحادثة فوراً لأنها لا تعطي الطرف الآخر ما يبني عليه سؤالاً جديداً. إطار "إجابة + تفصيل + سؤال" يحوّل أي إجابة قصيرة إلى محادثة مستمرة.
 
@@ -16,9 +16,9 @@
 
 ## أمثلة تطبيقية على الإطار
 
-- **?How was your trip** بدلاً من "Good" قل: "!It was great, actually. We visited three cities. Have you ever been to that area"
-- **?How's work going** بدلاً من "Busy" قل: "It's pretty busy right now, we have a big project due next week. What about you"
-- **?Do you like this city** بدلاً من "Yes" قل: "Yeah, I really do. The food here is amazing. Do you have a favorite spot around here"
+- **How was your trip?** بدلاً من "Good" قل: "It was great, actually. We visited three cities. Have you ever been to that area?"
+- **How's work going?** بدلاً من "Busy" قل: "It's pretty busy right now, we have a big project due next week. What about you"
+- **Do you like this city?** بدلاً من "Yes" قل: "Yeah, I really do. The food here is amazing. Do you have a favorite spot around here?"
 
 ## نصيحة عملية
 
@@ -26,7 +26,7 @@
 
 ## لماذا هذه العادة أهم من حفظ مفردات جديدة؟
 
-المشكلة هنا ليست في المفردات بل في عادة الرد نفسها. حتى بمفردات محدودة يمكنك تطبيق هذا الإطار وإنتاج محادثات طويلة ومريحة. [نظام The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html) صُمم بالضبط لتدريبك على هذه العادة.
+المشكلة هنا ليست في المفردات بل في عادة الرد نفسها. حتى بمفردات محدودة يمكنك تطبيق هذا الإطار وإنتاج محادثات طويلة ومريحة. [نظام The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) صُمم بالضبط لتدريبك على هذه العادة.
 
 ## أسئلة شائعة
 
@@ -41,6 +41,6 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), يدربك على الرد الكامل بدل الإجابة المقتضبة.
+كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), يدربك على الرد الكامل بدل الإجابة المقتضبة.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

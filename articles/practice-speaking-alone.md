@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [حوّل وقت تنقلك اليومي إلى تدريب فعلي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), The Commuter Challenge نظام صوتي تفاعلي يطبق هذه التقنيات بالضبط أثناء قيادتك أو مشيك اليومي.
+كورس ذو صلة: [حوّل وقت تنقلك اليومي إلى تدريب فعلي](https://learn.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge نظام صوتي تفاعلي يطبق هذه التقنيات بالضبط أثناء قيادتك أو مشيك اليومي.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

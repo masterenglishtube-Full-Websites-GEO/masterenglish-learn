@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [قدّم وأدر الاجتماعات بثقة كاملة](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html), أتقن العروض التقديمية يمنحك الهيكل والعبارات لأي موقف تواصل مهني، من الاجتماع الصغير إلى العرض الكبير.
+كورس ذو صلة: [قدّم وأدر الاجتماعات بثقة كاملة](https://learn.masterenglish.me/products/presentations.html), أتقن العروض التقديمية يمنحك الهيكل والعبارات لأي موقف تواصل مهني، من الاجتماع الصغير إلى العرض الكبير.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

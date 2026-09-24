@@ -43,6 +43,6 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), نظام صوتي تفاعلي لتدريب أذنك على هذه الأنماط أثناء تنقلك اليومي.
+كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي لتدريب أذنك على هذه الأنماط أثناء تنقلك اليومي.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

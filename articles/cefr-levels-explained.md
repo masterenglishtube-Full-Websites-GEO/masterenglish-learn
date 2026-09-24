@@ -34,6 +34,6 @@ A1-A2 (مبتدئ): فهم وإنتاج جمل بسيطة عن مواضيع مأ
 
 ---
 
-كورس ذو صلة: [لست متأكداً من أين تبدأ؟](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/quiz.html), أجب عن سؤالين بسيطين، ونرشح لك نقطة البداية الأنسب لهدفك ومستواك.
+كورس ذو صلة: [لست متأكداً من أين تبدأ؟](https://learn.masterenglish.me/quiz.html), أجب عن سؤالين بسيطين، ونرشح لك نقطة البداية الأنسب لهدفك ومستواك.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن الشوا وكل أصوات النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html), كورس أسرار النطق الأمريكي يخصص وحدة كاملة لصوت الشوا وتأثيره على الإيقاع الطبيعي لكلامك.
+كورس ذو صلة: [أتقن الشوا وكل أصوات النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يخصص دروساً كاملة لنبر المقاطع (Word Stress) والربط والتنغيم، وهي الأساس الذي يظهر فيه الشوا في كلامك.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

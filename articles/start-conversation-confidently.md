@@ -29,16 +29,16 @@
 ## أسئلة شائعة
 
 **ماذا لو بدأت محادثة ثم لم أعرف ماذا أقول بعدها؟**
-حوّل السؤال الذي طُرح عليك إلى سؤال مماثل: Pretty good, thanks! How about yours؟
+حوّل السؤال الذي طُرح عليك إلى سؤال مماثل: Pretty good, thanks! How about yours?
 
 **أخاف أن يضحك الناس على نطقي إذا تحدثت، كيف أتجاوز هذا؟**
 أغلب الناس مهتمون بأن يفهموا ما تقول وأن يشعروا أنك ودود، لا بلكنتك.
 
 **كيف أبدأ محادثة مع شخص لا أعرفه إطلاقاً؟**
-ابدأ بملاحظة على الموقف المشترك: This line is taking forever, huh؟
+ابدأ بملاحظة على الموقف المشترك: This line is taking forever, huh?
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), نظام صوتي تفاعلي يدربك على الرد الفوري في مواقف محادثة حقيقية.
+كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي يدربك على الرد الفوري في مواقف محادثة حقيقية.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

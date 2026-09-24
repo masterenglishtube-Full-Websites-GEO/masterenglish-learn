@@ -1,6 +1,6 @@
 # أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية
 
-أنت تعرف قواعد كثيرة، وربما تعرف مئات الكلمات. لكن حين يسألك أحدهم "?How's it going" تتجمد لثانيتين قبل أن تجيب. المشكلة ليست في معرفتك، المشكلة أنك لم تدرّب نفسك على الأنماط الجاهزة التي تُبنى عليها معظم المحادثات اليومية.
+أنت تعرف قواعد كثيرة، وربما تعرف مئات الكلمات. لكن حين يسألك أحدهم "How's it going?" تتجمد لثانيتين قبل أن تجيب. المشكلة ليست في معرفتك، المشكلة أنك لم تدرّب نفسك على الأنماط الجاهزة التي تُبنى عليها معظم المحادثات اليومية.
 
 فيديو الشرح: https://www.youtube.com/watch?v=Su3-sZv6iXU
 
@@ -10,15 +10,15 @@
 
 ## الفكرة الأساسية: عدد الأنماط محدود أكثر مما تتخيل
 
-معظم الأسئلة التي يسمعها الشخص العادي في يوم عمل تتكرر بصيغ قريبة من بعضها: "?How are you"، "?What do you do"، "?Where are you from"، "?How was your weekend". حين تتقن الرد على هذه الأنماط بثقة، تصبح جاهزاً لأغلب المحادثات اليومية دون حفظ آلاف الجمل.
+معظم الأسئلة التي يسمعها الشخص العادي في يوم عمل تتكرر بصيغ قريبة من بعضها: "How are you?"، "What do you do?"، "Where are you from?"، "How was your weekend?". حين تتقن الرد على هذه الأنماط بثقة، تصبح جاهزاً لأغلب المحادثات اليومية دون حفظ آلاف الجمل.
 
 ## أمثلة حقيقية على أنماط السؤال والجواب
 
-- **?How's it going** (كيف الحال؟) → "!Pretty good, thanks. You" (بخير، شكراً. وأنت؟)
-- **?What do you do (for work)** (بماذا تعمل؟) → "I work in marketing / I'm a teacher" (أعمل في التسويق / أنا معلم)
-- **?Have you been here before** (هل جئت هنا من قبل؟) → "Yeah, a couple of times / No, this is my first time" (نعم، عدة مرات / لا، هذه أول مرة)
-- **?What are you up to this weekend** (ماذا تفعل هذا الأسبوع؟) → "Not much, just relaxing / I'm visiting family" (لا شيء مهم، فقط أرتاح / سأزور العائلة)
-- **?Do you have any recommendations** (هل لديك أي توصيات؟) → "Actually, yeah, try the one down the street" (في الواقع نعم، جرّب الذي في آخر الشارع)
+- **How's it going?** (كيف الحال؟) → "Pretty good, thanks. You?" (بخير، شكراً. وأنت؟)
+- **What do you do (for work)?** (بماذا تعمل؟) → "I work in marketing / I'm a teacher" (أعمل في التسويق / أنا معلم)
+- **Have you been here before?** (هل جئت هنا من قبل؟) → "Yeah, a couple of times / No, this is my first time" (نعم، عدة مرات / لا، هذه أول مرة)
+- **What are you up to this weekend?** (ماذا ستفعل في عطلة نهاية الأسبوع؟) → "Not much, just relaxing / I'm visiting family" (لا شيء مهم، فقط أرتاح / سأزور العائلة)
+- **Do you have any recommendations?** (هل لديك أي توصيات؟) → "Actually, yeah, try the one down the street" (في الواقع نعم، جرّب الذي في آخر الشارع)
 
 كل جواب هنا جملة قصيرة كاملة، لا كلمة واحدة. إذا كنت تجد نفسك تكرر إجابات مقتضبة والمحادثة تموت بسرعة، هذه مشكلة نتحدث عنها بالتفصيل في [مقال إجابات الكلمة الواحدة](stop-one-word-answers.html).
 
@@ -43,6 +43,6 @@
 
 ---
 
-كورس ذو صلة: [أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html), لتنطق هذه الأنماط بثقة ووضوح.
+كورس ذو صلة: [أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html), لتنطق هذه الأنماط بثقة ووضوح.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

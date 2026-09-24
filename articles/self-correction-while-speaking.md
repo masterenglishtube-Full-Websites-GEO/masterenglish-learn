@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [ابنِ ثقة النطق الصحيح من البداية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html), كورس أسرار النطق الأمريكي يقلل أخطاءك الأصلية، فتحتاج تصحيحاً أقل أثناء الكلام الفعلي.
+كورس ذو صلة: [ابنِ ثقة النطق الصحيح من البداية](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يقلل أخطاءك الأصلية، فتحتاج تصحيحاً أقل أثناء الكلام الفعلي.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -28,7 +28,7 @@
 
 ## لماذا هذا النهج يحضّرك بشكل أفضل لما بعد رمضان؟
 
-الحفاظ على تعرّض يومي بسيط يمنع التراجع. هذا الفكر بُني عليه [نادي رمضان الصوتي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/ramadan-audio-club.html): سلسلة درامية صوتية "عمر وسارة"، حلقة قصيرة كل يوم تستمع إليها بلا مجهود ذهني إضافي.
+الحفاظ على تعرّض يومي بسيط يمنع التراجع. هذا الفكر بُني عليه [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html): سلسلة درامية صوتية "عمر وسارة"، حلقة قصيرة كل يوم تستمع إليها بلا مجهود ذهني إضافي.
 
 ## أسئلة شائعة
 
@@ -43,6 +43,6 @@
 
 ---
 
-كورس ذو صلة: [نادي رمضان الصوتي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/ramadan-audio-club.html), قصة يومية مشوقة مصممة للحظات طاقتك المنخفضة.
+كورس ذو صلة: [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html), قصة يومية مشوقة مصممة للحظات طاقتك المنخفضة.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

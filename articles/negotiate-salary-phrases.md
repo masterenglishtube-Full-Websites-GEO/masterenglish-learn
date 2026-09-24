@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [تحضير ذكي لأي محادثة مهنية حاسمة](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات كاملة للتفاوض بثقة والتعبير عن قيمتك بوضوح.
+كورس ذو صلة: [تحضير ذكي لأي محادثة مهنية حاسمة](https://learn.masterenglish.me/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات كاملة للتفاوض بثقة والتعبير عن قيمتك بوضوح.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -34,6 +34,6 @@
 
 ---
 
-كورس ذو صلة: [افهم الإنجليزية الحقيقية غير المُعتنى بها](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html), The Commuter Challenge يدربك على أنماط الكلام العفوي الحقيقي، لا الإنجليزية المدرسية فقط.
+كورس ذو صلة: [افهم الإنجليزية الحقيقية غير المُعتنى بها](https://learn.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge يدربك على أنماط الكلام العفوي الحقيقي، لا الإنجليزية المدرسية فقط.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

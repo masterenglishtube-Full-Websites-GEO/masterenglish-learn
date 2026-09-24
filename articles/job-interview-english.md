@@ -16,7 +16,7 @@
 
 "Tell me about yourself" ليس دعوة لسرد سيرتك كاملة، بل قصة قصيرة: من أنت مهنياً الآن، أهم إنجاز يخص هذا الدور، ولماذا أنت هنا اليوم. "What's your biggest weakness?" الإجابة الذكية تذكر نقطة حقيقية بسيطة مع خطوة عملية تعمل عليها. "Why should we hire you?" يجب أن يربط مهارة محددة لديك بمشكلة محددة تعرف أن الشركة تواجهها.
 
-إذا كان ما يعيقك هو الثقة في نطق هذه الإجابات بصوت واضح تحت ضغط، هذا بالضبط ما يعالجه [كورس أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html).
+إذا كان ما يعيقك هو الثقة في نطق هذه الإجابات بصوت واضح تحت ضغط، هذا بالضبط ما يعالجه [كورس أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html).
 
 ## التفاوض على الراتب: عبارات جاهزة
 
@@ -32,13 +32,13 @@
 توقف، خذ نفساً، وقل: That's a great question, let me think about that for a second. هذه الجملة تظهر أنك تفكر قبل أن تجيب.
 
 **هل من الطبيعي أن أطلب وقتاً للتفكير في عرض الراتب؟**
-نعم، وهذا متوقع في ثقافة العمل الغربية. قل: I appreciate the offer, can I have a day or two to review it؟
+نعم، وهذا متوقع في ثقافة العمل الغربية. قل: I appreciate the offer, can I have a day or two to review it?
 
 **مستوى إنجليزيتي متوسط، هل أستطيع اجتياز مقابلة عمل بالإنجليزية؟**
 نعم، لأن المقابلة تختبر قدرتك على الإجابة بوضوح عن أسئلة متوقعة، لا طلاقتك اللغوية الشاملة.
 
 ---
 
-كورس ذو صلة: [من التوتر إلى التميز](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/interview.html), دليل كامل للتحضير الذكي لمقابلات العمل.
+كورس ذو صلة: [من التوتر إلى التميز](https://learn.masterenglish.me/products/interview.html), دليل كامل للتحضير الذكي لمقابلات العمل.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -6,7 +6,7 @@
 
 ---
 
-**للإداريين والقياديين:** إذا كنت تدير فرق عمل دولية أو تشارك في اجتماعات مجالس الإدارة بالإنجليزية، وتفضّل العمل المباشر على حضورك ولغتك القيادية مع نور شخصياً، [تحقق من معايير القبول في برنامج التدريب التنفيذي PACE](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/pace-executive.html).
+**للإداريين والقياديين:** إذا كنت تدير فرق عمل دولية أو تشارك في اجتماعات مجالس الإدارة بالإنجليزية، وتفضّل العمل المباشر على حضورك ولغتك القيادية مع نور شخصياً، [تحقق من معايير القبول في برنامج التدريب التنفيذي PACE](https://learn.masterenglish.me/pace-executive.html).
 
 فيديو الشرح: https://www.youtube.com/watch?v=DzkHoqpJ-aU
 
@@ -28,7 +28,7 @@
 
 ## المفتاح الخامس: أنهِ اقتراحك بسؤال يفتح النقاش لا يغلقه
 
-أنهِ كلامك بسؤال يوجّه النقاش مثل "?What do you all think". هذا يُظهرك كشخص واثق من فكرته لدرجة أنه يدعو للنقاش المفتوح حولها.
+أنهِ كلامك بسؤال يوجّه النقاش مثل "What do you all think?". هذا يُظهرك كشخص واثق من فكرته لدرجة أنه يدعو للنقاش المفتوح حولها.
 
 ## نصيحة عملية
 
@@ -36,7 +36,7 @@
 
 ## ما بعد اللغة: بناء العرض الكامل
 
-حين يتعلق الأمر بعرض تقديمي كامل أمام فريقك، تحتاج بنية أوسع. هذا ما يغطيه [كورس أتقن العروض التقديمية بالإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html) خطوة بخطوة.
+حين يتعلق الأمر بعرض تقديمي كامل أمام فريقك، تحتاج بنية أوسع. هذا ما يغطيه [كورس أتقن العروض التقديمية بالإنجليزية](https://learn.masterenglish.me/products/presentations.html) خطوة بخطوة.
 
 ## أسئلة شائعة
 
@@ -51,6 +51,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن العروض التقديمية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html), يبني ثقتك في تقديم أفكارك أمام أي جمهور.
+كورس ذو صلة: [أتقن العروض التقديمية](https://learn.masterenglish.me/products/presentations.html), يبني ثقتك في تقديم أفكارك أمام أي جمهور.
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

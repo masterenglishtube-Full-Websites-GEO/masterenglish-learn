@@ -9,13 +9,13 @@
 
   const tooltip = document.createElement("span");
   tooltip.className = "me-fab-tooltip";
-  tooltip.textContent = "راسلي نور مباشرة";
+  tooltip.textContent = "راسل نور مباشرة";
 
   const panel = document.createElement("div");
   panel.id = "meContactPanel";
   panel.innerHTML = `
     <div class="me-contact-head">
-      <span>راسلينا</span>
+      <span>راسلنا</span>
       <button type="button" id="meContactClose" aria-label="إغلاق">&times;</button>
     </div>
     <div class="me-contact-body">

@@ -34,7 +34,7 @@
 
 ## السر الأول: الحرف "الكاذب" (The Vanishing T)
 
-إذا جاء حرف N ثم حرف T مباشرة، يموت T تماماً: Internet → Innernet، Center → Cener، Interview → Innerview، Twenty → Twenny. مثال حقيقي في الفيديو: Chiwetel Ejiofor يقول "Plenty of time" عند 02:37 (https://youtu.be/t0NNhn3MJh4?t=157).
+إذا جاء حرف N ثم حرف T مباشرة وبعدهما مقطع غير منبور، يموت T غالباً: Internet → Innernet، Center → Cener، Interview → Innerview، Twenty → Twenny. مثال حقيقي في الفيديو: Chiwetel Ejiofor يقول "Plenty of time" عند 02:37 (https://youtu.be/t0NNhn3MJh4?t=157).
 
 إذا جاء T بين حرفين متحركين، يتحول لصوت D خفيف وسريع (Flap T): Water → Wa-der، Better → Bedder، Computer → Compyuder. حتى بين كلمتين: "Put it away" → "Pud-id-away". مثال حقيقي: روبرت دي نيرو يقولها في فيلم Brazil عند 03:30 (https://youtu.be/t0NNhn3MJh4?t=210).
 
@@ -62,7 +62,7 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ## التدريب العملي
 
-المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/pronunciation.html). ولتبسيط اختيار كلماتك بشكل عام: [قائمة دايت المفردات](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/vocabulary-diet.html).
+المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html). ولتبسيط اختيار كلماتك بشكل عام: [قائمة دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html).
 
 ## أسئلة شائعة
 
@@ -79,4 +79,4 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ملف PDF قابل للتحميل بكل الأسرار: https://learn.masterenglish.me/assets/downloads/ghost-words-cheatsheet.pdf
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

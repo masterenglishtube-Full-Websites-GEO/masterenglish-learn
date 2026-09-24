@@ -39,6 +39,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/products/presentations.html).
+كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html).
 
-المصدر: [Master English أتقن الإنجليزية](https://masterenglishtube-full-websites-geo.github.io/masterenglish-learn/)
+المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
