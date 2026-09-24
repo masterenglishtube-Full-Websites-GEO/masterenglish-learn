@@ -36,6 +36,45 @@
   .watch-player-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .watch-current-title { font-family: var(--font-head); font-weight: 800; font-size: 20px; margin: 20px 0 0; }
   .watch-loading, .watch-error { text-align: center; padding: 80px 20px; color: var(--ink-soft); }
+  @media (max-width: 900px) {
+    .watch-sidebar { order: 2; max-height: none; }
+  }
+  .watch-progress { font-size: 13.5px; color: var(--ink-soft); padding: 8px 12px 2px; }
+  .watch-progress-bar { height: 6px; background: var(--paper-soft); border-radius: 99px; margin: 6px 12px 4px; overflow: hidden; }
+  .watch-progress-bar span { display: block; height: 100%; background: var(--accent); border-radius: 99px; transition: width .3s; }
+  .watch-lesson-btn { display: flex; gap: 8px; align-items: baseline; }
+  .watch-lesson-btn .tick { margin-inline-start: auto; color: #3f8a5c; font-weight: 800; flex-shrink: 0; }
+  .watch-lesson-btn .kind { font-size: 12px; color: var(--ink-soft); font-weight: 400; }
+  .watch-unit-card {
+    background: var(--accent-light); border-radius: var(--radius); padding: 34px 26px; text-align: center;
+  }
+  .watch-unit-card p { margin: 0 0 18px; color: var(--ink); }
+  .watch-block { margin-top: 26px; }
+  .watch-block h3 { font-family: var(--font-head); font-weight: 800; font-size: 17px; margin: 0 0 12px; }
+  .watch-files { display: grid; gap: 10px; }
+  .watch-file {
+    display: flex; gap: 12px; align-items: center; background: var(--paper); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px 16px; color: var(--ink); text-decoration: none; font-weight: 700;
+  }
+  .watch-file:hover { border-color: var(--accent); }
+  .watch-file small { display: block; font-weight: 400; color: var(--ink-soft); font-size: 12.5px; }
+  .watch-file .pdf { background: #c15353; color: #fff; font-size: 11px; font-weight: 800; border-radius: 6px; padding: 3px 7px; }
+  .quiz-q { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 16px; }
+  .quiz-q-text { margin: 0 0 14px; font-weight: 700; unicode-bidi: plaintext; text-align: right; }
+  .quiz-choices { display: grid; gap: 10px; }
+  .quiz-choice {
+    display: block; width: 100%; text-align: start; background: var(--paper-soft);
+    border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px;
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); cursor: pointer;
+  }
+  .quiz-choice:hover:not(:disabled) { border-color: var(--accent); }
+  .quiz-choice.correct { background: #e5f3ea; border-color: #3f8a5c; color: #1f5c37; font-weight: 700; }
+  .quiz-choice.incorrect { background: #fbeaea; border-color: #c15353; color: #8a2f2f; text-decoration: line-through; }
+  .quiz-choice:disabled { cursor: default; }
+  .quiz-feedback { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); unicode-bidi: plaintext; text-align: right; }
+  .quiz-result { background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 20px 22px; text-align: center; }
+  .quiz-result strong { font-family: var(--font-head); font-size: 22px; display: block; margin-bottom: 6px; }
+  .quiz-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
 </style>
 </head>
 <body>
@@ -68,11 +107,23 @@
       </div>
       <div id="watchContent" class="watch-wrap" style="display:none;">
         <div class="watch-sidebar" id="watchSidebar"></div>
-        <div>
-          <div class="watch-player-wrap">
+        <div id="watchMain">
+          <div class="watch-player-wrap" id="watchPlayerWrap">
             <iframe id="watchPlayer" title="مشغّل الدرس" src="" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen></iframe>
           </div>
+          <div class="watch-unit-card" id="watchUnitCard" hidden>
+            <p>هذه الوحدة ملف PDF تقرؤه على راحتك، ثم تختبر نفسك في الأسفل.</p>
+            <a class="btn btn-primary" id="watchUnitOpen" href="#" target="_blank" rel="noopener">افتح ملف الوحدة</a>
+          </div>
           <h2 class="watch-current-title" id="watchCurrentTitle"></h2>
+          <div class="watch-block" id="watchFilesBlock" hidden>
+            <h3>ملفات هذا الدرس</h3>
+            <div class="watch-files" id="watchFiles"></div>
+          </div>
+          <div class="watch-block" id="watchQuizBlock" hidden>
+            <h3>اختبر نفسك</h3>
+            <div id="watchQuiz"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -102,53 +153,257 @@
       return;
     }
 
+    let data;
     try {
       const res = await fetch(`${API}/watch/session?token=${encodeURIComponent(token)}`);
-      const data = await res.json();
+      data = await res.json();
       if (!res.ok || !data.lessons || data.lessons.length === 0) {
         throw new Error("no lessons");
       }
-
-      document.getElementById("watchPageTitle").textContent = PRODUCT_TITLES[data.product_slug] || "دروسك";
-      document.title = (PRODUCT_TITLES[data.product_slug] || "دروسك") + " | Master English";
-
-      const sidebar = document.getElementById("watchSidebar");
-      let lastSection = null;
-      data.lessons.forEach((lesson, i) => {
-        if (lesson.section_title && lesson.section_title !== lastSection) {
-          const h = document.createElement("div");
-          h.className = "watch-section-title";
-          h.textContent = lesson.section_title;
-          sidebar.appendChild(h);
-          lastSection = lesson.section_title;
-        }
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "watch-lesson-btn";
-        btn.dataset.index = i;
-        btn.textContent = lesson.lesson_title;
-        btn.addEventListener("click", () => selectLesson(i));
-        sidebar.appendChild(btn);
-      });
-
-      window.__lessons = data.lessons;
-      selectLesson(0);
-
-      document.getElementById("watchLoading").style.display = "none";
-      document.getElementById("watchContent").style.display = "grid";
     } catch (e) {
       document.getElementById("watchLoading").style.display = "none";
       document.getElementById("watchError").style.display = "block";
+      return;
     }
+
+    document.getElementById("watchPageTitle").textContent = PRODUCT_TITLES[data.product_slug] || "دروسك";
+    document.title = (PRODUCT_TITLES[data.product_slug] || "دروسك") + " | Master English";
+
+    materials = data.materials || [];
+    quizzes = data.quizzes || {};
+    progressKey = "me_course_progress_" + data.product_slug;
+    items = buildItems(data.lessons, materials);
+    renderSidebar();
+
+    const saved = parseInt(store.get(progressKey + "_last"), 10);
+    selectItem(saved >= 0 && saved < items.length ? saved : 0, false);
+
+    document.getElementById("watchLoading").style.display = "none";
+    document.getElementById("watchContent").style.display = "grid";
   }
 
-  function selectLesson(index) {
-    const lesson = window.__lessons[index];
-    document.getElementById("watchPlayer").src = lesson.iframe_src;
-    document.getElementById("watchCurrentTitle").textContent = lesson.lesson_title;
+  // --- helpers --------------------------------------------------------------
+
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+  };
+  const AR_DIGITS = "٠١٢٣٤٥٦٧٨٩";
+  const ar = (n) => String(n).replace(/[0-9]/g, (d) => AR_DIGITS[d]);
+
+  let items = [], materials = [], quizzes = {}, progressKey = "", current = -1;
+
+  // Videos in course order; a unit that is only a PDF (+ quiz) goes right after the
+  // lesson its preceding material belongs to, so it sits where it belongs in the course.
+  function buildItems(lessons, mats) {
+    const list = lessons.map((l) => ({ kind: "video", position: l.position, title: l.lesson_title, section: l.section_title, src: l.iframe_src, quizKey: l.position != null ? String(l.position) : null }));
+    let lastPos = null;
+    mats.forEach((m) => {
+      if (m.lessons && m.lessons.length) { lastPos = Math.max(...m.lessons); return; }
+      if (!m.quiz) return;
+      const at = list.findIndex((it) => it.kind === "video" && it.position === lastPos);
+      const unit = { kind: "unit", title: m.title, section: at >= 0 ? list[at].section : null, material: m, quizKey: m.quiz };
+      list.splice(at >= 0 ? at + 1 : list.length, 0, unit);
+    });
+    return list;
+  }
+
+  function readProgress() {
+    try { return JSON.parse(store.get(progressKey)) || {}; } catch (e) { return {}; }
+  }
+
+  function saveScore(quizKey, score, total) {
+    const p = readProgress();
+    const prev = p[quizKey];
+    if (!prev || score >= prev.score) p[quizKey] = { score, total };
+    store.set(progressKey, JSON.stringify(p));
+  }
+
+  function renderSidebar() {
+    const sidebar = document.getElementById("watchSidebar");
+    sidebar.innerHTML = "";
+    const progress = readProgress();
+    const withQuiz = items.filter((it) => it.quizKey && quizzes[it.quizKey]);
+    if (withQuiz.length) {
+      const done = withQuiz.filter((it) => progress[it.quizKey]).length;
+      const p = document.createElement("div");
+      p.className = "watch-progress";
+      p.textContent = `أنهيت ${ar(done)} من ${ar(withQuiz.length)} اختباراً`;
+      const bar = document.createElement("div");
+      bar.className = "watch-progress-bar";
+      bar.innerHTML = `<span style="width:${Math.round((done / withQuiz.length) * 100)}%"></span>`;
+      sidebar.append(p, bar);
+    }
+    let lastSection = null;
+    items.forEach((it, i) => {
+      if (it.section && it.section !== lastSection) {
+        const h = document.createElement("div");
+        h.className = "watch-section-title";
+        h.textContent = it.section;
+        sidebar.appendChild(h);
+        lastSection = it.section;
+      }
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "watch-lesson-btn" + (i === current ? " active" : "");
+      btn.dataset.index = i;
+      const label = document.createElement("span");
+      label.textContent = it.title;
+      btn.appendChild(label);
+      if (it.kind === "unit") {
+        const k = document.createElement("span");
+        k.className = "kind";
+        k.textContent = "(ملف + اختبار)";
+        btn.appendChild(k);
+      }
+      if (it.quizKey && progress[it.quizKey]) {
+        const t = document.createElement("span");
+        t.className = "tick";
+        t.textContent = "✓";
+        t.title = `نتيجتك: ${ar(progress[it.quizKey].score)} من ${ar(progress[it.quizKey].total)}`;
+        btn.appendChild(t);
+      }
+      btn.addEventListener("click", () => selectItem(i, true));
+      sidebar.appendChild(btn);
+    });
+  }
+
+  function selectItem(index, userAction) {
+    const it = items[index];
+    current = index;
+    store.set(progressKey + "_last", String(index));
+
+    const player = document.getElementById("watchPlayer");
+    const playerWrap = document.getElementById("watchPlayerWrap");
+    const unitCard = document.getElementById("watchUnitCard");
+    if (it.kind === "video") {
+      if (player.src !== it.src) player.src = it.src;
+      playerWrap.hidden = false;
+      unitCard.hidden = true;
+    } else {
+      player.src = "about:blank";
+      playerWrap.hidden = true;
+      unitCard.hidden = false;
+      document.getElementById("watchUnitOpen").href = it.material.url;
+    }
+    document.getElementById("watchCurrentTitle").textContent = it.title;
+
+    renderFiles(it);
+    renderQuiz(it);
     document.querySelectorAll(".watch-lesson-btn").forEach((b) => {
       b.classList.toggle("active", parseInt(b.dataset.index, 10) === index);
     });
+    if (userAction && window.matchMedia("(max-width: 900px)").matches) {
+      document.getElementById("watchMain").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function renderFiles(it) {
+    const files = it.kind === "unit" ? [it.material] : materials.filter((m) => (m.lessons || []).includes(it.position));
+    const block = document.getElementById("watchFilesBlock");
+    const list = document.getElementById("watchFiles");
+    list.innerHTML = "";
+    block.hidden = files.length === 0;
+    files.forEach((m) => {
+      const a = document.createElement("a");
+      a.className = "watch-file";
+      a.href = m.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = `<span class="pdf">PDF</span><span></span>`;
+      a.lastChild.textContent = m.title;
+      const small = document.createElement("small");
+      small.textContent = m.section || "";
+      a.lastChild.appendChild(small);
+      list.appendChild(a);
+    });
+  }
+
+  function shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function renderQuiz(it) {
+    const block = document.getElementById("watchQuizBlock");
+    const box = document.getElementById("watchQuiz");
+    const questions = it.quizKey ? quizzes[it.quizKey] : null;
+    box.innerHTML = "";
+    block.hidden = !questions || !questions.length;
+    if (block.hidden) return;
+
+    let answered = 0, correct = 0;
+    questions.forEach((q, qi) => {
+      const card = document.createElement("div");
+      card.className = "quiz-q";
+      const text = document.createElement("p");
+      text.className = "quiz-q-text";
+      text.textContent = `${ar(qi + 1)}. ${q.q}`;
+      const choices = document.createElement("div");
+      choices.className = "quiz-choices";
+      const feedback = document.createElement("p");
+      feedback.className = "quiz-feedback";
+      feedback.hidden = true;
+
+      shuffled(q.o.map((label, idx) => ({ label, idx }))).forEach((opt) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "quiz-choice";
+        b.dir = "auto";
+        b.textContent = opt.label;
+        b.dataset.right = opt.idx === q.a ? "1" : "";
+        b.addEventListener("click", () => {
+          const ok = opt.idx === q.a;
+          choices.querySelectorAll(".quiz-choice").forEach((c) => {
+            c.disabled = true;
+            if (c.dataset.right) c.classList.add("correct");
+          });
+          if (!ok) b.classList.add("incorrect");
+          feedback.textContent = (ok ? "✓ إجابة صحيحة. " : "✗ ليست هذه. ") + (q.e || "");
+          feedback.hidden = false;
+          answered++;
+          if (ok) correct++;
+          if (answered === questions.length) finishQuiz(it, correct, questions.length);
+        });
+        choices.appendChild(b);
+      });
+      card.append(text, choices, feedback);
+      box.appendChild(card);
+    });
+  }
+
+  function finishQuiz(it, score, total) {
+    saveScore(it.quizKey, score, total);
+    renderSidebar();
+    const box = document.getElementById("watchQuiz");
+    const result = document.createElement("div");
+    result.className = "quiz-result";
+    const msg = score === total ? "ممتاز! أتقنت عبارات هذا الدرس." :
+      score >= Math.ceil(total * 0.6) ? "أحسنت! راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة." :
+      "أعد مشاهدة الدرس أو راجع ملفه، ثم جرّب الاختبار مرة أخرى.";
+    result.innerHTML = `<strong></strong><p style="margin:0;"></p><div class="quiz-actions"></div>`;
+    result.querySelector("strong").textContent = `نتيجتك: ${ar(score)} من ${ar(total)}`;
+    result.querySelector("p").textContent = msg;
+    const actions = result.querySelector(".quiz-actions");
+    const retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "btn btn-ghost";
+    retry.textContent = "أعد الاختبار";
+    retry.addEventListener("click", () => { renderQuiz(it); document.getElementById("watchQuizBlock").scrollIntoView({ behavior: "smooth" }); });
+    actions.appendChild(retry);
+    if (current < items.length - 1) {
+      const next = document.createElement("button");
+      next.type = "button";
+      next.className = "btn btn-primary";
+      next.textContent = "الدرس التالي ←";
+      next.addEventListener("click", () => { selectItem(current + 1, false); document.getElementById("watchMain").scrollIntoView({ behavior: "smooth", block: "start" }); });
+      actions.appendChild(next);
+    }
+    box.appendChild(result);
   }
 
   init();

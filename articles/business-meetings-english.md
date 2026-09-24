@@ -39,6 +39,6 @@
 
 ---
 
-كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html), يشمل درساً كاملاً عن التعامل مع النقاش الحي.
+كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html), يشمل وحدة كاملة عن التعامل مع النقاش الحي.
 
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

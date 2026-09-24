@@ -887,3 +887,18 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
   opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
 }
 #meWhatsappBtn.show:hover + .me-wa-tooltip { opacity: 1; }
+
+/* Google-sign-in gate for free lesson PDFs (assets/js/pdf-gate.js) */
+.me-gate { position: fixed; inset: 0; z-index: 1000; background: rgba(20, 24, 30, .55); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.me-gate[hidden] { display: none; }
+.me-gate-card { position: relative; width: 100%; max-width: 420px; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 24px 22px; text-align: center; }
+.me-gate-close { position: absolute; top: 10px; left: 12px; background: none; border: none; font-size: 26px; line-height: 1; color: var(--ink-soft); cursor: pointer; }
+.me-gate-eyebrow { margin: 0 0 6px; font-family: var(--font-head); font-weight: 700; font-size: 13px; color: var(--accent-dark); }
+.me-gate-card h3 { margin: 0 0 10px; font-size: 20px; }
+.me-gate-text { margin: 0 0 18px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+.me-gate-google { display: flex; justify-content: center; min-height: 44px; }
+.me-gate-status { min-height: 22px; margin: 12px 0 0; font-size: 14px; color: var(--ink-soft); }
+.me-gate-status.error { color: #b23b3b; }
+.me-gate-status.ok { color: var(--accent-dark); }
+.me-gate-legal { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-soft); }
+[data-gated-pdf][aria-busy="true"] { opacity: .7; pointer-events: none; }

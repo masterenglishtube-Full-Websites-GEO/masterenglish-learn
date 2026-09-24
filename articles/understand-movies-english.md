@@ -77,6 +77,6 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ---
 
-ملف PDF قابل للتحميل بكل الأسرار: https://learn.masterenglish.me/assets/downloads/ghost-words-cheatsheet.pdf
+ملف PDF مجاني بكل الأسرار (يُحمَّل من صفحة الدرس بعد تسجيل الدخول بحساب Google): https://learn.masterenglish.me/articles/understand-movies-english.html
 
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
