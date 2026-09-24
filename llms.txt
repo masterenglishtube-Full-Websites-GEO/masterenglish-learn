@@ -28,7 +28,46 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - **The 30-Day Fluency Challenge: A Ramadan Story** (/products/ramadan-audio-club.html): مسلسل صوتي درامي يعلّم الإنجليزية الحقيقية للعمل والحياة اليومية عبر قصة "عمر وسارة"، 30 حلقة.
 - **قائمة دايت المفردات** (/products/vocabulary-diet.html): دليل مختصر يبسّط 1000 كلمة معقدة إلى 50 كلمة أساسية.
 
-## كل المقالات (45 مقالاً)
+## مصادر التعلم المجانية على الموقع
+
+- [مكتبة الدروس الكاملة](https://learn.masterenglish.me/videos.html): كل دروس قناة أتقن الإنجليزية العامة (أكثر من ١٬١٠٠ درس) مرتبة حسب الموضوع والمستوى، مع بحث.
+- [اختبار تحديد المستوى](https://learn.masterenglish.me/placement-test.html): ٢٥ سؤالاً من A1 إلى C1 بالشرح العربي، ثم مسار تعلم مقترح.
+- [من نحن](https://learn.masterenglish.me/about.html): حقائق عن أتقن الإنجليزية ونور (التأسيس ٢٠١٦، لبنان، ١٫٨٦ مليون مشترك، الكورسات والأسعار، الحسابات الرسمية).
+- [الأسئلة الشائعة](https://learn.masterenglish.me/faq.html): الدروس المجانية، الأسعار، الاسترجاع، الوصول مدى الحياة، ومن أين تبدأ.
+
+### مسارات التعلم
+- [مسار المبتدئين: من الصفر إلى أول محادثة](https://learn.masterenglish.me/paths/beginner.html)
+- [مسار المتوسط: من الفهم إلى الكلام بطلاقة](https://learn.masterenglish.me/paths/intermediate.html)
+- [مسار المتقدم: الطلاقة الكاملة وفهم الإنجليزية الحقيقية](https://learn.masterenglish.me/paths/advanced.html)
+- [مسار النطق الأمريكي للعرب](https://learn.masterenglish.me/paths/pronunciation.html)
+- [مسار إنجليزية العمل: من المقابلة إلى قاعة الاجتماعات](https://learn.masterenglish.me/paths/work.html)
+
+### أدلة المواضيع
+- [النطق الأمريكي وتخفيف اللكنة العربية](https://learn.masterenglish.me/topics/pronunciation.html)
+- [المحادثة والطلاقة: من الفهم إلى الكلام](https://learn.masterenglish.me/topics/conversation.html)
+- [المفردات والتعابير: كلمات أقل واستعمال أذكى](https://learn.masterenglish.me/topics/vocabulary.html)
+- [القواعد والأزمنة بدون تعقيد](https://learn.masterenglish.me/topics/grammar.html)
+- [إنجليزية العمل: المقابلات والاجتماعات والعروض](https://learn.masterenglish.me/topics/work.html)
+- [الاستماع وفهم الإنجليزية السريعة والأفلام](https://learn.masterenglish.me/topics/listening.html)
+
+### مراجع
+- [دليل الأصوات الإنجليزية الصعبة على العرب](https://learn.masterenglish.me/guides/english-sounds-for-arabic-speakers.html)
+- [لا تقل… بل قل: أخطاء العرب الشائعة بالإنجليزية](https://learn.masterenglish.me/guides/common-english-mistakes-arabs.html)
+- [أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب (مقارنة)](https://learn.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.html)
+- [أفضل كورس نطق أمريكي للعرب (مقارنة)](https://learn.masterenglish.me/articles/best-american-pronunciation-course-arabs.html)
+
+### دروس القناة مكتوبة (مع اختبار)
+- [تحدّي ٢٠ يوماً لطلاقة اللسان: اليوم الأول (فقرة I want to learn English)](https://learn.masterenglish.me/lessons/20-day-fluency-challenge-day-1.html)
+- [تعابير عامية أمريكية شائعة: I feel you وMy bad وNo worries](https://learn.masterenglish.me/lessons/american-slang-everyday-expressions.html)
+- [الإنجليزية في المطار: المفردات وثلاث محادثات جاهزة](https://learn.masterenglish.me/lessons/english-at-the-airport.html)
+- [اختبار تحديد مستوى الإنجليزية: ٢٥ سؤالاً مع الإجابات والشرح](https://learn.masterenglish.me/lessons/english-level-test-25-questions.html)
+- [٥ أمثال إنجليزية مشهورة تستعملها في المواقف اليومية](https://learn.masterenglish.me/lessons/english-proverbs-everyday.html)
+- [خمس جمل وتمرين واحد لتتكلم الإنجليزية بطلاقة: أسئلة المحادثة اليومية](https://learn.masterenglish.me/lessons/five-questions-speak-fluently.html)
+- [كيف تتعلم الإنجليزية الحقيقية بسهولة وبسرعة؟ ٥ نصائح مهمة](https://learn.masterenglish.me/lessons/five-tips-learn-real-english.html)
+- [أسماء الأمراض الشائعة بالإنجليزية وكيف تصف حالتك للطبيب](https://learn.masterenglish.me/lessons/illnesses-symptoms-in-english.html)
+- [كيف تطلب القهوة بالإنجليزية؟ العبارات والمحادثة الكاملة](https://learn.masterenglish.me/lessons/order-coffee-in-english.html)
+
+## كل المقالات (47 مقالاً)
 
 كل مقال له نسخة HTML ونسخة Markdown مطابقة (.md) لسهولة القراءة الآلية، ومعظمها مرفق بدرس فيديو من قناة أتقن الإنجليزية على يوتيوب.
 
@@ -87,6 +126,10 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - [من أين أبدأ في تعلم الإنجليزية معي؟](https://learn.masterenglish.me/articles/where-to-start.html) · [نص Markdown](https://learn.masterenglish.me/articles/where-to-start.md) · [درس الفيديو](https://www.youtube.com/watch?v=4iIxIdzxbzI)
 - [ما هي مستويات اللغة الإنجليزية (A1 إلى C2) وكيف تحدد مستواك الحقيقي؟](https://learn.masterenglish.me/articles/cefr-levels-explained.html) · [نص Markdown](https://learn.masterenglish.me/articles/cefr-levels-explained.md) · [درس الفيديو](https://www.youtube.com/watch?v=NRrXWCo3JMo)
 - [كيف تجتاز الجزء الثاني من اختبار المحادثة للآيلتس (IELTS Speaking Part 2)؟](https://learn.masterenglish.me/articles/ielts-speaking-part-2-framework.html) · [نص Markdown](https://learn.masterenglish.me/articles/ielts-speaking-part-2-framework.md) · [درس الفيديو](https://www.youtube.com/watch?v=Dccw_tpn5UY)
+
+### مقارنات
+- [أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب في ٢٠٢٦: مقارنة صادقة](https://learn.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.html) · [نص Markdown](https://learn.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.md)
+- [أفضل كورس نطق أمريكي للعرب في ٢٠٢٦: مقارنة ٤ خيارات](https://learn.masterenglish.me/articles/best-american-pronunciation-course-arabs.html) · [نص Markdown](https://learn.masterenglish.me/articles/best-american-pronunciation-course-arabs.md)
 
 ### عن المؤسِّسة
 - [كيف لاحظت الفجوة الحقيقية بين معرفة الإنجليزية والتحدث بها](https://learn.masterenglish.me/articles/my-story.html) · [نص Markdown](https://learn.masterenglish.me/articles/my-story.md)

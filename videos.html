@@ -3,39 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أفضل فيديوهات مجانية لتعلم اللغة الإنجليزية | ١٬٢٠٠+ فيديو | Master English</title>
-<meta name="description" content="أفضل فيديوهات مجانية لتعلم اللغة الإنجليزية بالعربية: النطق، المحادثة، المفردات، والطلاقة، من قناة نور بأكثر من ١٫٨٦ مليون مشترك و١٬٢٠٠+ فيديو.">
+<title>مكتبة دروس الإنجليزية المجانية (١٬١٤٨ درساً) | Master English</title>
+<meta name="description" content="كل دروس قناة أتقن الإنجليزية المجانية (١٬١٤٨ درساً) مرتبة حسب الموضوع والمستوى: النطق الأمريكي، المحادثة، المفردات، القواعد، إنجليزية العمل. ابحث وابدأ فوراً.">
 <link rel="canonical" href="https://learn.masterenglish.me/videos.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://learn.masterenglish.me/videos.html">
-<meta property="og:title" content="أفضل فيديوهات مجانية لتعلم اللغة الإنجليزية | ١٬٢٠٠+ فيديو">
-<meta property="og:description" content="أفضل فيديوهات مجانية لتعلم اللغة الإنجليزية بالعربية: النطق، المحادثة، المفردات، والطلاقة، من قناة نور بأكثر من ١٫٨٦ مليون مشترك و١٬٢٠٠+ فيديو.">
-<meta property="og:image" content="https://learn.masterenglish.me/assets/images/favicon-512.png">
+<meta property="og:title" content="مكتبة دروس الإنجليزية المجانية (١٬١٤٨ درساً)">
+<meta property="og:description" content="كل دروس قناة أتقن الإنجليزية المجانية (١٬١٤٨ درساً) مرتبة حسب الموضوع والمستوى: النطق الأمريكي، المحادثة، المفردات، القواعد، إنجليزية العمل. ابحث وابدأ فوراً.">
+<meta property="og:image" content="https://learn.masterenglish.me/assets/images/og/videos.jpg">
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://learn.masterenglish.me/assets/images/og/videos.jpg">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+.lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.lib-card { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+.lib-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.lib-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
+.lib-card .lib-dur { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.78); color: #fff; font-size: 12px; padding: 2px 7px; border-radius: 6px; direction: ltr; }
+.lib-card strong { display: block; padding: 12px 14px 4px; font-size: 14.5px; line-height: 1.6; }
+.lib-card small { display: block; padding: 0 14px 14px; margin-top: auto; font-size: 12.5px; color: var(--ink-soft); }
+/* Phones: long lists become compact rows (thumbnail beside the title); "most watched" blocks swipe sideways. */
+@media (max-width: 600px) {
+  .lib-grid { grid-template-columns: 1fr; gap: 10px; }
+  .lib-grid > .lib-card { display: grid; grid-template-columns: 136px minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; }
+  .lib-grid > .lib-card img { grid-column: 1; grid-row: 1 / 3; width: 128px; height: 72px; margin: 8px 8px 8px 0; border-radius: 6px; }
+  .lib-grid > .lib-card .lib-dur { top: 58px; left: auto; right: 12px; font-size: 11px; padding: 1px 6px; }
+  .lib-grid > .lib-card strong { grid-column: 2; padding: 8px 10px 2px; font-size: 13.5px; line-height: 1.55; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+  .lib-grid > .lib-card small { grid-column: 2; margin-top: 0; padding: 0 10px 8px; font-size: 11.5px; }
+  .lib-topic .lib-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+  .lib-topic .lib-grid > .lib-card { display: flex; flex-direction: column; scroll-snap-align: start; }
+  .lib-topic .lib-grid > .lib-card img { width: 100%; height: auto; margin: 0; border-radius: 0; }
+  .lib-topic .lib-grid > .lib-card .lib-dur { top: 8px; left: 8px; right: auto; }
+}
+
+.lib-hero-stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 22px; }
+.lib-hero-stats span { background: var(--paper); border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
+.lib-hero-stats strong { color: var(--accent-dark); }
+.lib-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.lib-tools { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; margin-bottom: 16px; }
+.lib-tools input, .lib-tools select { padding: 13px 18px; font-size: 16px; border-radius: 999px; border: 2px solid var(--border); font-family: var(--font-body); background: var(--paper); color: var(--ink); }
+.lib-tools input:focus, .lib-tools select:focus { outline: none; border-color: var(--accent); }
+@media (max-width: 700px) { .lib-tools { grid-template-columns: 1fr 1fr; } .lib-tools input { grid-column: 1 / -1; } }
+.lib-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.lib-chip { border: 1px solid var(--border); background: var(--paper); border-radius: 999px; padding: 7px 14px; font-family: var(--font-body); font-size: 14px; cursor: pointer; color: var(--ink); }
+.lib-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+#libCount { color: var(--ink-soft); margin: 0 0 14px; }
+#libMore { display: block; margin: 26px auto 0; }
+.lib-topic { margin-top: 44px; }
+.lib-topic h3 { margin: 0 0 14px; }
+.lib-topic .btn { margin-top: 16px; }
+.lib-section-title { margin-top: 10px; }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "فيديوهات تعليمية مجانية - Master English أتقن الإنجليزية",
+  "name": "مكتبة الدروس المجانية | أتقن الإنجليزية",
   "url": "https://learn.masterenglish.me/videos.html",
-  "about": "فيديوهات مجانية لتعلم اللغة الإنجليزية للناطقين بالعربية",
-  "hasPart": [
-    {"@type": "VideoObject", "name": "4 Rules to Help You Understand Fast-Spoken American English", "embedUrl": "https://www.youtube-nocookie.com/embed/CnMoRQJR9ic", "thumbnailUrl": "https://img.youtube.com/vi/CnMoRQJR9ic/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "قواعد لفهم اللغة الإنجليزية المحكية بسرعة."},
-    {"@type": "VideoObject", "name": "100 English Questions and Answers - Conversation Basics", "embedUrl": "https://www.youtube-nocookie.com/embed/Su3-sZv6iXU", "thumbnailUrl": "https://img.youtube.com/vi/Su3-sZv6iXU/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "أساسيات المحادثة بالإنجليزية عبر 100 سؤال وجواب."},
-    {"@type": "VideoObject", "name": "كلمتان فقط تغنيك عن حفظ 50 كلمة بالإنجليزية", "embedUrl": "https://www.youtube-nocookie.com/embed/4oDspnkXhNc", "thumbnailUrl": "https://img.youtube.com/vi/4oDspnkXhNc/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "طريقة مختصرة لتوسيع مفرداتك الإنجليزية بسرعة."},
-    {"@type": "VideoObject", "name": "توقف عن إجابات الكلمة الواحدة بالإنجليزية", "embedUrl": "https://www.youtube-nocookie.com/embed/Q_cqsM3YjEE", "thumbnailUrl": "https://img.youtube.com/vi/Q_cqsM3YjEE/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "كيف تطور إجاباتك في المحادثة الإنجليزية."},
-    {"@type": "VideoObject", "name": "كلمة واحدة تسحق 50 كلمة إنجليزية معقدة", "embedUrl": "https://www.youtube-nocookie.com/embed/GOezDtkHQA4", "thumbnailUrl": "https://img.youtube.com/vi/GOezDtkHQA4/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "استراتيجية لتبسيط المفردات الإنجليزية المعقدة."},
-    {"@type": "VideoObject", "name": "كيف تفرض شخصيتك في العمل؟ 5 مفاتيح للغة القادة", "embedUrl": "https://www.youtube-nocookie.com/embed/DzkHoqpJ-aU", "thumbnailUrl": "https://img.youtube.com/vi/DzkHoqpJ-aU/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "لغة القيادة الاحترافية بالإنجليزية في بيئة العمل."},
-    {"@type": "VideoObject", "name": "كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ 5 دقائق", "embedUrl": "https://www.youtube-nocookie.com/embed/IlTZBmoUqRE", "thumbnailUrl": "https://img.youtube.com/vi/IlTZBmoUqRE/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "تمرين عملي للتفكير المباشر باللغة الإنجليزية."},
-    {"@type": "VideoObject", "name": "لماذا لا تفهم الإنجليزية في الأفلام؟", "embedUrl": "https://www.youtube-nocookie.com/embed/t0NNhn3MJh4", "thumbnailUrl": "https://img.youtube.com/vi/t0NNhn3MJh4/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "سبب صعوبة فهم الإنجليزية العامية في الأفلام والحل."},
-    {"@type": "VideoObject", "name": "لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟", "embedUrl": "https://www.youtube-nocookie.com/embed/eIkHI4WQbww", "thumbnailUrl": "https://img.youtube.com/vi/eIkHI4WQbww/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "السبب الحقيقي وراء صعوبة التحدث رغم الفهم الجيد."},
-    {"@type": "VideoObject", "name": "توقف فوراً عن حفظ الكلمات", "embedUrl": "https://www.youtube-nocookie.com/embed/k4P9Y1thrRo", "thumbnailUrl": "https://img.youtube.com/vi/k4P9Y1thrRo/hqdefault.jpg", "uploadDate": "2024-01-01", "description": "ما يفعله المتحدث الذكي بدلاً من حفظ المفردات."}
+  "description": "كل دروس قناة أتقن الإنجليزية (1148 درساً مجانياً) مرتبة حسب الموضوع والمستوى.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Master English أتقن الإنجليزية",
+    "url": "https://learn.masterenglish.me/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Master English أتقن الإنجليزية",
+    "url": "https://learn.masterenglish.me/",
+    "sameAs": [
+      "https://www.youtube.com/@MasterEnglish"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "أكثر دروس قناة أتقن الإنجليزية مشاهدة",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "VideoObject",
+        "name": "(5) تعلم اللغة الإنجليزية بالصوت والصورة:  تعليم الإنجليزية من خلال قصة مسلية وجديدة",
+        "thumbnailUrl": "https://i.ytimg.com/vi/I46cCtKzWps/hqdefault.jpg",
+        "uploadDate": "2017-01-02T16:00:00Z",
+        "duration": "PT16M27S",
+        "contentUrl": "https://www.youtube.com/watch?v=I46cCtKzWps",
+        "embedUrl": "https://www.youtube.com/embed/I46cCtKzWps",
+        "description": "تواصل معي على الفايسبوك: http://bit.ly/TalkToNoorFacebook"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "VideoObject",
+        "name": "إذا أجبت على جميع هذه الأسئلة فأنت تتقن اللغة الانجليزية (إختبار تحديد مستوى) ✅😎",
+        "thumbnailUrl": "https://i.ytimg.com/vi/NRrXWCo3JMo/hqdefault.jpg",
+        "uploadDate": "2018-10-02T18:06:44Z",
+        "duration": "PT13M29S",
+        "contentUrl": "https://www.youtube.com/watch?v=NRrXWCo3JMo",
+        "embedUrl": "https://www.youtube.com/embed/NRrXWCo3JMo",
+        "description": "أفضل شرح للأسماء المعدودة وغير المعدودة بالإنجليزية مع ال Quantifiers "
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "VideoObject",
+        "name": "الجزء 1: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الأول",
+        "thumbnailUrl": "https://i.ytimg.com/vi/4Qhuihinog4/hqdefault.jpg",
+        "uploadDate": "2016-12-11T17:00:01Z",
+        "duration": "PT14M2S",
+        "contentUrl": "https://www.youtube.com/watch?v=4Qhuihinog4",
+        "embedUrl": "https://www.youtube.com/embed/4Qhuihinog4",
+        "description": "أفضل شرح للأسماء المعدودة وغير المعدودة بالإنجليزية مع ال Quantifiers "
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلّم الإنجليزية مع خطاب مارتن لوثر كينغ جونيور الشهير الذي غيّر تاريخ أمريكا: لديّ حلم",
+        "thumbnailUrl": "https://i.ytimg.com/vi/VYRp9S9eEik/hqdefault.jpg",
+        "uploadDate": "2016-12-17T15:00:05Z",
+        "duration": "PT12M30S",
+        "contentUrl": "https://www.youtube.com/watch?v=VYRp9S9eEik",
+        "embedUrl": "https://www.youtube.com/embed/VYRp9S9eEik",
+        "description": "تواصل معي على الفايسبوك: http://bit.ly/TalkToNoorFacebook"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "VideoObject",
+        "name": "كل ما تحتاجه هو خمسة جمل وتمرين واحد لتصبح طليق اللسان بالإنجليزية 💪",
+        "thumbnailUrl": "https://i.ytimg.com/vi/b-sWU5EvL-4/hqdefault.jpg",
+        "uploadDate": "2021-03-31T18:06:49Z",
+        "duration": "PT16M26S",
+        "contentUrl": "https://www.youtube.com/watch?v=b-sWU5EvL-4",
+        "embedUrl": "https://www.youtube.com/embed/b-sWU5EvL-4",
+        "description": "كل ما تحتاجه هو خمسة جمل وتمرين واحد لتصبح طليق اللسان بالإنجليزية (مع المثابرة اليومية)"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 1",
+        "thumbnailUrl": "https://i.ytimg.com/vi/qOlTicOMK3I/hqdefault.jpg",
+        "uploadDate": "2018-08-25T19:25:07Z",
+        "duration": "PT12M43S",
+        "contentUrl": "https://www.youtube.com/watch?v=qOlTicOMK3I",
+        "embedUrl": "https://www.youtube.com/embed/qOlTicOMK3I",
+        "description": "ليصلك كل جديد على الفايسبوك: http://bit.ly/TalkToNoorFacebook"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم اللغة الإنجليزية بالصوت والصورة: المفردات والمحادثات والعبارات الأكثر استخداماً في المطار",
+        "thumbnailUrl": "https://i.ytimg.com/vi/JIytze37ZrI/hqdefault.jpg",
+        "uploadDate": "2017-01-07T19:01:35Z",
+        "duration": "PT18M34S",
+        "contentUrl": "https://www.youtube.com/watch?v=JIytze37ZrI",
+        "embedUrl": "https://www.youtube.com/embed/JIytze37ZrI",
+        "description": "تواصل معي على الفايسبوك: http://bit.ly/TalkToNoorFacebook"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "VideoObject",
+        "name": "كيف أتعلم اللغة الإنجليزية الحقيقية بسهولة وبسرعة؟ 5 نصائح مهمة لتعلم الإنجليزية من الصفر",
+        "thumbnailUrl": "https://i.ytimg.com/vi/6x0rDVSt7S8/hqdefault.jpg",
+        "uploadDate": "2017-01-25T15:30:30Z",
+        "duration": "PT5M30S",
+        "contentUrl": "https://www.youtube.com/watch?v=6x0rDVSt7S8",
+        "embedUrl": "https://www.youtube.com/embed/6x0rDVSt7S8",
+        "description": "كيف أتعلم اللغة الإنجليزية الحقيقية بسهولة وبسرعة؟ 5 نصائح مهمة لتعلم الإنجليزية من الصفر"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية",
+        "thumbnailUrl": "https://i.ytimg.com/vi/GE5QAbfsR3c/hqdefault.jpg",
+        "uploadDate": "2022-11-29T15:04:28Z",
+        "duration": "PT14M3S",
+        "contentUrl": "https://www.youtube.com/watch?v=GE5QAbfsR3c",
+        "embedUrl": "https://www.youtube.com/embed/GE5QAbfsR3c",
+        "description": "أفضل شرح للأسماء المعدودة وغير المعدودة بالإنجليزية مع ال Quantifiers "
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم المحادثة الإنجليزية بطريقة تدريبية - تحدي 20 يوم لإتقان المحادثة 💪🔥 #17",
+        "thumbnailUrl": "https://i.ytimg.com/vi/RWNmcTnZjP4/hqdefault.jpg",
+        "uploadDate": "2023-10-19T15:43:37Z",
+        "duration": "PT11M5S",
+        "contentUrl": "https://www.youtube.com/watch?v=RWNmcTnZjP4",
+        "embedUrl": "https://www.youtube.com/embed/RWNmcTnZjP4",
+        "description": "في هذا الدرس وبطريقة تدريبية سنتمرن على التحدث وتكوين المحادثات بالإنجليزية لنقول كل ما نريده بسلاسة ودون انقطاع. هذا التحدي سيساعدك على ترجمة كلامك ومحادثاتك للإنجليزية خلال 20 يوم فقط   والهدف هو ال"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #9",
+        "thumbnailUrl": "https://i.ytimg.com/vi/Yq7Ux68rGjM/hqdefault.jpg",
+        "uploadDate": "2023-11-28T14:50:25Z",
+        "duration": "PT17M57S",
+        "contentUrl": "https://www.youtube.com/watch?v=Yq7Ux68rGjM",
+        "embedUrl": "https://www.youtube.com/embed/Yq7Ux68rGjM",
+        "description": "الدرس الأول تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة https://youtu.be/u4SU5-_wW7U"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "VideoObject",
+        "name": "49 تعبير في اللغة الإنجليزية يستخدم كل يوم: درس مهم جدااااا وسهل",
+        "thumbnailUrl": "https://i.ytimg.com/vi/9riPhS5ZLhY/hqdefault.jpg",
+        "uploadDate": "2016-10-26T15:00:01Z",
+        "duration": "PT7M12S",
+        "contentUrl": "https://www.youtube.com/watch?v=9riPhS5ZLhY",
+        "embedUrl": "https://www.youtube.com/embed/9riPhS5ZLhY",
+        "description": "في هذا الفيديو سوف ندرس 49 تعبيرا من التعابير التي تستخدم كثيرا في اللغة الإنجليزية في ستة دقائق فقط! درس مهم للمبتدئين وللمرحلة المتوسطة في الإنجليزية."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم الإنجليزية: 4 طرق المقاطعة ستعود بالنفع عليك شخصيا وعلى بلدك",
+        "thumbnailUrl": "https://i.ytimg.com/vi/G06cLSkJ7Ao/hqdefault.jpg",
+        "uploadDate": "2023-11-04T15:25:20Z",
+        "duration": "PT11M50S",
+        "contentUrl": "https://www.youtube.com/watch?v=G06cLSkJ7Ao",
+        "embedUrl": "https://www.youtube.com/embed/G06cLSkJ7Ao",
+        "description": "اشترك في القناة وفعّل زر الجرس 🔔 حتى تواظب معي على هذا التمرين وتشعر بالفرق بمستواك الإنجليزي إن شاء الله"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #7",
+        "thumbnailUrl": "https://i.ytimg.com/vi/klllvdJfay4/hqdefault.jpg",
+        "uploadDate": "2023-10-16T13:58:42Z",
+        "duration": "PT19M20S",
+        "contentUrl": "https://www.youtube.com/watch?v=klllvdJfay4",
+        "embedUrl": "https://www.youtube.com/embed/klllvdJfay4",
+        "description": "الدرس الأول تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة https://youtu.be/u4SU5-_wW7U"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "VideoObject",
+        "name": "(15) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: May I Borrow That؟",
+        "thumbnailUrl": "https://i.ytimg.com/vi/ixV2hSW4m-U/hqdefault.jpg",
+        "uploadDate": "2017-04-09T15:00:03Z",
+        "duration": "PT16M40S",
+        "contentUrl": "https://www.youtube.com/watch?v=ixV2hSW4m-U",
+        "embedUrl": "https://www.youtube.com/embed/ixV2hSW4m-U",
+        "description": "تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: May I Borrow That?"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "VideoObject",
+        "name": "(1) تعلم اللغة الإنجليزية بطريقة مسلية وسهلة من خلال قصة قصيرة ومضحكة: الجزء الأول",
+        "thumbnailUrl": "https://i.ytimg.com/vi/C8tmg5GPJgU/hqdefault.jpg",
+        "uploadDate": "2016-11-17T16:00:00Z",
+        "duration": "PT8M31S",
+        "contentUrl": "https://www.youtube.com/watch?v=C8tmg5GPJgU",
+        "embedUrl": "https://www.youtube.com/embed/C8tmg5GPJgU",
+        "description": "تواصل معي على الفايسبوك: http://bit.ly/TalkToNoorFacebook"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "VideoObject",
+        "name": "تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #6",
+        "thumbnailUrl": "https://i.ytimg.com/vi/CFpW4FM9hgE/hqdefault.jpg",
+        "uploadDate": "2023-10-03T16:41:35Z",
+        "duration": "PT18M31S",
+        "contentUrl": "https://www.youtube.com/watch?v=CFpW4FM9hgE",
+        "embedUrl": "https://www.youtube.com/embed/CFpW4FM9hgE",
+        "description": "الدرس الأول تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة https://youtu.be/u4SU5-_wW7U"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "VideoObject",
+        "name": "المفردات المهمة في المستشفى وعند عيادة الطبيب: تعلم الإنجليزية بالصوت والصورة عبر محادثات يومية",
+        "thumbnailUrl": "https://i.ytimg.com/vi/kP3ohDBu-Hs/hqdefault.jpg",
+        "uploadDate": "2017-02-07T16:00:05Z",
+        "duration": "PT8M59S",
+        "contentUrl": "https://www.youtube.com/watch?v=kP3ohDBu-Hs",
+        "embedUrl": "https://www.youtube.com/embed/kP3ohDBu-Hs",
+        "description": "المفردات المهمة في المستشفى وعند عيادة الطبيب: تعلم الإنجليزية من الصفر بالصوت والصورة عبر محادثات يومية "
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "item": {
+        "@type": "VideoObject",
+        "name": "الجزء 2: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الثاني",
+        "thumbnailUrl": "https://i.ytimg.com/vi/hWBYhoT6FLQ/hqdefault.jpg",
+        "uploadDate": "2016-12-13T16:00:02Z",
+        "duration": "PT11M57S",
+        "contentUrl": "https://www.youtube.com/watch?v=hWBYhoT6FLQ",
+        "embedUrl": "https://www.youtube.com/embed/hWBYhoT6FLQ",
+        "description": "كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الثاني 1000"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "item": {
+        "@type": "VideoObject",
+        "name": "بكلمة واحدة فقط سأختصر لك 4 أشهر من تعلم اللغة الإنجليزية - تعلم الإنجليزية بذكاء 💪",
+        "thumbnailUrl": "https://i.ytimg.com/vi/_3v_tEHtxeA/hqdefault.jpg",
+        "uploadDate": "2021-10-16T17:58:38Z",
+        "duration": "PT17M23S",
+        "contentUrl": "https://www.youtube.com/watch?v=_3v_tEHtxeA",
+        "embedUrl": "https://www.youtube.com/embed/_3v_tEHtxeA",
+        "description": "اشترك في القناة وفعّل زر الجرس 🔔 حتى تواظب معي على هذا التمرين وتشعر بالفرق بمستواك الإنجليزي إن شاء الله"
+      }
+    }
   ]
 }
 </script>
@@ -51,11 +382,11 @@
     <nav class="main-nav" id="mainNav">
       <a href="courses.html">الكورسات</a>
       <a href="videos.html" aria-current="page">الفيديوهات</a>
+      <a href="paths/index.html">مسارات التعلم</a>
       <a href="articles/index.html">المقالات</a>
       <a href="testimonials.html">آراء الطلاب</a>
       <a href="search.html">بحث</a>
-      <a href="index.html#about">من أنا؟</a>
-      <a href="index.html#contact">تواصل معي</a>
+      <a href="about.html">من نحن</a>
     </nav>
     <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
@@ -67,102 +398,217 @@
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">✦ أكثر من ١٬٢٠٠ فيديو مجاني</span>
-      <h1>فيديوهات تعليمية مجانية</h1>
-      <p class="hero-sub">مختارات من أفضل الفيديوهات على قناة أتقن الإنجليزية: نطق، محادثة، مفردات، وطلاقة. كل هذا مجاناً، وأكثر من ١٬٢٠٠ فيديو آخر بانتظارك على القناة.</p>
-      <a href="https://www.youtube.com/@MasterEnglish" target="_blank" rel="noopener" class="btn btn-outline">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
-        زيارة القناة كاملة
-      </a>
+      <span class="eyebrow">✦ مكتبة مجانية بالكامل</span>
+      <h1>مكتبة دروس أتقن الإنجليزية: ١٬١٤٨ درساً مجانياً</h1>
+      <p class="hero-sub">كل دروس قناة نور على يوتيوب في مكان واحد، مرتبة حسب الموضوع والمستوى: النطق الأمريكي، المحادثة، المفردات، القواعد، إنجليزية العمل، والاستماع. ابحث عن أي موضوع وابدأ فوراً.</p>
+      <p class="en-note" lang="en">In English: the complete, searchable library of free Master English video lessons for Arabic speakers, sorted by topic and level.</p>
+      <div class="lib-hero-stats">
+        <span><strong>١٬١٤٨</strong> درساً</span>
+        <span><strong>٩٨٫٨ مليون</strong> مشاهدة</span>
+        <span><strong>١٫٨٦ مليون</strong> مشترك</span>
+        <span>منذ <strong>٢٠١٦</strong></span>
+      </div>
+      <div class="lib-cta">
+        <a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في القناة لتصلك الدروس الجديدة</a>
+        <a class="btn btn-ghost" href="placement-test.html">لا تعرف مستواك؟ اختبر نفسك</a>
+        <div class="g-ytsubscribe" data-channelid="UCLLwHs7jXwx34n-UYvDVERg" data-layout="default" data-count="default"></div>
+      </div>
     </div>
   </section>
 
-  <section class="video-grid-section">
+  <section style="padding-top:10px;">
     <div class="wrap">
-      <div class="video-grid">
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/CnMoRQJR9ic" title="4 Rules to Help You Understand Fast-Spoken American English" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>4 Rules to Help You Understand Fast-Spoken American English</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/Su3-sZv6iXU" title="100 English Questions and Answers - Conversation Basics" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>100 English Questions and Answers - Conversation Basics</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/4oDspnkXhNc" title="كلمتان فقط تغنيك عن حفظ 50 كلمة بالإنجليزية" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>كلمتان فقط تغنيك عن حفظ ٥٠ كلمة بالإنجليزية! (السر المخفي)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/Q_cqsM3YjEE" title="توقف عن إجابات الكلمة الواحدة بالإنجليزية" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>توقف عن إجابات الكلمة الواحدة بالإنجليزية! (دمرت محادثتك)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/GOezDtkHQA4" title="كلمة واحدة تسحق 50 كلمة إنجليزية معقدة" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>كلمة واحدة "تسحق" ٥٠ كلمة إنجليزية معقدة (وداعاً للنسيان)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/DzkHoqpJ-aU" title="كيف تفرض شخصيتك في العمل؟" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>كيف تفرض شخصيتك في العمل؟ (٥ مفاتيح للغة القادة)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/IlTZBmoUqRE" title="كيف تفكر بالإنجليزية بدون توقف؟" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>كيف تفكر بالإنجليزية بدون توقف؟ (تمرين الـ ٥ دقائق)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/t0NNhn3MJh4" title="لماذا لا تفهم الإنجليزية في الأفلام؟" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>لماذا لا تفهم الإنجليزية في الأفلام؟ (السر ليس في السرعة)</h3>
-        </article>
-
-        <article class="video-card reveal">
-          <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/eIkHI4WQbww" title="لماذا تفهم الإنجليزية ولكن ينعقد لسانك؟" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <h3>لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟ (السبب الحقيقي)</h3>
-        </article>
-
-      </div>
-
-      <div class="video-more reveal">
-        <p>هذه مجرد نقطة انطلاق. أكثر من ١٬٢٠٠ فيديو آخر بانتظارك على القناة، تغطي النطق، القواعد، المحادثة، والمزيد.</p>
-        <a href="https://www.youtube.com/@MasterEnglish/videos" target="_blank" rel="noopener" class="btn btn-primary btn-lg">تصفح كل الفيديوهات على يوتيوب</a>
+      <h2 class="lib-section-title">🆕 أحدث الدروس على القناة</h2>
+      <div class="lib-grid" id="libLatest">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=58S9G1sdF3M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/58S9G1sdF3M/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">9:24</span><strong>تحدّي الـ 20 يوم للطلاقة الكاملة 🔥 تكلّم الإنجليزية بثقة كأنها لغتك الأم (اليوم 6)</strong><small>٧ ألف مشاهدة · ١٤ سبتمبر ٢٠٢٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=mdpqAPK9YI8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mdpqAPK9YI8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">36:12</span><strong>ماذا تفعل عندما &quot;تطير&quot; الكلمة من رأسك؟ أسرار الالتفاف اللغوي (تحدي مباشر Live)</strong><small>٦ ألف مشاهدة · ٥ سبتمبر ٢٠٢٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=CnMoRQJR9ic" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CnMoRQJR9ic/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">9:14</span><strong>4 قوانين تخليك تفهم الانجليزية الامريكية لما يحكوا بسرعة American English</strong><small>١٠ ألف مشاهدة · ٢٥ أغسطس ٢٠٢٦</small></a>
       </div>
     </div>
   </section>
 
-  <section class="courses-teaser alt-bg">
+  <section id="library" data-rules="assets/data/video-topics.json" style="padding-top:50px;">
     <div class="wrap">
-      <span class="eyebrow center">هل أعجبك المحتوى المجاني؟</span>
-      <h2 class="center">انتقل لمسار تعلم أعمق ومنظم</h2>
-      <p class="section-sub center">الفيديوهات المجانية نقطة انطلاق رائعة، لكن كورساتي المدفوعة مصممة كمسار متكامل خطوة بخطوة</p>
-      <div class="center">
-        <a href="courses.html" class="btn btn-primary btn-lg">تصفح الكورسات ←</a>
+      <h2>ابحث في كل الدروس</h2>
+      <div class="lib-tools">
+        <input type="search" id="libSearch" placeholder="ابحث: النطق، الأزمنة، مقابلة عمل، قصة..." aria-label="ابحث في الدروس">
+        <select id="libLevel" aria-label="المستوى">
+          <option value="">كل المستويات</option>
+          <option value="beginner">مبتدئ</option>
+          <option value="intermediate">متوسط</option>
+          <option value="advanced">متقدم</option>
+        </select>
+        <select id="libSort" aria-label="الترتيب">
+          <option value="new">الأحدث أولاً</option>
+          <option value="views">الأكثر مشاهدة</option>
+          <option value="short">الأقصر أولاً</option>
+        </select>
       </div>
+      <div class="lib-chips" id="libTopics"></div>
+      <p id="libCount" role="status">جارِ تحميل المكتبة...</p>
+      <div class="lib-grid" id="libGrid"></div>
+      <button type="button" class="btn btn-outline" id="libMore" hidden>عرض المزيد من الدروس</button>
     </div>
   </section>
+
+  <section style="padding:30px 0 80px;">
+    <div class="wrap">
+      <h2>الأكثر مشاهدة في كل موضوع</h2>
+      <p>إذا لم تعرف من أين تبدأ، هذه الدروس هي التي ساعدت أكبر عدد من المتعلمين العرب في كل موضوع. ولبرنامج مرتّب خطوة بخطوة، اختر <a href="paths/index.html">مسار تعلم</a> يناسب مستواك وهدفك.</p>
+    <div class="lib-topic" id="best-pronunciation">
+      <h3>🗣️ الأكثر مشاهدة: النطق واللكنة</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=qOlTicOMK3I" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qOlTicOMK3I/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:43</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 1</strong><small>١٫٨ مليون مشاهدة · ٢٥ أغسطس ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=PeqRiX9-Zk8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PeqRiX9-Zk8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">15:15</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 2</strong><small>٦٥٦ ألف مشاهدة · ٣٠ أغسطس ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=C7JjsCJlsVA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/C7JjsCJlsVA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:13</span><strong>الأشخاص الذين يتقنون اللفظ الإنجليزي يستعملون هذه الأسرار الذكية في محادثاتهم😎✅ كورس اللفظ الأمريكي</strong><small>٤٤٣ ألف مشاهدة · ١٠ ديسمبر ٢٠٢٠</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Gcto52cnPa0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Gcto52cnPa0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:44</span><strong>محادثات عند الطبيب مع تمارين لتقوية النطق: تعلم اللغة الإنجليزية من خلال المحادثات اليومية من الصفر</strong><small>٤٣٥ ألف مشاهدة · ١٤ فبراير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=r6DyBh06JLk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/r6DyBh06JLk/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:21</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 3 🔥</strong><small>٤١٨ ألف مشاهدة · ٦ سبتمبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=IheOm_Jc28M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/IheOm_Jc28M/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:26</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 4 🔥</strong><small>٣٥٥ ألف مشاهدة · ١٣ سبتمبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=ETBuPZ625Iw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ETBuPZ625Iw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">15:31</span><strong>كيف نلفظ حرف ال T باللهجة الإنجليزية الأمريكية: دروس النطق تعلم الإنجليزية</strong><small>٣٤١ ألف مشاهدة · ١١ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Tamu7_nJW-Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Tamu7_nJW-Y/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:18</span><strong>(27) تعلّم الإنجليزية: قصة بالصوت والصورة مع تقوية للنطق: I Can Fix This مجانا من Master English</strong><small>٣١٤ ألف مشاهدة · ٦ أغسطس ٢٠١٧</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/pronunciation.html">كل ما يخص النطق واللكنة ←</a>
+    </div>
+    <div class="lib-topic" id="best-conversation">
+      <h3>💬 الأكثر مشاهدة: المحادثة والطلاقة</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=JIytze37ZrI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JIytze37ZrI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:34</span><strong>تعلم اللغة الإنجليزية بالصوت والصورة: المفردات والمحادثات والعبارات الأكثر استخداماً في المطار</strong><small>١٫٧ مليون مشاهدة · ٧ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=GE5QAbfsR3c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GE5QAbfsR3c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:03</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية</strong><small>١٫٥ مليون مشاهدة · ٢٩ نوفمبر ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=RWNmcTnZjP4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/RWNmcTnZjP4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:05</span><strong>تعلم المحادثة الإنجليزية بطريقة تدريبية - تحدي 20 يوم لإتقان المحادثة 💪🔥 #17</strong><small>١٫٤ مليون مشاهدة · ١٩ أكتوبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Yq7Ux68rGjM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Yq7Ux68rGjM/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">17:57</span><strong>تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #9</strong><small>١٫٢ مليون مشاهدة · ٢٨ نوفمبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=klllvdJfay4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/klllvdJfay4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:20</span><strong>تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #7</strong><small>٩٢٣ ألف مشاهدة · ١٦ أكتوبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=CFpW4FM9hgE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CFpW4FM9hgE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:31</span><strong>تعلم الإنجليزية بهذه الطريقة وستبدأ بالتحدث بطلاقة 🚀 Speak English Fluently with me #6</strong><small>٨٦٧ ألف مشاهدة · ٣ أكتوبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=kP3ohDBu-Hs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kP3ohDBu-Hs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">8:59</span><strong>المفردات المهمة في المستشفى وعند عيادة الطبيب: تعلم الإنجليزية بالصوت والصورة عبر محادثات يومية</strong><small>٨٤٤ ألف مشاهدة · ٧ فبراير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=aga0-xRevE4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/aga0-xRevE4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">10:40</span><strong>كيف تعرّف عن نفسك وعن الآخرين بالإنجليزية مع تمارين ومحادثات - أفضل شرح بالصوت والصورة</strong><small>٧٢٤ ألف مشاهدة · ١٢ فبراير ٢٠١٨</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/conversation.html">كل ما يخص المحادثة والطلاقة ←</a>
+    </div>
+    <div class="lib-topic" id="best-vocabulary">
+      <h3>📚 الأكثر مشاهدة: المفردات والتعابير</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=4Qhuihinog4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4Qhuihinog4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:02</span><strong>الجزء 1: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الأول</strong><small>٢٫٥ مليون مشاهدة · ١١ ديسمبر ٢٠١٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=JIytze37ZrI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JIytze37ZrI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:34</span><strong>تعلم اللغة الإنجليزية بالصوت والصورة: المفردات والمحادثات والعبارات الأكثر استخداماً في المطار</strong><small>١٫٧ مليون مشاهدة · ٧ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=9riPhS5ZLhY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9riPhS5ZLhY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">7:12</span><strong>49 تعبير في اللغة الإنجليزية يستخدم كل يوم: درس مهم جدااااا وسهل</strong><small>١٫١ مليون مشاهدة · ٢٦ أكتوبر ٢٠١٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=kP3ohDBu-Hs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kP3ohDBu-Hs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">8:59</span><strong>المفردات المهمة في المستشفى وعند عيادة الطبيب: تعلم الإنجليزية بالصوت والصورة عبر محادثات يومية</strong><small>٨٤٤ ألف مشاهدة · ٧ فبراير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=hWBYhoT6FLQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hWBYhoT6FLQ/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:57</span><strong>الجزء 2: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الثاني</strong><small>٨٢٠ ألف مشاهدة · ١٣ ديسمبر ٢٠١٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=_3v_tEHtxeA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/_3v_tEHtxeA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">17:23</span><strong>بكلمة واحدة فقط سأختصر لك 4 أشهر من تعلم اللغة الإنجليزية - تعلم الإنجليزية بذكاء 💪</strong><small>٧٤٨ ألف مشاهدة · ١٦ أكتوبر ٢٠٢١</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=5yv2pCCDXaU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5yv2pCCDXaU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">9:27</span><strong>المفردات المهمة في الفنادق وللحجز في الفندق: تعلم الإنجليزية من الصفر Hotel Vocabulary</strong><small>٥٨٢ ألف مشاهدة · ٢٩ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=wLRM4ak_cUQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wLRM4ak_cUQ/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:13</span><strong>الجزء 3: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الثالث</strong><small>٥٦١ ألف مشاهدة · ١٨ ديسمبر ٢٠١٦</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/vocabulary.html">كل ما يخص المفردات والتعابير ←</a>
+    </div>
+    <div class="lib-topic" id="best-grammar">
+      <h3>🧩 الأكثر مشاهدة: القواعد والأزمنة</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=k4-Q3SYtOcc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k4-Q3SYtOcc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">22:37</span><strong>كل ما تريد معرفته عن زمن المضارع البسيط في فيديو واحد! تعلم اللغة الإنجليزية من الصفر</strong><small>٢٠٥ ألف مشاهدة · ١٧ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Fd85xp6Aahs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Fd85xp6Aahs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:45</span><strong>ما الفرق بين Will و Going to؟ أقوى شرح مع تمارين وملاحظات مهمة 🔥😎</strong><small>١٥٠ ألف مشاهدة · ١٦ أبريل ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=UyeX2ikquCM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UyeX2ikquCM/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:31</span><strong>تعلم اللغة الإنجليزية بسهولة: ما الفرق بين Can و Could مع تمارين⭐</strong><small>١٤٧ ألف مشاهدة · ٣٠ سبتمبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=D9pLqm1xk_c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/D9pLqm1xk_c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">10:35</span><strong>ما الفرق بين Do و Make؟ أقوى شرح مع تمارين مهمة 🔥😎</strong><small>١٠٤ ألف مشاهدة · ٢٠ أبريل ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=P8ulUBQujuE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/P8ulUBQujuE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:03</span><strong>ما الفرق بين Have to و Must في اللغة الإنجليزية مع تمارين ✅</strong><small>٩٨ ألف مشاهدة · ٢٠ أكتوبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=bMIguMwDWhc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bMIguMwDWhc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">6:52</span><strong>لن تربكك هذه الكلمات مجدداً: ما الفرق بين In, On and At أتقن الإنجليزية معنا</strong><small>٨٩ ألف مشاهدة · ٢٨ أكتوبر ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Cm9zQHLpRAg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Cm9zQHLpRAg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:24</span><strong>كن سيداً على الأزمنة الإنجليزية من جملة واحدة فقط 💪</strong><small>٨٨ ألف مشاهدة · ٤ نوفمبر ٢٠٢١</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=CP5AJDmfJZE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CP5AJDmfJZE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">10:08</span><strong>98% من الأشخاص يقعون في هذا الخطأ: اعرف الفرق بين infinitive و gerund باللغة الإنجليزية</strong><small>٨٢ ألف مشاهدة · ٩ أكتوبر ٢٠١٨</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/grammar.html">كل ما يخص القواعد والأزمنة ←</a>
+    </div>
+    <div class="lib-topic" id="best-work">
+      <h3>💼 الأكثر مشاهدة: إنجليزية العمل</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=zQ5SjOTVGjg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zQ5SjOTVGjg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:04</span><strong>أسئلة المقابلة الشخصية للعمل بالانجليزي</strong><small>٢٣٦ ألف مشاهدة · ١٥ يوليو ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=1wv8CdC8lMg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1wv8CdC8lMg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:09</span><strong>كيف بدرب تلاميذي تكتب ايميل محترف بالإنجليزي</strong><small>١١٧ ألف مشاهدة · ١٦ ديسمبر ٢٠٢١</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=V0o7I5IHnls" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/V0o7I5IHnls/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:01</span><strong>وعد إنك ستبهرهم - تواصل مع زملائك في العمل باللغة الإنجليزية من خلال هذه التعابير المهمة 🤩</strong><small>٤٨ ألف مشاهدة · ٢١ أكتوبر ٢٠٢٠</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=iFZD_9mtrgI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iFZD_9mtrgI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:57</span><strong>كتابة ايميل بشكل محترف بالإنجليزية: أساسيات كتابة الايميل وأهم التعابير والمفردات</strong><small>٤٥ ألف مشاهدة · ٢٧ نوفمبر ٢٠٢١</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=fm7nVoLeK40" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/fm7nVoLeK40/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:48</span><strong>كيف تتكلم إنجليزي في الاجتماعات؟ أهم 40 جملة للتحدث بثقة</strong><small>٢٣ ألف مشاهدة · ٢٢ مايو ٢٠٢٥</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=0tgmKFXs7ss" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0tgmKFXs7ss/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:43</span><strong>أسئلة المقابلة الشخصية للعمل بالانجليزي 2</strong><small>٢٠ ألف مشاهدة · ١٤ أغسطس ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=niQJZM-Ybj8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/niQJZM-Ybj8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:05</span><strong>كن أنت ملك المحادثات ومقابلات العمل بالإنجليزية من خلال تمرين واحد فقط 🔥 - أساسيات لا بد منها</strong><small>١٩ ألف مشاهدة · ٢٧ أبريل ٢٠٢١</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=SIlhzoDWd24" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SIlhzoDWd24/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">10:01</span><strong>إحصل على وظيفة أحلامك - أفضل 25 نصيحة لمقابلة العمل الجزء الأول</strong><small>١٨ ألف مشاهدة · ٢٣ يناير ٢٠١٨</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/work.html">كل ما يخص إنجليزية العمل ←</a>
+    </div>
+    <div class="lib-topic" id="best-listening">
+      <h3>🎧 الأكثر مشاهدة: الاستماع والأفلام</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=VYRp9S9eEik" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VYRp9S9eEik/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:30</span><strong>تعلّم الإنجليزية مع خطاب مارتن لوثر كينغ جونيور الشهير الذي غيّر تاريخ أمريكا: لديّ حلم</strong><small>٢٫٢ مليون مشاهدة · ١٧ ديسمبر ٢٠١٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=6x0rDVSt7S8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6x0rDVSt7S8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">5:30</span><strong>كيف أتعلم اللغة الإنجليزية الحقيقية بسهولة وبسرعة؟ 5 نصائح مهمة لتعلم الإنجليزية من الصفر</strong><small>١٫٦ مليون مشاهدة · ٢٥ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=t0NNhn3MJh4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/t0NNhn3MJh4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:26</span><strong>لماذا لا تفهم الإنجليزية في الأفلام؟ (السر ليس في السرعة)</strong><small>٤٧٨ ألف مشاهدة · ٢٧ ديسمبر ٢٠٢٥</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=8124uj0_8fg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8124uj0_8fg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:51</span><strong>السر للتحدث بالإنجليزية بسرعة مثل الأجانب - I&#x27;m in/I&#x27;m on/I&#x27;m at ✅</strong><small>٣٢٩ ألف مشاهدة · ١٣ يوليو ٢٠١٩</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=6HMEbaNLPVs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6HMEbaNLPVs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:02</span><strong>درس سيعلمك الإنجليزية وسيعطيك هدفاً يجعلك تريد إتقانها بسرعة</strong><small>٢٩٣ ألف مشاهدة · ٢٤ أكتوبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=hQqklVDsjno" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hQqklVDsjno/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:58</span><strong>تعلم اللغة الإنجليزية بسهولة وبسرعة: Phrasal verbs مع فعل look تعلم الإنجليزية من الصفر</strong><small>٢٧٢ ألف مشاهدة · ١ مارس ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=ODIHtIjUeAk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ODIHtIjUeAk/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">9:00</span><strong>تعلم  اللغة الإنجليزية مع خطاب نيلسون مانديلا الشهير الذي كافح العنصرية: أنا مستعد للموت ✅</strong><small>١٥٧ ألف مشاهدة · ١٧ ديسمبر ٢٠٢٠</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=skwAsRdRbXM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/skwAsRdRbXM/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">17:21</span><strong>تقدم مستويات عديدة بسرعة صاروخية باللغة الإنجليزية من خلال هذا التمرين الذكي 🚀</strong><small>١٤٦ ألف مشاهدة · ٣ أبريل ٢٠٢١</small></a>
+      </div>
+      <a class="btn btn-outline" href="topics/listening.html">كل ما يخص الاستماع والأفلام ←</a>
+    </div>
+    <div class="lib-topic" id="best-stories">
+      <h3>📖 الأكثر مشاهدة: القصص</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=I46cCtKzWps" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/I46cCtKzWps/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:27</span><strong>(5) تعلم اللغة الإنجليزية بالصوت والصورة:  تعليم الإنجليزية من خلال قصة مسلية وجديدة</strong><small>٤٫٤ مليون مشاهدة · ٢ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=ixV2hSW4m-U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ixV2hSW4m-U/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:40</span><strong>(15) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: May I Borrow That؟</strong><small>٩٢٠ ألف مشاهدة · ٩ أبريل ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=C8tmg5GPJgU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/C8tmg5GPJgU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">8:31</span><strong>(1) تعلم اللغة الإنجليزية بطريقة مسلية وسهلة من خلال قصة قصيرة ومضحكة: الجزء الأول</strong><small>٩١٠ ألف مشاهدة · ١٧ نوفمبر ٢٠١٦</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=-Hwn_27zwjI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-Hwn_27zwjI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">15:58</span><strong>(25) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: Are you busy؟</strong><small>٦٣٧ ألف مشاهدة · ٢٦ يوليو ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=iGXNybzelQA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iGXNybzelQA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:26</span><strong>(31) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة مع ماستر إنجلش: What Can You Do?</strong><small>٦٢٤ ألف مشاهدة · ٩ أكتوبر ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=u6-I_8aWvb8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/u6-I_8aWvb8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:12</span><strong>(6) تعلم اللغة الإنجليزية بالصوت والصورة مجاناً: قصة جديدة ومسلية ومضحكة</strong><small>٦٠٠ ألف مشاهدة · ١٥ يناير ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=un-cPfSBApI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/un-cPfSBApI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:01</span><strong>(24) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: I am Here! أنا هنا!</strong><small>٤٩٤ ألف مشاهدة · ٢٣ يوليو ٢٠١٧</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=krfSlQjQJn8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/krfSlQjQJn8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">22:40</span><strong>(14) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: Can You Come to the Party?</strong><small>٤٣١ ألف مشاهدة · ٢٢ مارس ٢٠١٧</small></a>
+      </div>
+      
+    </div>
+    <div class="lib-topic" id="best-tests">
+      <h3>🎯 الأكثر مشاهدة: المستويات والاختبارات</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=NRrXWCo3JMo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NRrXWCo3JMo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:29</span><strong>إذا أجبت على جميع هذه الأسئلة فأنت تتقن اللغة الانجليزية (إختبار تحديد مستوى) ✅😎</strong><small>٣٫٧ مليون مشاهدة · ٢ أكتوبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=uOVGm2S4R7o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uOVGm2S4R7o/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:00</span><strong>شرح أجوبة اختبار تحديد المستوى في اللغة الإنجليزية ✅😎</strong><small>٣٧٨ ألف مشاهدة · ١٦ أكتوبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=4Uqp3OwEfDk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4Uqp3OwEfDk/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:04</span><strong>6 معاني مختلفة لفعل GET - حسّن مستواك في الإنجليزية بشكل خارق مع ال Collocations 🔥💪</strong><small>١٧٦ ألف مشاهدة · ٧ مارس ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=1ncGXzr2LUs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1ncGXzr2LUs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:12</span><strong>200 سؤال وجواب باللغة الإنجليزية - أساسيات المحادثة (المستوى الأول، الدرس 1)</strong><small>١٥٩ ألف مشاهدة · ١٥ يوليو ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=y0japNCrfG0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/y0japNCrfG0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">3:25</span><strong>أول خطوة: خطة دراسية تعلم الإنجليزية من الصفر  المستوى الأول</strong><small>١٤٨ ألف مشاهدة · ١٧ أغسطس ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=Ye5EpIsMO5g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Ye5EpIsMO5g/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">5:37</span><strong>قوالب استعملها في محادثاتك الإنجليزية لتدهشهم بمستواك 😎 لا تقول Yes ⛔</strong><small>١٠١ ألف مشاهدة · ٥ مايو ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=XwFfS1dN8IE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/XwFfS1dN8IE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:38</span><strong>تعلم الإنجليزية من الصفر حتى الإتقان المستوى الثاني: كورس كامل في القراءة والنطق الجزء 1✅ A2</strong><small>٩٩ ألف مشاهدة · ٧ فبراير ٢٠١٩</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=O1YqDK-YFdY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/O1YqDK-YFdY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:41</span><strong>تعلم الإنجليزية من الصفر حتى الإتقان المستوى الثاني: كورس كامل في القراءة والنطق الجزء 2✅</strong><small>٧٦ ألف مشاهدة · ١٤ فبراير ٢٠١٩</small></a>
+      </div>
+      <a class="btn btn-outline" href="paths/index.html">كل ما يخص المستويات والاختبارات ←</a>
+    </div>
+    <div class="lib-topic" id="best-challenges">
+      <h3>🔥 الأكثر مشاهدة: التحديات اليومية</h3>
+      <div class="lib-grid">
+        <a class="lib-card" href="https://www.youtube.com/watch?v=NRrXWCo3JMo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NRrXWCo3JMo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:29</span><strong>إذا أجبت على جميع هذه الأسئلة فأنت تتقن اللغة الانجليزية (إختبار تحديد مستوى) ✅😎</strong><small>٣٫٧ مليون مشاهدة · ٢ أكتوبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=GE5QAbfsR3c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GE5QAbfsR3c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:03</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية</strong><small>١٫٥ مليون مشاهدة · ٢٩ نوفمبر ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=RWNmcTnZjP4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/RWNmcTnZjP4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:05</span><strong>تعلم المحادثة الإنجليزية بطريقة تدريبية - تحدي 20 يوم لإتقان المحادثة 💪🔥 #17</strong><small>١٫٤ مليون مشاهدة · ١٩ أكتوبر ٢٠٢٣</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=uOVGm2S4R7o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uOVGm2S4R7o/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:00</span><strong>شرح أجوبة اختبار تحديد المستوى في اللغة الإنجليزية ✅😎</strong><small>٣٧٨ ألف مشاهدة · ١٦ أكتوبر ٢٠١٨</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=JcJXNMQyqKw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JcJXNMQyqKw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:38</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية 2</strong><small>٢٤٩ ألف مشاهدة · ٤ ديسمبر ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=ayzSGqSyeEU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ayzSGqSyeEU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">15:35</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية 3</strong><small>١٤١ ألف مشاهدة · ١٢ ديسمبر ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=c2jl4G2lNZc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/c2jl4G2lNZc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:47</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية 5</strong><small>٨٩ ألف مشاهدة · ٢٤ ديسمبر ٢٠٢٢</small></a>
+        <a class="lib-card" href="https://www.youtube.com/watch?v=LFYO66jpO0U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LFYO66jpO0U/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">11:21</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية 4</strong><small>٨٨ ألف مشاهدة · ٢٠ ديسمبر ٢٠٢٢</small></a>
+      </div>
+      
+    </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>تريد نظاماً مرتّباً بدل دروس متفرقة؟</h2>
+      <p>الكورسات المتخصصة تأخذك خطوة بخطوة، مع تمارين واختبارات ومتابعة.</p>
+      <a href="courses.html" class="btn btn-primary btn-lg">تصفح الكورسات</a>
+    </div>
+  </section>
+
+<script src="https://apis.google.com/js/platform.js" async></script>
+<script>
+  fetch("https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev/videos/latest?limit=3")
+    .then((r) => r.json()).then((d) => {
+      const box = document.getElementById("libLatest");
+      if (!d.videos || !d.videos.length || d.videos[0].id === (box.querySelector("a") || {}).href?.split("v=")[1]) return;
+      box.innerHTML = "";
+      d.videos.forEach((v) => {
+        const a = document.createElement("a");
+        a.className = "lib-card"; a.href = v.url; a.target = "_blank"; a.rel = "noopener";
+        a.innerHTML = '<img alt="" loading="lazy" width="320" height="180"><strong></strong>';
+        a.querySelector("img").src = "https://i.ytimg.com/vi/" + v.id + "/mqdefault.jpg";
+        a.querySelector("strong").textContent = v.title;
+        box.appendChild(a);
+      });
+    }).catch(() => {});
+</script>
 </main>
 
 <footer class="site-footer">
@@ -173,7 +619,11 @@
         <a href="index.html">الرئيسية</a>
         <a href="courses.html">الكورسات</a>
         <a href="videos.html">الفيديوهات</a>
-        <a href="index.html#about">من أنا؟</a>
+        <a href="paths/index.html">مسارات التعلم</a>
+        <a href="placement-test.html">اختبار تحديد المستوى</a>
+        <a href="articles/index.html">المقالات</a>
+        <a href="about.html">من نحن</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
         <a href="become-affiliate.html">كن شريكاً معنا</a>
       </div>
       <div class="footer-col">
@@ -199,18 +649,18 @@
     <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
-      <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a> ·
-      <a href="https://twitter.com/MasterEnglishYT" target="_blank" rel="noopener">Twitter</a> ·
-      <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
+      <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
     </p>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/track.js"></script>
+<script src="assets/js/learner.js"></script>
 <script src="assets/js/auth.js"></script>
 <script src="assets/js/contact-widget.js"></script>
 <script src="assets/js/help-bot.js"></script>
 <script src="assets/js/whatsapp-widget.js"></script>
+<script src="assets/js/library.js"></script>
 </body>
 </html>

@@ -248,6 +248,7 @@
       <button type="button" class="an-tab-btn" data-tab="heatmap">🗓️ خريطة الأوقات</button>
       <button type="button" class="an-tab-btn" data-tab="trend">📉 الاتجاه الزمني</button>
       <button type="button" class="an-tab-btn" data-tab="sources">🔗 مصادر الزيارات</button>
+      <button type="button" class="an-tab-btn" data-tab="youtube">▶ يوتيوب والتعلم</button>
     </div>
 
     <div class="an-panel active" id="anPanelPages">
@@ -296,6 +297,24 @@
       <p class="an-summary-line">من أين يأتي الزوار (بحسب الموقع المُحيل)، للمدة المحددة أعلاه.</p>
       <table id="anSourcesTable">
         <thead><tr><th>المصدر</th><th>عدد الجلسات</th><th>عدد الزيارات</th><th>متوسط التفاعل</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="an-panel" id="anPanelYoutube">
+      <p class="an-summary-line">ماذا يفعل الزوار على الموقع: النقرات إلى يوتيوب، الاشتراك، الاختبارات، التحميلات، والاستماع للعبارات، للمدة المحددة أعلاه.</p>
+      <table id="anEventsTable">
+        <thead><tr><th>الحدث</th><th>العدد</th><th>زوار مختلفون</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <h3 style="margin:22px 0 8px;">الصفحات التي ترسل الزوار إلى يوتيوب</h3>
+      <table id="anYtPagesTable">
+        <thead><tr><th>الصفحة</th><th>نقرات على فيديو</th><th>نقرات اشتراك</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <h3 style="margin:22px 0 8px;">أكثر الفيديوهات نقراً من الموقع</h3>
+      <table id="anYtVideosTable">
+        <thead><tr><th>الفيديو</th><th>النقرات</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -789,6 +808,20 @@
     });
   }
 
+  const EVENT_LABELS = { yt_click: "▶ نقرة على فيديو يوتيوب", yt_subscribe: "🔔 نقرة اشتراك في القناة", video_play: "🎬 تشغيل فيديو داخل الموقع", pdf_download: "📄 تحميل ملف", quiz_done: "🎯 اختبار مكتمل", tts_play: "🔊 استماع لعبارة", placement_done: "🧭 اختبار تحديد مستوى", library_search: "🔎 بحث في مكتبة الدروس" };
+  async function loadYoutubeEvents() {
+    const data = await api("/admin/api/analytics/events?" + anRangeQuery().toString());
+    const fill = (sel, rows, cells) => {
+      const tbody = document.querySelector(sel + " tbody");
+      tbody.innerHTML = "";
+      rows.forEach((r) => { const tr = document.createElement("tr"); tr.innerHTML = cells(r); tbody.appendChild(tr); });
+      if (!rows.length) tbody.innerHTML = '<tr><td colspan="3">لا توجد بيانات بعد لهذه المدة.</td></tr>';
+    };
+    fill("#anEventsTable", data.types || [], (r) => `<td>${EVENT_LABELS[r.event_type] || r.event_type}</td><td>${r.n}</td><td>${r.visitors}</td>`);
+    fill("#anYtPagesTable", data.youtube_pages || [], (r) => `<td>${r.path}</td><td>${r.video_clicks}</td><td>${r.subscribe_clicks}</td>`);
+    fill("#anYtVideosTable", data.youtube_videos || [], (r) => `<td><a href="https://www.youtube.com/watch?v=${encodeURIComponent(r.target)}" target="_blank" rel="noopener">${r.target}</a></td><td>${r.n}</td>`);
+  }
+
   function anSwitchTab(tab) {
     document.querySelectorAll(".an-tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
     document.querySelectorAll(".an-panel").forEach((p) => p.classList.remove("active"));
@@ -797,6 +830,7 @@
     if (tab === "heatmap") loadHeatmap();
     if (tab === "trend") { populateTrendPathFilter(); loadTrend(); }
     if (tab === "sources") loadSources();
+    if (tab === "youtube") loadYoutubeEvents();
   }
 
   document.querySelectorAll(".an-tab-btn").forEach((btn) => {
@@ -815,6 +849,7 @@
     if (tab === "heatmap") loadHeatmap();
     if (tab === "trend") loadTrend();
     if (tab === "sources") loadSources();
+    if (tab === "youtube") loadYoutubeEvents();
   }
 
   document.getElementById("anApplyBtn").addEventListener("click", anRefreshActiveTab);

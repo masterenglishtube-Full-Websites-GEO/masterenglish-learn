@@ -34,7 +34,7 @@
         <p class="me-gate-text">بضغطة واحدة يصلك الملف فوراً. بتسجيل الدخول تنضم أيضاً إلى نشرة أتقن الإنجليزية (دروس ونصائح أسبوعية)، ويمكنك إلغاء الاشتراك في أي وقت من أسفل أي رسالة.</p>
         <div class="me-gate-google" id="meGateGoogle"></div>
         <p class="me-gate-status" role="status"></p>
-        <p class="me-gate-legal">نحترم خصوصيتك: <a href="${location.pathname.includes("/articles/") ? "../" : ""}privacy.html">سياسة الخصوصية</a></p>
+        <p class="me-gate-legal">نحترم خصوصيتك: <a href="${"../".repeat(Math.max(0, location.pathname.split("/").length - 2))}privacy.html">سياسة الخصوصية</a></p>
       </div>`;
     document.body.appendChild(dialog);
     statusEl = dialog.querySelector(".me-gate-status");
@@ -119,6 +119,7 @@
       a.remove();
       setTimeout(() => URL.revokeObjectURL(href), 30000);
       button.textContent = "تم التحميل ✓ حمّله مرة أخرى";
+      if (window.MELearner) window.MELearner.track("pdf_download", id);
       if (fromDialog && dialog) {
         setStatus("تم! بدأ تحميل الملف.", "ok");
         setTimeout(close, 1400);

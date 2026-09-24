@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقدّمي في التعلم | Master English أتقن الإنجليزية</title>
+<meta name="description" content="صفحتك الخاصة على أتقن الإنجليزية: مستواك، الدروس التي أنهيتها، نتائج اختباراتك، والعبارات التي حفظتها.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://learn.masterenglish.me/my-learning.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn.masterenglish.me/my-learning.html">
+<meta property="og:title" content="تقدّمي في التعلم">
+<meta property="og:description" content="صفحتك الخاصة على أتقن الإنجليزية: مستواك، الدروس التي أنهيتها، نتائج اختباراتك، والعبارات التي حفظتها.">
+<meta property="og:image" content="https://learn.masterenglish.me/assets/images/og/my-learning.jpg">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://learn.masterenglish.me/assets/images/og/my-learning.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.ml-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 20px 0 10px; }
+.ml-stat { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px; text-align: center; }
+.ml-stat strong { display: block; font-family: var(--font-head); font-size: 26px; color: var(--accent-dark); }
+.ml-stat span { font-size: 14px; color: var(--ink-soft); }
+.ml-card { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin: 18px 0; }
+.ml-card h2 { margin-top: 0; font-size: 20px; }
+.ml-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ml-list li { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.ml-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.ml-phrase { font-weight: 700; direction: ltr; unicode-bidi: isolate; }
+.ml-actions { display: flex; gap: 8px; }
+.ml-actions button { border: 1px solid var(--border); background: var(--paper-soft); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-family: var(--font-body); }
+.ml-empty { color: var(--ink-soft); margin: 0; }
+.ml-signin { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: var(--accent-light); }
+.ml-signin p { margin: 0; flex: 1 1 260px; }
+.ml-level { font-family: var(--font-head); font-size: 28px; color: var(--accent-dark); margin: 0 0 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/avatar-96.jpg" alt="Master English أتقن الإنجليزية" class="brand-avatar" width="38" height="38">
+      <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="courses.html">الكورسات</a>
+      <a href="videos.html">الفيديوهات</a>
+      <a href="paths/index.html">مسارات التعلم</a>
+      <a href="articles/index.html">المقالات</a>
+      <a href="testimonials.html">آراء الطلاب</a>
+      <a href="search.html">بحث</a>
+      <a href="about.html">من نحن</a>
+    </nav>
+    <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <button class="nav-toggle" id="navToggle" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:10px;">
+    <div class="wrap">
+      <span class="eyebrow">✦ مساحتك الخاصة</span>
+      <h1>تقدّمي في تعلم الإنجليزية</h1>
+      <p class="hero-sub">كل ما أنهيته على الموقع في مكان واحد: مستواك، الدروس التي شاهدتها، نتائج اختباراتك، والعبارات التي حفظتها لتراجعها.</p>
+    </div>
+  </section>
+  <section style="padding-bottom:80px;">
+    <div class="wrap" id="myLearning">
+      <div class="ml-card ml-signin" id="mlSignin" hidden>
+        <p><strong>تقدّمك محفوظ على هذا الجهاز فقط.</strong> سجّل الدخول بحساب Google ليبقى معك على الهاتف والكمبيوتر، ولتظهر هنا كورساتك المشتراة بروابط وصول جديدة دائماً.</p>
+        <div id="mlGoogle"></div>
+      </div>
+
+      <div class="ml-grid" id="mlStats"></div>
+
+      <div class="ml-card" id="mlLevelCard"></div>
+      <div class="ml-card" id="mlContinue" hidden></div>
+      <div class="ml-card" id="mlCourses" hidden><h2>كورساتي</h2><ul class="ml-list" id="mlCourseList"></ul></div>
+
+      <div class="ml-card">
+        <h2>☆ عباراتي المحفوظة</h2>
+        <p class="ml-empty" id="mlPhrasesEmpty">اضغط 🔊 بجانب أي عبارة إنجليزية في المقالات، ثم «احفظ العبارة»، لتجدها هنا مع زر الاستماع.</p>
+        <ul class="ml-list" id="mlPhrases"></ul>
+      </div>
+
+      <div class="ml-card">
+        <h2>🎯 نتائج اختباراتي</h2>
+        <p class="ml-empty" id="mlQuizEmpty">لم تحلّ أي اختبار بعد. كل مقال تقريباً ينتهي باختبار قصير.</p>
+        <ul class="ml-list" id="mlQuizzes"></ul>
+      </div>
+
+      <div class="ml-card">
+        <h2>📖 مقالات أنهيتها</h2>
+        <p class="ml-empty" id="mlReadEmpty">لا توجد بعد. ابدأ من <a href="articles/where-to-start.html">دليل البداية</a>.</p>
+        <ul class="ml-list" id="mlRead"></ul>
+      </div>
+    </div>
+  </section>
+
+<script>
+(function () {
+  const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const GOOGLE_CLIENT_ID = "564162958911-lf8strh07g2oilos6srha0hj95d04o55.apps.googleusercontent.com";
+  const AR = "٠١٢٣٤٥٦٧٨٩", ar = (n) => String(n).replace(/[0-9]/g, (d) => AR[d]);
+  const LEVELS = { A1: ["مبتدئ (A1)", "paths/beginner.html"], A2: ["مبتدئ متقدم (A2)", "paths/beginner.html"], B1: ["متوسط (B1)", "paths/intermediate.html"], B2: ["فوق المتوسط (B2)", "paths/intermediate.html"], C1: ["متقدم (C1)", "paths/advanced.html"] };
+  const token = () => { try { return localStorage.getItem("me_auth_token"); } catch (e) { return null; } };
+  const el = (id) => document.getElementById(id);
+  let titles = {};
+
+  function li(html) { const x = document.createElement("li"); x.innerHTML = html; return x; }
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const title = (path) => titles[path.replace(/^\//, "")] || path.split("/").pop().replace(".html", "").replace(/-/g, " ");
+
+  function render() {
+    const s = (window.MELearner && window.MELearner.get()) || {};
+    const read = Object.keys(s.read || {}), watched = Object.keys(s.watched || {}), quizzes = Object.entries(s.quizzes || {}), phrases = s.phrases || [];
+    const passed = quizzes.filter(([, q]) => q.total && q.score / q.total >= 0.6).length;
+    el("mlStats").innerHTML = [
+      [read.length, "مقالاً أنهيته"], [watched.length, "درس فيديو فتحته"], [passed, "اختباراً نجحت فيه"], [phrases.length, "عبارة محفوظة"],
+    ].map(([n, l]) => `<div class="ml-stat"><strong>${ar(n)}</strong><span>${l}</span></div>`).join("");
+
+    const lv = s.level && LEVELS[s.level.level];
+    el("mlLevelCard").innerHTML = lv
+      ? `<h2>مستواك</h2><p class="ml-level">${lv[0]}</p><p>حسب اختبار تحديد المستوى. المسار المقترح لك: <a href="${lv[1]}">افتح مسارك</a> · <a href="placement-test.html">أعد الاختبار</a></p>`
+      : `<h2>مستواك</h2><p class="ml-empty">لم تحدد مستواك بعد. <a href="placement-test.html">خذ اختبار تحديد المستوى</a> (٢٥ سؤالاً، ١٠ دقائق) لنقترح عليك مساراً يناسبك.</p>`;
+
+    if (s.last && s.last.path) {
+      el("mlContinue").hidden = false;
+      el("mlContinue").innerHTML = `<h2>تابع من حيث توقفت</h2><p><a class="btn btn-primary" href="${esc(s.last.path.replace(/^\//, ""))}">${esc(s.last.title || "آخر صفحة")} ←</a></p>`;
+    }
+
+    const pl = el("mlPhrases"); pl.innerHTML = "";
+    el("mlPhrasesEmpty").hidden = phrases.length > 0;
+    phrases.forEach((p) => {
+      const item = li(`<span><span class="ml-phrase" lang="en"></span><br><small><a></a></small></span><span class="ml-actions"><button type="button" data-say>🔊 استمع</button><button type="button" data-del>حذف</button></span>`);
+      item.querySelector(".ml-phrase").textContent = p.en;
+      const a = item.querySelector("small a"); a.textContent = p.title || ""; a.href = (p.src || "").replace(/^\//, "");
+      item.querySelector("[data-say]").addEventListener("click", () => window.MELearner.speak(p.en));
+      item.querySelector("[data-del]").addEventListener("click", () => { window.MELearner.removePhrase(p.en); render(); });
+      pl.appendChild(item);
+    });
+
+    const ql = el("mlQuizzes"); ql.innerHTML = "";
+    el("mlQuizEmpty").hidden = quizzes.length > 0;
+    quizzes.sort((a, b) => b[1].ts - a[1].ts).forEach(([key, q]) => {
+      const path = key.startsWith("/") ? key : null;
+      ql.appendChild(li(`<span>${path ? `<a href="${esc(path.replace(/^\//, ""))}">${esc(title(path))}</a>` : esc(key)}</span><strong>${ar(q.score)} / ${ar(q.total)}</strong>`));
+    });
+
+    const rl = el("mlRead"); rl.innerHTML = "";
+    el("mlReadEmpty").hidden = read.length > 0;
+    read.sort((a, b) => s.read[b] - s.read[a]).forEach((p) => rl.appendChild(li(`<a href="${esc(p.replace(/^\//, ""))}">${esc(title(p))}</a><span>✓</span>`)));
+  }
+
+  function loadCourses() {
+    const t = token();
+    if (!t) { el("mlSignin").hidden = false; renderGoogle(); return; }
+    fetch(API + "/learner/courses", { headers: { Authorization: "Bearer " + t } }).then((r) => r.ok ? r.json() : null).then((d) => {
+      if (!d || !d.courses || !d.courses.length) return;
+      el("mlCourses").hidden = false;
+      const list = el("mlCourseList");
+      d.courses.forEach((c) => {
+        const link = c.watch_url ? `<a class="btn btn-primary" href="${esc(c.watch_url)}">▶ ادخل للكورس</a>` : c.download_url ? `<a class="btn btn-primary" href="${esc(c.download_url)}">⬇ حمّل الملفات</a>` : "";
+        list.appendChild(li(`<span><strong>${esc(c.name)}</strong></span>${link}`));
+      });
+    }).catch(() => {});
+  }
+
+  function renderGoogle() {
+    const s = document.createElement("script");
+    s.src = "https://accounts.google.com/gsi/client"; s.async = true;
+    s.onload = () => {
+      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: async (resp) => {
+        try {
+          const r = await fetch(API + "/auth/google", { method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ credential: resp.credential, session_id: localStorage.getItem("me_sid") }) });
+          const d = await r.json();
+          if (d.ok && d.token) { localStorage.setItem("me_auth_token", d.token); sessionStorage.removeItem("me_progress_pulled"); location.reload(); }
+        } catch (e) {}
+      } });
+      google.accounts.id.renderButton(el("mlGoogle"), { theme: "filled_blue", size: "large", text: "signin_with", shape: "pill", locale: "ar" });
+    };
+    document.head.appendChild(s);
+  }
+
+  fetch("assets/search-index.json").then((r) => r.json()).then((idx) => {
+    idx.forEach((e) => { titles[e.url] = e.title.split("|")[0].trim(); });
+    render();
+  }).catch(render);
+  document.addEventListener("me:progress", render);
+  loadCourses();
+})();
+</script>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <strong>الموقع</strong>
+        <a href="index.html">الرئيسية</a>
+        <a href="courses.html">الكورسات</a>
+        <a href="videos.html">الفيديوهات</a>
+        <a href="paths/index.html">مسارات التعلم</a>
+        <a href="placement-test.html">اختبار تحديد المستوى</a>
+        <a href="articles/index.html">المقالات</a>
+        <a href="about.html">من نحن</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
+        <a href="become-affiliate.html">كن شريكاً معنا</a>
+      </div>
+      <div class="footer-col">
+        <strong>الكورسات</strong>
+        <a href="products/pronunciation.html">أسرار النطق الأمريكي</a>
+        <a href="products/commuter-challenge.html">The Commuter Challenge</a>
+        <a href="products/presentations.html">أتقن العروض التقديمية</a>
+        <a href="products/interview.html">من التوتر إلى التميز</a>
+        <a href="products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="products/vocabulary-diet.html">قائمة دايت المفردات</a>
+      </div>
+      <div class="footer-col">
+        <strong>تواصل</strong>
+        <a href="mailto:noor@masterenglish.me">noor@masterenglish.me</a>
+        <a href="https://www.youtube.com/@MasterEnglish" target="_blank" rel="noopener">يوتيوب</a>
+        <a href="https://instagram.com/masterenglish.me" target="_blank" rel="noopener">انستقرام</a>
+        <a href="https://twitter.com/MasterEnglishYT" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://facebook.com/MasterEnglishME" target="_blank" rel="noopener">فيسبوك</a>
+        <a href="https://telegram.me/noormasterenglish" target="_blank" rel="noopener">تيليجرام</a>
+        <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
+      </div>
+    </div>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
+    <p class="footer-links">
+      <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/track.js"></script>
+<script src="assets/js/learner.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/contact-widget.js"></script>
+<script src="assets/js/help-bot.js"></script>
+<script src="assets/js/whatsapp-widget.js"></script>
+</body>
+</html>

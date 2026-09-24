@@ -10,7 +10,10 @@
 <meta property="og:url" content="https://learn.masterenglish.me/articles/understand-movies-english.html">
 <meta property="og:title" content="لماذا لا تفهم الإنجليزية في الأفلام؟ ٤ أسرار الكلمات الشبحية (Ghost Words)">
 <meta property="og:description" content="لماذا تفهم كل كلمة في الفيلم لكن لا تفهم الحوار؟ الحل ليس سرعة الكلام، بل ٤ أسرار في النطق المتصل (Ghost Words)، مع اختبار تفاعلي وملف PDF للتحميل.">
-<meta property="og:image" content="https://img.youtube.com/vi/t0NNhn3MJh4/hqdefault.jpg">
+<meta property="og:image" content="https://learn.masterenglish.me/assets/images/og/articles-understand-movies-english.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://learn.masterenglish.me/assets/images/og/articles-understand-movies-english.jpg">
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
@@ -144,10 +147,11 @@
     <nav class="main-nav" id="mainNav">
       <a href="../courses.html">الكورسات</a>
       <a href="../videos.html">الفيديوهات</a>
+      <a href="../paths/index.html">مسارات التعلم</a>
       <a href="../articles/index.html" aria-current="page">المقالات</a>
       <a href="../testimonials.html">آراء الطلاب</a>
       <a href="../search.html">بحث</a>
-      <a href="../index.html#about">من أنا؟</a>
+      <a href="../about.html">من نحن</a>
     </nav>
     <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
@@ -452,6 +456,7 @@
 
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/track.js"></script>
+<script src="../assets/js/learner.js"></script>
 <script src="../assets/js/auth.js"></script>
 <script src="../assets/js/contact-widget.js"></script>
 <script src="../assets/js/help-bot.js"></script>
@@ -487,6 +492,7 @@
           feedback.classList.add('show');
           if (answered === questions.length) {
             scoreEl.textContent = `نتيجتك: ${correctCount} من ${questions.length}`;
+            if (window.MELearner) window.MELearner.recordQuiz(location.pathname, correctCount, questions.length);
           }
         });
       });

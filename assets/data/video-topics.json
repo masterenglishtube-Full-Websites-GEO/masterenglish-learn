@@ -1,0 +1,18 @@
+{
+  "topics": [
+    {"id": "pronunciation", "label": "النطق واللكنة", "icon": "🗣️", "hub": "topics/pronunciation.html", "words": ["نطق", "لفظ", "اللفظ", "النطق", "pronunciation", "accent", "لهجة", "اللهجة", "صوت ال", "الأصوات", "أصوات", "vowel", "الصوتيات", "linking", "الأمريكيين", "الامريكيين", "حرف ال"]},
+    {"id": "conversation", "label": "المحادثة والطلاقة", "icon": "💬", "hub": "topics/conversation.html", "words": ["محادثة", "المحادثة", "محادثات", "المحادثات", "conversation", "بطلاقة", "الطلاقة", "طلاقة", "التحدث", "تتحدث", "تحدث ", "speak", "fluent", "fluently"]},
+    {"id": "vocabulary", "label": "المفردات والتعابير", "icon": "📚", "hub": "topics/vocabulary.html", "words": ["كلمة", "كلمات", "مفردات", "المفردات", "vocabulary", "words", "تعبير", "تعابير", "التعابير", "idioms", "idiom", "phrasal", "عبارات", "العبارات", "expressions", "collocations"]},
+    {"id": "grammar", "label": "القواعد والأزمنة", "icon": "🧩", "hub": "topics/grammar.html", "words": ["قواعد", "القواعد", "زمن", "أزمنة", "الأزمنة", "tense", "grammar", "الفرق بين", "present", "past ", "future", "conditional", "modal", "passive", "حروف الجر", "preposition", "gerund", "infinitive"]},
+    {"id": "work", "label": "إنجليزية العمل", "icon": "💼", "hub": "topics/work.html", "words": ["العمل", "مقابلة", "المقابلة", "وظيفة", "business", "اجتماع", "الاجتماعات", "ايميل", "إيميل", "email", "تقديمي", "تقديمية", "presentation", "الشركات", "مديرك", "القادة", "شخصيتك"]},
+    {"id": "listening", "label": "الاستماع والأفلام", "icon": "🎧", "hub": "topics/listening.html", "words": ["استماع", "الاستماع", "listening", "أفلام", "الأفلام", "افلام", "فيلم", "مسلسل", "المسلسلات", "أغنية", "خطاب", "خطابات", "movie", "song", "بسرعة"]},
+    {"id": "stories", "label": "القصص", "icon": "📖", "hub": "videos.html#topic-stories", "words": ["قصة", "قصص", "story", "stories", "القصة"]},
+    {"id": "tests", "label": "المستويات والاختبارات", "icon": "🎯", "hub": "paths/index.html", "words": ["اختبار", "مستوى", "مستواك", "ielts", "ايلتس", "toefl", "test", "level", "المستوى"]},
+    {"id": "challenges", "label": "التحديات اليومية", "icon": "🔥", "hub": "videos.html#topic-challenges", "words": ["تحدي", "تحدّي", "challenge"]}
+  ],
+  "levels": [
+    {"id": "beginner", "label": "مبتدئ", "words": ["الصفر", "مبتدئ", "المبتدئين", "للمبتدئين", "beginner", "الأساسيات", "المستوى الأول", "المستوى 1", "A1", "A2"]},
+    {"id": "intermediate", "label": "متوسط", "words": ["متوسط", "المتوسط", "المستوى الثاني", "المستوى الثالث", "intermediate", "B1", "B2"]},
+    {"id": "advanced", "label": "متقدم", "words": ["متقدم", "المتقدمين", "متقدما", "متقدماً", "المستوى الرابع", "advanced", "C1", "C2"]}
+  ]
+}

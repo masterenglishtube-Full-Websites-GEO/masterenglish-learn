@@ -102,7 +102,7 @@
       scroll_pct: Math.max(maxScrollPct, computeScrollPct()),
     });
     if (useBeacon && navigator.sendBeacon) {
-      navigator.sendBeacon(API + "/track/heartbeat", new Blob([payload], { type: "application/json" }));
+      navigator.sendBeacon(API + "/track/heartbeat", new Blob([payload], { type: "text/plain;charset=UTF-8" }));
     } else {
       fetch(API + "/track/heartbeat", {
         method: "POST",
