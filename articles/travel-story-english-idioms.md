@@ -67,3 +67,6 @@ hit a snag أكثر طبيعية وتصف عقبة صغيرة ومؤقتة، و�
 اختبار تفاعلي من ٥ أسئلة متاح على الصفحة الكاملة: /articles/travel-story-english-idioms.html
 
 مصادر أخرى ذات صلة: [The Commuter Challenge](/products/commuter-challenge.html) · [The 30-Day Fluency Challenge: A Ramadan Story](/products/ramadan-audio-club.html) · [قائمة دايت المفردات](/products/vocabulary-diet.html)
+
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24

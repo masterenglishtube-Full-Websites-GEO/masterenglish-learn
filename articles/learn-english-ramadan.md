@@ -45,4 +45,7 @@
 
 كورس ذو صلة: [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html), قصة يومية مشوقة مصممة للحظات طاقتك المنخفضة.
 
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
+
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -45,4 +45,7 @@
 
 كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي لتدريب أذنك على هذه الأنماط أثناء تنقلك اليومي.
 
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
+
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

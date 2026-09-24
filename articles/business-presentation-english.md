@@ -4,6 +4,8 @@
 
 **الخلاصة المباشرة:** التوتر أثناء العروض التقديمية بالإنجليزية غالباً ليس بسبب ضعف المحتوى، بل غياب هيكل واضح (افتتاحية، بناء محتوى، أسئلة وأجوبة، خاتمة) يبقي المتحدث والجمهور على وعي دائم بمكانهما في العرض.
 
+فيديو الشرح: https://www.youtube.com/watch?v=JpJnE0g3Aow
+
 ## الافتتاحية: أول 30 ثانية تحدد انتباه الجمهور بالكامل
 
 لا تبدأ بـ "Today I'm going to talk about..."، ابدأ بسؤال مباشر أو جملة تلامس مشكلة يعرفها الحاضرون: "How many of you have felt that your team spends more time in meetings than actually working?" ثم أخبرهم بوضوح عن مسار العرض: "Today, I'll walk you through three ways we can solve this."
@@ -40,5 +42,8 @@
 ---
 
 كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html).
+
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
 
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

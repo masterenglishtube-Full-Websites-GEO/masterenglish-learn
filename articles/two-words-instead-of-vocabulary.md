@@ -49,4 +49,7 @@
 
 كورس ذو صلة: [دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html), 50 كلمة تغنيك عن 1000 كلمة معقدة.
 
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
+
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

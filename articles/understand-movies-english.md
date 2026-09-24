@@ -79,4 +79,7 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ملف PDF مجاني بكل الأسرار (يُحمَّل من صفحة الدرس بعد تسجيل الدخول بحساب Google): https://learn.masterenglish.me/articles/understand-movies-english.html
 
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
+
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

@@ -4,6 +4,8 @@
 
 **الخلاصة المباشرة:** وصف الرسوم البيانية بالإنجليزية يحتاج مجموعتين من العبارات الجاهزة: عبارات لوصف اتجاه التغيير (ارتفاع، انخفاض، ثبات)، وعبارات لوصف حجم وسرعة هذا التغيير (بسيط، حاد، تدريجي). الجمع بينهما يعطيك تنوعاً كافياً لوصف أي رسم بياني دون تكرار مملّ، والأهم أن تربط كل رقم بقصة أو سبب لا أن تكتفي بقراءته.
 
+فيديو الشرح: https://www.youtube.com/watch?v=RhXEkWDe93E
+
 ## عبارات وصف الاتجاه العام
 
 للارتفاع: increased, rose, grew, climbed. للانخفاض: decreased, dropped, declined, fell. للثبات: remained stable, stayed flat, held steady. مثال: "Revenue increased significantly in Q3" أو "Costs remained stable throughout the year". تنويع هذه الأفعال بدل تكرار go up/go down يجعل عرضك يبدو أكثر احترافية فوراً.
@@ -35,5 +37,8 @@
 ---
 
 كورس ذو صلة: [قدّم بياناتك وأرقامك بثقة واحترافية](https://learn.masterenglish.me/products/presentations.html), كورس أتقن العروض التقديمية يشمل وحدة كاملة عن لغة البيانات وشرح الرسوم البيانية بوضوح.
+
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
 
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

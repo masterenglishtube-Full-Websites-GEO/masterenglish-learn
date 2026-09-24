@@ -16,8 +16,13 @@
     const topic = widget.dataset.topic;
     if (!topic) return;
 
+    // Don't repeat the lesson video the article already embeds.
+    const embedded = [...document.querySelectorAll('iframe[src*="/embed/"]')]
+      .map((f) => (f.src.match(/\/embed\/([A-Za-z0-9_-]{11})/) || [])[1])
+      .filter(Boolean);
+
     try {
-      const res = await fetch(`${API}/videos/related?q=${encodeURIComponent(topic)}&limit=3`);
+      const res = await fetch(`${API}/videos/related?q=${encodeURIComponent(topic)}&limit=3&exclude=${embedded.join(",")}`);
       const data = await res.json();
       const videos = data.videos || [];
       if (!videos.length) {

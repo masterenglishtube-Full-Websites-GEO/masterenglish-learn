@@ -4,6 +4,8 @@
 
 **الخلاصة المباشرة:** بدء محادثة مع شخص غريب لا يحتاج جملة "مثالية"، بل جملاً افتتاحية جاهزة مسبقاً حسب الموقف (زميل عمل، شخص غريب، مناسبة اجتماعية) تخرج تلقائياً دون تفكير، مهما كانت درجة التوتر.
 
+فيديو الشرح: https://www.youtube.com/watch?v=8n-WYmzqBbo
+
 ## مع زميل في العمل: ابدأ من المشترك اليومي
 
 "How's your morning going so far?" أو "Did you catch the meeting notes from earlier?" أو حتى ملاحظة بسيطة عن القهوة: "Is that the coffee from downstairs? Is it any good?" هذه الجمل لا تطلب إجابة عميقة، هدفها فقط فتح الباب.
@@ -40,5 +42,8 @@
 ---
 
 كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي يدربك على الرد الفوري في مواقف محادثة حقيقية.
+
+الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
+آخر تحديث: 2026-09-24
 
 المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)

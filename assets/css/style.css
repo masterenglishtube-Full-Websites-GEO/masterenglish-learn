@@ -902,3 +902,30 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
 .me-gate-status.ok { color: var(--accent-dark); }
 .me-gate-legal { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-soft); }
 [data-gated-pdf][aria-busy="true"] { opacity: .7; pointer-events: none; }
+
+/* YouTube loop: caption under lesson videos, author box, subscribe button */
+.prose .video-embed + .video-caption { margin: -18px 0 30px; font-size: 14px; color: var(--ink-soft); }
+.video-caption a { font-weight: 700; }
+.btn-yt { background: #d62f2f; color: #fff; box-shadow: var(--shadow-sm); }
+.btn-yt:hover { background: #b82323; color: #fff; transform: translateY(-2px); }
+.author-box {
+  display: flex; gap: 18px; align-items: flex-start; margin: 50px 0 0; padding: 22px 24px;
+  background: var(--paper-soft); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.author-box img { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+.prose .author-box p { margin: 0 0 10px; font-size: 15px; }
+.prose .author-box .author-name { font-family: var(--font-head); font-weight: 800; font-size: 16.5px; margin-bottom: 6px; }
+.author-box .author-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.author-box .btn { padding: 9px 18px; font-size: 14px; }
+@media (max-width: 520px) { .author-box { flex-direction: column; padding: 20px; } }
+.footer-yt { margin: 0 0 18px; }
+
+/* Phones: one floating button instead of two covering the text on both sides.
+   The help bot also forwards questions to Noor by email, so the separate contact
+   button is hidden; WhatsApp (qualified visitors only) takes its corner. */
+@media (max-width: 600px) {
+  #meContactBtn, #meContactBtn + .me-fab-tooltip, #meContactPanel { display: none !important; }
+  #meHelpBotBtn { bottom: 18px; right: 16px; width: 52px; height: 52px; font-size: 22px; }
+  #meWhatsappBtn { bottom: 18px; left: 16px; }
+  .me-wa-tooltip, .me-fab-tooltip-right { display: none; }
+}

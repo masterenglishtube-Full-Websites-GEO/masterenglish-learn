@@ -14,6 +14,7 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 ## صفحات الموقع
 
 ### الصفحات الرئيسية
+- **English overview** (https://learn.masterenglish.me/learn-english-for-arabic-speakers.html): English-language summary of Master English for Arabic speakers, with courses, free lessons and FAQ.
 - **الصفحة الرئيسية** (/index.html): نبذة عن نور، ونظرة عامة على الكورسات والخدمات.
 - **الكورسات** (/courses.html): قائمة كاملة بالكورسات والمنتجات الرقمية للتعلم.
 - **الفيديوهات** (/videos.html): مختارات من فيديوهات يوتيوب التعليمية المجانية.
@@ -27,16 +28,68 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - **The 30-Day Fluency Challenge: A Ramadan Story** (/products/ramadan-audio-club.html): مسلسل صوتي درامي يعلّم الإنجليزية الحقيقية للعمل والحياة اليومية عبر قصة "عمر وسارة"، 30 حلقة.
 - **قائمة دايت المفردات** (/products/vocabulary-diet.html): دليل مختصر يبسّط 1000 كلمة معقدة إلى 50 كلمة أساسية.
 
-### مقالات مختارة (مكتبة متنامية من 45 مقالاً)
-- كيف تفهم الإنجليزية المحكية بسرعة؟ 4 قواعد ذهبية (/articles/understand-fast-english.html، ونسخة نصية عند /articles/understand-fast-english.md)
-- أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية (/articles/conversation-basics-100-qa.html)
-- أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟ (/articles/american-accent-secrets.html)
-- كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟ (/articles/job-interview-english.html)
-- كيف تصل إلى الطلاقة خلال أشهر لا سنوات؟ (/articles/fluency-in-months-not-years.html)
-- ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟ (/articles/schwa-sound-explained.html)
-- كيف تتفاوض على زيادة الراتب بالإنجليزية خطوة بخطوة؟ (/articles/negotiate-salary-phrases.html)
-- كيف تروي قصة سفرك بالإنجليزية الطبيعية؟ 9 تعبيرات تستبدل بها الترجمة الحرفية (/articles/travel-story-english-idioms.html، ونسخة نصية عند /articles/travel-story-english-idioms.md)
-- لماذا لا تفهم الإنجليزية في الأفلام؟ 4 أسرار الكلمات الشبحية (Ghost Words): الحرف المختفي، صوت الكسل، القطار، والاختصارات الشائعة، مع اختبار تفاعلي وملف PDF (/articles/understand-movies-english.html، ونسخة نصية عند /articles/understand-movies-english.md)
+## كل المقالات (45 مقالاً)
+
+كل مقال له نسخة HTML ونسخة Markdown مطابقة (.md) لسهولة القراءة الآلية، ومعظمها مرفق بدرس فيديو من قناة أتقن الإنجليزية على يوتيوب.
+
+### النطق واللكنة الأمريكية
+- [أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟](https://learn.masterenglish.me/articles/american-accent-secrets.html) · [نص Markdown](https://learn.masterenglish.me/articles/american-accent-secrets.md) · [درس الفيديو](https://www.youtube.com/watch?v=C7JjsCJlsVA)
+- [ما هي تاء الرفرفة (Flap T) في النطق الأمريكي ومتى تنطقها؟](https://learn.masterenglish.me/articles/american-flap-t-rules.html) · [نص Markdown](https://learn.masterenglish.me/articles/american-flap-t-rules.md) · [درس الفيديو](https://www.youtube.com/watch?v=ETBuPZ625Iw)
+- [ما هو الـ Glottal Stop ولماذا يحذف الأمريكيون صوت الـ T أحياناً؟](https://learn.masterenglish.me/articles/glottal-stop-american-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/glottal-stop-american-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=St8Y38IbD-0)
+- [ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟](https://learn.masterenglish.me/articles/schwa-sound-explained.html) · [نص Markdown](https://learn.masterenglish.me/articles/schwa-sound-explained.md) · [درس الفيديو](https://www.youtube.com/watch?v=KBbYo1mPSF4)
+- [لماذا تبدو لكنة العرب في الإنجليزية "قاسية" وكيف تجعلها أكثر انسيابية؟](https://learn.masterenglish.me/articles/soften-arabic-accent-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/soften-arabic-accent-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=aOBQJy1qorg)
+- [الفرق بين النطق الأمريكي والبريطاني: أيهما تتعلم؟](https://learn.masterenglish.me/articles/american-vs-british-accent.html) · [نص Markdown](https://learn.masterenglish.me/articles/american-vs-british-accent.md) · [درس الفيديو](https://www.youtube.com/watch?v=i47_uqON51c)
+- [كيف تصحح لنفسك أخطاء النطق أثناء الكلام دون أن تتوقف؟](https://learn.masterenglish.me/articles/self-correction-while-speaking.html) · [نص Markdown](https://learn.masterenglish.me/articles/self-correction-while-speaking.md) · [درس الفيديو](https://www.youtube.com/watch?v=e02kbJKFA7Y)
+- [كورس نطق أمريكي متخصص أم كورس على منصة عامة مثل Udemy؟ كيف تختار](https://learn.masterenglish.me/articles/pronunciation-course-comparison-guide.html) · [نص Markdown](https://learn.masterenglish.me/articles/pronunciation-course-comparison-guide.md) · [درس الفيديو](https://www.youtube.com/watch?v=he6U3zm4vxw)
+
+### الفهم والاستماع (الأفلام والكلام السريع)
+- [لماذا لا تفهم الإنجليزية في الأفلام؟ ٤ أسرار الكلمات الشبحية (Ghost Words)](https://learn.masterenglish.me/articles/understand-movies-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/understand-movies-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=t0NNhn3MJh4)
+- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://learn.masterenglish.me/articles/understand-fast-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/understand-fast-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=CnMoRQJR9ic)
+- [كيف تفهم النكات والتلميحات الثقافية بالإنجليزية في المحادثات اليومية؟](https://learn.masterenglish.me/articles/cultural-humor-idioms-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/cultural-humor-idioms-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=ufbb412juuY)
+- [أفضل الطرق لتعلم الإنجليزية أثناء القيادة أو التنقل](https://learn.masterenglish.me/articles/learn-english-while-driving.html) · [نص Markdown](https://learn.masterenglish.me/articles/learn-english-while-driving.md) · [درس الفيديو](https://www.youtube.com/watch?v=IZryAyOA0iQ)
+
+### المحادثة والطلاقة والثقة
+- [لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟](https://learn.masterenglish.me/articles/know-but-cant-speak.html) · [نص Markdown](https://learn.masterenglish.me/articles/know-but-cant-speak.md) · [درس الفيديو](https://www.youtube.com/watch?v=eIkHI4WQbww)
+- [كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق](https://learn.masterenglish.me/articles/think-in-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/think-in-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=IlTZBmoUqRE)
+- [كيف تصل إلى الطلاقة في الإنجليزية خلال أشهر لا سنوات؟](https://learn.masterenglish.me/articles/fluency-in-months-not-years.html) · [نص Markdown](https://learn.masterenglish.me/articles/fluency-in-months-not-years.md) · [درس الفيديو](https://www.youtube.com/watch?v=v272BxvPB4Q)
+- [كيف تحسّن مهارة التحدث بالإنجليزية ذاتياً بدون شريك أجنبي؟](https://learn.masterenglish.me/articles/practice-speaking-alone.html) · [نص Markdown](https://learn.masterenglish.me/articles/practice-speaking-alone.md) · [درس الفيديو](https://www.youtube.com/watch?v=-6-HzGDenf4)
+- [كيف تبدأ أي محادثة بالإنجليزية دون خجل أو تردد؟](https://learn.masterenglish.me/articles/start-conversation-confidently.html) · [نص Markdown](https://learn.masterenglish.me/articles/start-conversation-confidently.md) · [درس الفيديو](https://www.youtube.com/watch?v=8n-WYmzqBbo)
+- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://learn.masterenglish.me/articles/stop-one-word-answers.html) · [نص Markdown](https://learn.masterenglish.me/articles/stop-one-word-answers.md) · [درس الفيديو](https://www.youtube.com/watch?v=Q_cqsM3YjEE)
+- [كيف تتخلص من صوت "أم" (Umm) أثناء التحدث بالإنجليزية؟](https://learn.masterenglish.me/articles/stop-saying-um-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/stop-saying-um-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=hTASp1LywZk)
+- [أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية](https://learn.masterenglish.me/articles/conversation-basics-100-qa.html) · [نص Markdown](https://learn.masterenglish.me/articles/conversation-basics-100-qa.md) · [درس الفيديو](https://www.youtube.com/watch?v=Su3-sZv6iXU)
+- [كيف تروي قصة سفرك بالإنجليزية الطبيعية؟ ٩ تعبيرات تستبدل بها الترجمة الحرفية](https://learn.masterenglish.me/articles/travel-story-english-idioms.html) · [نص Markdown](https://learn.masterenglish.me/articles/travel-story-english-idioms.md) · [درس الفيديو](https://www.youtube.com/watch?v=58S9G1sdF3M)
+- [كيف تتعلم الإنجليزية في رمضان وأنت صائم وتعبان؟](https://learn.masterenglish.me/articles/learn-english-ramadan.html) · [نص Markdown](https://learn.masterenglish.me/articles/learn-english-ramadan.md) · [درس الفيديو](https://www.youtube.com/watch?v=MuHlIPA3SWw)
+
+### المفردات والقواعد
+- [توقف فوراً عن حفظ الكلمات: ماذا يفعل المتحدث الذكي بدلاً من ذلك؟](https://learn.masterenglish.me/articles/stop-memorizing-words.html) · [نص Markdown](https://learn.masterenglish.me/articles/stop-memorizing-words.md) · [درس الفيديو](https://www.youtube.com/watch?v=k4P9Y1thrRo)
+- [كلمة واحدة تسحق ٥٠ كلمة إنجليزية معقدة](https://learn.masterenglish.me/articles/one-word-beats-50-words.html) · [نص Markdown](https://learn.masterenglish.me/articles/one-word-beats-50-words.md) · [درس الفيديو](https://www.youtube.com/watch?v=GOezDtkHQA4)
+- [كلمتان فقط تُغنيانك عن حفظ ٥٠ كلمة إنجليزية](https://learn.masterenglish.me/articles/two-words-instead-of-vocabulary.html) · [نص Markdown](https://learn.masterenglish.me/articles/two-words-instead-of-vocabulary.md) · [درس الفيديو](https://www.youtube.com/watch?v=4oDspnkXhNc)
+- [لماذا تخطئ في in وon وat مهما حفظت؟](https://learn.masterenglish.me/articles/prepositions-mistakes.html) · [نص Markdown](https://learn.masterenglish.me/articles/prepositions-mistakes.md) · [درس الفيديو](https://www.youtube.com/watch?v=bMIguMwDWhc)
+- [ما الفرق بين Present Perfect و Past Simple دون الدخول في تعقيدات القواعد؟](https://learn.masterenglish.me/articles/present-perfect-vs-past-simple.html) · [نص Markdown](https://learn.masterenglish.me/articles/present-perfect-vs-past-simple.md) · [درس الفيديو](https://www.youtube.com/watch?v=W8z0YCFOF1E)
+- [أخطاء شائعة يقع فيها العرب عند تعلم الإنجليزية](https://learn.masterenglish.me/articles/common-arabic-speaker-mistakes.html) · [نص Markdown](https://learn.masterenglish.me/articles/common-arabic-speaker-mistakes.md) · [درس الفيديو](https://www.youtube.com/watch?v=5cVVB52lgVo)
+- [كيف تقرأ كتاباً بالإنجليزية دون التوقف عند كل كلمة لترجمتها؟](https://learn.masterenglish.me/articles/reading-books-without-dictionary.html) · [نص Markdown](https://learn.masterenglish.me/articles/reading-books-without-dictionary.md) · [درس الفيديو](https://www.youtube.com/watch?v=qSv-JyHuIS0)
+
+### الإنجليزية للعمل والمهنة
+- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://learn.masterenglish.me/articles/job-interview-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/job-interview-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=zQ5SjOTVGjg)
+- [كيف تجيب عن سؤال "What are your salary expectations" دون خسارة التفاوض؟](https://learn.masterenglish.me/articles/salary-expectations-interview-answer.html) · [نص Markdown](https://learn.masterenglish.me/articles/salary-expectations-interview-answer.md) · [درس الفيديو](https://www.youtube.com/watch?v=fCvnokR2saQ)
+- [كيف تتفاوض على زيادة الراتب بالإنجليزية خطوة بخطوة؟](https://learn.masterenglish.me/articles/negotiate-salary-phrases.html) · [نص Markdown](https://learn.masterenglish.me/articles/negotiate-salary-phrases.md) · [درس الفيديو](https://www.youtube.com/watch?v=Fch-5ycsQ0k)
+- [كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟](https://learn.masterenglish.me/articles/business-meetings-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/business-meetings-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=fm7nVoLeK40)
+- [كيف تدير اجتماعاً بالإنجليزية عبر Zoom أو Teams باحترافية؟](https://learn.masterenglish.me/articles/remote-meetings-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/remote-meetings-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=CnEp_By2qRs)
+- [كيف تقدم عرضاً تقديمياً احترافياً بالإنجليزية؟](https://learn.masterenglish.me/articles/business-presentation-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/business-presentation-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=JpJnE0g3Aow)
+- [كيف تصف الرسوم البيانية والأرقام المالية في العروض التقديمية بالإنجليزية؟](https://learn.masterenglish.me/articles/describing-charts-presentations.html) · [نص Markdown](https://learn.masterenglish.me/articles/describing-charts-presentations.md) · [درس الفيديو](https://www.youtube.com/watch?v=RhXEkWDe93E)
+- [كيف تفرض شخصيتك في العمل بالإنجليزية؟ ٥ مفاتيح للغة القادة](https://learn.masterenglish.me/articles/leadership-language-at-work.html) · [نص Markdown](https://learn.masterenglish.me/articles/leadership-language-at-work.md) · [درس الفيديو](https://www.youtube.com/watch?v=DzkHoqpJ-aU)
+- [كيف تتحدث بالإنجليزية في أول يوم عمل في شركة متعددة الجنسيات؟](https://learn.masterenglish.me/articles/first-day-at-work-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/first-day-at-work-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=eCjq2pZAxc4)
+- [ما الفرق بين الإنجليزية الرسمية وغير الرسمية في بيئة العمل؟](https://learn.masterenglish.me/articles/formal-vs-informal-workplace.html) · [نص Markdown](https://learn.masterenglish.me/articles/formal-vs-informal-workplace.md) · [درس الفيديو](https://www.youtube.com/watch?v=BX0h-4jafSc)
+- [كيف تكتب بريداً إلكترونياً رسمياً بالإنجليزية دون أخطاء أو إحراج؟](https://learn.masterenglish.me/articles/professional-email-writing.html) · [نص Markdown](https://learn.masterenglish.me/articles/professional-email-writing.md) · [درس الفيديو](https://www.youtube.com/watch?v=e8EH-G3UVns)
+- [كيف تشرح مشكلة تقنية بالإنجليزية لفريق الدعم أو المهندسين؟](https://learn.masterenglish.me/articles/tech-support-phrases-english.html) · [نص Markdown](https://learn.masterenglish.me/articles/tech-support-phrases-english.md) · [درس الفيديو](https://www.youtube.com/watch?v=X5ffHeV535s)
+
+### المستويات والاختبارات والبداية
+- [من أين أبدأ في تعلم الإنجليزية معي؟](https://learn.masterenglish.me/articles/where-to-start.html) · [نص Markdown](https://learn.masterenglish.me/articles/where-to-start.md) · [درس الفيديو](https://www.youtube.com/watch?v=4iIxIdzxbzI)
+- [ما هي مستويات اللغة الإنجليزية (A1 إلى C2) وكيف تحدد مستواك الحقيقي؟](https://learn.masterenglish.me/articles/cefr-levels-explained.html) · [نص Markdown](https://learn.masterenglish.me/articles/cefr-levels-explained.md) · [درس الفيديو](https://www.youtube.com/watch?v=NRrXWCo3JMo)
+- [كيف تجتاز الجزء الثاني من اختبار المحادثة للآيلتس (IELTS Speaking Part 2)؟](https://learn.masterenglish.me/articles/ielts-speaking-part-2-framework.html) · [نص Markdown](https://learn.masterenglish.me/articles/ielts-speaking-part-2-framework.md) · [درس الفيديو](https://www.youtube.com/watch?v=Dccw_tpn5UY)
+
+### عن المؤسِّسة
+- [كيف لاحظت الفجوة الحقيقية بين معرفة الإنجليزية والتحدث بها](https://learn.masterenglish.me/articles/my-story.html) · [نص Markdown](https://learn.masterenglish.me/articles/my-story.md)
 
 ## القنوات الاجتماعية
 - YouTube: https://www.youtube.com/@MasterEnglish (1.86M+ مشترك)
