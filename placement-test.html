@@ -11,8 +11,6 @@
 <meta property="og:title" content="اختبار تحديد مستوى الإنجليزية مجاناً (A1 إلى C1)">
 <meta property="og:description" content="اختبار تحديد مستوى مجاني من ٢٥ سؤالاً في القواعد والمفردات والاستماع، بالشرح العربي: اعرف مستواك من A1 إلى C1 واحصل على مسار تعلم يناسبك.">
 <meta property="og:image" content="https://learn.masterenglish.me/assets/images/og/placement-test.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://learn.masterenglish.me/assets/images/og/placement-test.jpg">
@@ -27,10 +25,30 @@
 .pt-progress span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
 .pt-meta { display: flex; justify-content: space-between; color: var(--ink-soft); font-size: 14px; }
 .pt-say { margin: 0 0 14px; }
-.pt-result h2 { font-size: 30px; color: var(--accent-dark); margin: 6px 0; }
-.pt-review li { margin-bottom: 10px; }
-.pt-review .ok { color: #1f5c37; } .pt-review .bad { color: #8a2f2f; }
 .pt-start ul { margin: 0 0 20px; }
+.pt-gate { text-align: center; padding: 30px 26px; }
+.pt-gate h2 { font-size: 24px; margin: 8px 0 8px; }
+.pt-gate > p { color: var(--ink-soft); margin: 0 auto 18px; max-width: 520px; }
+.pt-gate-ic { width: 64px; height: 64px; margin: 0 auto; border-radius: 18px; display: grid; place-items: center; font-size: 32px; background: var(--gold-light); color: var(--gold-dark); }
+.pt-gate-ic.ok { background: var(--accent-light); color: var(--accent); }
+.pt-google { display: flex; justify-content: center; min-height: 44px; }
+.pt-or { display: flex; align-items: center; gap: 12px; color: var(--ink-soft); font-size: 14px; margin: 18px auto 12px; max-width: 420px; }
+.pt-or::before, .pt-or::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.pt-form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; flex-wrap: wrap; }
+.pt-form input {
+  flex: 1; min-width: 220px; padding: 13px 16px; border: 2px solid var(--border); border-radius: 999px;
+  font-family: var(--font-body); font-size: 16px; background: var(--paper); color: var(--ink); text-align: left;
+}
+.pt-form input:focus { outline: none; border-color: var(--accent); }
+.pt-hint { font-size: 14px; color: var(--gold-dark); margin: 12px 0 0; display: flex; gap: 6px; justify-content: center; align-items: center; }
+.pt-suggest { font-size: 15px; margin: 12px 0 0; }
+.pt-suggest button, .pt-link { background: none; border: 0; padding: 0; color: var(--accent-dark); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.pt-status { min-height: 22px; margin: 14px 0 0; font-size: 15px; color: var(--ink-soft); }
+.pt-status.error { color: #b23b3b; }
+.pt-legal { font-size: 12.5px; color: var(--ink-soft); margin: 16px auto 0; max-width: 480px; }
+.pt-sent-to { font-family: var(--font-head); font-weight: 800; font-size: 19px; color: var(--accent-dark); direction: ltr; margin: 0 0 16px !important; }
+.pt-steps { text-align: right; max-width: 520px; margin: 0 auto 20px; padding-inline-start: 22px; }
+.pt-steps li { margin-bottom: 10px; }
 </style>
 <script type="application/ld+json">
 {
@@ -106,8 +124,8 @@
     <div class="wrap">
       <span class="eyebrow">مجاني · ١٠ دقائق</span>
       <h1>اختبار تحديد مستوى الإنجليزية (A1 إلى C1)</h1>
-      <p class="hero-sub">٢٥ سؤالاً في القواعد والمفردات والاستماع، تتدرج من المستوى المبتدئ إلى المتقدم. في النهاية تعرف مستواك التقريبي، وترى إجاباتك مع الشرح، ونقترح عليك مسار تعلم يناسبك.</p>
-      <p class="en-note" lang="en">In English: a free 25-question English placement test (A1 to C1) for Arabic speakers, with explanations in Arabic and a learning path for your level.</p>
+      <p class="hero-sub">٢٥ سؤالاً في القواعد والمفردات والاستماع، تتدرج من المستوى المبتدئ إلى المتقدم. في النهاية نرسل إلى بريدك الإلكتروني مستواك التقريبي، وإجاباتك مع الشرح، ومسار تعلم يناسبك.</p>
+      <p class="en-note" lang="en">In English: a free 25-question English placement test (A1 to C1) for Arabic speakers. Your level, answers with explanations in Arabic, and a learning path are sent to your email.</p>
     </div>
   </section>
   <section style="padding-bottom:80px;">
@@ -119,6 +137,7 @@
             <li>أجب دون قاموس أو ترجمة، لأن الهدف معرفة مستواك الحقيقي.</li>
             <li>إذا لم تعرف الإجابة اختر «لا أعرف» بدل التخمين.</li>
             <li>سؤالان للاستماع: شغّل الصوت واضغط زر الاستماع.</li>
+            <li>في النهاية نرسل لك النتيجة مع الشرح على بريدك الإلكتروني (أو حساب Google).</li>
           </ul>
           <button type="button" class="btn btn-primary btn-lg" id="ptGo">ابدأ الاختبار</button>
         </div>
@@ -127,77 +146,59 @@
           <div class="pt-progress"><span id="ptBar"></span></div>
           <div class="quiz-q">
             <p class="quiz-q-text" id="ptQ"></p>
-            <p class="pt-say" id="ptSayWrap" hidden><button type="button" class="btn btn-outline" id="ptSay">🔊 استمع</button> <small id="ptSayFallback" hidden></small></p>
+            <p class="pt-say" id="ptSayWrap" hidden><button type="button" class="btn btn-outline" id="ptSay"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg> استمع</button> <small id="ptSayFallback" hidden></small></p>
             <div class="quiz-choices" id="ptChoices"></div>
           </div>
         </div>
-        <div id="ptResult" hidden></div>
+
+        <div id="ptGate" hidden>
+          <div class="quiz-q pt-gate">
+            <div class="pt-gate-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/><path d="M3 7l9 6l9 -6"/></svg></div>
+            <h2>أحسنت، أنهيت الاختبار! نتيجتك جاهزة</h2>
+            <p>إلى أين نرسل لك مستواك التقريبي، وإجاباتك مع الشرح، ومسار التعلم المناسب لمستواك؟</p>
+            <div id="ptAccount" hidden>
+              <button type="button" class="btn btn-primary btn-lg" id="ptSendAccount">أرسل النتيجة إلى <bdi id="ptAccountEmail"></bdi></button>
+              <p style="margin:12px 0 0;"><button type="button" class="pt-link" id="ptUseOther">أرسلها إلى بريد آخر</button></p>
+            </div>
+            <div id="ptChoose">
+              <div class="pt-google" id="ptGoogle"></div>
+              <p class="pt-or">أو اكتب بريدك الإلكتروني</p>
+              <form class="pt-form" id="ptEmailForm" novalidate>
+                <input type="email" id="ptEmail" dir="ltr" placeholder="name@gmail.com" autocomplete="email" inputmode="email" aria-label="بريدك الإلكتروني" required>
+                <button type="submit" class="btn btn-primary" id="ptSendEmail">أرسل النتيجة</button>
+              </form>
+              <p class="pt-suggest" id="ptSuggest" hidden></p>
+              <p class="pt-hint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"/><path d="M12 16h.01"/></svg> اكتب بريدك بدقة: النتيجة تُرسل إليه فقط.</p>
+            </div>
+            <p class="pt-status" id="ptStatus" role="status"></p>
+            <p class="pt-legal">بإرسال النتيجة تنضم إلى نشرة أتقن الإنجليزية (دروس ونصائح مجانية)، ويمكنك إلغاء الاشتراك في أي وقت من أسفل أي رسالة. <a href="privacy.html">سياسة الخصوصية</a></p>
+          </div>
+        </div>
+
+        <div id="ptSent" hidden>
+          <div class="quiz-q pt-gate">
+            <div class="pt-gate-ic ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg></div>
+            <h2>أرسلنا نتيجتك إلى بريدك</h2>
+            <p class="pt-sent-to"><bdi id="ptSentTo"></bdi></p>
+            <ol class="pt-steps">
+              <li>افتح بريدك الآن وابحث عن رسالة من <b>Master English</b> بعنوان «نتيجتك في اختبار المستوى».</li>
+              <li>لم تجدها خلال دقيقتين؟ افتح مجلد <b>Spam</b> (الرسائل غير المرغوب فيها)، أو تبويب <b>Promotions</b> (العروض الترويجية) في Gmail.</li>
+              <li>وجدتها هناك؟ اضغط <b>Not spam</b> (ليست رسالة غير مرغوب فيها) لتصلك رسائلنا القادمة في البريد الوارد.</li>
+            </ol>
+            <div class="quiz-actions">
+              <a class="btn btn-primary" id="ptOpenMail" href="#" target="_blank" rel="noopener" hidden>افتح بريدك</a>
+              <button type="button" class="btn btn-outline" id="ptResend">لم تصلني، أعد الإرسال</button>
+              <button type="button" class="btn btn-ghost" id="ptChange">البريد خطأ؟ صحّحه</button>
+            </div>
+            <p class="pt-status" id="ptSentStatus" role="status"></p>
+            <p style="margin:18px 0 0;"><button type="button" class="pt-link" onclick="location.reload()">أعد الاختبار</button></p>
+          </div>
+        </div>
       </div>
       <p style="text-align:center; margin-top:30px; color:var(--ink-soft); font-size:14px;">اختبار تقريبي للتوجيه، وليس شهادة رسمية. لاختبارات أطول بالفيديو: <a href="https://www.youtube.com/watch?v=8LawAOO6iHI" target="_blank" rel="noopener">اختبار A1</a> · <a href="https://www.youtube.com/watch?v=dCz5RrI6a7U" target="_blank" rel="noopener">B1</a> · <a href="https://www.youtube.com/watch?v=B-VK4Ijo8Nw" target="_blank" rel="noopener">B2</a> · <a href="https://www.youtube.com/watch?v=a6KLF-MFSPA" target="_blank" rel="noopener">C1</a></p>
     </div>
   </section>
-
-<script>
-(function () {
-  const QUESTIONS = [{"level": "A1", "q": "اختر الكلمة الصحيحة: She ___ a teacher.", "o": ["is", "are", "am", "be"], "a": 0, "e": "مع he/she/it نستخدم is."}, {"level": "A1", "q": "I ___ coffee every morning.", "o": ["drink", "drinks", "drinking", "am drink"], "a": 0, "e": "المضارع البسيط مع I بدون s: I drink."}, {"level": "A1", "q": "ما عكس كلمة cheap؟", "o": ["expensive", "small", "old", "slow"], "a": 0, "e": "cheap = رخيص، وعكسها expensive = غالي."}, {"level": "A1", "q": "There ___ two books on the table.", "o": ["are", "is", "be", "am"], "a": 0, "e": "مع الجمع (two books) نستخدم There are."}, {"level": "A1", "q": "What time ___ you get up?", "o": ["do", "does", "are", "is"], "a": 0, "e": "السؤال في المضارع البسيط مع you يبدأ بـ do."}, {"level": "A2", "q": "Yesterday we ___ to the beach.", "o": ["went", "go", "goes", "going"], "a": 0, "e": "Yesterday تعني الماضي، وماضي go هو went."}, {"level": "A2", "q": "He is ___ than his brother.", "o": ["taller", "more tall", "tallest", "the taller"], "a": 0, "e": "المقارنة بين اثنين مع صفة قصيرة: tall → taller than."}, {"level": "A2", "q": "I haven't seen her ___ Monday.", "o": ["since", "for", "from", "ago"], "a": 0, "e": "since مع نقطة بداية في الزمن (Monday)، وfor مع مدة."}, {"level": "A2", "q": "Could you ___ me the salt, please?", "o": ["pass", "to pass", "passing", "passed"], "a": 0, "e": "بعد could يأتي الفعل في مصدره بدون to."}, {"level": "A2", "q": "ما معنى: I'm looking forward to the weekend.", "o": ["أنتظر عطلة نهاية الأسبوع بشوق", "أبحث عن عطلة نهاية الأسبوع", "أنظر إلى الأمام في العطلة", "نسيت عطلة نهاية الأسبوع"], "a": 0, "e": "look forward to = يتطلع بشوق إلى."}, {"level": "B1", "q": "If it rains tomorrow, we ___ at home.", "o": ["will stay", "would stay", "stayed", "stay will"], "a": 0, "e": "الحالة الشرطية الأولى: If + مضارع، ثم will + فعل."}, {"level": "B1", "q": "I've been working here ___ five years.", "o": ["for", "since", "during", "from"], "a": 0, "e": "for مع المدة (five years)."}, {"level": "B1", "q": "أي جملة صحيحة؟", "o": ["She suggested going to the cinema.", "She suggested to go to the cinema.", "She suggested us to go to the cinema.", "She suggested go to the cinema."], "a": 0, "e": "بعد suggest يأتي الفعل بصيغة ‎-ing‎ (أو that + جملة)."}, {"level": "B1", "q": "🔊 استمع إلى الجملة، ثم اختر معناها.", "o": ["أفضّل البقاء في البيت الليلة", "سأخرج الليلة بالتأكيد", "بقيت في البيت أمس", "لا أحب البقاء في البيت"], "a": 0, "e": "الجملة: I'd rather stay in tonight. وI'd rather تعني: أفضّل.", "say": "I'd rather stay in tonight."}, {"level": "B1", "q": "The meeting was ___ because the manager was sick.", "o": ["called off", "called on", "called up", "called in"], "a": 0, "e": "call off = يلغي."}, {"level": "B2", "q": "By the time we arrived, the film ___.", "o": ["had already started", "has already started", "already started", "was already start"], "a": 0, "e": "حدث قبل حدث آخر في الماضي: الماضي التام had + started."}, {"level": "B2", "q": "I wish I ___ more time to study.", "o": ["had", "have", "would have", "will have"], "a": 0, "e": "wish عن الحاضر تأتي بعدها صيغة الماضي: I wish I had."}, {"level": "B2", "q": "He denied ___ the money.", "o": ["taking", "to take", "take", "taken"], "a": 0, "e": "بعد deny يأتي الفعل بصيغة ‎-ing‎."}, {"level": "B2", "q": "🔊 استمع إلى السؤال، ثم اختر معناه.", "o": ["هل يمكنك شرح هذه النقطة مرة أخرى؟", "هل يمكنك تجاوز هذه النقطة؟", "هل ذهبت إلى هناك مرة أخرى؟", "هل انتهيت من هذه النقطة؟"], "a": 0, "e": "السؤال: Could you go over that point again? وgo over تعني: يراجع أو يشرح مرة أخرى.", "say": "Could you go over that point again?"}, {"level": "B2", "q": "The new policy had a significant ___ on sales.", "o": ["impact", "affect", "effect to", "influence at"], "a": 0, "e": "have an impact on = يكون له أثر على. affect فعل وليس اسماً."}, {"level": "C1", "q": "Hardly ___ the room when the phone rang.", "o": ["had I entered", "I had entered", "did I entered", "I entered"], "a": 0, "e": "بعد Hardly في أول الجملة ينقلب الترتيب: Hardly had I entered."}, {"level": "C1", "q": "It's high time we ___ a decision.", "o": ["made", "make", "will make", "have made"], "a": 0, "e": "It's high time + فاعل + فعل ماضٍ، رغم أن المعنى عن الحاضر."}, {"level": "C1", "q": "ما معنى to beat around the bush؟", "o": ["يتهرب من قول الشيء مباشرة", "يعمل بجد", "يتنزه في الحديقة", "يهزم منافسه"], "a": 0, "e": "beat around the bush = يلفّ ويدور ولا يدخل في صلب الموضوع."}, {"level": "C1", "q": "Not only ___ late, but he also forgot the documents.", "o": ["was he", "he was", "he is", "did he"], "a": 0, "e": "بعد Not only في أول الجملة ينقلب الترتيب: Not only was he late."}, {"level": "C1", "q": "أي جملة هي الأنسب لطلب مهذب في إيميل عمل؟", "o": ["I'd appreciate it if you could send me the report by Friday.", "Send me the report Friday, thanks.", "I want the report on Friday.", "You must send the report Friday."], "a": 0, "e": "I'd appreciate it if you could… صيغة مهذبة واحترافية للطلب."}];
-  const LEVELS = {"A1": ["مبتدئ (A1)", "تعرف أساسيات قليلة. ابدأ من الصفر بخطوات واضحة: القراءة والنطق، ثم أشهر الكلمات، ثم الجمل البسيطة.", "paths/beginner.html"], "A2": ["مبتدئ متقدم (A2)", "لديك أساس جيد. ما تحتاجه الآن توسيع المفردات وتكوين جمل عن حياتك اليومية بثقة.", "paths/beginner.html"], "B1": ["متوسط (B1)", "تفهم الكثير لكن الكلام ما زال يحتاج تدريباً. هنا تنتقل من الفهم إلى التحدث.", "paths/intermediate.html"], "B2": ["فوق المتوسط (B2)", "مستواك جيد جداً. تحتاج الآن الطلاقة والسرعة والتعابير الطبيعية لتبدو واثقاً تماماً.", "paths/intermediate.html"], "C1": ["متقدم (C1)", "مستواك متقدم. ركّز على الإنجليزية السريعة الحقيقية، والتعابير، والنطق، وإنجليزية العمل.", "paths/advanced.html"]};
-  const AR = "٠١٢٣٤٥٦٧٨٩", ar = (n) => String(n).replace(/[0-9]/g, (d) => AR[d]);
-  const $ = (id) => document.getElementById(id);
-  let i = 0; const answers = [];
-
-  function shuffle(a) { a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
-
-  function show() {
-    const q = QUESTIONS[i];
-    $("ptCount").textContent = `السؤال ${ar(i + 1)} من ${ar(QUESTIONS.length)}`;
-    $("ptLevelTag").textContent = q.level;
-    $("ptBar").style.width = (i / QUESTIONS.length * 100) + "%";
-    $("ptQ").textContent = q.q;
-    $("ptSayWrap").hidden = !q.say;
-    $("ptSayFallback").hidden = true;
-    const box = $("ptChoices"); box.innerHTML = "";
-    const opts = shuffle(q.o.map((label, idx) => ({ label, idx }))).concat([{ label: "لا أعرف", idx: -1 }]);
-    opts.forEach((opt) => {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "quiz-choice"; b.dir = "auto"; b.textContent = opt.label;
-      b.addEventListener("click", () => {
-        answers[i] = opt.idx;
-        i++;
-        if (i < QUESTIONS.length) show(); else finish();
-      });
-      box.appendChild(b);
-    });
-  }
-
-  $("ptSay").addEventListener("click", () => {
-    const q = QUESTIONS[i];
-    const ok = window.MELearner && window.MELearner.speak(q.say);
-    if (!ok) { $("ptSayFallback").hidden = false; $("ptSayFallback").textContent = "(متصفحك لا يدعم الصوت، الجملة: " + q.say + ")"; }
-  });
-
-  function levelFor(score) { return score <= 5 ? "A1" : score <= 10 ? "A2" : score <= 15 ? "B1" : score <= 20 ? "B2" : "C1"; }
-
-  function finish() {
-    const score = answers.filter((a, k) => a === QUESTIONS[k].a).length;
-    const level = levelFor(score);
-    const [name, desc, path] = LEVELS[level];
-    if (window.MELearner) window.MELearner.setLevel(level, score);
-    $("ptRun").hidden = true;
-    const review = QUESTIONS.map((q, k) => {
-      const ok = answers[k] === q.a;
-      const mine = answers[k] === -1 ? "لا أعرف" : q.o[answers[k]];
-      return `<li><span class="${ok ? "ok" : "bad"}">${ok ? "✓" : "✗"}</span> <bdi>${q.say ? q.say : q.q}</bdi><br><small>${ok ? "" : "إجابتك: <bdi>" + mine + "</bdi> · "}الصحيح: <bdi>${q.o[q.a]}</bdi>. ${q.e}</small></li>`;
-    }).join("");
-    $("ptResult").hidden = false;
-    $("ptResult").innerHTML = `<div class="quiz-result pt-result"><p>نتيجتك ${ar(score)} من ${ar(QUESTIONS.length)}، ومستواك التقريبي:</p><h2>${name}</h2><p>${desc}</p>
-      <div class="quiz-actions"><a class="btn btn-primary" href="${path}">ابدأ مسارك الآن ←</a><a class="btn btn-outline" href="my-learning.html">احفظ تقدّمي</a><button type="button" class="btn btn-ghost" onclick="location.reload()">أعد الاختبار</button></div></div>
-      <div class="quiz-q"><p class="quiz-q-text">راجع إجاباتك</p><ul class="pt-review">${review}</ul></div>`;
-    $("pt").scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  $("ptGo").addEventListener("click", () => { $("ptStart").hidden = true; $("ptRun").hidden = false; show(); });
-})();
-</script>
+<script type="application/json" id="ptQuestions">[{"level": "A1", "q": "اختر الكلمة الصحيحة: She ___ a teacher.", "o": ["is", "are", "am", "be"], "a": 0, "e": "مع he/she/it نستخدم is."}, {"level": "A1", "q": "I ___ coffee every morning.", "o": ["drink", "drinks", "drinking", "am drink"], "a": 0, "e": "المضارع البسيط مع I بدون s: I drink."}, {"level": "A1", "q": "ما عكس كلمة cheap؟", "o": ["expensive", "small", "old", "slow"], "a": 0, "e": "cheap = رخيص، وعكسها expensive = غالي."}, {"level": "A1", "q": "There ___ two books on the table.", "o": ["are", "is", "be", "am"], "a": 0, "e": "مع الجمع (two books) نستخدم There are."}, {"level": "A1", "q": "What time ___ you get up?", "o": ["do", "does", "are", "is"], "a": 0, "e": "السؤال في المضارع البسيط مع you يبدأ بـ do."}, {"level": "A2", "q": "Yesterday we ___ to the beach.", "o": ["went", "go", "goes", "going"], "a": 0, "e": "Yesterday تعني الماضي، وماضي go هو went."}, {"level": "A2", "q": "He is ___ than his brother.", "o": ["taller", "more tall", "tallest", "the taller"], "a": 0, "e": "المقارنة بين اثنين مع صفة قصيرة: tall → taller than."}, {"level": "A2", "q": "I haven't seen her ___ Monday.", "o": ["since", "for", "from", "ago"], "a": 0, "e": "since مع نقطة بداية في الزمن (Monday)، وfor مع مدة."}, {"level": "A2", "q": "Could you ___ me the salt, please?", "o": ["pass", "to pass", "passing", "passed"], "a": 0, "e": "بعد could يأتي الفعل في مصدره بدون to."}, {"level": "A2", "q": "ما معنى: I'm looking forward to the weekend.", "o": ["أنتظر عطلة نهاية الأسبوع بشوق", "أبحث عن عطلة نهاية الأسبوع", "أنظر إلى الأمام في العطلة", "نسيت عطلة نهاية الأسبوع"], "a": 0, "e": "look forward to = يتطلع بشوق إلى."}, {"level": "B1", "q": "If it rains tomorrow, we ___ at home.", "o": ["will stay", "would stay", "stayed", "stay will"], "a": 0, "e": "الحالة الشرطية الأولى: If + مضارع، ثم will + فعل."}, {"level": "B1", "q": "I've been working here ___ five years.", "o": ["for", "since", "during", "from"], "a": 0, "e": "for مع المدة (five years)."}, {"level": "B1", "q": "أي جملة صحيحة؟", "o": ["She suggested going to the cinema.", "She suggested to go to the cinema.", "She suggested us to go to the cinema.", "She suggested go to the cinema."], "a": 0, "e": "بعد suggest يأتي الفعل بصيغة ‎-ing‎ (أو that + جملة)."}, {"level": "B1", "q": "🔊 استمع إلى الجملة، ثم اختر معناها.", "o": ["أفضّل البقاء في البيت الليلة", "سأخرج الليلة بالتأكيد", "بقيت في البيت أمس", "لا أحب البقاء في البيت"], "a": 0, "e": "الجملة: I'd rather stay in tonight. وI'd rather تعني: أفضّل.", "say": "I'd rather stay in tonight."}, {"level": "B1", "q": "The meeting was ___ because the manager was sick.", "o": ["called off", "called on", "called up", "called in"], "a": 0, "e": "call off = يلغي."}, {"level": "B2", "q": "By the time we arrived, the film ___.", "o": ["had already started", "has already started", "already started", "was already start"], "a": 0, "e": "حدث قبل حدث آخر في الماضي: الماضي التام had + started."}, {"level": "B2", "q": "I wish I ___ more time to study.", "o": ["had", "have", "would have", "will have"], "a": 0, "e": "wish عن الحاضر تأتي بعدها صيغة الماضي: I wish I had."}, {"level": "B2", "q": "He denied ___ the money.", "o": ["taking", "to take", "take", "taken"], "a": 0, "e": "بعد deny يأتي الفعل بصيغة ‎-ing‎."}, {"level": "B2", "q": "🔊 استمع إلى السؤال، ثم اختر معناه.", "o": ["هل يمكنك شرح هذه النقطة مرة أخرى؟", "هل يمكنك تجاوز هذه النقطة؟", "هل ذهبت إلى هناك مرة أخرى؟", "هل انتهيت من هذه النقطة؟"], "a": 0, "e": "السؤال: Could you go over that point again? وgo over تعني: يراجع أو يشرح مرة أخرى.", "say": "Could you go over that point again?"}, {"level": "B2", "q": "The new policy had a significant ___ on sales.", "o": ["impact", "affect", "effect to", "influence at"], "a": 0, "e": "have an impact on = يكون له أثر على. affect فعل وليس اسماً."}, {"level": "C1", "q": "Hardly ___ the room when the phone rang.", "o": ["had I entered", "I had entered", "did I entered", "I entered"], "a": 0, "e": "بعد Hardly في أول الجملة ينقلب الترتيب: Hardly had I entered."}, {"level": "C1", "q": "It's high time we ___ a decision.", "o": ["made", "make", "will make", "have made"], "a": 0, "e": "It's high time + فاعل + فعل ماضٍ، رغم أن المعنى عن الحاضر."}, {"level": "C1", "q": "ما معنى to beat around the bush؟", "o": ["يتهرب من قول الشيء مباشرة", "يعمل بجد", "يتنزه في الحديقة", "يهزم منافسه"], "a": 0, "e": "beat around the bush = يلفّ ويدور ولا يدخل في صلب الموضوع."}, {"level": "C1", "q": "Not only ___ late, but he also forgot the documents.", "o": ["was he", "he was", "he is", "did he"], "a": 0, "e": "بعد Not only في أول الجملة ينقلب الترتيب: Not only was he late."}, {"level": "C1", "q": "أي جملة هي الأنسب لطلب مهذب في إيميل عمل؟", "o": ["I'd appreciate it if you could send me the report by Friday.", "Send me the report Friday, thanks.", "I want the report on Friday.", "You must send the report Friday."], "a": 0, "e": "I'd appreciate it if you could… صيغة مهذبة واحترافية للطلب."}]</script>
 </main>
 
 <footer class="site-footer">
@@ -250,5 +251,6 @@
 <script src="assets/js/contact-widget.js?v=20260925"></script>
 <script src="assets/js/help-bot.js?v=20260925"></script>
 <script src="assets/js/whatsapp-widget.js?v=20260925"></script>
+<script src="assets/js/placement.js?v=20260925"></script>
 </body>
 </html>
