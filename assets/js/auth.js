@@ -155,7 +155,7 @@
     btn.textContent = "تسجيل الدخول";
 
     if (ctaBtn) {
-      headerInner.insertBefore(btn, ctaBtn);
+      ctaBtn.parentNode.insertBefore(btn, ctaBtn);
     } else {
       headerInner.appendChild(btn);
     }

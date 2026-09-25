@@ -18,12 +18,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180.png">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260925">
 <style>
 .lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
 .lib-card { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
 .lib-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-.lib-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
+.lib-card img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
 .lib-card .lib-dur { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.78); color: #fff; font-size: 12px; padding: 2px 7px; border-radius: 6px; direction: ltr; }
 .lib-card strong { display: block; padding: 12px 14px 4px; font-size: 14.5px; line-height: 1.6; }
 .lib-card small { display: block; padding: 0 14px 14px; margin-top: auto; font-size: 12.5px; color: var(--ink-soft); }
@@ -42,29 +42,24 @@
 }
 
 .hub-articles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 16px 0 10px; }
-.hub-articles a { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; color: var(--ink); font-weight: 700; line-height: 1.6; }
-.hub-articles a:hover { border-color: var(--accent); }
+.hub-articles a { display: block; background: var(--paper); border-inline-start: 4px solid var(--accent); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); padding: 14px 16px; color: var(--ink); font-weight: 700; line-height: 1.6; transition: transform .15s ease, box-shadow .15s ease; }
+.hub-articles a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .hub-articles a .done { color: #3f8a5c; margin-inline-start: 6px; }
 .hub-courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
-.hub-courses a { display: block; background: var(--accent-light); border-radius: var(--radius-sm); padding: 16px 18px; color: var(--accent-dark); font-weight: 700; }
+.hub-courses a { display: block; background: var(--paper); border-top: 4px solid var(--gold); box-shadow: var(--shadow-sm); border-radius: var(--radius-sm); padding: 16px 18px; color: var(--accent-dark); font-weight: 800; font-family: var(--font-head); }
+.hub-courses a:hover { box-shadow: var(--shadow); }
 .hub-courses a span { display: block; font-weight: 400; color: var(--ink); font-size: 14px; margin-top: 4px; }
 .hub-block { margin: 44px 0 0; }
 
-.stage { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin: 22px 0; }
-.stage h2 { margin: 0 0 6px; font-size: 21px; }
-.stage-num { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; margin-inline-end: 8px; }
+.stage { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 26px 28px; margin: 24px 0; }
+.stage h2 { margin: 0 0 6px; font-size: 22px; display: flex; align-items: center; }
+.stage-num { display: inline-flex; flex-shrink: 0; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 900; margin-inline-end: 12px; box-shadow: 0 6px 14px -6px rgba(31,122,92,.8); }
 .stage-bar { height: 6px; background: var(--paper-soft); border-radius: 99px; overflow: hidden; margin: 10px 0 4px; }
 .stage-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
 .stage-count { font-size: 13px; color: var(--ink-soft); min-height: 18px; }
 .stage details { margin-top: 12px; }
 .stage summary { cursor: pointer; font-weight: 700; color: var(--accent-dark); margin: 6px 0 12px; }
 .lib-card .done { display: block; padding: 0 14px 12px; color: #3f8a5c; font-size: 13px; font-weight: 700; }
-.path-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; margin: 20px 0; }
-.path-card { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; color: var(--ink); }
-.path-card:hover { border-color: var(--accent); }
-.path-card strong { display: block; font-size: 19px; margin: 6px 0; font-family: var(--font-head); }
-.path-card small { color: var(--accent-dark); font-weight: 700; }
-.path-card p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14.5px; }
 </style>
 <script type="application/ld+json">
 {
@@ -133,15 +128,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="../courses.html">الكورسات</a>
-      <a href="../videos.html">الفيديوهات</a>
       <a href="../paths/index.html" aria-current="page">مسارات التعلم</a>
+      <a href="../videos.html">الفيديوهات</a>
+      <a href="../courses.html">الكورسات</a>
       <a href="../articles/index.html">المقالات</a>
       <a href="../testimonials.html">آراء الطلاب</a>
-      <a href="../search.html">بحث</a>
       <a href="../about.html">من نحن</a>
+      <a href="../search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="../placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="../search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="../placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -152,8 +151,8 @@
   <section class="article-hero">
     <div class="wrap">
       <p class="breadcrumb"><a href="../index.html">الرئيسية</a> ← <a href="../paths/index.html">مسارات التعلم</a> ← مسار إنجليزية العمل</p>
-      <h1>💼 مسار إنجليزية العمل: من المقابلة إلى قاعة الاجتماعات</h1>
-      <p class="article-meta"><span>🎯 المستوى: B1 وما فوق</span><span>🎬 ١٨ درساً</span><span>⏱️ نحو ٥ ساعة</span><span>مجاني بالكامل</span></p>
+      <h1>مسار إنجليزية العمل: من المقابلة إلى قاعة الاجتماعات</h1>
+      <p class="article-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg> المستوى: B1 وما فوق</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ١٨ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7h11"/><path d="M6.5 17h11"/><path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"/><path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"/></svg> نحو ٥ ساعة</span><span>مجاني بالكامل</span></p>
     </div>
   </section>
   <section class="article-body">
@@ -234,7 +233,7 @@
         <a href="../pace-executive.html">PACE<span>تدريب فردي مباشر مع نور للقياديين</span></a>
         </div>
       </div>
-      <p style="margin-top:36px;"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في القناة لتصلك الدروس الجديدة</a> <a class="btn btn-ghost" href="../my-learning.html">تقدّمي في التعلم</a></p>
+      <p style="margin-top:36px;"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في القناة لتصلك الدروس الجديدة</a> <a class="btn btn-ghost" href="../my-learning.html">تقدّمي في التعلم</a></p>
     </div>
   </section>
 <script>
@@ -282,7 +281,7 @@
         <a href="../products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="../products/presentations.html">أتقن العروض التقديمية</a>
         <a href="../products/interview.html">من التوتر إلى التميز</a>
-        <a href="../products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="../products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="../products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -296,7 +295,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -304,12 +303,12 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/track.js"></script>
-<script src="../assets/js/learner.js"></script>
-<script src="../assets/js/auth.js"></script>
-<script src="../assets/js/contact-widget.js"></script>
-<script src="../assets/js/help-bot.js"></script>
-<script src="../assets/js/whatsapp-widget.js"></script>
+<script src="../assets/js/main.js?v=20260925"></script>
+<script src="../assets/js/track.js?v=20260925"></script>
+<script src="../assets/js/learner.js?v=20260925"></script>
+<script src="../assets/js/auth.js?v=20260925"></script>
+<script src="../assets/js/contact-widget.js?v=20260925"></script>
+<script src="../assets/js/help-bot.js?v=20260925"></script>
+<script src="../assets/js/whatsapp-widget.js?v=20260925"></script>
 </body>
 </html>

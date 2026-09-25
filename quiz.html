@@ -11,12 +11,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925">
 <style>
   .quiz-wrap { max-width: 620px; margin: 0 auto; }
   .quiz-progress { display: flex; gap: 8px; justify-content: center; margin-bottom: 30px; }
-  .quiz-progress span { width: 40px; height: 4px; border-radius: 999px; background: var(--border); }
-  .quiz-progress span.done { background: var(--accent); }
+  .quiz-progress span { width: 40px; height: 4px; border-radius: 999px; background: rgba(255,255,255,.22); }
+  .quiz-option .ic { color: var(--accent); margin-inline-end: 6px; }
+  .quiz-progress span.done { background: var(--gold); }
   .quiz-step { display: none; }
   .quiz-step.active { display: block; }
   .quiz-options { display: grid; gap: 14px; margin-top: 28px; }
@@ -28,13 +29,13 @@
   }
   .quiz-option:hover { border-color: var(--accent); transform: translateY(-2px); }
   .quiz-result-card {
-    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--ink); background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
     padding: 30px; text-align: center; margin-top: 20px;
   }
   .quiz-result-card .card-icon { font-size: 40px; margin-bottom: 10px; }
   .quiz-result-card h3 { margin: 0 0 10px; font-size: 22px; }
   .quiz-result-card p { color: var(--ink-soft); margin: 0 0 24px; }
-  .quiz-restart { display: block; text-align: center; margin-top: 20px; color: var(--ink-soft); font-size: 14px; }
+  .quiz-restart { display: block; text-align: center; margin-top: 20px; color: rgba(255,255,255,.72); font-size: 14px; }
 </style>
 </head>
 <body>
@@ -46,15 +47,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="courses.html">الكورسات</a>
-      <a href="videos.html">الفيديوهات</a>
       <a href="paths/index.html">مسارات التعلم</a>
+      <a href="videos.html">الفيديوهات</a>
+      <a href="courses.html">الكورسات</a>
       <a href="articles/index.html">المقالات</a>
       <a href="testimonials.html">آراء الطلاب</a>
-      <a href="search.html">بحث</a>
       <a href="about.html">من نحن</a>
+      <a href="search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -76,19 +81,19 @@
       <div class="quiz-step active" id="step1">
         <h2 style="text-align:center; font-size:20px;">ما هو هدفك الأساسي الآن؟</h2>
         <div class="quiz-options">
-          <button type="button" class="quiz-option" data-answer="pronunciation">🗣️ أريد نطقاً أوضح وأقرب للأمريكي</button>
-          <button type="button" class="quiz-option" data-answer="work">💼 أحتاج إنجليزية أقوى للعمل (اجتماعات، عروض، مقابلات)</button>
-          <button type="button" class="quiz-option" data-answer="vocabulary-diet">📝 أريد توسيع مفرداتي بسرعة وبساطة</button>
-          <button type="button" class="quiz-option" data-answer="commuter-challenge">🚗 أريد التدرب أثناء تنقلي اليومي بدون وقت إضافي</button>
+          <button type="button" class="quiz-option" data-answer="pronunciation"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12.9a5 5 0 1 0 -3.902 -3.9"/><path d="M15 12.9l-3.902 -3.899l-7.513 8.584a2 2 0 1 0 2.827 2.83l8.588 -7.515z"/></svg>  أريد نطقاً أوضح وأقرب للأمريكي</button>
+          <button type="button" class="quiz-option" data-answer="work"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg>  أحتاج إنجليزية أقوى للعمل (اجتماعات، عروض، مقابلات)</button>
+          <button type="button" class="quiz-option" data-answer="vocabulary-diet"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"/><path d="M13 8l2 0"/><path d="M13 12l2 0"/></svg>  أريد توسيع مفرداتي بسرعة وبساطة</button>
+          <button type="button" class="quiz-option" data-answer="commuter-challenge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"/></svg>  أريد التدرب أثناء تنقلي اليومي بدون وقت إضافي</button>
         </div>
       </div>
 
       <div class="quiz-step" id="step2">
         <h2 style="text-align:center; font-size:20px;">أي جانب من العمل هو الأصعب عليك؟</h2>
         <div class="quiz-options">
-          <button type="button" class="quiz-option" data-answer="presentations">🎤 تقديم عروض تقديمية احترافية</button>
-          <button type="button" class="quiz-option" data-answer="interview">💼 مقابلات العمل</button>
-          <button type="button" class="quiz-option" data-answer="ramadan-audio-club">🌙 المحادثات والاجتماعات اليومية في العمل</button>
+          <button type="button" class="quiz-option" data-answer="presentations"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4l18 0"/><path d="M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-10"/><path d="M12 16l0 4"/><path d="M9 20l6 0"/><path d="M8 12l3 -3l2 2l3 -3"/></svg>  تقديم عروض تقديمية احترافية</button>
+          <button type="button" class="quiz-option" data-answer="interview"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg>  مقابلات العمل</button>
+          <button type="button" class="quiz-option" data-answer="ramadan-audio-club"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>  المحادثات والاجتماعات اليومية في العمل</button>
         </div>
       </div>
 
@@ -108,7 +113,11 @@
         <a href="index.html">الرئيسية</a>
         <a href="courses.html">الكورسات</a>
         <a href="videos.html">الفيديوهات</a>
+        <a href="paths/index.html">مسارات التعلم</a>
+        <a href="placement-test.html">اختبار تحديد المستوى</a>
         <a href="articles/index.html">المقالات</a>
+        <a href="about.html">من نحن</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
         <a href="become-affiliate.html">كن شريكاً معنا</a>
       </div>
       <div class="footer-col">
@@ -117,7 +126,7 @@
         <a href="products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="products/presentations.html">أتقن العروض التقديمية</a>
         <a href="products/interview.html">من التوتر إلى التميز</a>
-        <a href="products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -131,7 +140,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -139,12 +148,12 @@
   </div>
 </footer>
 
-<script src="assets/js/track.js"></script>
-<script src="assets/js/learner.js"></script>
-<script src="assets/js/auth.js"></script>
-<script src="assets/js/contact-widget.js"></script>
-<script src="assets/js/help-bot.js"></script>
-<script src="assets/js/whatsapp-widget.js"></script>
+<script src="assets/js/track.js?v=20260925"></script>
+<script src="assets/js/learner.js?v=20260925"></script>
+<script src="assets/js/auth.js?v=20260925"></script>
+<script src="assets/js/contact-widget.js?v=20260925"></script>
+<script src="assets/js/help-bot.js?v=20260925"></script>
+<script src="assets/js/whatsapp-widget.js?v=20260925"></script>
 <script>
   const RESULTS = {
     "pronunciation": {

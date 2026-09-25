@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180.png">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260925">
 </head>
 <body>
 
@@ -31,15 +31,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="../courses.html">الكورسات</a>
-      <a href="../videos.html">الفيديوهات</a>
       <a href="../paths/index.html">مسارات التعلم</a>
+      <a href="../videos.html">الفيديوهات</a>
+      <a href="../courses.html">الكورسات</a>
       <a href="../articles/index.html" aria-current="page">المقالات</a>
       <a href="../testimonials.html">آراء الطلاب</a>
-      <a href="../search.html">بحث</a>
       <a href="../about.html">من نحن</a>
+      <a href="../search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="../placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="../search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="../placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -49,7 +53,7 @@
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">✦ مكتبة المقالات</span>
+      <span class="eyebrow">مكتبة المقالات</span>
       <h1>دليلك الكامل نحو الطلاقة بالإنجليزية</h1>
       <p class="hero-sub">أدلة عملية مفصّلة، مبنية على خبرة تدريس منذ ٢٠١٦ وأكثر من ١٬٢٠٠ فيديو تعليمي. كل مقال يعالج مشكلة محددة تواجه المتعلم العربي بحلول قابلة للتطبيق فوراً.</p>
     </div>
@@ -61,21 +65,25 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">من أين أبدأ؟</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="where-to-start.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/4iIxIdzxbzI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">دليل البداية</span>
           <h3>من أين أبدأ في تعلم الإنجليزية معي؟</h3>
           <p>خارطة طريق واضحة حسب هدفك، بدل الضياع بين ١٬٢٠٠ فيديو.</p>
         </a>
         <a href="../placement-test.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg></span>
           <span class="cat">اختبار مجاني</span>
           <h3>اختبار تحديد مستوى الإنجليزية (A1 إلى C1)</h3>
           <p>٢٥ سؤالاً مع الشرح، ثم مسار تعلم يناسب مستواك.</p>
         </a>
         <a href="../paths/index.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4z"/><path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5"/></svg></span>
           <span class="cat">مسارات التعلم</span>
           <h3>مسارات مرتّبة: من الصفر حتى الطلاقة</h3>
           <p>دروس القناة والمقالات في مراحل واضحة حسب مستواك وهدفك.</p>
         </a>
         <a href="best-youtube-channels-learn-english-arabic.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg></span>
           <span class="cat">مقارنة</span>
           <h3>أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب في ٢٠٢٦</h3>
           <p>مقارنة صادقة بالأرقام، ومتى تناسبك كل قناة.</p>
@@ -85,21 +93,25 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">مراجع ودروس مكتوبة</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="../guides/english-sounds-for-arabic-speakers.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M5 8h4"/><path d="M9 16h4"/><path d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z"/><path d="M14 9l4 -1"/><path d="M16 16l3.923 -.98"/></svg></span>
           <span class="cat">مرجع النطق</span>
           <h3>دليل الأصوات الإنجليزية الصعبة على العرب</h3>
           <p>P وB، F وV، TH، الـ R، الحركات، مع تدريب صوتي لكل صوت.</p>
         </a>
         <a href="../guides/common-english-mistakes-arabs.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M5 8h4"/><path d="M9 16h4"/><path d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z"/><path d="M14 9l4 -1"/><path d="M16 16l3.923 -.98"/></svg></span>
           <span class="cat">مرجع الأخطاء</span>
           <h3>لا تقل… بل قل: أخطاء العرب الشائعة بالإنجليزية</h3>
           <p>أكثر من ٥٠ خطأً مع الصواب وسبب الخطأ.</p>
         </a>
         <a href="best-american-pronunciation-course-arabs.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg></span>
           <span class="cat">مقارنة</span>
           <h3>أفضل كورس نطق أمريكي للعرب: مقارنة ٤ خيارات</h3>
           <p>اللغة والحجم والسعر والشهادة، ومتى يناسبك كل كورس.</p>
         </a>
         <a href="../lessons/index.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"/><path d="M13 8l2 0"/><path d="M13 12l2 0"/></svg></span>
           <span class="cat">دروس مكتوبة</span>
           <h3>أشهر دروس القناة مكتوبة مع اختبار</h3>
           <p>المطار، المقهى، الطبيب، اختبار المستوى، التعابير العامية وغيرها.</p>
@@ -109,46 +121,55 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">النطق والاستماع</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="understand-fast-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/CnMoRQJR9ic/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق واستماع</span>
           <h3>كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية</h3>
           <p>أسرار الربط والاختصار التي يستخدمها المتحدثون الأصليون.</p>
         </a>
         <a href="understand-movies-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/t0NNhn3MJh4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق واستماع</span>
           <h3>لماذا لا تفهم الإنجليزية في الأفلام؟ ٤ أسرار الكلمات الشبحية</h3>
           <p>الحرف المختفي، صوت الكسل، القطار، والاختصارات. مع اختبار تفاعلي وملف PDF.</p>
         </a>
         <a href="american-accent-secrets.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/C7JjsCJlsVA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟</h3>
           <p>خطوات عملية لتحقيق نطق أمريكي مفهوم وواثق.</p>
         </a>
         <a href="american-vs-british-accent.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/i47_uqON51c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>الفرق بين النطق الأمريكي والبريطاني: أيهما تتعلم؟</h3>
           <p>دليل مبسط لاختيار اللهجة المناسبة لهدفك.</p>
         </a>
         <a href="schwa-sound-explained.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/KBbYo1mPSF4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟</h3>
           <p>الصوت الصغير الذي يفضح لكنتك أكثر من أي حرف آخر.</p>
         </a>
         <a href="american-flap-t-rules.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/ETBuPZ625Iw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>ما هي تاء الرفرفة (Flap T) في النطق الأمريكي؟</h3>
           <p>لماذا تسمع water كأنها wader، بالقاعدة الدقيقة.</p>
         </a>
         <a href="glottal-stop-american-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/St8Y38IbD-0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>ما هو الـ Glottal Stop ولماذا يحذف الأمريكيون صوت الـ T؟</h3>
           <p>لماذا تختفي التاء تماماً في button وmountain.</p>
         </a>
         <a href="soften-arabic-accent-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/aOBQJy1qorg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>لماذا تبدو لكنة العرب في الإنجليزية "قاسية"؟</h3>
           <p>السبب هو الإيقاع لا الحروف، وكيف تصلحه.</p>
         </a>
         <a href="pronunciation-course-comparison-guide.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/he6U3zm4vxw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">نطق</span>
           <h3>كورس نطق أمريكي متخصص أم كورس على منصة عامة مثل Udemy؟ كيف تختار</h3>
           <p>معايير عملية لاختيار الكورس الأنسب لهدفك، لا لسعره فقط.</p>
@@ -158,51 +179,61 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">المحادثة والطلاقة</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="conversation-basics-100-qa.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/Su3-sZv6iXU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">محادثة</span>
           <h3>أهم أنماط السؤال والجواب في المحادثات اليومية بالإنجليزية</h3>
           <p>مرجع شامل لبناء أساس محادثة قوي.</p>
         </a>
         <a href="stop-one-word-answers.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/Q_cqsM3YjEE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">محادثة</span>
           <h3>لماذا تدمر إجابات الكلمة الواحدة محادثتك؟</h3>
           <p>كيف تحوّل إجاباتك القصيرة إلى محادثات حقيقية.</p>
         </a>
         <a href="start-conversation-confidently.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/8n-WYmzqBbo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">محادثة</span>
           <h3>كيف تبدأ أي محادثة بالإنجليزية دون خجل؟</h3>
           <p>جمل افتتاحية وتقنيات لكسر حاجز البداية.</p>
         </a>
         <a href="think-in-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/IlTZBmoUqRE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق</h3>
           <p>تمرين يومي بسيط لكسر عادة الترجمة الذهنية.</p>
         </a>
         <a href="know-but-cant-speak.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/eIkHI4WQbww/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>لماذا ينعقد لسانك رغم فهمك للإنجليزية؟</h3>
           <p>السبب الحقيقي وراء فجوة الفهم والتحدث.</p>
         </a>
         <a href="fluency-in-months-not-years.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/v272BxvPB4Q/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>كيف تصل إلى الطلاقة خلال أشهر لا سنوات؟</h3>
           <p>خارطة طريق واقعية لتسريع تقدمك.</p>
         </a>
               <a href="stop-saying-um-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/hTASp1LywZk/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>كيف تتخلص من صوت "أم" (Umm) أثناء التحدث؟</h3>
           <p>بديلان عمليان يجعلان كلامك أكثر ثقة فوراً.</p>
         </a>
         <a href="self-correction-while-speaking.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/e02kbJKFA7Y/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>كيف تصحح لنفسك أخطاء النطق دون أن تتوقف؟</h3>
           <p>تقنية التصحيح السريع بدون كسر تدفق الكلام.</p>
         </a>
         <a href="cultural-humor-idioms-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/ufbb412juuY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">محادثة</span>
           <h3>كيف تفهم النكات والتلميحات الثقافية بالإنجليزية؟</h3>
           <p>لماذا الفكاهة أصعب جزء في أي لغة أجنبية.</p>
         </a>
         <a href="travel-story-english-idioms.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/58S9G1sdF3M/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">طلاقة</span>
           <h3>كيف تروي قصة سفرك بالإنجليزية الطبيعية؟</h3>
           <p>٩ تعبيرات تستبدل بها الترجمة الحرفية، مع فيديو واختبار وPDF.</p>
@@ -212,16 +243,19 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">المفردات</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="two-words-instead-of-vocabulary.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/4oDspnkXhNc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">مفردات</span>
           <h3>كلمتان فقط تُغنيانك عن حفظ ٥٠ كلمة إنجليزية</h3>
           <p>طريقة مختصرة لتوسيع مفرداتك بسرعة.</p>
         </a>
         <a href="one-word-beats-50-words.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/GOezDtkHQA4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">مفردات</span>
           <h3>كلمة واحدة "تسحق" ٥٠ كلمة إنجليزية معقدة</h3>
           <p>استراتيجية لتبسيط المفردات المعقدة.</p>
         </a>
         <a href="stop-memorizing-words.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/k4P9Y1thrRo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">مفردات</span>
           <h3>توقف عن حفظ الكلمات: ماذا يفعل المتحدث الذكي؟</h3>
           <p>بديل أذكى وأسرع من الحفظ التقليدي.</p>
@@ -231,61 +265,73 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">الإنجليزية للعمل والمهنة</h2>
       <div class="article-index-grid" style="margin-bottom:50px;">
         <a href="leadership-language-at-work.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/DzkHoqpJ-aU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تفرض شخصيتك في العمل بالإنجليزية؟ ٥ مفاتيح</h3>
           <p>لغة القيادة الاحترافية في بيئة العمل.</p>
         </a>
         <a href="job-interview-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/zQ5SjOTVGjg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟</h3>
           <p>خطة تحضير كاملة لأصعب الأسئلة.</p>
         </a>
         <a href="business-presentation-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/JpJnE0g3Aow/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تقدم عرضاً تقديمياً احترافياً بالإنجليزية؟</h3>
           <p>هيكلية عرض تقديمي مقنع من البداية للنهاية.</p>
         </a>
         <a href="business-meetings-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/fm7nVoLeK40/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟</h3>
           <p>عبارات ومهارات للمشاركة الفعالة في الاجتماعات.</p>
         </a>
               <a href="professional-email-writing.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/e8EH-G3UVns/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تكتب بريداً إلكترونياً رسمياً بالإنجليزية؟</h3>
           <p>الهيكل الصحيح وأخطاء شائعة يقع فيها العرب.</p>
         </a>
         <a href="first-day-at-work-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/eCjq2pZAxc4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تتحدث بالإنجليزية في أول يوم عمل؟</h3>
           <p>عبارات جاهزة لتقديم نفسك بثقة من اللحظة الأولى.</p>
         </a>
         <a href="negotiate-salary-phrases.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/Fch-5ycsQ0k/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تتفاوض على زيادة الراتب بالإنجليزية؟</h3>
           <p>هيكل من ثلاث خطوات لطلب زيادة براتبك الحالي.</p>
         </a>
         <a href="remote-meetings-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/CnEp_By2qRs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تدير اجتماعاً بالإنجليزية عبر Zoom أو Teams؟</h3>
           <p>عبارات لافتتاح الاجتماع وحل مشاكل الاتصال بثقة.</p>
         </a>
         <a href="describing-charts-presentations.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/RhXEkWDe93E/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تصف الرسوم البيانية والأرقام المالية بالإنجليزية؟</h3>
           <p>عبارات جاهزة لوصف أي اتجاه في عرضك التقديمي.</p>
         </a>
         <a href="formal-vs-informal-workplace.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/BX0h-4jafSc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>ما الفرق بين الإنجليزية الرسمية وغير الرسمية في العمل؟</h3>
           <p>متى تستخدم كل مستوى دون أن تبدو بعيداً.</p>
         </a>
         <a href="tech-support-phrases-english.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/X5ffHeV535s/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تشرح مشكلة تقنية بالإنجليزية لفريق الدعم؟</h3>
           <p>هيكل واضح يسرّع فهم وحل أي مشكلة تقنية.</p>
         </a>
         <a href="salary-expectations-interview-answer.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/fCvnokR2saQ/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عمل ومهنة</span>
           <h3>كيف تجيب عن سؤال "salary expectations" في المقابلة؟</h3>
           <p>الصيغة الآمنة التي لا تخسرك التفاوض لاحقاً.</p>
@@ -295,46 +341,55 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">عادات التعلم</h2>
       <div class="article-index-grid">
         <a href="learn-english-ramadan.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/MuHlIPA3SWw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عادات تعلم</span>
           <h3>كيف تتعلم الإنجليزية في رمضان وأنت صائم؟</h3>
           <p>طريقة تعلم خفيفة تناسب الطاقة المنخفضة.</p>
         </a>
         <a href="learn-english-while-driving.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/IZryAyOA0iQ/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عادات تعلم</span>
           <h3>أفضل الطرق لتعلم الإنجليزية أثناء القيادة</h3>
           <p>حوّل وقت التنقل اليومي إلى جلسة تدريب.</p>
         </a>
         <a href="common-arabic-speaker-mistakes.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/5cVVB52lgVo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عام</span>
           <h3>أخطاء شائعة يقع فيها العرب عند تعلم الإنجليزية</h3>
           <p>تجنّب الأخطاء التي تبطئ تقدمك دون أن تشعر.</p>
         </a>
         <a href="prepositions-mistakes.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/bMIguMwDWhc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">قواعد</span>
           <h3>لماذا تخطئ في in وon وat مهما حفظت؟</h3>
           <p>السبب الحقيقي وراء التباس حروف الجر، وطريقة عملية لإتقانها.</p>
         </a>
               <a href="practice-speaking-alone.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/-6-HzGDenf4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عادات تعلم</span>
           <h3>كيف تحسّن التحدث بالإنجليزية ذاتياً بدون شريك؟</h3>
           <p>ثلاث تقنيات مثبتة تدربك على التحدث وحدك.</p>
         </a>
         <a href="reading-books-without-dictionary.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/qSv-JyHuIS0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عادات تعلم</span>
           <h3>كيف تقرأ كتاباً بالإنجليزية دون التوقف عند كل كلمة؟</h3>
           <p>قاعدة الـ٥٪ لمتى تتجاهل كلمة ومتى تبحث عنها.</p>
         </a>
         <a href="present-perfect-vs-past-simple.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/W8z0YCFOF1E/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">قواعد</span>
           <h3>ما الفرق بين Present Perfect وPast Simple؟</h3>
           <p>القاعدة العملية المختصرة دون تعقيدات نحوية.</p>
         </a>
         <a href="cefr-levels-explained.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/NRrXWCo3JMo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عام</span>
           <h3>ما هي مستويات اللغة الإنجليزية (A1 إلى C2)؟</h3>
           <p>كيف تحدد مستواك الحقيقي بدون اختبار رسمي.</p>
         </a>
         <a href="ielts-speaking-part-2-framework.html" class="article-index-card">
+          <img class="aic-thumb" src="https://i.ytimg.com/vi/Dccw_tpn5UY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="aic-play"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></span>
           <span class="cat">عام</span>
           <h3>كيف تجتاز الجزء الثاني من اختبار المحادثة للآيلتس؟</h3>
           <p>هيكل جاهز يملأ الدقيقتين المطلوبتين دون توقف.</p>
@@ -344,6 +399,7 @@
       <h2 style="font-family:var(--font-head); font-size:22px; margin-bottom:20px;">قصتي</h2>
       <div class="article-index-grid">
         <a href="my-story.html" class="article-index-card">
+          <span class="aic-cover"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 10l.01 0"/><path d="M15 10l.01 0"/><path d="M9.5 15a3.5 3.5 0 0 0 5 0"/></svg></span>
           <span class="cat">قصتي</span>
           <h3>كيف لاحظت الفجوة الحقيقية بين معرفة الإنجليزية والتحدث بها</h3>
           <p>قصتي الكاملة، وكيف تحوّلت ملاحظة بسيطة إلى منهج تدريس كامل.</p>
@@ -362,7 +418,11 @@
         <a href="../index.html">الرئيسية</a>
         <a href="../courses.html">الكورسات</a>
         <a href="../videos.html">الفيديوهات</a>
+        <a href="../paths/index.html">مسارات التعلم</a>
+        <a href="../placement-test.html">اختبار تحديد المستوى</a>
         <a href="../articles/index.html">المقالات</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../faq.html">الأسئلة الشائعة</a>
         <a href="../become-affiliate.html">كن شريكاً معنا</a>
       </div>
       <div class="footer-col">
@@ -371,7 +431,7 @@
         <a href="../products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="../products/presentations.html">أتقن العروض التقديمية</a>
         <a href="../products/interview.html">من التوتر إلى التميز</a>
-        <a href="../products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="../products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="../products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -385,7 +445,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -393,12 +453,12 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/track.js"></script>
-<script src="../assets/js/learner.js"></script>
-<script src="../assets/js/auth.js"></script>
-<script src="../assets/js/contact-widget.js"></script>
-<script src="../assets/js/help-bot.js"></script>
-<script src="../assets/js/whatsapp-widget.js"></script>
+<script src="../assets/js/main.js?v=20260925"></script>
+<script src="../assets/js/track.js?v=20260925"></script>
+<script src="../assets/js/learner.js?v=20260925"></script>
+<script src="../assets/js/auth.js?v=20260925"></script>
+<script src="../assets/js/contact-widget.js?v=20260925"></script>
+<script src="../assets/js/help-bot.js?v=20260925"></script>
+<script src="../assets/js/whatsapp-widget.js?v=20260925"></script>
 </body>
 </html>

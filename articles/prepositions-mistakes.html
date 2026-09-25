@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180.png">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260925">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -120,15 +120,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="../courses.html">الكورسات</a>
-      <a href="../videos.html">الفيديوهات</a>
       <a href="../paths/index.html">مسارات التعلم</a>
+      <a href="../videos.html">الفيديوهات</a>
+      <a href="../courses.html">الكورسات</a>
       <a href="../articles/index.html" aria-current="page">المقالات</a>
       <a href="../testimonials.html">آراء الطلاب</a>
-      <a href="../search.html">بحث</a>
       <a href="../about.html">من نحن</a>
+      <a href="../search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="../placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="../search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="../placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -141,7 +145,7 @@
       <p class="breadcrumb"><a href="../index.html">الرئيسية</a> ← <a href="index.html">المقالات</a> ← حروف الجر</p>
       <span class="eyebrow">أخطاء شائعة</span>
       <h1>لماذا تخطئ في in وon وat مهما حفظت؟</h1>
-      <p class="article-meta"><span>🧩 حروف الجر</span><span>⏱️ ٤ دقائق قراءة</span><span>🗓️ آخر تحديث: ٢٤ سبتمبر ٢٠٢٦</span></p>
+      <p class="article-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"/></svg> حروف الجر</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7h11"/><path d="M6.5 17h11"/><path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"/><path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"/></svg> ٤ دقائق قراءة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/><path d="M11 15h1"/><path d="M12 15v3"/></svg> آخر تحديث: ٢٤ سبتمبر ٢٠٢٦</span></p>
     </div>
   </section>
 
@@ -172,7 +176,7 @@
           <h2>لماذا الترجمة الحرفية تفشل هنا تحديداً</h2>
           <p>عندما تفكر بالعربية أولاً ثم تترجم، عقلك يبحث عن حرف الجر "المكافئ" في الإنجليزية، لكن حروف الجر نادراً ما تتطابق بين اللغتين. "أستمع إلى" تصبح "listen to" وليس "listen at"، بينما "أنظر إلى" تصبح "look at" وليس "look to". لا توجد طريقة لتخمين هذا منطقياً، ولا داعي للمحاولة. الحل ليس فهم "لماذا"، بل تغيير طريقة الحفظ نفسها.</p>
           <div class="article-cta" style="margin-top:20px;">
-            <h3>🎧 أفضل طريقة لـ"امتصاص" حروف الجر بدل حفظها</h3>
+            <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"/><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"/><path d="M4 15v-3a8 8 0 0 1 16 0v3"/></svg> أفضل طريقة لـ"امتصاص" حروف الجر بدل حفظها</h3>
             <p>الاستماع الكثيف للمتحدثين الأصليين يبني إحساساً طبيعياً بحرف الجر الصحيح دون تفكير واعٍ في القاعدة.</p>
             <a href="../products/commuter-challenge.html" class="btn btn-primary">جرّب The Commuter Challenge</a>
           </div>
@@ -185,10 +189,10 @@
         <div class="prose">
           <h2>نمط عام يساعدك في معظم الحالات (وليس كلها)</h2>
           <ul class="included-list">
-            <li><span class="item-icon">📍</span><span><strong>at للنقطة المحددة:</strong> وقت دقيق (at 5 pm) أو مكان دقيق (at the door، at the meeting). فكر بها كنقطة صغيرة على الخريطة أو الساعة.</span></li>
-            <li><span class="item-icon">🗓️</span><span><strong>on للسطح أو اليوم المحدد:</strong> شيء "فوق" سطح (on the table) أو يوم بعينه (on Monday، on my birthday).</span></li>
-            <li><span class="item-icon">📦</span><span><strong>in للمساحة أو الفترة الأوسع:</strong> مكان له حدود (in the room، in Cairo) أو فترة زمنية أوسع من يوم واحد (in September، in 2024، in the morning).</span></li>
-            <li><span class="item-icon">⚠️</span><span><strong>لكن انتبه:</strong> هذا نمط توجيهي وليس قانوناً ثابتاً. تعبيرات كثيرة تكسر هذا النمط تماماً (مثل at night رغم أنها فترة، أو in time مقابل on time بمعنيين مختلفين تماماً)، ولهذا الخطوة التالية أهم من حفظ أي قاعدة.</span></li>
+            <li><span class="item-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg></span><span><strong>at للنقطة المحددة:</strong> وقت دقيق (at 5 pm) أو مكان دقيق (at the door، at the meeting). فكر بها كنقطة صغيرة على الخريطة أو الساعة.</span></li>
+            <li><span class="item-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/><path d="M11 15h1"/><path d="M12 15v3"/></svg></span><span><strong>on للسطح أو اليوم المحدد:</strong> شيء "فوق" سطح (on the table) أو يوم بعينه (on Monday، on my birthday).</span></li>
+            <li><span class="item-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5"/><path d="M12 12l8 -4.5"/><path d="M12 12l0 9"/><path d="M12 12l-8 -4.5"/><path d="M16 5.25l-8 4.5"/></svg></span><span><strong>in للمساحة أو الفترة الأوسع:</strong> مكان له حدود (in the room، in Cairo) أو فترة زمنية أوسع من يوم واحد (in September، in 2024، in the morning).</span></li>
+            <li><span class="item-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"/><path d="M12 16h.01"/></svg></span><span><strong>لكن انتبه:</strong> هذا نمط توجيهي وليس قانوناً ثابتاً. تعبيرات كثيرة تكسر هذا النمط تماماً (مثل at night رغم أنها فترة، أو in time مقابل on time بمعنيين مختلفين تماماً)، ولهذا الخطوة التالية أهم من حفظ أي قاعدة.</span></li>
           </ul>
         </div>
       </div>
@@ -212,7 +216,7 @@
       <div class="wrap">
         <div class="prose">
       <div class="article-cta">
-        <h3>📄 حمّل قائمة «لا تقل… بل قل» (PDF)</h3>
+        <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 9l1 0"/><path d="M9 13l6 0"/><path d="M9 17l6 0"/></svg> حمّل قائمة «لا تقل… بل قل» (PDF)</h3>
         <p>أشهر أخطاء العرب في الإنجليزية مع الصواب في صفحة واحدة للمراجعة السريعة.</p>
         <button type="button" class="btn btn-primary" data-gated-pdf="dont-say-say-cheatsheet" data-file-name="Dont-Say-Say.pdf">حمّل الملف مجاناً بحساب Google ←</button>
       </div>
@@ -253,7 +257,7 @@
           <p class="author-name">بقلم نور، مؤسسة أتقن الإنجليزية</p>
           <p>أعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦: أكثر من ١٬٢٠٠ فيديو مجاني، و١٫٨٦ مليون مشترك، وأكثر من ١٠١ مليون مشاهدة. كل ما أكتبه هنا مجرّب مع طلابي، ومشروح بالفيديو على القناة.</p>
           <div class="author-actions">
-            <a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في القناة على يوتيوب</a>
+            <a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في القناة على يوتيوب</a>
             <a class="btn btn-ghost" href="my-story.html">قصتي مع الإنجليزية</a>
           </div>
         </div>
@@ -283,7 +287,11 @@
         <a href="../index.html">الرئيسية</a>
         <a href="../courses.html">الكورسات</a>
         <a href="../videos.html">الفيديوهات</a>
+        <a href="../paths/index.html">مسارات التعلم</a>
+        <a href="../placement-test.html">اختبار تحديد المستوى</a>
         <a href="../articles/index.html">المقالات</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../faq.html">الأسئلة الشائعة</a>
         <a href="../become-affiliate.html">كن شريكاً معنا</a>
       </div>
       <div class="footer-col">
@@ -292,7 +300,7 @@
         <a href="../products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="../products/presentations.html">أتقن العروض التقديمية</a>
         <a href="../products/interview.html">من التوتر إلى التميز</a>
-        <a href="../products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="../products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="../products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -306,7 +314,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -314,16 +322,16 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/track.js"></script>
-<script src="../assets/js/learner.js"></script>
-<script src="../assets/js/pdf-gate.js"></script>
-<script src="../assets/js/quiz.js"></script>
-<script src="../assets/js/auth.js"></script>
-<script src="../assets/js/contact-widget.js"></script>
-<script src="../assets/js/help-bot.js"></script>
-<script src="../assets/js/whatsapp-widget.js"></script>
-<script src="../assets/js/related-videos.js"></script>
-<script src="../assets/js/newsletter.js"></script>
+<script src="../assets/js/main.js?v=20260925"></script>
+<script src="../assets/js/track.js?v=20260925"></script>
+<script src="../assets/js/learner.js?v=20260925"></script>
+<script src="../assets/js/pdf-gate.js?v=20260925"></script>
+<script src="../assets/js/quiz.js?v=20260925"></script>
+<script src="../assets/js/auth.js?v=20260925"></script>
+<script src="../assets/js/contact-widget.js?v=20260925"></script>
+<script src="../assets/js/help-bot.js?v=20260925"></script>
+<script src="../assets/js/whatsapp-widget.js?v=20260925"></script>
+<script src="../assets/js/related-videos.js?v=20260925"></script>
+<script src="../assets/js/newsletter.js?v=20260925"></script>
 </body>
 </html>

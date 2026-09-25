@@ -18,12 +18,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180.png">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260925">
 <style>
 .lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
 .lib-card { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
 .lib-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-.lib-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
+.lib-card img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
 .lib-card .lib-dur { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.78); color: #fff; font-size: 12px; padding: 2px 7px; border-radius: 6px; direction: ltr; }
 .lib-card strong { display: block; padding: 12px 14px 4px; font-size: 14.5px; line-height: 1.6; }
 .lib-card small { display: block; padding: 0 14px 14px; margin-top: auto; font-size: 12.5px; color: var(--ink-soft); }
@@ -42,29 +42,24 @@
 }
 
 .hub-articles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 16px 0 10px; }
-.hub-articles a { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; color: var(--ink); font-weight: 700; line-height: 1.6; }
-.hub-articles a:hover { border-color: var(--accent); }
+.hub-articles a { display: block; background: var(--paper); border-inline-start: 4px solid var(--accent); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); padding: 14px 16px; color: var(--ink); font-weight: 700; line-height: 1.6; transition: transform .15s ease, box-shadow .15s ease; }
+.hub-articles a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .hub-articles a .done { color: #3f8a5c; margin-inline-start: 6px; }
 .hub-courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
-.hub-courses a { display: block; background: var(--accent-light); border-radius: var(--radius-sm); padding: 16px 18px; color: var(--accent-dark); font-weight: 700; }
+.hub-courses a { display: block; background: var(--paper); border-top: 4px solid var(--gold); box-shadow: var(--shadow-sm); border-radius: var(--radius-sm); padding: 16px 18px; color: var(--accent-dark); font-weight: 800; font-family: var(--font-head); }
+.hub-courses a:hover { box-shadow: var(--shadow); }
 .hub-courses a span { display: block; font-weight: 400; color: var(--ink); font-size: 14px; margin-top: 4px; }
 .hub-block { margin: 44px 0 0; }
 
-.stage { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin: 22px 0; }
-.stage h2 { margin: 0 0 6px; font-size: 21px; }
-.stage-num { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; margin-inline-end: 8px; }
+.stage { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 26px 28px; margin: 24px 0; }
+.stage h2 { margin: 0 0 6px; font-size: 22px; display: flex; align-items: center; }
+.stage-num { display: inline-flex; flex-shrink: 0; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 900; margin-inline-end: 12px; box-shadow: 0 6px 14px -6px rgba(31,122,92,.8); }
 .stage-bar { height: 6px; background: var(--paper-soft); border-radius: 99px; overflow: hidden; margin: 10px 0 4px; }
 .stage-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
 .stage-count { font-size: 13px; color: var(--ink-soft); min-height: 18px; }
 .stage details { margin-top: 12px; }
 .stage summary { cursor: pointer; font-weight: 700; color: var(--accent-dark); margin: 6px 0 12px; }
 .lib-card .done { display: block; padding: 0 14px 12px; color: #3f8a5c; font-size: 13px; font-weight: 700; }
-.path-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; margin: 20px 0; }
-.path-card { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; color: var(--ink); }
-.path-card:hover { border-color: var(--accent); }
-.path-card strong { display: block; font-size: 19px; margin: 6px 0; font-family: var(--font-head); }
-.path-card small { color: var(--accent-dark); font-weight: 700; }
-.path-card p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14.5px; }
 </style>
 <script type="application/ld+json">
 {
@@ -115,15 +110,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="../courses.html">الكورسات</a>
-      <a href="../videos.html">الفيديوهات</a>
       <a href="../paths/index.html" aria-current="page">مسارات التعلم</a>
+      <a href="../videos.html">الفيديوهات</a>
+      <a href="../courses.html">الكورسات</a>
       <a href="../articles/index.html">المقالات</a>
       <a href="../testimonials.html">آراء الطلاب</a>
-      <a href="../search.html">بحث</a>
       <a href="../about.html">من نحن</a>
+      <a href="../search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="../placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="../courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="../search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="../placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -133,21 +132,21 @@
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">✦ مجانية بالكامل</span>
+      <span class="eyebrow">مجانية بالكامل</span>
       <h1>مسارات تعلم الإنجليزية: اختر مسارك وابدأ</h1>
       <p class="hero-sub">بدل أن تتنقل بين مئات الفيديوهات، اختر مساراً مرتّباً حسب مستواك وهدفك. كل مسار يجمع دروس القناة ومقالات الموقع في مراحل واضحة، ويحفظ تقدّمك.</p>
       <p class="en-note" lang="en">In English: free, structured English learning paths for Arabic speakers (beginner, intermediate, advanced, American pronunciation, business English) built from Master English lessons.</p>
       <p><a class="btn btn-primary" href="../placement-test.html">لا تعرف مستواك؟ خذ اختبار تحديد المستوى</a></p>
     </div>
   </section>
-  <section style="padding-bottom:60px;">
+  <section style="padding:56px 0 70px;">
     <div class="wrap">
       <div class="path-cards">
-        <a class="path-card" href="beginner.html"><small>🌱 A1–A2</small><strong>مسار المبتدئين: من الصفر إلى أول محادثة</strong><p>لمن يبدأ من الصفر أو يشعر أن أساسه ضعيف. ستتعلم القراءة والنطق، ثم أشهر الكلمات في جمل، ثم تكوين جمل عن حياتك اليومية، مع قصص مسلية تثبّت ما تعلمته.</p><p>🎬 ١٣٠ درساً · ⏱️ نحو ٢٨ ساعة</p></a>
-        <a class="path-card" href="intermediate.html"><small>🗣️ B1–B2</small><strong>مسار المتوسط: من الفهم إلى الكلام بطلاقة</strong><p>لمن يفهم الإنجليزية لكن لسانه يتجمد عند الكلام. ستتدرّب على الرد السريع، والتفكير بالإنجليزية، وعبارات المحادثة اليومية، والأفعال المركبة التي يستعملها الناطقون فعلاً.</p><p>🎬 ٧٣ درساً · ⏱️ نحو ١٧ ساعة</p></a>
-        <a class="path-card" href="advanced.html"><small>🚀 B2–C1</small><strong>مسار المتقدم: الطلاقة الكاملة وفهم الإنجليزية الحقيقية</strong><p>لمن يتكلم جيداً ويريد أن يفهم الأفلام والكلام السريع، ويستعمل التعابير الطبيعية، ويتحدث بثقة كاملة.</p><p>🎬 ٢٩ درساً · ⏱️ نحو ٦ ساعة</p></a>
-        <a class="path-card" href="pronunciation.html"><small>🎙️ كل المستويات</small><strong>مسار النطق الأمريكي للعرب</strong><p>لمن يريد أن يُفهم من أول مرة: الأصوات الصعبة على العربي، والحركات، والربط بين الكلمات، والتنغيم.</p><p>🎬 ١٥ درساً · ⏱️ نحو ٣ ساعة</p></a>
-        <a class="path-card" href="work.html"><small>💼 B1 وما فوق</small><strong>مسار إنجليزية العمل: من المقابلة إلى قاعة الاجتماعات</strong><p>لمن يحتاج الإنجليزية في وظيفته: اجتياز المقابلة، أول يوم في العمل، الاجتماعات، الإيميلات، العروض التقديمية، ولغة القيادة.</p><p>🎬 ١٨ درساً · ⏱️ نحو ٥ ساعة</p></a>
+        <a class="path-card" href="beginner.html"><div class="path-top"><span class="lvl">A1–A2 · المبتدئين</span><span class="big">A1</span><div class="thumb-stack"><img src="https://i.ytimg.com/vi/qOlTicOMK3I/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/4Qhuihinog4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/I46cCtKzWps/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></div></div><div class="path-body"><h3>من الصفر إلى أول محادثة</h3><p>لمن يبدأ من الصفر أو يشعر أن أساسه ضعيف.</p><div class="path-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ١٣٠ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> نحو ٢٨ ساعة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h-5v5h-5v5h-5v5h-5"/></svg> ٦ مراحل</span></div><div class="path-go"><span>ابدأ المسار مجاناً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></span></div></div></a>
+        <a class="path-card pc-plum" href="intermediate.html"><div class="path-top"><span class="lvl">B1–B2 · المتوسط</span><span class="big">B1</span><div class="thumb-stack"><img src="https://i.ytimg.com/vi/klllvdJfay4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/Yq7Ux68rGjM/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/GE5QAbfsR3c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></div></div><div class="path-body"><h3>من الفهم إلى الكلام بطلاقة</h3><p>لمن يفهم الإنجليزية لكن لسانه يتجمد عند الكلام.</p><div class="path-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ٧٣ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> نحو ١٧ ساعة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h-5v5h-5v5h-5v5h-5"/></svg> ٦ مراحل</span></div><div class="path-go"><span>ابدأ المسار مجاناً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></span></div></div></a>
+        <a class="path-card pc-gold" href="advanced.html"><div class="path-top"><span class="lvl">B2–C1 · المتقدم</span><span class="big">C1</span><div class="thumb-stack"><img src="https://i.ytimg.com/vi/XlQduJ4wrEE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/MSnPRa-4i8E/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/t0NNhn3MJh4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></div></div><div class="path-body"><h3>الطلاقة الكاملة وفهم الإنجليزية الحقيقية</h3><p>لمن يتكلم جيداً ويريد أن يفهم الأفلام والكلام السريع.</p><div class="path-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ٢٩ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> نحو ٦ ساعة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h-5v5h-5v5h-5v5h-5"/></svg> ٥ مراحل</span></div><div class="path-go"><span>ابدأ المسار مجاناً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></span></div></div></a>
+        <a class="path-card pc-terra" href="pronunciation.html"><div class="path-top"><span class="lvl">كل المستويات · النطق الأمريكي للعرب</span><span class="big">/æ/</span><div class="thumb-stack"><img src="https://i.ytimg.com/vi/KBbYo1mPSF4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/ETBuPZ625Iw/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/C7JjsCJlsVA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></div></div><div class="path-body"><h3>مسار النطق الأمريكي للعرب</h3><p>لمن يريد أن يُفهم من أول مرة: الأصوات الصعبة على العربي.</p><div class="path-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ١٥ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> نحو ٣ ساعة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h-5v5h-5v5h-5v5h-5"/></svg> ٥ مراحل</span></div><div class="path-go"><span>ابدأ المسار مجاناً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></span></div></div></a>
+        <a class="path-card pc-blue" href="work.html"><div class="path-top"><span class="lvl">B1 وما فوق · إنجليزية العمل</span><span class="big">B2</span><div class="thumb-stack"><img src="https://i.ytimg.com/vi/V0o7I5IHnls/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/1wv8CdC8lMg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><img src="https://i.ytimg.com/vi/zQ5SjOTVGjg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></div></div><div class="path-body"><h3>من المقابلة إلى قاعة الاجتماعات</h3><p>لمن يحتاج الإنجليزية في وظيفته: اجتياز المقابلة.</p><div class="path-meta"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg> ١٨ درساً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> نحو ٥ ساعة</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5h-5v5h-5v5h-5v5h-5"/></svg> ٤ مراحل</span></div><div class="path-go"><span>ابدأ المسار مجاناً</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></span></div></div></a>
       </div>
       <h2 style="margin-top:50px;">أو تصفّح حسب الموضوع</h2>
       <div class="hub-articles">
@@ -183,7 +182,7 @@
         <a href="../products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="../products/presentations.html">أتقن العروض التقديمية</a>
         <a href="../products/interview.html">من التوتر إلى التميز</a>
-        <a href="../products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="../products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="../products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -197,7 +196,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -205,12 +204,12 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/track.js"></script>
-<script src="../assets/js/learner.js"></script>
-<script src="../assets/js/auth.js"></script>
-<script src="../assets/js/contact-widget.js"></script>
-<script src="../assets/js/help-bot.js"></script>
-<script src="../assets/js/whatsapp-widget.js"></script>
+<script src="../assets/js/main.js?v=20260925"></script>
+<script src="../assets/js/track.js?v=20260925"></script>
+<script src="../assets/js/learner.js?v=20260925"></script>
+<script src="../assets/js/auth.js?v=20260925"></script>
+<script src="../assets/js/contact-widget.js?v=20260925"></script>
+<script src="../assets/js/help-bot.js?v=20260925"></script>
+<script src="../assets/js/whatsapp-widget.js?v=20260925"></script>
 </body>
 </html>

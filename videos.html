@@ -18,12 +18,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925">
 <style>
 .lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
 .lib-card { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
 .lib-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-.lib-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
+.lib-card img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
 .lib-card .lib-dur { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.78); color: #fff; font-size: 12px; padding: 2px 7px; border-radius: 6px; direction: ltr; }
 .lib-card strong { display: block; padding: 12px 14px 4px; font-size: 14.5px; line-height: 1.6; }
 .lib-card small { display: block; padding: 0 14px 14px; margin-top: auto; font-size: 12.5px; color: var(--ink-soft); }
@@ -380,15 +380,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="courses.html">الكورسات</a>
-      <a href="videos.html" aria-current="page">الفيديوهات</a>
       <a href="paths/index.html">مسارات التعلم</a>
+      <a href="videos.html" aria-current="page">الفيديوهات</a>
+      <a href="courses.html">الكورسات</a>
       <a href="articles/index.html">المقالات</a>
       <a href="testimonials.html">آراء الطلاب</a>
-      <a href="search.html">بحث</a>
       <a href="about.html">من نحن</a>
+      <a href="search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -398,7 +402,7 @@
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">✦ مكتبة مجانية بالكامل</span>
+      <span class="eyebrow">مكتبة مجانية بالكامل</span>
       <h1>مكتبة دروس أتقن الإنجليزية: ١٬١٤٨ درساً مجانياً</h1>
       <p class="hero-sub">كل دروس قناة نور على يوتيوب في مكان واحد، مرتبة حسب الموضوع والمستوى: النطق الأمريكي، المحادثة، المفردات، القواعد، إنجليزية العمل، والاستماع. ابحث عن أي موضوع وابدأ فوراً.</p>
       <p class="en-note" lang="en">In English: the complete, searchable library of free Master English video lessons for Arabic speakers, sorted by topic and level.</p>
@@ -409,7 +413,7 @@
         <span>منذ <strong>٢٠١٦</strong></span>
       </div>
       <div class="lib-cta">
-        <a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في القناة لتصلك الدروس الجديدة</a>
+        <a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في القناة لتصلك الدروس الجديدة</a>
         <a class="btn btn-ghost" href="placement-test.html">لا تعرف مستواك؟ اختبر نفسك</a>
         <div class="g-ytsubscribe" data-channelid="UCLLwHs7jXwx34n-UYvDVERg" data-layout="default" data-count="default"></div>
       </div>
@@ -456,7 +460,7 @@
       <h2>الأكثر مشاهدة في كل موضوع</h2>
       <p>إذا لم تعرف من أين تبدأ، هذه الدروس هي التي ساعدت أكبر عدد من المتعلمين العرب في كل موضوع. ولبرنامج مرتّب خطوة بخطوة، اختر <a href="paths/index.html">مسار تعلم</a> يناسب مستواك وهدفك.</p>
     <div class="lib-topic" id="best-pronunciation">
-      <h3>🗣️ الأكثر مشاهدة: النطق واللكنة</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12.9a5 5 0 1 0 -3.902 -3.9"/><path d="M15 12.9l-3.902 -3.899l-7.513 8.584a2 2 0 1 0 2.827 2.83l8.588 -7.515z"/></svg> الأكثر مشاهدة: النطق واللكنة</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=qOlTicOMK3I" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qOlTicOMK3I/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:43</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 1</strong><small>١٫٨ مليون مشاهدة · ٢٥ أغسطس ٢٠١٨</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=PeqRiX9-Zk8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PeqRiX9-Zk8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">15:15</span><strong>تعلم اللغة الإنجليزية من الصفر حتى الإتقان: كورس كامل في القراءة والنطق للمبتدئين الجزء 2</strong><small>٦٥٦ ألف مشاهدة · ٣٠ أغسطس ٢٠١٨</small></a>
@@ -470,7 +474,7 @@
       <a class="btn btn-outline" href="topics/pronunciation.html">كل ما يخص النطق واللكنة ←</a>
     </div>
     <div class="lib-topic" id="best-conversation">
-      <h3>💬 الأكثر مشاهدة: المحادثة والطلاقة</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"/></svg> الأكثر مشاهدة: المحادثة والطلاقة</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=JIytze37ZrI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JIytze37ZrI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:34</span><strong>تعلم اللغة الإنجليزية بالصوت والصورة: المفردات والمحادثات والعبارات الأكثر استخداماً في المطار</strong><small>١٫٧ مليون مشاهدة · ٧ يناير ٢٠١٧</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=GE5QAbfsR3c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GE5QAbfsR3c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:03</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية</strong><small>١٫٥ مليون مشاهدة · ٢٩ نوفمبر ٢٠٢٢</small></a>
@@ -484,7 +488,7 @@
       <a class="btn btn-outline" href="topics/conversation.html">كل ما يخص المحادثة والطلاقة ←</a>
     </div>
     <div class="lib-topic" id="best-vocabulary">
-      <h3>📚 الأكثر مشاهدة: المفردات والتعابير</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/><path d="M5 8h4"/><path d="M9 16h4"/><path d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z"/><path d="M14 9l4 -1"/><path d="M16 16l3.923 -.98"/></svg> الأكثر مشاهدة: المفردات والتعابير</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=4Qhuihinog4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4Qhuihinog4/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:02</span><strong>الجزء 1: سلسلة 1000 كلمة شائعة في اللغة الإنجليزية وكيف نضعها في جمل: الجزء الأول</strong><small>٢٫٥ مليون مشاهدة · ١١ ديسمبر ٢٠١٦</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=JIytze37ZrI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JIytze37ZrI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:34</span><strong>تعلم اللغة الإنجليزية بالصوت والصورة: المفردات والمحادثات والعبارات الأكثر استخداماً في المطار</strong><small>١٫٧ مليون مشاهدة · ٧ يناير ٢٠١٧</small></a>
@@ -498,7 +502,7 @@
       <a class="btn btn-outline" href="topics/vocabulary.html">كل ما يخص المفردات والتعابير ←</a>
     </div>
     <div class="lib-topic" id="best-grammar">
-      <h3>🧩 الأكثر مشاهدة: القواعد والأزمنة</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"/></svg> الأكثر مشاهدة: القواعد والأزمنة</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=k4-Q3SYtOcc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k4-Q3SYtOcc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">22:37</span><strong>كل ما تريد معرفته عن زمن المضارع البسيط في فيديو واحد! تعلم اللغة الإنجليزية من الصفر</strong><small>٢٠٥ ألف مشاهدة · ١٧ يناير ٢٠١٧</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=Fd85xp6Aahs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Fd85xp6Aahs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:45</span><strong>ما الفرق بين Will و Going to؟ أقوى شرح مع تمارين وملاحظات مهمة 🔥😎</strong><small>١٥٠ ألف مشاهدة · ١٦ أبريل ٢٠١٨</small></a>
@@ -512,7 +516,7 @@
       <a class="btn btn-outline" href="topics/grammar.html">كل ما يخص القواعد والأزمنة ←</a>
     </div>
     <div class="lib-topic" id="best-work">
-      <h3>💼 الأكثر مشاهدة: إنجليزية العمل</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg> الأكثر مشاهدة: إنجليزية العمل</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=zQ5SjOTVGjg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zQ5SjOTVGjg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:04</span><strong>أسئلة المقابلة الشخصية للعمل بالانجليزي</strong><small>٢٣٦ ألف مشاهدة · ١٥ يوليو ٢٠١٨</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=1wv8CdC8lMg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1wv8CdC8lMg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">18:09</span><strong>كيف بدرب تلاميذي تكتب ايميل محترف بالإنجليزي</strong><small>١١٧ ألف مشاهدة · ١٦ ديسمبر ٢٠٢١</small></a>
@@ -526,7 +530,7 @@
       <a class="btn btn-outline" href="topics/work.html">كل ما يخص إنجليزية العمل ←</a>
     </div>
     <div class="lib-topic" id="best-listening">
-      <h3>🎧 الأكثر مشاهدة: الاستماع والأفلام</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"/><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"/><path d="M4 15v-3a8 8 0 0 1 16 0v3"/></svg> الأكثر مشاهدة: الاستماع والأفلام</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=VYRp9S9eEik" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VYRp9S9eEik/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">12:30</span><strong>تعلّم الإنجليزية مع خطاب مارتن لوثر كينغ جونيور الشهير الذي غيّر تاريخ أمريكا: لديّ حلم</strong><small>٢٫٢ مليون مشاهدة · ١٧ ديسمبر ٢٠١٦</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=6x0rDVSt7S8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6x0rDVSt7S8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">5:30</span><strong>كيف أتعلم اللغة الإنجليزية الحقيقية بسهولة وبسرعة؟ 5 نصائح مهمة لتعلم الإنجليزية من الصفر</strong><small>١٫٦ مليون مشاهدة · ٢٥ يناير ٢٠١٧</small></a>
@@ -540,7 +544,7 @@
       <a class="btn btn-outline" href="topics/listening.html">كل ما يخص الاستماع والأفلام ←</a>
     </div>
     <div class="lib-topic" id="best-stories">
-      <h3>📖 الأكثر مشاهدة: القصص</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> الأكثر مشاهدة: القصص</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=I46cCtKzWps" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/I46cCtKzWps/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:27</span><strong>(5) تعلم اللغة الإنجليزية بالصوت والصورة:  تعليم الإنجليزية من خلال قصة مسلية وجديدة</strong><small>٤٫٤ مليون مشاهدة · ٢ يناير ٢٠١٧</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=ixV2hSW4m-U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ixV2hSW4m-U/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">16:40</span><strong>(15) تعلّم اللغة الإنجليزية من خلال قصة قصيرة ومسلية بالصوت والصورة: May I Borrow That؟</strong><small>٩٢٠ ألف مشاهدة · ٩ أبريل ٢٠١٧</small></a>
@@ -554,7 +558,7 @@
       
     </div>
     <div class="lib-topic" id="best-tests">
-      <h3>🎯 الأكثر مشاهدة: المستويات والاختبارات</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg> الأكثر مشاهدة: المستويات والاختبارات</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=NRrXWCo3JMo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NRrXWCo3JMo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:29</span><strong>إذا أجبت على جميع هذه الأسئلة فأنت تتقن اللغة الانجليزية (إختبار تحديد مستوى) ✅😎</strong><small>٣٫٧ مليون مشاهدة · ٢ أكتوبر ٢٠١٨</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=uOVGm2S4R7o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uOVGm2S4R7o/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">19:00</span><strong>شرح أجوبة اختبار تحديد المستوى في اللغة الإنجليزية ✅😎</strong><small>٣٧٨ ألف مشاهدة · ١٦ أكتوبر ٢٠١٨</small></a>
@@ -568,7 +572,7 @@
       <a class="btn btn-outline" href="paths/index.html">كل ما يخص المستويات والاختبارات ←</a>
     </div>
     <div class="lib-topic" id="best-challenges">
-      <h3>🔥 الأكثر مشاهدة: التحديات اليومية</h3>
+      <h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"/><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"/><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/></svg> الأكثر مشاهدة: التحديات اليومية</h3>
       <div class="lib-grid">
         <a class="lib-card" href="https://www.youtube.com/watch?v=NRrXWCo3JMo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NRrXWCo3JMo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">13:29</span><strong>إذا أجبت على جميع هذه الأسئلة فأنت تتقن اللغة الانجليزية (إختبار تحديد مستوى) ✅😎</strong><small>٣٫٧ مليون مشاهدة · ٢ أكتوبر ٢٠١٨</small></a>
         <a class="lib-card" href="https://www.youtube.com/watch?v=GE5QAbfsR3c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GE5QAbfsR3c/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span class="lib-dur">14:03</span><strong>تحدّي 20 يوم لطلاقة اللسان بالإنجليزية 💪 تعلم اللغة الإنجليزية بطريقة تدريبية</strong><small>١٫٥ مليون مشاهدة · ٢٩ نوفمبر ٢٠٢٢</small></a>
@@ -632,7 +636,7 @@
         <a href="products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="products/presentations.html">أتقن العروض التقديمية</a>
         <a href="products/interview.html">من التوتر إلى التميز</a>
-        <a href="products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -646,7 +650,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -654,13 +658,13 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/track.js"></script>
-<script src="assets/js/learner.js"></script>
-<script src="assets/js/auth.js"></script>
-<script src="assets/js/contact-widget.js"></script>
-<script src="assets/js/help-bot.js"></script>
-<script src="assets/js/whatsapp-widget.js"></script>
-<script src="assets/js/library.js"></script>
+<script src="assets/js/main.js?v=20260925"></script>
+<script src="assets/js/track.js?v=20260925"></script>
+<script src="assets/js/learner.js?v=20260925"></script>
+<script src="assets/js/auth.js?v=20260925"></script>
+<script src="assets/js/contact-widget.js?v=20260925"></script>
+<script src="assets/js/help-bot.js?v=20260925"></script>
+<script src="assets/js/whatsapp-widget.js?v=20260925"></script>
+<script src="assets/js/library.js?v=20260925"></script>
 </body>
 </html>

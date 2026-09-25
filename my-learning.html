@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925">
 <style>
 .ml-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 20px 0 10px; }
 .ml-stat { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px; text-align: center; }
@@ -48,15 +48,19 @@
       <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="courses.html">الكورسات</a>
-      <a href="videos.html">الفيديوهات</a>
       <a href="paths/index.html">مسارات التعلم</a>
+      <a href="videos.html">الفيديوهات</a>
+      <a href="courses.html">الكورسات</a>
       <a href="articles/index.html">المقالات</a>
       <a href="testimonials.html">آراء الطلاب</a>
-      <a href="search.html">بحث</a>
       <a href="about.html">من نحن</a>
+      <a href="search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
-    <a href="courses.html" class="btn btn-primary btn-nav">ابدأ الآن</a>
+    <div class="header-end">
+      <a href="search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
@@ -66,7 +70,7 @@
 <main>
   <section class="page-hero" style="padding-bottom:10px;">
     <div class="wrap">
-      <span class="eyebrow">✦ مساحتك الخاصة</span>
+      <span class="eyebrow">مساحتك الخاصة</span>
       <h1>تقدّمي في تعلم الإنجليزية</h1>
       <p class="hero-sub">كل ما أنهيته على الموقع في مكان واحد: مستواك، الدروس التي شاهدتها، نتائج اختباراتك، والعبارات التي حفظتها لتراجعها.</p>
     </div>
@@ -85,19 +89,19 @@
       <div class="ml-card" id="mlCourses" hidden><h2>كورساتي</h2><ul class="ml-list" id="mlCourseList"></ul></div>
 
       <div class="ml-card">
-        <h2>☆ عباراتي المحفوظة</h2>
+        <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg> عباراتي المحفوظة</h2>
         <p class="ml-empty" id="mlPhrasesEmpty">اضغط 🔊 بجانب أي عبارة إنجليزية في المقالات، ثم «احفظ العبارة»، لتجدها هنا مع زر الاستماع.</p>
         <ul class="ml-list" id="mlPhrases"></ul>
       </div>
 
       <div class="ml-card">
-        <h2>🎯 نتائج اختباراتي</h2>
+        <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg> نتائج اختباراتي</h2>
         <p class="ml-empty" id="mlQuizEmpty">لم تحلّ أي اختبار بعد. كل مقال تقريباً ينتهي باختبار قصير.</p>
         <ul class="ml-list" id="mlQuizzes"></ul>
       </div>
 
       <div class="ml-card">
-        <h2>📖 مقالات أنهيتها</h2>
+        <h2><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg> مقالات أنهيتها</h2>
         <p class="ml-empty" id="mlReadEmpty">لا توجد بعد. ابدأ من <a href="articles/where-to-start.html">دليل البداية</a>.</p>
         <ul class="ml-list" id="mlRead"></ul>
       </div>
@@ -221,7 +225,7 @@
         <a href="products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="products/presentations.html">أتقن العروض التقديمية</a>
         <a href="products/interview.html">من التوتر إلى التميز</a>
-        <a href="products/ramadan-audio-club.html">30-Day Fluency Challenge</a>
+        <a href="products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
         <a href="products/vocabulary-diet.html">قائمة دايت المفردات</a>
       </div>
       <div class="footer-col">
@@ -235,7 +239,7 @@
         <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
       </div>
     </div>
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
     <p class="footer-links">
       <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
@@ -243,12 +247,12 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/track.js"></script>
-<script src="assets/js/learner.js"></script>
-<script src="assets/js/auth.js"></script>
-<script src="assets/js/contact-widget.js"></script>
-<script src="assets/js/help-bot.js"></script>
-<script src="assets/js/whatsapp-widget.js"></script>
+<script src="assets/js/main.js?v=20260925"></script>
+<script src="assets/js/track.js?v=20260925"></script>
+<script src="assets/js/learner.js?v=20260925"></script>
+<script src="assets/js/auth.js?v=20260925"></script>
+<script src="assets/js/contact-widget.js?v=20260925"></script>
+<script src="assets/js/help-bot.js?v=20260925"></script>
+<script src="assets/js/whatsapp-widget.js?v=20260925"></script>
 </body>
 </html>

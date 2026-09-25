@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 <main>
   <section class="page-hero" id="upsellLoading">
     <div class="wrap" style="max-width:560px;">
-      <span class="eyebrow">✅ تم الدفع بنجاح</span>
+      <span class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg> تم الدفع بنجاح</span>
       <h1>لحظة واحدة...</h1>
       <p class="hero-sub">نتحقق من طلبك.</p>
     </div>
@@ -34,21 +34,21 @@
 
   <section class="page-hero" id="upsellOffer" style="display:none;">
     <div class="wrap" style="max-width:560px;">
-      <span class="eyebrow">🎁 عرض خاص لمرة واحدة فقط</span>
+      <span class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"/><path d="M12 8l0 13"/><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5"/></svg> عرض خاص لمرة واحدة فقط</span>
       <h1 id="upsellTitle">عرض إضافي</h1>
       <p class="hero-sub">أضفه الآن بضغطة واحدة، بدون إدخال بيانات الدفع مرة أخرى.</p>
 
       <div class="hero-cta" style="justify-content:center; flex-direction:column; align-items:center;">
         <button type="button" id="upsellAcceptBtn" class="btn btn-primary btn-lg" style="width:100%; max-width:340px; justify-content:center;">نعم، أضف هذا العرض</button>
-        <a href="#" id="upsellSkipLink" style="margin-top:16px; color:var(--ink-soft); font-size:14px;">لا شكراً، أكمل بدون هذا العرض</a>
+        <a href="#" id="upsellSkipLink" style="margin-top:16px; color:rgba(255,255,255,.72); font-size:14px;">لا شكراً، أكمل بدون هذا العرض</a>
       </div>
-      <p id="upsellError" style="color:#b23b3b; margin-top:14px;"></p>
+      <p id="upsellError" style="color:#ffb4b4; margin-top:14px;"></p>
     </div>
   </section>
 
   <section class="page-hero" id="upsellSuccess" style="display:none;">
     <div class="wrap" style="max-width:560px;">
-      <span class="eyebrow">✅ تمت الإضافة بنجاح</span>
+      <span class="eyebrow"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg> تمت الإضافة بنجاح</span>
       <h1 id="upsellSuccessTitle">رائع! تمت الإضافة</h1>
       <p class="hero-sub">ستصلك رسالة بريد إلكتروني منفصلة تحتوي على تفاصيل هذا الطلب أيضاً.</p>
       <div class="hero-cta" style="justify-content:center;">
@@ -60,16 +60,52 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener">▶ اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <strong>الموقع</strong>
+        <a href="index.html">الرئيسية</a>
+        <a href="courses.html">الكورسات</a>
+        <a href="videos.html">الفيديوهات</a>
+        <a href="paths/index.html">مسارات التعلم</a>
+        <a href="placement-test.html">اختبار تحديد المستوى</a>
+        <a href="articles/index.html">المقالات</a>
+        <a href="about.html">من نحن</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
+        <a href="become-affiliate.html">كن شريكاً معنا</a>
+      </div>
+      <div class="footer-col">
+        <strong>الكورسات</strong>
+        <a href="products/pronunciation.html">أسرار النطق الأمريكي</a>
+        <a href="products/commuter-challenge.html">The Commuter Challenge</a>
+        <a href="products/presentations.html">أتقن العروض التقديمية</a>
+        <a href="products/interview.html">من التوتر إلى التميز</a>
+        <a href="products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
+        <a href="products/vocabulary-diet.html">قائمة دايت المفردات</a>
+      </div>
+      <div class="footer-col">
+        <strong>تواصل</strong>
+        <a href="mailto:noor@masterenglish.me">noor@masterenglish.me</a>
+        <a href="https://www.youtube.com/@MasterEnglish" target="_blank" rel="noopener">يوتيوب</a>
+        <a href="https://instagram.com/masterenglish.me" target="_blank" rel="noopener">انستقرام</a>
+        <a href="https://twitter.com/MasterEnglishYT" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://facebook.com/MasterEnglishME" target="_blank" rel="noopener">فيسبوك</a>
+        <a href="https://telegram.me/noormasterenglish" target="_blank" rel="noopener">تيليجرام</a>
+        <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
+      </div>
+    </div>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
     <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
+    <p class="footer-links">
+      <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="learn-english-for-arabic-speakers.html" lang="en">English</a>
+    </p>
   </div>
 </footer>
 
-<script src="assets/js/track.js"></script>
-<script src="assets/js/learner.js"></script>
-<script src="assets/js/auth.js"></script>
-<script src="assets/js/contact-widget.js"></script>
-<script src="assets/js/whatsapp-widget.js"></script>
+<script src="assets/js/track.js?v=20260925"></script>
+<script src="assets/js/learner.js?v=20260925"></script>
+<script src="assets/js/auth.js?v=20260925"></script>
+<script src="assets/js/contact-widget.js?v=20260925"></script>
+<script src="assets/js/whatsapp-widget.js?v=20260925"></script>
 <script>
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
   const params = new URLSearchParams(location.search);
