@@ -62,6 +62,7 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 
 ### مراجع
 - [مراجع الإنجليزية](https://learn.masterenglish.me/guides/index.html): كل القوائم في مكان واحد
+- [تمرين النطق بالصوت](https://learn.masterenglish.me/speak.html): قل الكلمة بالميكروفون ويخبرك التمرين ماذا سمع (P/B، F/V، TH، R)
 - [أشهر ١٠٠٠ كلمة في الإنجليزية مع الترجمة والنطق](https://learn.masterenglish.me/guides/common-english-words.html)
 - [قائمة الأفعال الشاذة مع الترجمة وتمرين](https://learn.masterenglish.me/guides/irregular-verbs-list.html)
 - [قائمة الأفعال المركبة Phrasal Verbs مع الترجمة والأمثلة](https://learn.masterenglish.me/guides/phrasal-verbs-list.html)
