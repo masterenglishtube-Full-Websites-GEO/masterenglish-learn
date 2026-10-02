@@ -200,6 +200,7 @@
   function suggestion(email) {
     const at = email.lastIndexOf("@");
     if (at < 1) return null;
+    if (/^www\./i.test(email)) return email.slice(4); // "www.name@gmail.com" is almost always a typo
     const dom = email.slice(at + 1).toLowerCase();
     if (DOMAINS.includes(dom)) return null;
     let best = null;
