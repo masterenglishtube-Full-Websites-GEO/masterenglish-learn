@@ -618,10 +618,11 @@
 
   async function loadOverview() {
     const data = await api("/admin/api/overview");
+    const split = data.podia_purchases !== undefined; // older Worker: one combined total
     document.getElementById("statGrid").innerHTML = `
       <div class="stat-card"><span class="stat-icon">👥</span><div class="num">${data.total_customers}</div><div class="label">إجمالي العملاء</div></div>
-      <div class="stat-card stat-blue"><span class="stat-icon">🛒</span><div class="num">${data.total_purchases}</div><div class="label">طلبات الموقع الجديد</div><div class="stat-note">+ ${data.podia_purchases || 0} منقولة من Podia${data.test_purchases ? ` · ${data.test_purchases} تجريبية غير محسوبة` : ""}</div></div>
-      <div class="stat-card stat-gold"><span class="stat-icon">💰</span><div class="num">${money(data.total_revenue_cents)}</div><div class="label">إيرادات الموقع الجديد</div><div class="stat-note">Podia سابقاً: ${money(data.podia_revenue_cents)}</div></div>
+      <div class="stat-card stat-blue"><span class="stat-icon">🛒</span><div class="num">${data.total_purchases}</div><div class="label">${split ? "طلبات الموقع الجديد" : "إجمالي الطلبات"}</div>${split ? `<div class="stat-note">+ ${data.podia_purchases} منقولة من Podia${data.test_purchases ? ` · ${data.test_purchases} تجريبية غير محسوبة` : ""}</div>` : ""}</div>
+      <div class="stat-card stat-gold"><span class="stat-icon">💰</span><div class="num">${money(data.total_revenue_cents)}</div><div class="label">${split ? "إيرادات الموقع الجديد" : "إجمالي الإيرادات"}</div>${split ? `<div class="stat-note">Podia سابقاً: ${money(data.podia_revenue_cents)}</div>` : ""}</div>
       <div class="stat-card stat-terracotta"><span class="stat-icon">⚡</span><div class="num">${data.active_sessions_now}</div><div class="label"><span class="stat-live-dot"></span>نشطون الآن</div></div>
     `;
     renderHealth(data.health);
