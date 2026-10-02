@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أنواع متعلمي الإنجليزية العرب: اعرف نوعك وقائمتك | Master English</title>
+<meta name="description" content="أربعة أنواع من متعلمي الإنجليزية العرب: الباني، والفاهم الصامت، والمتكلم العفوي، والمحترف الطموح. لكل نوع قائمة دروس مجانية مرتبة حسب مستواه.">
+<link rel="canonical" href="https://learn.masterenglish.me/plans/index.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn.masterenglish.me/plans/index.html">
+<meta property="og:title" content="أنواع متعلمي الإنجليزية العرب: اعرف نوعك وقائمتك">
+<meta property="og:description" content="أربعة أنواع من متعلمي الإنجليزية العرب: الباني، والفاهم الصامت، والمتكلم العفوي، والمحترف الطموح. لكل نوع قائمة دروس مجانية مرتبة حسب مستواه.">
+<meta property="og:image" content="https://learn.masterenglish.me/assets/images/og/plans-index.jpg">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://learn.masterenglish.me/assets/images/og/plans-index.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180.png">
+<link rel="stylesheet" href="../assets/css/style.css?v=20261002">
+<style>
+.lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.lib-card { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .15s ease, border-color .15s ease; }
+.lib-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.lib-card img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--paper-soft); }
+.lib-card .lib-dur { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,.78); color: #fff; font-size: 12px; padding: 2px 7px; border-radius: 6px; direction: ltr; }
+.lib-card strong { display: block; padding: 12px 14px 4px; font-size: 14.5px; line-height: 1.6; }
+.lib-card small { display: block; padding: 0 14px 14px; margin-top: auto; font-size: 12.5px; color: var(--ink-soft); }
+/* Phones: long lists become compact rows (thumbnail beside the title); "most watched" blocks swipe sideways. */
+@media (max-width: 600px) {
+  .lib-grid { grid-template-columns: 1fr; gap: 10px; }
+  .lib-grid > .lib-card { display: grid; grid-template-columns: 136px minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; }
+  .lib-grid > .lib-card img { grid-column: 1; grid-row: 1 / 3; width: 128px; height: 72px; margin: 8px 8px 8px 0; border-radius: 6px; }
+  .lib-grid > .lib-card .lib-dur { top: 58px; left: auto; right: 12px; font-size: 11px; padding: 1px 6px; }
+  .lib-grid > .lib-card strong { grid-column: 2; padding: 8px 10px 2px; font-size: 13.5px; line-height: 1.55; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+  .lib-grid > .lib-card small { grid-column: 2; margin-top: 0; padding: 0 10px 8px; font-size: 11.5px; }
+  .lib-topic .lib-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+  .lib-topic .lib-grid > .lib-card { display: flex; flex-direction: column; scroll-snap-align: start; }
+  .lib-topic .lib-grid > .lib-card img { width: 100%; height: auto; margin: 0; border-radius: 0; }
+  .lib-topic .lib-grid > .lib-card .lib-dur { top: 8px; left: 8px; right: auto; }
+}
+
+.hub-articles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 16px 0 10px; }
+.hub-articles a { display: block; background: var(--paper); border-inline-start: 4px solid var(--accent); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); padding: 14px 16px; color: var(--ink); font-weight: 700; line-height: 1.6; transition: transform .15s ease, box-shadow .15s ease; }
+.hub-articles a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.hub-articles a .done { color: #3f8a5c; margin-inline-start: 6px; }
+.hub-courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
+.hub-courses a { display: block; background: var(--paper); border-top: 4px solid var(--gold); box-shadow: var(--shadow-sm); border-radius: var(--radius-sm); padding: 16px 18px; color: var(--accent-dark); font-weight: 800; font-family: var(--font-head); }
+.hub-courses a:hover { box-shadow: var(--shadow); }
+.hub-courses a span { display: block; font-weight: 400; color: var(--ink); font-size: 14px; margin-top: 4px; }
+.hub-block { margin: 44px 0 0; }
+
+.stage { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 26px 28px; margin: 24px 0; }
+.stage h2 { margin: 0 0 6px; font-size: 22px; display: flex; align-items: center; }
+.stage-num { display: inline-flex; flex-shrink: 0; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 900; margin-inline-end: 12px; box-shadow: 0 6px 14px -6px rgba(31,122,92,.8); }
+.stage-bar { height: 6px; background: var(--paper-soft); border-radius: 99px; overflow: hidden; margin: 10px 0 4px; }
+.stage-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.stage-count { font-size: 13px; color: var(--ink-soft); min-height: 18px; }
+.stage details { margin-top: 12px; }
+.stage summary { cursor: pointer; font-weight: 700; color: var(--accent-dark); margin: 6px 0 12px; }
+.lib-card .done { display: block; padding: 0 14px 12px; color: #3f8a5c; font-size: 13px; font-weight: 700; }
+
+.type-card { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px 26px; margin: 0 0 16px; }
+.type-card h2 { margin: 0 0 8px; font-size: 22px; }
+.type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px; margin-top: 14px; }
+.type-grid div { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 14px 16px; }
+.type-grid strong { display: block; color: var(--accent-dark); margin-bottom: 4px; }
+.other-lists { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.other-lists a { border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; text-decoration: none; background: var(--paper); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "قوائم التعلم حسب نوع المتعلم",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://learn.masterenglish.me/plans/builder-a1.html",
+      "name": "قائمة A1 الخاصة بـ«الباني»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://learn.masterenglish.me/plans/builder-a2.html",
+      "name": "قائمة A2 الخاصة بـ«الباني»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://learn.masterenglish.me/plans/silent-b1.html",
+      "name": "قائمة B1 الخاصة بـ«الفاهم الصامت»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://learn.masterenglish.me/plans/silent-b2.html",
+      "name": "قائمة B2 الخاصة بـ«الفاهم الصامت»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://learn.masterenglish.me/plans/natural-b1.html",
+      "name": "قائمة B1 الخاصة بـ«المتكلّم العفوي»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://learn.masterenglish.me/plans/natural-b2.html",
+      "name": "قائمة B2 الخاصة بـ«المتكلّم العفوي»"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://learn.masterenglish.me/plans/pro-c1.html",
+      "name": "قائمة C1 الخاصة بـ«المحترف الطموح»"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/avatar-96.jpg" alt="Master English أتقن الإنجليزية" class="brand-avatar" width="38" height="38">
+      <span class="brand-name">Master English <span class="brand-name-ar">أتقن الإنجليزية</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="../paths/index.html">مسارات التعلم</a>
+      <a href="../videos.html">الفيديوهات</a>
+      <a href="../courses.html">الكورسات</a>
+      <a href="../articles/index.html">المقالات</a>
+      <a href="../testimonials.html">آراء الطلاب</a>
+      <a href="../about.html">من نحن</a>
+      <a href="../search.html" class="nav-mobile-only">بحث في الموقع</a>
+      <a href="../placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
+    </nav>
+    <div class="header-end">
+      <a href="../search.html" class="hdr-search" aria-label="بحث في الموقع"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg></a>
+      <a href="../placement-test.html" class="btn btn-primary btn-nav">اختبر مستواك</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">أربعة أنواع من متعلمي الإنجليزية العرب</span>
+      <h1>أي نوع من المتعلمين أنت؟ وما القائمة المصممة لك؟</h1>
+      <p class="hero-sub">ليس كل من في مستوى B1 يحتاج الشيء نفسه. بعض الناس قواعدهم ممتازة ولا يتكلمون، وبعضهم يتكلم بطلاقة بأخطاء متكررة. اختبار تحديد المستوى يعرف نوعك من نقاط قوتك وضعفك، ويرسل لك قائمتك.</p>
+      <p class="en-note" lang="en">In English: four types of Arabic-speaking English learners (The Builder, The Silent Understander, The Natural Speaker, The Ambitious Pro), each with a free, ordered study list per level.</p>
+      <p><a class="btn btn-primary" href="../placement-test.html">اعرف نوعك: خذ اختبار تحديد المستوى</a></p>
+    </div>
+  </section>
+  <section style="padding:40px 0 70px;">
+    <div class="wrap" style="max-width:1000px;">
+      <div class="type-card">
+        <h2>«الباني» <span lang="en" dir="ltr" style="font-size:15px; color:var(--ink-soft);">(The Builder)</span></h2>
+        <p>تعرف أساسيات قليلة، أو تشعر أن أساسك متقطع: كلمات تعرفها هنا وهناك، لكن الجملة الكاملة لا تخرج بسهولة.</p>
+        <div class="type-grid"><div><strong>نقطة قوته</strong>عندك بداية، وهي أصعب خطوة. كل خطوة الآن تُحدث فرقاً كبيراً وسريعاً.</div><div><strong>ما يحتاج تقويته</strong>الأساس: الأزمنة البسيطة، وأشهر الكلمات، وقراءة الكلمة ونطقها بثقة.</div></div>
+        <p style="margin:12px 0 0;"><b>قائمته:</b> <a href="builder-a1.html">قائمة A1</a> · <a href="builder-a2.html">قائمة A2</a></p>
+      </div>
+      <div class="type-card">
+        <h2>«الفاهم الصامت» <span lang="en" dir="ltr" style="font-size:15px; color:var(--ink-soft);">(The Silent Understander)</span></h2>
+        <p>تفهم الإنجليزية المكتوبة وقواعدك جيدة، لكن حين يتكلم أحد بسرعة، أو حين يأتي دورك لتتكلم، تتجمد.</p>
+        <div class="type-grid"><div><strong>نقطة قوته</strong>القواعد والفهم المكتوب. درستَ جيداً، والمعلومات موجودة في رأسك.</div><div><strong>ما يحتاج تقويته</strong>الاستماع للكلام الحقيقي، والتعابير الجاهزة، وسرعة الرد.</div></div>
+        <p style="margin:12px 0 0;"><b>قائمته:</b> <a href="silent-b1.html">قائمة B1</a> · <a href="silent-b2.html">قائمة B2</a></p>
+      </div>
+      <div class="type-card">
+        <h2>«المتكلّم العفوي» <span lang="en" dir="ltr" style="font-size:15px; color:var(--ink-soft);">(The Natural Speaker)</span></h2>
+        <p>التقطت الإنجليزية من الأفلام أو العمل أو السفر. تفهم وتتكلم وتوصل فكرتك، لكن أخطاء القواعد تتكرر في كلامك.</p>
+        <div class="type-grid"><div><strong>نقطة قوته</strong>الأذن والجرأة: تفهم الكلام الحقيقي ولا تخاف أن تتكلم.</div><div><strong>ما يحتاج تقويته</strong>الدقة: الأزمنة، وحروف الجر، وترتيب الجملة.</div></div>
+        <p style="margin:12px 0 0;"><b>قائمته:</b> <a href="natural-b1.html">قائمة B1</a> · <a href="natural-b2.html">قائمة B2</a></p>
+      </div>
+      <div class="type-card">
+        <h2>«المحترف الطموح» <span lang="en" dir="ltr" style="font-size:15px; color:var(--ink-soft);">(The Ambitious Pro)</span></h2>
+        <p>مستواك متقدم. تفهم وتتكلم وتكتب بثقة، وما ينقصك هو اللمسة التي تجعلك تبدو كالناطقين بها.</p>
+        <div class="type-grid"><div><strong>نقطة قوته</strong>القواعد والمفردات والاستماع معاً.</div><div><strong>ما يحتاج تقويته</strong>سرعة الكلام الحقيقي، والتعابير الاصطلاحية، ولغة العمل والقيادة.</div></div>
+        <p style="margin:12px 0 0;"><b>قائمته:</b> <a href="pro-c1.html">قائمة C1</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <strong>الموقع</strong>
+        <a href="../index.html">الرئيسية</a>
+        <a href="../courses.html">الكورسات</a>
+        <a href="../videos.html">الفيديوهات</a>
+        <a href="../paths/index.html">مسارات التعلم</a>
+        <a href="../placement-test.html">اختبار تحديد المستوى</a>
+        <a href="../articles/index.html">المقالات</a>
+        <a href="../about.html">من نحن</a>
+        <a href="../faq.html">الأسئلة الشائعة</a>
+        <a href="../become-affiliate.html">كن شريكاً معنا</a>
+      </div>
+      <div class="footer-col">
+        <strong>الكورسات</strong>
+        <a href="../products/pronunciation.html">أسرار النطق الأمريكي</a>
+        <a href="../products/commuter-challenge.html">The Commuter Challenge</a>
+        <a href="../products/presentations.html">أتقن العروض التقديمية</a>
+        <a href="../products/interview.html">من التوتر إلى التميز</a>
+        <a href="../products/ramadan-audio-club.html"><bdi>30-Day Fluency Challenge</bdi></a>
+        <a href="../products/vocabulary-diet.html">قائمة دايت المفردات</a>
+      </div>
+      <div class="footer-col">
+        <strong>تواصل</strong>
+        <a href="mailto:noor@masterenglish.me">noor@masterenglish.me</a>
+        <a href="https://www.youtube.com/@MasterEnglish" target="_blank" rel="noopener">يوتيوب</a>
+        <a href="https://instagram.com/masterenglish.me" target="_blank" rel="noopener">انستقرام</a>
+        <a href="https://twitter.com/MasterEnglishYT" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://facebook.com/MasterEnglishME" target="_blank" rel="noopener">فيسبوك</a>
+        <a href="https://telegram.me/noormasterenglish" target="_blank" rel="noopener">تيليجرام</a>
+        <a href="https://patreon.com/masterenglish" target="_blank" rel="noopener">Patreon</a>
+      </div>
+    </div>
+    <p class="footer-yt"><a class="btn btn-yt" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg> اشترك في قناة أتقن الإنجليزية على يوتيوب: ١٬٢٠٠ درس مجاني</a></p>
+    <p>منصة متخصصة في سد الفجوة بين معرفتك النظرية باللغة الإنجليزية، وبين قدرتك على التحدث بها بطلاقة وثقة في بيئات العمل والمواقف اليومية.</p>
+    <p class="footer-links">
+      <a href="../terms.html">Terms of Service</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../learn-english-for-arabic-speakers.html" lang="en">English</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js?v=20261002"></script>
+<script src="../assets/js/track.js?v=20261002"></script>
+<script src="../assets/js/learner.js?v=20261002"></script>
+<script src="../assets/js/auth.js?v=20261002"></script>
+<script src="../assets/js/contact-widget.js?v=20261002"></script>
+<script src="../assets/js/help-bot.js?v=20261002"></script>
+<script src="../assets/js/whatsapp-widget.js?v=20261002"></script>
+</body>
+</html>

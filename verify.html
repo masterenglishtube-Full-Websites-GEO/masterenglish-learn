@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="stylesheet" href="assets/css/style.css?v=20260925">
+<link rel="stylesheet" href="assets/css/style.css?v=20261002">
 </head>
 <body>
 
@@ -36,6 +36,8 @@
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
   const params = new URLSearchParams(location.search);
   const token = params.get("token");
+  // Where to land after sign-in: only a page of this site (e.g. my-learning.html), never an outside URL.
+  const next = /^[a-z0-9-]+\.html$/.test(params.get("next") || "") ? params.get("next") : "index.html";
 
   const titleEl = document.getElementById("verifyTitle");
   const subEl = document.getElementById("verifySub");
@@ -62,7 +64,7 @@
         } catch (e) {}
         titleEl.textContent = "تم تسجيل الدخول بنجاح ✅";
         subEl.textContent = "جارِ توجيهك...";
-        setTimeout(() => { location.href = "index.html"; }, 1200);
+        setTimeout(() => { location.href = next; }, 1200);
       })
       .catch(() => fail("حدث خطأ تقني، حاول مرة أخرى أو راسلنا على noor@masterenglish.me"));
   }

@@ -42,6 +42,16 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - [مسار النطق الأمريكي للعرب](https://learn.masterenglish.me/paths/pronunciation.html)
 - [مسار إنجليزية العمل: من المقابلة إلى قاعة الاجتماعات](https://learn.masterenglish.me/paths/work.html)
 
+### قوائم حسب نوع المتعلم (من نتيجة اختبار تحديد المستوى)
+- [أنواع متعلمي الإنجليزية العرب](https://learn.masterenglish.me/plans/index.html): الباني، والفاهم الصامت، والمتكلم العفوي، والمحترف الطموح
+- [قائمة A1 الخاصة بـ«الباني»](https://learn.masterenglish.me/plans/builder-a1.html)
+- [قائمة A2 الخاصة بـ«الباني»](https://learn.masterenglish.me/plans/builder-a2.html)
+- [قائمة B1 الخاصة بـ«الفاهم الصامت»](https://learn.masterenglish.me/plans/silent-b1.html)
+- [قائمة B2 الخاصة بـ«الفاهم الصامت»](https://learn.masterenglish.me/plans/silent-b2.html)
+- [قائمة B1 الخاصة بـ«المتكلّم العفوي»](https://learn.masterenglish.me/plans/natural-b1.html)
+- [قائمة B2 الخاصة بـ«المتكلّم العفوي»](https://learn.masterenglish.me/plans/natural-b2.html)
+- [قائمة C1 الخاصة بـ«المحترف الطموح»](https://learn.masterenglish.me/plans/pro-c1.html)
+
 ### أدلة المواضيع
 - [النطق الأمريكي وتخفيف اللكنة العربية](https://learn.masterenglish.me/topics/pronunciation.html)
 - [المحادثة والطلاقة: من الفهم إلى الكلام](https://learn.masterenglish.me/topics/conversation.html)

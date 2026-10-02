@@ -1,8 +1,11 @@
-// Placement test (placement-test.html): 25 questions, then the result is emailed -- level,
-// answers with explanations, learning path -- via the Worker's /placement/result. The page
-// never shows the level itself, so the visitor has to give a real address to see it.
+// Placement test (placement-test.html): 25 questions, then 5 goals questions (each answer
+// picks the next question), then the result is emailed -- level, learner type, personal list,
+// recommended course, answers with explanations -- via the Worker's /placement/result. The
+// page never shows the level itself, so the visitor has to give a real address to see it.
+// Answers are picked, then confirmed with «تأكيد»; «رجوع» goes back to change one.
 (function () {
   const QUESTIONS = JSON.parse(document.getElementById("ptQuestions").textContent);
+  const GOALS = JSON.parse(document.getElementById("ptGoals").textContent);
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
   const GOOGLE_CLIENT_ID = "564162958911-lf8strh07g2oilos6srha0hj95d04o55.apps.googleusercontent.com";
   const AR = "٠١٢٣٤٥٦٧٨٩", ar = (n) => String(n).replace(/[0-9]/g, (d) => AR[d]);
@@ -21,31 +24,94 @@
   };
   let i = 0, score = 0, level = "";
   const answers = [];
+  const orders = []; // shuffled option order per question, kept when the visitor goes back
+  let picked = null; // the option chosen on screen, not yet confirmed
+  const gPath = [GOALS.start]; // goals questions asked so far, in order
+  const gAns = {}; // goals question id -> option id
   let lastSend = null; // the request body to repeat when the visitor asks to resend
 
   function shuffle(a) { a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
 
+  function only(id) {
+    ["ptStart", "ptRun", "ptGoalsIntro", "ptGoalsRun", "ptGate", "ptSent"].forEach((x) => { $(x).hidden = x !== id; });
+  }
+
+  // Choice buttons that select (aria-pressed) instead of moving on; onPick enables «تأكيد».
+  function choices(box, opts, current, onPick) {
+    box.innerHTML = "";
+    opts.forEach((opt) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "quiz-choice"; b.dir = "auto"; b.textContent = opt.label;
+      b.setAttribute("aria-pressed", String(opt.value === current));
+      b.addEventListener("click", () => {
+        box.querySelectorAll(".quiz-choice").forEach((x) => x.setAttribute("aria-pressed", "false"));
+        b.setAttribute("aria-pressed", "true");
+        onPick(opt.value);
+      });
+      box.appendChild(b);
+    });
+  }
+
   function show() {
     const q = QUESTIONS[i];
+    only("ptRun");
     $("ptCount").textContent = `السؤال ${ar(i + 1)} من ${ar(QUESTIONS.length)}`;
     $("ptLevelTag").textContent = q.level;
     $("ptBar").style.width = (i / QUESTIONS.length * 100) + "%";
     $("ptQ").textContent = q.q;
     $("ptSayWrap").hidden = !q.say;
     $("ptSayFallback").hidden = true;
-    const box = $("ptChoices"); box.innerHTML = "";
-    const opts = shuffle(q.o.map((label, idx) => ({ label, idx }))).concat([{ label: "لا أعرف", idx: -1 }]);
-    opts.forEach((opt) => {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "quiz-choice"; b.dir = "auto"; b.textContent = opt.label;
-      b.addEventListener("click", () => {
-        answers[i] = opt.idx;
-        i++;
-        if (i < QUESTIONS.length) show(); else finish();
-      });
-      box.appendChild(b);
+    if (!orders[i]) orders[i] = shuffle(q.o.map((label, idx) => ({ label, value: idx }))).concat([{ label: "لا أعرف", value: -1 }]);
+    picked = answers[i] === undefined ? null : answers[i];
+    $("ptNext").disabled = picked === null;
+    $("ptNext").textContent = i === QUESTIONS.length - 1 ? "تأكيد وإنهاء الاختبار" : "تأكيد";
+    $("ptBack").style.visibility = i === 0 ? "hidden" : "visible";
+    choices($("ptChoices"), orders[i], picked, (v) => { picked = v; $("ptNext").disabled = false; });
+  }
+
+  $("ptNext").addEventListener("click", () => {
+    if (picked === null) return;
+    answers[i] = picked;
+    if (i < QUESTIONS.length - 1) { i++; show(); } else goalsIntro();
+  });
+  $("ptBack").addEventListener("click", () => { if (i > 0) { i--; show(); } });
+
+  // Goals: every branch has GOALS.steps questions; only the answers on the current path are sent.
+  function goalsIntro() {
+    only("ptGoalsIntro");
+    $("pt").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  $("ptGoalsGo").addEventListener("click", showGoal);
+  $("ptGoalsBackToTest").addEventListener("click", () => { i = QUESTIONS.length - 1; show(); });
+
+  function showGoal() {
+    const id = gPath[gPath.length - 1], q = GOALS.q[id];
+    only("ptGoalsRun");
+    $("ptGCount").textContent = `سؤال ${ar(gPath.length)} من ${ar(GOALS.steps)}`;
+    $("ptGBar").style.width = ((gPath.length - 1) / GOALS.steps * 100) + "%";
+    $("ptGQ").textContent = q.t;
+    picked = gAns[id] === undefined ? null : gAns[id];
+    $("ptGNext").disabled = picked === null;
+    const opt = q.o.find((o) => o.id === picked);
+    $("ptGNext").textContent = (picked === null ? !q.o[0].next : !(opt && opt.next)) ? "تأكيد وإرسال" : "تأكيد";
+    choices($("ptGChoices"), q.o.map((o) => ({ label: o.t, value: o.id })), picked, (v) => {
+      picked = v;
+      $("ptGNext").disabled = false;
+      $("ptGNext").textContent = q.o.find((o) => o.id === v).next ? "تأكيد" : "تأكيد وإرسال";
     });
   }
+
+  $("ptGNext").addEventListener("click", () => {
+    if (picked === null) return;
+    const id = gPath[gPath.length - 1];
+    gAns[id] = picked;
+    const next = GOALS.q[id].o.find((o) => o.id === picked).next;
+    if (next) { gPath.push(next); showGoal(); } else finish();
+  });
+  $("ptGBack").addEventListener("click", () => {
+    if (gPath.length > 1) { gPath.pop(); showGoal(); } else goalsIntro();
+  });
+  const goals = () => Object.fromEntries(gPath.filter((id) => gAns[id] !== undefined).map((id) => [id, gAns[id]]));
 
   $("ptSay").addEventListener("click", () => {
     const q = QUESTIONS[i];
@@ -59,8 +125,7 @@
   function finish() {
     score = answers.filter((a, k) => a === QUESTIONS[k].a).length;
     level = levelFor(score);
-    $("ptRun").hidden = true;
-    $("ptGate").hidden = false;
+    only("ptGate");
     $("pt").scrollIntoView({ behavior: "smooth", block: "start" });
     const token = store.get("me_auth_token");
     if (token) {
@@ -95,7 +160,7 @@
     if (extra.use_account) headers.Authorization = "Bearer " + store.get("me_auth_token");
     try {
       const res = await fetch(API + "/placement/result", {
-        method: "POST", headers, body: JSON.stringify({ answers, session_id: store.get("me_sid"), ...extra }),
+        method: "POST", headers, body: JSON.stringify({ answers, goals: goals(), session_id: store.get("me_sid"), ...extra }),
       });
       const d = await res.json().catch(() => ({}));
       if (!res.ok || !d.ok) throw new Error(d.error || "send_failed");
@@ -110,8 +175,7 @@
   }
 
   function sent(email) {
-    $("ptGate").hidden = true;
-    $("ptSent").hidden = false;
+    only("ptSent");
     $("ptSentTo").textContent = email;
     status($("ptSentStatus"), "");
     const domain = email.split("@")[1] || "";
@@ -167,12 +231,13 @@
   $("ptSendAccount").addEventListener("click", () => send({ use_account: true }));
   $("ptUseOther").addEventListener("click", () => { $("ptAccount").hidden = true; $("ptChoose").hidden = false; $("ptEmail").focus(); });
   $("ptResend").addEventListener("click", () => { if (lastSend) send(lastSend, $("ptSentStatus")); });
+  $("ptGateBack").addEventListener("click", showGoal);
   $("ptChange").addEventListener("click", () => {
-    $("ptSent").hidden = true; $("ptGate").hidden = false;
+    only("ptGate");
     $("ptAccount").hidden = true; $("ptChoose").hidden = false;
     status($("ptStatus"), "");
     $("ptEmail").focus(); $("ptEmail").select();
   });
 
-  $("ptGo").addEventListener("click", () => { $("ptStart").hidden = true; $("ptRun").hidden = false; show(); });
+  $("ptGo").addEventListener("click", show);
 })();

@@ -199,6 +199,27 @@
   .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
   .chart-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
+  /* ---------- sales opportunities (lead score) ---------- */
+  .lead-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .lead-note { color: var(--ink-soft); font-size: 14px; margin: 0 0 14px; }
+  .lead-card { border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--paper); padding: 14px 16px; margin: 0 0 12px; }
+  .lead-top { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .lead-score { min-width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; font-size: 20px; color: #fff; }
+  .lead-score.hot { background: #c9522a; } .lead-score.warm { background: #e0a21a; color: #2a1c00; } .lead-score.cool { background: #8a9a92; }
+  .lead-who { flex: 1; min-width: 200px; }
+  .lead-who b { display: block; }
+  .lead-who span { color: var(--ink-soft); font-size: 13px; direction: ltr; unicode-bidi: isolate; }
+  .lead-prod { background: var(--accent-light); color: var(--accent-dark); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; }
+  .lead-card ul { margin: 10px 0 0; padding-inline-start: 20px; font-size: 14px; }
+  .lead-card details { margin-top: 10px; }
+  .lead-card summary { cursor: pointer; font-weight: 700; color: var(--accent-dark); }
+  .lead-card input, .lead-card textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; margin: 8px 0 0; background: var(--paper); color: var(--ink); }
+  .lead-card textarea { min-height: 190px; line-height: 1.7; }
+  .lead-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .lead-actions button { border-radius: 999px; padding: 8px 18px; font: inherit; font-weight: 700; cursor: pointer; border: 1px solid var(--border); background: var(--paper-soft); color: var(--ink); }
+  .lead-actions .send { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .lead-status { font-size: 13px; color: var(--ink-soft); margin-inline-start: 6px; }
+
   @media (max-width: 640px) {
     .admin-topbar h1 { font-size: 16px; }
     thead th { position: static; }
@@ -225,6 +246,15 @@
 <div class="admin-wrap" id="dashboard">
 
   <div class="stat-grid" id="statGrid"></div>
+
+  <div class="admin-section" id="leads">
+    <div class="lead-head">
+      <h2 style="margin:0;"><span class="icon">🎯</span> فرص البيع: الأقرب للشراء الآن</h2>
+      <button type="button" class="btn btn-primary" id="leadsRefresh" style="padding:8px 18px;">أعد الحساب الآن</button>
+    </div>
+    <p class="lead-note">يُحسب كل صباح لكل شخص نعرف بريده، من آخر ٦٠ يوماً: بدء الدفع أو تركه، صفحات المنتجات التي قرأها، الروابط التي ضغطها في رسائلنا، نتيجة اختبار المستوى وهدفه ومتى يحتاج الإنجليزية، وعودته للموقع. الإشارة الأحدث أقوى. لكل شخص المنتج الأنسب له مما لا يملكه، ورسالة مقترحة مكتوبة من بياناته. <b>لا يُرسل شيء إلا حين تضغط «أرسل».</b> من تراسله أو تتخطاه يغيب عن القائمة ١٤ يوماً.</p>
+    <div id="leadsList"><p class="lead-note">جارِ التحميل...</p></div>
+  </div>
 
   <div class="admin-section">
     <h2><span class="icon">🔥</span> الصفحات الأكثر زيارة (آخر 7 أيام)</h2>
@@ -492,6 +522,7 @@
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("dashboardTopbar").style.display = "block";
     loadOverview();
+    loadLeads();
     loadAnalyticsPages();
     populateProductFilter();
     loadCustomers("");
@@ -501,6 +532,51 @@
   }
 
   function money(cents) { return ((cents || 0) / 100).toFixed(2) + " $"; }
+
+  // Sales opportunities: lead score per person, with a draft Noor can edit and send.
+  const escH = (t) => String(t == null ? "" : t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  async function loadLeads(refresh) {
+    const box = document.getElementById("leadsList");
+    if (refresh) box.innerHTML = '<p class="lead-note">جارِ الحساب...</p>';
+    let data;
+    try { data = await api("/admin/api/leads" + (refresh ? "?refresh=1" : "")); } catch (e) { box.innerHTML = '<p class="lead-note">تعذّر التحميل.</p>'; return; }
+    const leads = data.leads || [];
+    if (!leads.length) { box.innerHTML = '<p class="lead-note">لا أحد في القائمة الآن.</p>'; return; }
+    box.innerHTML = leads.map((l) => `
+      <div class="lead-card" data-id="${l.customer_id}" data-email="${escH(l.email)}">
+        <div class="lead-top">
+          <div class="lead-score ${l.score >= 50 ? "hot" : l.score >= 25 ? "warm" : "cool"}" title="مؤشر الشراء من ١٠٠">${l.score}</div>
+          <div class="lead-who"><b>${escH(l.name || l.email)}</b>${l.name ? `<span>${escH(l.email)}</span>` : ""}</div>
+          <div class="lead-prod">${escH(l.product_name)}</div>
+        </div>
+        <ul>${(l.reasons || []).map((r) => `<li>${escH(r)}</li>`).join("")}</ul>
+        <details>
+          <summary>الرسالة المقترحة</summary>
+          <input type="text" class="lead-subject" value="${escH(l.draft.subject)}" aria-label="عنوان الرسالة">
+          <textarea class="lead-body" aria-label="نص الرسالة">${escH(l.draft.body)}</textarea>
+          <div class="lead-actions">
+            <button type="button" class="send">أرسل إلى ${escH(l.email)}</button>
+            <button type="button" class="skip">تخطَّ ١٤ يوماً</button>
+            <span class="lead-status"></span>
+          </div>
+        </details>
+      </div>`).join("");
+    box.querySelectorAll(".lead-card").forEach((card) => {
+      const id = card.dataset.id, status = card.querySelector(".lead-status");
+      card.querySelector(".send").addEventListener("click", async (ev) => {
+        const email = card.dataset.email;
+        if (!confirm("إرسال هذه الرسالة الآن إلى " + email + "؟")) return;
+        ev.target.disabled = true; status.textContent = "جارِ الإرسال...";
+        const r = await apiSend("/admin/api/leads/send", "POST", { customer_id: id, subject: card.querySelector(".lead-subject").value, body: card.querySelector(".lead-body").value }).catch(() => ({}));
+        if (r.ok) { card.style.opacity = ".5"; status.textContent = "أُرسلت ✓"; } else { ev.target.disabled = false; status.textContent = "تعذّر الإرسال: " + (r.error || ""); }
+      });
+      card.querySelector(".skip").addEventListener("click", async () => {
+        const r = await apiSend("/admin/api/leads/skip", "POST", { customer_id: id }).catch(() => ({}));
+        if (r.ok) card.remove();
+      });
+    });
+  }
+  document.getElementById("leadsRefresh").addEventListener("click", () => loadLeads(true));
 
   async function loadOverview() {
     const data = await api("/admin/api/overview");
