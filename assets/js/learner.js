@@ -224,6 +224,7 @@
 
   function addListenButtons() {
     if (!("speechSynthesis" in window)) return;
+    if (document.documentElement.lang === "en") return; // English pages: everything is English, no buttons
     const roots = document.querySelectorAll(".article-body .prose, .guide-body");
     roots.forEach((root) => {
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {

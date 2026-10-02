@@ -10,7 +10,7 @@
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
   const PATH = location.pathname.replace(/^\/masterenglish-learn/, "");
   const SKIP = /\/(admin|watch|verify|thank-you|upsell|affiliate|checkout)\.html$/;
-  if (SKIP.test(PATH)) return;
+  if (SKIP.test(PATH) || document.documentElement.lang === "en") return; // English pages have their own, English-only layout
 
   const AR = (n) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
   const dayWord = (n) => (n === 1 ? "يوم" : n === 2 ? "يومان" : n <= 10 ? "أيام" : "يوماً");
