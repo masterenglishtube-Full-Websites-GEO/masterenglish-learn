@@ -9,6 +9,7 @@
 // Other scripts use window.MELearner.recordQuiz(key, score, total) etc.
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const SELF = document.currentScript && document.currentScript.src;
   const KEY = "me_progress";
   const TOKEN_KEY = "me_auth_token";
 
@@ -19,6 +20,7 @@
 
   // ---- events ------------------------------------------------------------
   function track(type, target) {
+    if (store.get("me_internal") === "1") return; // Noor's own browser (see track.js)
     const body = JSON.stringify({ event_type: type, target: target || "", path: location.pathname, session_id: store.get("me_sid"), visitor_id: store.get("me_vid") });
     try {
       if (navigator.sendBeacon) navigator.sendBeacon(API + "/track/event", new Blob([body], { type: "text/plain;charset=UTF-8" }));
@@ -64,8 +66,9 @@
   function load() {
     try { return JSON.parse(store.get(KEY)) || {}; } catch (e) { return {}; }
   }
-  let state = Object.assign({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null }, load());
+  let state = Object.assign({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null, daily: {} }, load());
   if (!state.watched) state.watched = {};
+  if (!state.daily) state.daily = {};
 
   function markWatched(id) {
     state.watched[id] = Date.now();
@@ -111,8 +114,8 @@
       save();
       track("quiz_done", key + ":" + score + "/" + total);
     },
-    setLevel(level, score) {
-      state.level = { level, score, ts: Date.now() };
+    setLevel(level, score, extra) {
+      state.level = Object.assign({ level, score, ts: Date.now() }, extra || {}); // extra: learner type + list id
       save();
       track("placement_done", level);
     },
@@ -122,6 +125,14 @@
       state.phrases.unshift({ en, src: location.pathname, title: title || document.title.split("|")[0].trim(), ts: Date.now() });
       state.phrases = state.phrases.slice(0, 300);
       save();
+    },
+    // "Today's 10 minutes" finished (personal.js): one mark per local day, for the streak.
+    markDaily() {
+      const d = new Date(), key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      if (state.daily[key]) return;
+      state.daily[key] = 1;
+      save();
+      track("daily_done", key);
     },
     removePhrase(en) {
       state.phrases = state.phrases.filter((p) => p.en !== en);
@@ -264,9 +275,18 @@
     });
   }
 
+  // personal.js (phone tab bar, next step, homepage greeting) comes with every page that has this file.
+  function loadPersonal() {
+    if (!SELF || document.querySelector('script[src*="personal.js"]')) return;
+    const s = document.createElement("script");
+    s.src = SELF.replace("learner.js", "personal.js");
+    document.body.appendChild(s);
+  }
+
   function init() {
     addListenButtons();
     pullFromAccount();
+    loadPersonal();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

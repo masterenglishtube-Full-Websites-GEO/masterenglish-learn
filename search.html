@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css?v=20261002">
+<link rel="stylesheet" href="assets/css/style.css?v=2026100202">
 <style>
   .search-box-wrap { max-width: 640px; margin: 0 auto 50px; position: relative; }
   #siteSearchInput {
@@ -25,6 +25,11 @@
     padding: 20px 24px; transition: border-color .15s ease, transform .15s ease;
   }
   .search-result:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .search-group { max-width: 760px; margin: 18px auto 0; width: 100%; font-size: 18px; }
+  .search-videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 14px; max-width: 760px; margin: 0 auto; width: 100%; }
+  .search-video { display: block; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; text-decoration: none; color: var(--ink); }
+  .search-video img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+  .search-video span { display: block; padding: 10px 12px; font-size: 14px; font-weight: 700; line-height: 1.5; }
   .search-result h3 { margin: 0 0 6px; font-size: 17px; }
   .search-result h3 a { color: var(--ink); }
   .search-result h3 a:hover { color: var(--accent-dark); }
@@ -43,11 +48,10 @@
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="paths/index.html">مسارات التعلم</a>
-      <a href="videos.html">الفيديوهات</a>
-      <a href="courses.html">الكورسات</a>
+      <a href="videos.html">الدروس</a>
       <a href="articles/index.html">المقالات</a>
-      <a href="testimonials.html">آراء الطلاب</a>
-      <a href="about.html">من نحن</a>
+      <a href="courses.html">الكورسات</a>
+      <a href="about.html">عن نور</a>
       <a href="search.html" class="nav-mobile-only">بحث في الموقع</a>
       <a href="placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
@@ -90,7 +94,9 @@
         <a href="videos.html">الفيديوهات</a>
         <a href="paths/index.html">مسارات التعلم</a>
         <a href="placement-test.html">اختبار تحديد المستوى</a>
+        <a href="plans/index.html">أي نوع من المتعلمين أنت؟</a>
         <a href="articles/index.html">المقالات</a>
+        <a href="testimonials.html">آراء الطلاب</a>
         <a href="about.html">من نحن</a>
         <a href="faq.html">الأسئلة الشائعة</a>
         <a href="become-affiliate.html">كن شريكاً معنا</a>
@@ -123,64 +129,87 @@
   </div>
 </footer>
 
-<script src="assets/js/track.js?v=20261002"></script>
-<script src="assets/js/learner.js?v=20261002"></script>
-<script src="assets/js/auth.js?v=20261002"></script>
-<script src="assets/js/contact-widget.js?v=20261002"></script>
-<script src="assets/js/help-bot.js?v=20261002"></script>
-<script src="assets/js/whatsapp-widget.js?v=20261002"></script>
+<script src="assets/js/track.js?v=2026100202"></script>
+<script src="assets/js/learner.js?v=2026100202"></script>
+<script src="assets/js/auth.js?v=2026100202"></script>
+<script src="assets/js/contact-widget.js?v=2026100202"></script>
+<script src="assets/js/help-bot.js?v=2026100202"></script>
+<script src="assets/js/whatsapp-widget.js?v=2026100202"></script>
 <script>
-  let searchIndex = [];
+  // Site search: pages (search-index.json) and the channel's public lessons (/videos/library).
+  // Arabic is normalized first, so أ/إ/آ/ا, ة/ه, ى/ي, ؤ/و, ئ/ي, diacritics and tatweel all match,
+  // and every word of the query must appear (in any order); title hits rank first.
+  const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  let searchIndex = [], videos = [];
+  const AR = (n) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-  function highlight(text, query) {
-    if (!query) return text;
-    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return text.replace(new RegExp(`(${escaped})`, "gi"), "<mark>$1</mark>");
+  function norm(t) {
+    return String(t || "").toLowerCase()
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+      .replace(/[أإآٱ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي").replace(/ؤ/g, "و").replace(/ئ/g, "ي")
+      .replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
+  }
+  // Drop a leading "ال" so "النطق" also finds "نطق".
+  const words = (q) => norm(q).split(" ").filter((w) => w.length > 1).map((w) => (w.startsWith("ال") && w.length > 3 ? w.slice(2) : w));
+
+  function score(title, desc, ws) {
+    const t = norm(title), d = norm(desc);
+    let sc = 0;
+    for (const w of ws) {
+      if (t.includes(w)) sc += 3; else if (d.includes(w)) sc += 1; else return 0;
+    }
+    return sc;
+  }
+
+  function highlight(text, ws) {
+    let out = esc(text);
+    for (const w of ws) {
+      if (!/^[\w]+$/i.test(w)) continue; // highlight Latin words only; Arabic letters may differ from the normalized form
+      out = out.replace(new RegExp("(" + w + ")", "gi"), "<mark>$1</mark>"); // w is letters/digits only here
+    }
+    return out;
   }
 
   function render(query) {
     const resultsEl = document.getElementById("searchResults");
     const emptyEl = document.getElementById("searchEmpty");
     resultsEl.innerHTML = "";
+    const ws = words(query);
+    if (!ws.length) { emptyEl.style.display = "none"; return; }
 
-    if (!query.trim()) {
-      emptyEl.style.display = "none";
-      return;
+    const pages = searchIndex.map((e) => [score(e.title, e.desc, ws), e]).filter((x) => x[0]).sort((a, b) => b[0] - a[0]).map((x) => x[1]);
+    const vids = videos.map((v) => [score(v.t, "", ws), v]).filter((x) => x[0]).sort((a, b) => b[0] - a[0] || (b[1].v || 0) - (a[1].v || 0)).map((x) => x[1]);
+    emptyEl.style.display = pages.length || vids.length ? "none" : "block";
+
+    if (pages.length) {
+      resultsEl.insertAdjacentHTML("beforeend", `<h2 class="search-group">صفحات ومقالات (${AR(pages.length)})</h2>`);
+      pages.slice(0, 30).forEach((entry) => resultsEl.insertAdjacentHTML("beforeend",
+        `<div class="search-result"><h3><a href="${esc(entry.url)}">${highlight(entry.title, ws)}</a></h3><p>${highlight(entry.desc, ws)}</p></div>`));
     }
-
-    const q = query.trim().toLowerCase();
-    const matches = searchIndex.filter((entry) =>
-      entry.title.toLowerCase().includes(q) || entry.desc.toLowerCase().includes(q)
-    );
-
-    emptyEl.style.display = matches.length === 0 ? "block" : "none";
-
-    matches.forEach((entry) => {
-      const card = document.createElement("div");
-      card.className = "search-result";
-      card.innerHTML = `
-        <h3><a href="${entry.url}">${highlight(entry.title, query)}</a></h3>
-        <p>${highlight(entry.desc, query)}</p>
-      `;
-      resultsEl.appendChild(card);
-    });
+    if (vids.length) {
+      resultsEl.insertAdjacentHTML("beforeend", `<h2 class="search-group">دروس الفيديو على القناة (${AR(vids.length)})</h2><div class="search-videos"></div>`);
+      const grid = resultsEl.querySelector(".search-videos");
+      vids.slice(0, 12).forEach((v) => grid.insertAdjacentHTML("beforeend",
+        `<a class="search-video" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"><span>${esc(v.t)}</span></a>`));
+      if (vids.length > 12) resultsEl.insertAdjacentHTML("beforeend", `<p style="text-align:center;"><a class="btn btn-outline" href="videos.html?q=${encodeURIComponent(query)}">كل دروس الفيديو عن «${esc(query)}»</a></p>`);
+    }
   }
 
-  fetch("assets/search-index.json")
-    .then((r) => r.json())
-    .then((data) => {
-      searchIndex = data;
-      const params = new URLSearchParams(location.search);
-      const initialQuery = params.get("q") || "";
-      if (initialQuery) {
-        document.getElementById("siteSearchInput").value = initialQuery;
-        render(initialQuery);
-      }
-    });
+  let timer = null;
+  function go(q) {
+    render(q);
+    clearTimeout(timer);
+    timer = setTimeout(() => { if (q.trim().length > 2 && window.MELearner) window.MELearner.track("library_search", "site:" + q.trim().slice(0, 100)); }, 1500);
+  }
 
-  document.getElementById("siteSearchInput").addEventListener("input", (e) => {
-    render(e.target.value);
-  });
+  const initialQuery = new URLSearchParams(location.search).get("q") || "";
+  if (initialQuery) document.getElementById("siteSearchInput").value = initialQuery;
+  Promise.all([
+    fetch("assets/search-index.json").then((r) => r.json()).then((d) => { searchIndex = d; }),
+    fetch(API + "/videos/library").then((r) => r.json()).then((d) => { videos = d.videos || []; }).catch(() => {}),
+  ]).then(() => render(document.getElementById("siteSearchInput").value));
+  document.getElementById("siteSearchInput").addEventListener("input", (e) => go(e.target.value));
 </script>
 
 </body>

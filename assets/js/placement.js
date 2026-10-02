@@ -106,7 +106,10 @@
     const id = gPath[gPath.length - 1];
     gAns[id] = picked;
     const next = GOALS.q[id].o.find((o) => o.id === picked).next;
-    if (next) { gPath.push(next); showGoal(); } else finish();
+    if (next) { gPath.push(next); showGoal(); } else {
+      if (window.MELearner) window.MELearner.track("goals_done", Object.values(goals()).join(">"));
+      finish();
+    }
   });
   $("ptGBack").addEventListener("click", () => {
     if (gPath.length > 1) { gPath.pop(); showGoal(); } else goalsIntro();
@@ -166,7 +169,7 @@
       if (!res.ok || !d.ok) throw new Error(d.error || "send_failed");
       if (d.token) store.set("me_auth_token", d.token);
       lastSend = extra.credential ? { use_account: true } : extra; // Google visitors are signed in now
-      sent(d.email);
+      sent(d.email, d);
     } catch (e) {
       status(statusEl, ERRORS[e.message] || ERRORS.send_failed, true);
     } finally {
@@ -174,7 +177,7 @@
     }
   }
 
-  function sent(email) {
+  function sent(email, d) {
     only("ptSent");
     $("ptSentTo").textContent = email;
     status($("ptSentStatus"), "");
@@ -184,7 +187,7 @@
       : /yahoo/.test(domain) ? "https://mail.yahoo.com/" : /icloud|me\.com/.test(domain) ? "https://www.icloud.com/mail/" : "";
     $("ptOpenMail").hidden = !inbox;
     if (inbox) $("ptOpenMail").href = inbox;
-    if (window.MELearner) window.MELearner.setLevel(level, score);
+    if (window.MELearner) window.MELearner.setLevel(level, score, d && d.avatar ? { avatar: d.avatar, list: d.list } : null);
   }
 
   // Typo check for common providers: "gmial.com" -> "gmail.com"
@@ -240,5 +243,5 @@
     $("ptEmail").focus(); $("ptEmail").select();
   });
 
-  $("ptGo").addEventListener("click", show);
+  $("ptGo").addEventListener("click", () => { if (window.MELearner) window.MELearner.track("test_start", ""); show(); });
 })();

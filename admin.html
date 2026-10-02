@@ -171,6 +171,10 @@
   }
   .an-tab-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
   .an-tab-btn.active { background: var(--gradient-primary); color: #fff; border-color: transparent; box-shadow: var(--shadow-sm); }
+  .funnel-row { display: grid; grid-template-columns: minmax(150px, 230px) 1fr 70px; gap: 10px; align-items: center; margin: 0 0 8px; font-size: 14px; }
+  .funnel-bar { background: var(--paper-soft); border-radius: 99px; height: 16px; overflow: hidden; }
+  .funnel-bar span { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+  .funnel-row b { text-align: left; direction: ltr; }
   .an-panel { display: none; }
   .an-panel.active { display: block; animation: fadeIn .2s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
@@ -273,12 +277,18 @@
     </div>
 
     <div class="an-tabs">
+      <button type="button" class="an-tab-btn" data-tab="funnel">🧭 رحلة الزائر</button>
       <button type="button" class="an-tab-btn active" data-tab="pages">📄 الصفحات</button>
       <button type="button" class="an-tab-btn" data-tab="visitors">👤 الزوار</button>
       <button type="button" class="an-tab-btn" data-tab="heatmap">🗓️ خريطة الأوقات</button>
       <button type="button" class="an-tab-btn" data-tab="trend">📉 الاتجاه الزمني</button>
       <button type="button" class="an-tab-btn" data-tab="sources">🔗 مصادر الزيارات</button>
       <button type="button" class="an-tab-btn" data-tab="youtube">▶ يوتيوب والتعلم</button>
+    </div>
+
+    <div class="an-panel" id="anPanelFunnel">
+      <p class="an-summary-line">كم زائراً وصل إلى كل خطوة، للمدة المحددة أعلاه (زياراتك أنت وزيارات الروبوتات لا تُحسب). الخطوة التي يسقط عندها أكثر الناس هي أول ما يُصلح.</p>
+      <div id="anFunnel"></div>
     </div>
 
     <div class="an-panel active" id="anPanelPages">
@@ -518,6 +528,8 @@
   }
 
   function showDashboard() {
+    // This browser is Noor's: keep its visits out of the site analytics (track.js reads it).
+    try { localStorage.setItem("me_internal", "1"); } catch (e) {}
     document.getElementById("signinBox").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("dashboardTopbar").style.display = "block";
@@ -884,7 +896,15 @@
     });
   }
 
-  const EVENT_LABELS = { yt_click: "▶ نقرة على فيديو يوتيوب", yt_subscribe: "🔔 نقرة اشتراك في القناة", video_play: "🎬 تشغيل فيديو داخل الموقع", pdf_download: "📄 تحميل ملف", quiz_done: "🎯 اختبار مكتمل", tts_play: "🔊 استماع لعبارة", placement_done: "🧭 اختبار تحديد مستوى", library_search: "🔎 بحث في مكتبة الدروس" };
+  async function loadFunnel() {
+    const data = await api("/admin/api/analytics/funnel?" + anRangeQuery().toString());
+    const steps = data.steps || [];
+    const top = Math.max(1, ...steps.map((st) => st[1]));
+    document.getElementById("anFunnel").innerHTML = steps.map(([label, n]) =>
+      `<div class="funnel-row"><span>${label}</span><div class="funnel-bar"><span style="width:${Math.max(n ? 2 : 0, Math.round(n / top * 100))}%"></span></div><b>${n}</b></div>`).join("");
+  }
+
+  const EVENT_LABELS = { yt_click: "▶ نقرة على فيديو يوتيوب", yt_subscribe: "🔔 نقرة اشتراك في القناة", video_play: "🎬 تشغيل فيديو داخل الموقع", pdf_download: "📄 تحميل ملف", quiz_done: "🎯 اختبار مكتمل", tts_play: "🔊 استماع لعبارة", placement_done: "🧭 اختبار تحديد مستوى", library_search: "🔎 بحث في مكتبة الدروس", test_start: "🧭 بدأ اختبار المستوى", goals_done: "🎯 أنهى أسئلة الهدف", next_step: "➡️ ضغط «خطوتك التالية»", home_continue: "🏠 «تابع من حيث توقفت» في الرئيسية", daily_done: "✅ أنهى تمرين اليوم", speak_try: "🎙️ جرّب تمرين النطق", speak_score: "🎙️ نتيجة تمرين النطق", nav_tab: "📱 شريط التنقل في الهاتف" };
   async function loadYoutubeEvents() {
     const data = await api("/admin/api/analytics/events?" + anRangeQuery().toString());
     const fill = (sel, rows, cells) => {
@@ -907,6 +927,7 @@
     if (tab === "trend") { populateTrendPathFilter(); loadTrend(); }
     if (tab === "sources") loadSources();
     if (tab === "youtube") loadYoutubeEvents();
+    if (tab === "funnel") loadFunnel();
   }
 
   document.querySelectorAll(".an-tab-btn").forEach((btn) => {
@@ -926,6 +947,7 @@
     if (tab === "trend") loadTrend();
     if (tab === "sources") loadSources();
     if (tab === "youtube") loadYoutubeEvents();
+    if (tab === "funnel") loadFunnel();
   }
 
   document.getElementById("anApplyBtn").addEventListener("click", anRefreshActiveTab);

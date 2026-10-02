@@ -1234,3 +1234,58 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
   .btn { white-space: normal; text-align: center; }
   .page-hero, .article-hero { padding: 36px 0 34px; }
 }
+
+/* ---------- Personal layer (assets/js/personal.js) ---------- */
+/* Phone tab bar */
+.me-tabbar { display: none; }
+@media (max-width: 760px) {
+  .me-tabbar {
+    display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; inset-inline: 0; bottom: 0; z-index: 1001;
+    background: var(--paper); border-top: 1px solid var(--border); box-shadow: 0 -6px 20px -12px rgba(0,0,0,.25);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  }
+  .me-tabbar a { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; color: var(--ink-soft); font-size: 11px; font-weight: 700; padding: 4px 2px; border-radius: 12px; }
+  .me-tabbar svg { width: 22px; height: 22px; }
+  .me-tabbar a.on { color: var(--accent-dark); }
+  .me-tabbar a.star { color: var(--on-gold); background: var(--gold); margin: -2px 2px; }
+  body.has-tabbar { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
+  body.has-tabbar #meContactBtn, body.has-tabbar #meHelpBotBtn { bottom: calc(80px + env(safe-area-inset-bottom)); width: 50px; height: 50px; }
+  body.has-tabbar .me-fab-tooltip, body.has-tabbar .me-fab-tooltip-right { bottom: calc(90px + env(safe-area-inset-bottom)); }
+  body.has-tabbar #meContactPanel, body.has-tabbar .me-helpbot-nudge { bottom: calc(140px + env(safe-area-inset-bottom)); }
+  body.has-tabbar #meWhatsappBtn { bottom: calc(140px + env(safe-area-inset-bottom)); }
+  body.has-tabbar .me-wa-tooltip { bottom: calc(150px + env(safe-area-inset-bottom)); }
+}
+
+/* "Your next step" at the end of reading pages */
+.me-next { margin: 40px 0 10px; padding: 22px 24px; border-radius: var(--radius); background: var(--green-900, #0c3a2c); color: #fff; }
+.me-next h2 { color: #fff; margin: 4px 0 8px; font-size: 21px; }
+.me-next p { color: #d6e8df; margin: 0 0 14px; }
+.me-next a:not(.btn) { color: var(--gold); font-weight: 700; }
+.me-next-label { color: var(--gold); font-weight: 800; font-size: 13px; }
+.me-next-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.me-next .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
+.me-next .btn-ghost:hover { background: rgba(255,255,255,.1); }
+.me-next .btn-primary { background: var(--gold); color: var(--on-gold); box-shadow: none; }
+
+/* Homepage greeting + today's 10 minutes */
+.me-home { padding: 22px 0 24px; background: var(--cream, var(--paper-soft)); }
+.me-home-card { background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 22px 24px; border: 1px solid var(--border); }
+.me-home-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.me-home-hello { margin: 0; font-size: 24px; }
+.me-home-type { margin: 4px 0 0; color: var(--ink-soft); }
+.me-streak { text-align: center; background: var(--gold-light, #fdf1d6); border-radius: 16px; padding: 8px 14px; min-width: 82px; }
+.me-streak strong { display: block; font-size: 26px; line-height: 1.1; color: var(--gold-dark, #8a6a1c); }
+.me-streak span { font-size: 12px; color: var(--ink-soft); }
+.me-streak.zero strong { color: var(--ink-soft); }
+.me-home-card h3 { margin: 18px 0 8px; font-size: 18px; }
+.me-today { margin: 0 0 14px; padding-inline-start: 22px; display: grid; gap: 8px; list-style: arabic-indic; }
+.me-today a { color: var(--accent-dark); font-weight: 700; text-decoration: underline; }
+.me-phrase { font-weight: 800; color: var(--accent-dark); }
+.me-say-today { border: 1px solid var(--border); background: var(--paper-soft); border-radius: 999px; padding: 0 8px; cursor: pointer; }
+.me-link { background: none; border: 0; padding: 0; color: var(--accent-dark); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.me-home-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.me-home-actions .btn[disabled] { opacity: .65; cursor: default; }
+
+/* Personal list page: the next lesson to do */
+.me-next-here { outline: 3px solid var(--gold); outline-offset: 3px; position: relative; }
+.me-next-flag { position: absolute; top: 8px; inset-inline-start: 8px; z-index: 2; background: var(--gold); color: var(--on-gold); font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }

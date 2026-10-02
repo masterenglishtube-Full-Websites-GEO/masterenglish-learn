@@ -1,20 +1,34 @@
 // Lightweight page-view + engagement tracking.
 // Sends a pageview on load, then heartbeats accumulated "engaged" seconds
 // (tab visible AND user active in the last 60s) every 15s and on unload.
+// A session ends after 30 minutes without activity (the next visit starts a new one),
+// so "returning visitors" = one visitor id with several sessions. Noor's own browsers
+// (admin.html sets me_internal, or any page opened once with ?internal=1) are not tracked.
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const SESSION_IDLE_MS = 30 * 60 * 1000;
+
+  try {
+    if (/[?&]internal=1/.test(location.search)) localStorage.setItem("me_internal", "1");
+    if (localStorage.getItem("me_internal") === "1") return;
+  } catch (e) {}
 
   function getSessionId() {
     try {
       let id = localStorage.getItem("me_sid");
-      if (!id) {
+      const last = parseInt(localStorage.getItem("me_sid_at"), 10) || 0;
+      if (!id || Date.now() - last > SESSION_IDLE_MS) {
         id = crypto.randomUUID();
         localStorage.setItem("me_sid", id);
       }
+      localStorage.setItem("me_sid_at", String(Date.now()));
       return id;
     } catch (e) {
       return "no-storage";
     }
+  }
+  function touchSession() {
+    try { localStorage.setItem("me_sid_at", String(Date.now())); } catch (e) {}
   }
 
   // Long-lived visitor id, separate from the session id above: this one
@@ -95,6 +109,7 @@
 
   function sendHeartbeat(useBeacon) {
     if (!pageViewId) return;
+    touchSession();
     const payload = JSON.stringify({
       page_view_id: pageViewId,
       session_id: sessionId,
