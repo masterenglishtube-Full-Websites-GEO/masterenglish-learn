@@ -24,11 +24,23 @@ if (header) {
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 if (navToggle && mainNav) {
+  // Screen readers hear whether the menu is open; Escape closes it and returns focus to the button.
+  navToggle.setAttribute('aria-controls', 'mainNav');
+  navToggle.setAttribute('aria-expanded', 'false');
+  const setOpen = (open) => {
+    mainNav.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
   navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
+    const open = !mainNav.classList.contains('open');
+    setOpen(open);
+    if (open) { const first = mainNav.querySelector('a'); if (first) first.focus(); }
   });
   mainNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mainNav.classList.remove('open'));
+    a.addEventListener('click', () => setOpen(false));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) { setOpen(false); navToggle.focus(); }
   });
 }
 

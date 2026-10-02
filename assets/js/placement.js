@@ -72,9 +72,13 @@
   $("ptNext").addEventListener("click", () => {
     if (picked === null) return;
     answers[i] = picked;
-    if (i < QUESTIONS.length - 1) { i++; show(); } else goalsIntro();
+    if (i < QUESTIONS.length - 1) { i++; show(); } else {
+      if (!testDoneSent && window.MELearner) { testDoneSent = true; window.MELearner.track("test_done", String(answers.filter((a, k) => a === QUESTIONS[k].a).length)); }
+      goalsIntro();
+    }
   });
   $("ptBack").addEventListener("click", () => { if (i > 0) { i--; show(); } });
+  let testDoneSent = false;
 
   // Goals: every branch has GOALS.steps questions; only the answers on the current path are sent.
   function goalsIntro() {

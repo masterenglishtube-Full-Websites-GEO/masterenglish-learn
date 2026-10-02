@@ -66,6 +66,11 @@
   .stat-card.stat-terracotta::before { background: var(--terracotta); }
   .stat-icon { font-size: 22px; display: block; margin-bottom: 8px; opacity: .85; }
   .stat-card .num { font-family: var(--font-head); font-size: 30px; font-weight: 800; color: var(--ink); line-height: 1.1; }
+  .stat-card .stat-note { font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; }
+  .health-bar { margin: 0 0 18px; padding: 12px 16px; border-radius: 12px; font-size: 14px; line-height: 1.7; }
+  .health-bar.good { background: #e8f5ee; color: #1f5c43; }
+  .health-bar.bad { background: #fdecea; color: #8a2a20; border: 1px solid #f3b8b0; }
+  .health-bar .btn-small { margin-inline-start: 8px; font: inherit; font-size: 12.5px; padding: 3px 10px; border-radius: 999px; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
   .stat-card .label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-weight: 600; }
   .stat-live-dot {
     display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--terracotta);
@@ -249,6 +254,7 @@
 
 <div class="admin-wrap" id="dashboard">
 
+  <div class="health-bar" id="healthBar" hidden></div>
   <div class="stat-grid" id="statGrid"></div>
 
   <div class="admin-section" id="leads">
@@ -590,14 +596,35 @@
   }
   document.getElementById("leadsRefresh").addEventListener("click", () => loadLeads(true));
 
+  // Daily health check (Worker cron): a red bar only when the last check found a problem.
+  function renderHealth(h) {
+    const box = document.getElementById("healthBar");
+    if (!box) return;
+    if (!h) { box.hidden = true; return; }
+    const results = JSON.parse(h.results || "[]");
+    const bad = results.filter((c) => !c.ok);
+    box.hidden = false;
+    box.className = "health-bar " + (bad.length ? "bad" : "good");
+    box.innerHTML = bad.length
+      ? `<strong>⚠️ الفحص اليومي وجد مشكلة (<bdi dir="ltr">${escH(h.checked_at)} UTC</bdi>):</strong> ` + bad.map((c) => `${escH(c.label)}: ${escH(c.detail)}`).join(" · ") + ` <button type="button" class="btn-small" id="healthRun">افحص الآن</button>`
+      : `✅ الفحص اليومي: كل شيء يعمل (${results.map((c) => escH(c.label)).join("، ")}) · <bdi dir="ltr">${escH(h.checked_at)} UTC</bdi> <button type="button" class="btn-small" id="healthRun">افحص الآن</button>`;
+    document.getElementById("healthRun").addEventListener("click", async (ev) => {
+      ev.target.disabled = true; ev.target.textContent = "جارِ الفحص...";
+      const r = await api("/admin/api/health?run=1").catch(() => null);
+      if (r && r.checks && r.checks[0]) renderHealth({ checked_at: r.checks[0].checked_at, results: JSON.stringify(r.checks[0].results) });
+      else { ev.target.disabled = false; ev.target.textContent = "تعذّر الفحص"; }
+    });
+  }
+
   async function loadOverview() {
     const data = await api("/admin/api/overview");
     document.getElementById("statGrid").innerHTML = `
       <div class="stat-card"><span class="stat-icon">👥</span><div class="num">${data.total_customers}</div><div class="label">إجمالي العملاء</div></div>
-      <div class="stat-card stat-blue"><span class="stat-icon">🛒</span><div class="num">${data.total_purchases}</div><div class="label">إجمالي الطلبات</div></div>
-      <div class="stat-card stat-gold"><span class="stat-icon">💰</span><div class="num">${money(data.total_revenue_cents)}</div><div class="label">إجمالي الإيرادات</div></div>
+      <div class="stat-card stat-blue"><span class="stat-icon">🛒</span><div class="num">${data.total_purchases}</div><div class="label">طلبات الموقع الجديد</div><div class="stat-note">+ ${data.podia_purchases || 0} منقولة من Podia${data.test_purchases ? ` · ${data.test_purchases} تجريبية غير محسوبة` : ""}</div></div>
+      <div class="stat-card stat-gold"><span class="stat-icon">💰</span><div class="num">${money(data.total_revenue_cents)}</div><div class="label">إيرادات الموقع الجديد</div><div class="stat-note">Podia سابقاً: ${money(data.podia_revenue_cents)}</div></div>
       <div class="stat-card stat-terracotta"><span class="stat-icon">⚡</span><div class="num">${data.active_sessions_now}</div><div class="label"><span class="stat-live-dot"></span>نشطون الآن</div></div>
     `;
+    renderHealth(data.health);
     const tbody = document.querySelector("#topPagesTable tbody");
     tbody.innerHTML = "";
     (data.top_pages_7d || []).forEach((p) => {
@@ -904,7 +931,7 @@
       `<div class="funnel-row"><span>${label}</span><div class="funnel-bar"><span style="width:${Math.max(n ? 2 : 0, Math.round(n / top * 100))}%"></span></div><b>${n}</b></div>`).join("");
   }
 
-  const EVENT_LABELS = { yt_click: "▶ نقرة على فيديو يوتيوب", yt_subscribe: "🔔 نقرة اشتراك في القناة", video_play: "🎬 تشغيل فيديو داخل الموقع", pdf_download: "📄 تحميل ملف", quiz_done: "🎯 اختبار مكتمل", tts_play: "🔊 استماع لعبارة", placement_done: "🧭 اختبار تحديد مستوى", library_search: "🔎 بحث في مكتبة الدروس", test_start: "🧭 بدأ اختبار المستوى", goals_done: "🎯 أنهى أسئلة الهدف", next_step: "➡️ ضغط «خطوتك التالية»", home_continue: "🏠 «تابع من حيث توقفت» في الرئيسية", daily_done: "✅ أنهى تمرين اليوم", speak_try: "🎙️ جرّب تمرين النطق", speak_score: "🎙️ نتيجة تمرين النطق", nav_tab: "📱 شريط التنقل في الهاتف" };
+  const EVENT_LABELS = { yt_click: "▶ نقرة على فيديو يوتيوب", yt_subscribe: "🔔 نقرة اشتراك في القناة", video_play: "🎬 تشغيل فيديو داخل الموقع", pdf_download: "📄 تحميل ملف", quiz_done: "🎯 اختبار مكتمل", tts_play: "🔊 استماع لعبارة", placement_done: "🧭 اختبار تحديد مستوى", library_search: "🔎 بحث في مكتبة الدروس", test_start: "🧭 بدأ اختبار المستوى", test_done: "🏁 أنهى أسئلة الاختبار", pace_form: "💼 بدأ تعبئة طلب PACE", pace_submit: "💼 أرسل طلب PACE", goals_done: "🎯 أنهى أسئلة الهدف", next_step: "➡️ ضغط «خطوتك التالية»", home_continue: "🏠 «تابع من حيث توقفت» في الرئيسية", daily_done: "✅ أنهى تمرين اليوم", speak_try: "🎙️ جرّب تمرين النطق", speak_score: "🎙️ نتيجة تمرين النطق", nav_tab: "📱 شريط التنقل في الهاتف" };
   async function loadYoutubeEvents() {
     const data = await api("/admin/api/analytics/events?" + anRangeQuery().toString());
     const fill = (sel, rows, cells) => {

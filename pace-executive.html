@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://learn.masterenglish.me/pace-executive.html">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2026100203">
+<link rel="stylesheet" href="assets/css/style.css?v=2026100204">
 <style>
   .pace-wrap { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
   .pace-criteria { background: var(--paper-soft); border-radius: var(--radius); padding: 26px 28px; margin: 30px 0; }
@@ -123,17 +123,17 @@
     <div class="pace-form">
       <h3>أرسل طلبك</h3>
       <label for="paceName">الاسم الكامل</label>
-      <input type="text" id="paceName">
+      <input type="text" id="paceName" autocomplete="name" required>
       <label for="paceEmail">البريد الإلكتروني</label>
-      <input type="email" id="paceEmail">
+      <input type="email" id="paceEmail" autocomplete="email" dir="ltr" required>
       <label for="paceWhatsapp">رقم واتساب (اختياري)</label>
-      <input type="text" id="paceWhatsapp">
+      <input type="tel" id="paceWhatsapp" autocomplete="tel" dir="ltr" placeholder="+961 …">
       <label for="paceRole">منصبك الحالي ومجال عملك</label>
-      <input type="text" id="paceRole" placeholder="مثال: مدير عمليات، شركة صناعية، الرياض">
+      <input type="text" id="paceRole" autocomplete="organization-title" required placeholder="مثال: مدير عمليات، شركة صناعية، الرياض">
       <label for="paceChallenge">صف التحدي الفعلي الذي تواجهه في الاجتماعات بالإنجليزية</label>
-      <textarea id="paceChallenge" rows="4"></textarea>
+      <textarea id="paceChallenge" rows="4" required></textarea>
       <button type="button" id="paceSubmitBtn" class="btn btn-primary">إرسال الطلب</button>
-      <p id="paceResult"></p>
+      <p id="paceResult" role="status" aria-live="polite"></p>
     </div>
   </div>
 </main>
@@ -186,10 +186,17 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2026100203"></script>
+<script src="assets/js/main.js?v=2026100204"></script>
+<script src="assets/js/track.js?v=2026100204"></script>
+<script src="assets/js/learner.js?v=2026100204"></script>
 <script>
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
+  const track = (type, target) => { if (window.MELearner) window.MELearner.track(type, target || ""); };
+  let formStarted = false;
+  document.getElementById("paceName").closest("div, form, section").addEventListener("focusin", () => {
+    if (!formStarted) { formStarted = true; track("pace_form"); }
+  });
   document.getElementById("paceSubmitBtn").addEventListener("click", async () => {
     const resultEl = document.getElementById("paceResult");
     const name = document.getElementById("paceName").value.trim();
@@ -218,7 +225,14 @@
         body: JSON.stringify({ name, email, whatsapp, role, challenge }),
       });
       const data = await res.json();
+      if (res.status === 429 && data.error === "already_applied") {
+        resultEl.style.color = "#1f7a5c";
+        resultEl.textContent = "وصلنا طلبك من قبل، وستتواصل معك نور قريباً. لإضافة أي تفاصيل راسلها على noor@masterenglish.me";
+        btn.textContent = "تم الإرسال ✓";
+        return;
+      }
       if (!res.ok || !data.ok) throw new Error("failed");
+      track("pace_submit");
       resultEl.style.color = "#1f7a5c";
       resultEl.textContent = "تم استلام طلبك. ستراجعه نور شخصياً وتتواصل معك إذا كان البرنامج مناسباً لوضعك.";
       btn.textContent = "تم الإرسال ✓";
