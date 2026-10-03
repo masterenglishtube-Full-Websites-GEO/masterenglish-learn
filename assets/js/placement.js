@@ -98,11 +98,28 @@
     $("ptGNext").disabled = picked === null;
     const opt = q.o.find((o) => o.id === picked);
     $("ptGNext").textContent = (picked === null ? !q.o[0].next : !(opt && opt.next)) ? "تأكيد وإرسال" : "تأكيد";
+    const reply = (v) => { const o = q.o.find((x) => x.id === v); $("ptGReply").textContent = (o && o.r) || ""; $("ptGReply").hidden = !(o && o.r); };
+    reply(picked);
     choices($("ptGChoices"), q.o.map((o) => ({ label: o.t, value: o.id })), picked, (v) => {
       picked = v;
       $("ptGNext").disabled = false;
       $("ptGNext").textContent = q.o.find((o) => o.id === v).next ? "تأكيد" : "تأكيد وإرسال";
+      reply(v);
     });
+  }
+
+  // What the plan covers, shown before the email step; the level and type stay for the email.
+  function teaser() {
+    const label = (qid) => { const q = GOALS.q[qid], o = q && q.o.find((x) => x.id === gAns[qid]); return o ? o.t : ""; };
+    const second = gPath[1] ? label(gPath[1]) : "";
+    const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const cells = [
+      ["هدفك", [label("goal"), second].filter(Boolean).join(" · ")],
+      ["وقت تعلّمك", label("time")],
+    ].filter((c) => c[1]).map((c) => `<div><span>${c[0]}</span><b>${esc(c[1])}</b></div>`);
+    cells.push(`<div><span>مستواك ونوعك كمتعلم</span><b class="pt-lock">●●● · ●●●●●</b><small>في رسالتك</small></div>`);
+    cells.push(`<div><span>قائمة دروسك</span><b>مرتبة لمستواك ونوعك</b><small>في رسالتك</small></div>`);
+    $("ptTeaser").innerHTML = cells.join("");
   }
 
   $("ptGNext").addEventListener("click", () => {
@@ -132,6 +149,7 @@
   function finish() {
     score = answers.filter((a, k) => a === QUESTIONS[k].a).length;
     level = levelFor(score);
+    teaser();
     only("ptGate");
     $("pt").scrollIntoView({ behavior: "smooth", block: "start" });
     const token = store.get("me_auth_token");

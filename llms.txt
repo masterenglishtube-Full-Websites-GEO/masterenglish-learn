@@ -66,6 +66,11 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - [إنجليزية العمل: المقابلات والاجتماعات والعروض](https://www.masterenglish.me/topics/work.html)
 - [الاستماع وفهم الإنجليزية السريعة والأفلام](https://www.masterenglish.me/topics/listening.html)
 
+### Master English terms (مصطلحات أتقن الإنجليزية)
+- [الكلمات الشبحية (Ghost Words)](https://www.masterenglish.me/terms/ghost-words.html): the name Noor gives to how words change in fast spoken American English (vanishing T, schwa, linking, gonna/wanna)
+- [عضلة التحدث (The Speaking Muscle)](https://www.masterenglish.me/terms/speaking-muscle.html): Noor's phrase for turning English you know into instant speech; it grows with speaking practice, not more grammar
+- [مصطلحات أتقن الإنجليزية](https://www.masterenglish.me/terms/index.html): the glossary, incl. the four learner types (The Builder, The Silent Understander, The Natural Speaker, The Ambitious Pro)
+
 ### مراجع
 - [مراجع الإنجليزية](https://www.masterenglish.me/guides/index.html): كل القوائم في مكان واحد
 - [تمرين النطق بالصوت](https://www.masterenglish.me/speak.html): قل الكلمة بالميكروفون ويخبرك التمرين ماذا سمع (P/B، F/V، TH، R)

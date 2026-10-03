@@ -577,6 +577,8 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .prose .article-cta h3 { margin: 0 0 10px; font-size: 22px; color: #fff; }
 .prose .article-cta p { color: rgba(255, 255, 255, .8); margin: 0 0 20px; }
 .article-cta .btn-primary { background: var(--gold); color: var(--on-gold); box-shadow: 0 10px 24px -10px rgba(244, 184, 46, .9); }
+.article-cta .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, .55); margin: 8px 6px 0; }
+.article-cta .btn-outline:hover { background: rgba(255, 255, 255, .1); color: #fff; }
 .article-cta .btn-primary:hover { background: #ffc53d; }
 .article-cta .btn-outline { color: #fff; border-color: rgba(255, 255, 255, .4); }
 .article-cta a:not(.btn) { color: var(--gold); }
@@ -1289,3 +1291,29 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
 /* Personal list page: the next lesson to do */
 .me-next-here { outline: 3px solid var(--gold); outline-offset: 3px; position: relative; }
 .me-next-flag { position: absolute; top: 8px; inset-inline-start: 8px; z-index: 2; background: var(--gold); color: var(--on-gold); font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
+
+/* One help button (help-hub.js) replaces the separate floating buttons: the help bot,
+   the contact form and WhatsApp open from its menu. The widgets' own buttons are hidden. */
+body.me-hub #meContactBtn, body.me-hub #meHelpBotBtn, body.me-hub #meWhatsappBtn,
+body.me-hub .me-fab-tooltip, body.me-hub .me-fab-tooltip-right, body.me-hub .me-wa-tooltip,
+body.me-hub .me-helpbot-nudge { display: none !important; }
+body.me-hub #meContactPanel { left: auto; right: 24px; }
+#meHelpHub { position: fixed; bottom: 22px; right: 22px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.me-hub-btn { display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; padding: 12px 18px; border-radius: 999px;
+  background: var(--gradient-primary); color: #fff; font: 700 15px var(--font-body); box-shadow: var(--shadow); }
+.me-hub-btn:hover { transform: translateY(-1px); }
+.me-hub-menu { background: var(--paper, #fff); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 6px; width: 270px; }
+.me-hub-menu[hidden] { display: none; }
+.me-hub-menu button, .me-hub-menu a { display: block; width: 100%; text-align: right; background: none; border: none; cursor: pointer; padding: 10px 12px; border-radius: 12px; color: var(--ink); text-decoration: none; font: inherit; }
+.me-hub-menu button:hover, .me-hub-menu a:hover { background: var(--paper-soft, #f6f1e7); }
+.me-hub-menu b { display: block; font-size: 15px; }
+.me-hub-menu span { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
+@media (max-width: 600px) {
+  #meHelpHub { bottom: 16px; right: 14px; }
+  .me-hub-btn { padding: 11px 15px; font-size: 14px; }
+  body.me-hub #meContactPanel { left: 12px; right: 12px; width: auto; }
+  body.me-hub #meContactPanel.open { display: flex !important; }
+}
+@media (max-width: 760px) {
+  body.has-tabbar #meHelpHub { bottom: calc(76px + env(safe-area-inset-bottom)); }
+}

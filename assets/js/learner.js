@@ -284,10 +284,20 @@
     document.body.appendChild(s);
   }
 
+  // One floating help button instead of several (help-hub.js), on pages that have the widgets.
+  function loadHelpHub() {
+    if (!SELF || document.querySelector('script[src*="help-hub.js"]')) return;
+    if (!document.querySelector('script[src*="help-bot.js"], script[src*="contact-widget.js"]')) return;
+    const s = document.createElement("script");
+    s.src = SELF.replace("learner.js", "help-hub.js");
+    document.body.appendChild(s);
+  }
+
   function init() {
     addListenButtons();
     pullFromAccount();
     loadPersonal();
+    loadHelpHub();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
