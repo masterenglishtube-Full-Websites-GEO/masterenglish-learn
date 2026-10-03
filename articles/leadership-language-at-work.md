@@ -40,7 +40,7 @@ In English: 5 language habits that make your ideas sound authoritative in Englis
 
 ## ما بعد اللغة: بناء العرض الكامل
 
-هذه المفاتيح الخمسة تصنع فرقاً كبيراً في التعليقات والمداخلات داخل الاجتماعات، لكن حين يتعلق الأمر بعرض تقديمي كامل أمام فريقك أو عملائك، تحتاج بنية أوسع: كيف تبدأ بقوة، كيف تنظم أفكارك، وكيف تتعامل مع الأسئلة الصعبة. هذا بالضبط ما يغطيه [كورس أتقن العروض التقديمية بالإنجليزية](https://learn.masterenglish.me/products/presentations.html) خطوة بخطوة على مدار ١٠ أيام.
+هذه المفاتيح الخمسة تصنع فرقاً كبيراً في التعليقات والمداخلات داخل الاجتماعات، لكن حين يتعلق الأمر بعرض تقديمي كامل أمام فريقك أو عملائك، تحتاج بنية أوسع: كيف تبدأ بقوة، كيف تنظم أفكارك، وكيف تتعامل مع الأسئلة الصعبة. هذا بالضبط ما يغطيه [كورس أتقن العروض التقديمية بالإنجليزية](https://www.masterenglish.me/products/presentations.html) خطوة بخطوة على مدار ١٠ أيام.
 
 ### أفضل كورس لتطوير حضورك القيادي بالإنجليزية
 
@@ -71,13 +71,13 @@ In English: 5 language habits that make your ideas sound authoritative in Englis
 
 ## مقالات ذات صلة
 
-- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://learn.masterenglish.me/articles/stop-one-word-answers.html)
-- [لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟](https://learn.masterenglish.me/articles/know-but-cant-speak.html)
-- [تصفح جميع المقالات](https://learn.masterenglish.me/articles/index.html)
+- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://www.masterenglish.me/articles/stop-one-word-answers.html)
+- [لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟](https://www.masterenglish.me/articles/know-but-cant-speak.html)
+- [تصفح جميع المقالات](https://www.masterenglish.me/articles/index.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

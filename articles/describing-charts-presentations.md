@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تقدم عرضاً تقديمياً احترافياً بالإنجليزية؟](https://learn.masterenglish.me/articles/business-presentation-english.html)
-- [كيف تفرض شخصيتك في العمل بالإنجليزية؟ 5 مفاتيح للغة القادة](https://learn.masterenglish.me/articles/leadership-language-at-work.html)
+- [كيف تقدم عرضاً تقديمياً احترافياً بالإنجليزية؟](https://www.masterenglish.me/articles/business-presentation-english.html)
+- [كيف تفرض شخصيتك في العمل بالإنجليزية؟ 5 مفاتيح للغة القادة](https://www.masterenglish.me/articles/leadership-language-at-work.html)
 
 ---
 
-كورس ذو صلة: [قدّم بياناتك وأرقامك بثقة واحترافية](https://learn.masterenglish.me/products/presentations.html), كورس أتقن العروض التقديمية يشمل وحدة كاملة عن لغة البيانات وشرح الرسوم البيانية بوضوح.
+كورس ذو صلة: [قدّم بياناتك وأرقامك بثقة واحترافية](https://www.masterenglish.me/products/presentations.html), كورس أتقن العروض التقديمية يشمل وحدة كاملة عن لغة البيانات وشرح الرسوم البيانية بوضوح.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

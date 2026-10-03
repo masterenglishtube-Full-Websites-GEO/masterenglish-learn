@@ -89,11 +89,11 @@ In English: an honest, data-based comparison of the most popular YouTube channel
 
 ## كيف تختار بسرعة؟
 
-- حدّد مستواك: [اختبار تحديد المستوى المجاني](https://learn.masterenglish.me/placement-test.html).
+- حدّد مستواك: [اختبار تحديد المستوى المجاني](https://www.masterenglish.me/placement-test.html).
 - اختر قناة أساسية واحدة تشرح بالعربية واتبع سلاسلها بالترتيب.
 - أضف قناة ثانية لهدف محدد (النطق، الاستماع، العمل).
 - بعد B1 أضف قناة بالإنجليزية فقط.
-إذا اخترت أتقن الإنجليزية، فكل دروسها مرتبة في [مكتبة مجانية](https://learn.masterenglish.me/videos.html) و[مسارات تعلم](https://learn.masterenglish.me/paths/index.html) حسب المستوى والهدف.
+إذا اخترت أتقن الإنجليزية، فكل دروسها مرتبة في [مكتبة مجانية](https://www.masterenglish.me/videos.html) و[مسارات تعلم](https://www.masterenglish.me/paths/index.html) حسب المستوى والهدف.
 
 ## أسئلة شائعة
 
@@ -107,7 +107,7 @@ In English: an honest, data-based comparison of the most popular YouTube channel
 الأفضل قناة أساسية واحدة تتبع سلاسلها بالترتيب، وقناة ثانية للاستماع أو لمهارة محددة. التنقل العشوائي بين قنوات كثيرة أكثر ما يضيّع الوقت.
 
 **كيف أعرف من أين أبدأ؟**
-خذ [اختبار تحديد المستوى المجاني](https://learn.masterenglish.me/placement-test.html) (٢٥ سؤالاً)، ثم اتبع [مسار التعلم](https://learn.masterenglish.me/paths/index.html) المناسب لمستواك.
+خذ [اختبار تحديد المستوى المجاني](https://www.masterenglish.me/placement-test.html) (٢٥ سؤالاً)، ثم اتبع [مسار التعلم](https://www.masterenglish.me/paths/index.html) المناسب لمستواك.
 
 **هل هذه الأرقام محدثة؟**
 أعداد المشتركين والفيديوهات من صفحات القنوات العامة في سبتمبر ٢٠٢٦، وستتغير مع الوقت. سنحدّث المقال دورياً.
@@ -118,13 +118,13 @@ In English: an honest, data-based comparison of the most popular YouTube channel
 
 ## مقالات ذات صلة
 
-- [أفضل كورس نطق أمريكي للعرب: مقارنة الخيارات](https://learn.masterenglish.me/articles/best-american-pronunciation-course-arabs.html)
-- [من أين أبدأ في تعلم الإنجليزية؟](https://learn.masterenglish.me/articles/where-to-start.html)
-- [مستويات الإنجليزية A1 إلى C2 وكيف تعرف مستواك](https://learn.masterenglish.me/articles/cefr-levels-explained.html)
+- [أفضل كورس نطق أمريكي للعرب: مقارنة الخيارات](https://www.masterenglish.me/articles/best-american-pronunciation-course-arabs.html)
+- [من أين أبدأ في تعلم الإنجليزية؟](https://www.masterenglish.me/articles/where-to-start.html)
+- [مستويات الإنجليزية A1 إلى C2 وكيف تعرف مستواك](https://www.masterenglish.me/articles/cefr-levels-explained.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

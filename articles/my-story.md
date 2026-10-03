@@ -36,14 +36,14 @@ In English: Noor's own story of noticing the real gap between knowing English an
 
 ## مقالات ذات صلة
 
-- [من أين أبدأ في تعلم الإنجليزية؟](https://learn.masterenglish.me/articles/where-to-start.html)
-- [تعرف الكلمات ولا تستطيع التحدث؟](https://learn.masterenglish.me/articles/know-but-cant-speak.html)
-- [آراء طلاب حقيقيين](https://learn.masterenglish.me/testimonials.html)
-- [تصفح جميع المقالات](https://learn.masterenglish.me/articles/index.html)
+- [من أين أبدأ في تعلم الإنجليزية؟](https://www.masterenglish.me/articles/where-to-start.html)
+- [تعرف الكلمات ولا تستطيع التحدث؟](https://www.masterenglish.me/articles/know-but-cant-speak.html)
+- [آراء طلاب حقيقيين](https://www.masterenglish.me/testimonials.html)
+- [تصفح جميع المقالات](https://www.masterenglish.me/articles/index.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

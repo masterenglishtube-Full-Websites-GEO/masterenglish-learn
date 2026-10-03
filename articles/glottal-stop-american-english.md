@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [ما هي تاء الرفرفة (Flap T) في النطق الأمريكي ومتى تنطقها؟](https://learn.masterenglish.me/articles/american-flap-t-rules.html)
-- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://learn.masterenglish.me/articles/understand-fast-english.html)
+- [ما هي تاء الرفرفة (Flap T) في النطق الأمريكي ومتى تنطقها؟](https://www.masterenglish.me/articles/american-flap-t-rules.html)
+- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://www.masterenglish.me/articles/understand-fast-english.html)
 
 ---
 
-كورس ذو صلة: [افهم كل أنماط النطق المتصل بثقة](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يغطي هذه الظواهر الصوتية بالتفصيل مع تمارين استماع وإنتاج حقيقية.
+كورس ذو صلة: [افهم كل أنماط النطق المتصل بثقة](https://www.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يغطي هذه الظواهر الصوتية بالتفصيل مع تمارين استماع وإنتاج حقيقية.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

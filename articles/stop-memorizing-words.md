@@ -28,7 +28,7 @@
 
 ## كيف تبني نظاماً عملياً لهذا النهج؟
 
-ركّز على مجموعة محدودة من الكلمات والعبارات عالية الفائدة. هذا ما يقدمه [دليل دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html): خمسون كلمة مختارة لأنها الأكثر استخداماً.
+ركّز على مجموعة محدودة من الكلمات والعبارات عالية الفائدة. هذا ما يقدمه [دليل دايت المفردات](https://www.masterenglish.me/products/vocabulary-diet.html): خمسون كلمة مختارة لأنها الأكثر استخداماً.
 
 ## أسئلة شائعة
 
@@ -43,9 +43,9 @@
 
 ---
 
-كورس ذو صلة: [دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html), 50 كلمة عملية فقط.
+كورس ذو صلة: [دايت المفردات](https://www.masterenglish.me/products/vocabulary-diet.html), 50 كلمة عملية فقط.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

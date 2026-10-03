@@ -48,14 +48,14 @@ In English: why English prepositions like in, on, and at feel random to Arabic s
 
 ## مقالات ذات صلة
 
-- [أخطاء شائعة أخرى عند المتحدثين بالعربية](https://learn.masterenglish.me/articles/common-arabic-speaker-mistakes.html)
-- [من أين أبدأ في تعلم الإنجليزية؟](https://learn.masterenglish.me/articles/where-to-start.html)
-- [تصفح جميع المقالات](https://learn.masterenglish.me/articles/index.html)
-- [ما هو الكورس المناسب لك؟](https://learn.masterenglish.me/quiz.html)
+- [أخطاء شائعة أخرى عند المتحدثين بالعربية](https://www.masterenglish.me/articles/common-arabic-speaker-mistakes.html)
+- [من أين أبدأ في تعلم الإنجليزية؟](https://www.masterenglish.me/articles/where-to-start.html)
+- [تصفح جميع المقالات](https://www.masterenglish.me/articles/index.html)
+- [ما هو الكورس المناسب لك؟](https://www.masterenglish.me/quiz.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

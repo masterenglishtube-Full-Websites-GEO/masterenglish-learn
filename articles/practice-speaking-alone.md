@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [أفضل الطرق لتعلم الإنجليزية أثناء القيادة أو التنقل](https://learn.masterenglish.me/articles/learn-english-while-driving.html)
-- [كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق](https://learn.masterenglish.me/articles/think-in-english.html)
+- [أفضل الطرق لتعلم الإنجليزية أثناء القيادة أو التنقل](https://www.masterenglish.me/articles/learn-english-while-driving.html)
+- [كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق](https://www.masterenglish.me/articles/think-in-english.html)
 
 ---
 
-كورس ذو صلة: [حوّل وقت تنقلك اليومي إلى تدريب فعلي](https://learn.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge نظام صوتي تفاعلي يطبق هذه التقنيات بالضبط أثناء قيادتك أو مشيك اليومي.
+كورس ذو صلة: [حوّل وقت تنقلك اليومي إلى تدريب فعلي](https://www.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge نظام صوتي تفاعلي يطبق هذه التقنيات بالضبط أثناء قيادتك أو مشيك اليومي.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

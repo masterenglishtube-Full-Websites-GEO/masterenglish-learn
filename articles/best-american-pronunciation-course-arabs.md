@@ -14,7 +14,7 @@ In English: an honest comparison of the best American English pronunciation cour
 
 ### أسرار النطق الأمريكي
 
-إذا كانت الإنجليزية لغتك الثانية وتريد شرحاً بالعربية، ونظاماً مرتباً يعالج أخطاء العرب واحدة بواحدة (P وB، الـ R، الـ TH، الـ Flap T، الربط والتنغيم)، مع تمارين بعد كل درس ودعم مباشر بعد الشراء. [صفحة الكورس](https://learn.masterenglish.me/products/pronunciation.html)
+إذا كانت الإنجليزية لغتك الثانية وتريد شرحاً بالعربية، ونظاماً مرتباً يعالج أخطاء العرب واحدة بواحدة (P وB، الـ R، الـ TH، الـ Flap T، الربط والتنغيم)، مع تمارين بعد كل درس ودعم مباشر بعد الشراء. [صفحة الكورس](https://www.masterenglish.me/products/pronunciation.html)
 
 ### كورس محمود نشاوي على Udemy
 
@@ -30,7 +30,7 @@ In English: an honest comparison of the best American English pronunciation cour
 
 ## ابدأ مجاناً قبل أن تدفع
 
-مهما اخترت، ابدأ بتحديد مشكلتك: اقرأ [أسرار النطق الأمريكي](https://learn.masterenglish.me/articles/american-accent-secrets.html) و[لماذا تبدو لكنة العرب قاسية](https://learn.masterenglish.me/articles/soften-arabic-accent-english.html)، واتبع [مسار النطق المجاني](https://learn.masterenglish.me/paths/pronunciation.html). ستعرف بعدها هل تحتاج كورساً كاملاً أم يكفيك التدريب المجاني.
+مهما اخترت، ابدأ بتحديد مشكلتك: اقرأ [أسرار النطق الأمريكي](https://www.masterenglish.me/articles/american-accent-secrets.html) و[لماذا تبدو لكنة العرب قاسية](https://www.masterenglish.me/articles/soften-arabic-accent-english.html)، واتبع [مسار النطق المجاني](https://www.masterenglish.me/paths/pronunciation.html). ستعرف بعدها هل تحتاج كورساً كاملاً أم يكفيك التدريب المجاني.
 
 ## أسئلة شائعة
 
@@ -38,10 +38,10 @@ In English: an honest comparison of the best American English pronunciation cour
 إذا أردت شرحاً بالعربية مبنياً على أخطاء العرب تحديداً: كورس أسرار النطق الأمريكي (٤٤ درساً) أو كورس محمود نشاوي على Udemy (مقدمة أقصر). إذا كانت إنجليزيتك متوسطة فما فوق وتريد أكبر عمق ممكن: Rachel's English Academy. وإذا أردت برنامجاً أكاديمياً بشهادة: تخصص UC Irvine على Coursera.
 
 **هل أحتاج كورساً مدفوعاً لأحسّن نطقي؟**
-ليس بالضرورة. يمكنك البدء مجاناً بـ[مسار النطق الأمريكي المجاني](https://learn.masterenglish.me/paths/pronunciation.html) على الموقع. الكورس المدفوع يفيد عندما تريد نظاماً مرتباً بتمارين بعد كل درس بدل التنقل بين فيديوهات متفرقة.
+ليس بالضرورة. يمكنك البدء مجاناً بـ[مسار النطق الأمريكي المجاني](https://www.masterenglish.me/paths/pronunciation.html) على الموقع. الكورس المدفوع يفيد عندما تريد نظاماً مرتباً بتمارين بعد كل درس بدل التنقل بين فيديوهات متفرقة.
 
 **ما الأصوات التي يجب أن يركز عليها العربي أولاً؟**
-الفرق بين P وB، وصوتا TH، والـ R الأمريكية، والفرق بين الحركات الطويلة والقصيرة، ثم الإيقاع والربط بين الكلمات. التفاصيل في مقال [أسرار النطق الأمريكي](https://learn.masterenglish.me/articles/american-accent-secrets.html).
+الفرق بين P وB، وصوتا TH، والـ R الأمريكية، والفرق بين الحركات الطويلة والقصيرة، ثم الإيقاع والربط بين الكلمات. التفاصيل في مقال [أسرار النطق الأمريكي](https://www.masterenglish.me/articles/american-accent-secrets.html).
 
 **كم أحتاج من الوقت لأرى فرقاً؟**
 مع ١٠ دقائق تدريب يومي مركّز على صوت واحد، يلاحظ معظم المتعلمين فرقاً خلال أسبوعين إلى ثلاثة.
@@ -52,13 +52,13 @@ In English: an honest comparison of the best American English pronunciation cour
 
 ## مقالات ذات صلة
 
-- [أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب](https://learn.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.html)
-- [كورس نطق متخصص أم كورس على منصة عامة؟](https://learn.masterenglish.me/articles/pronunciation-course-comparison-guide.html)
-- [الفرق بين النطق الأمريكي والبريطاني](https://learn.masterenglish.me/articles/american-vs-british-accent.html)
+- [أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب](https://www.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.html)
+- [كورس نطق متخصص أم كورس على منصة عامة؟](https://www.masterenglish.me/articles/pronunciation-course-comparison-guide.html)
+- [الفرق بين النطق الأمريكي والبريطاني](https://www.masterenglish.me/articles/american-vs-british-accent.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

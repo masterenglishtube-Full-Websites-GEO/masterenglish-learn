@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [توقف فوراً عن حفظ الكلمات: ماذا يفعل المتحدث الذكي بدلاً من ذلك؟](https://learn.masterenglish.me/articles/stop-memorizing-words.html)
-- [لماذا لا تفهم الإنجليزية في الأفلام؟](https://learn.masterenglish.me/articles/understand-movies-english.html)
+- [توقف فوراً عن حفظ الكلمات: ماذا يفعل المتحدث الذكي بدلاً من ذلك؟](https://www.masterenglish.me/articles/stop-memorizing-words.html)
+- [لماذا لا تفهم الإنجليزية في الأفلام؟](https://www.masterenglish.me/articles/understand-movies-english.html)
 
 ---
 
-كورس ذو صلة: [ابنِ مفرداتك من الاستخدام الفعلي لا الحفظ](https://learn.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك ٥٠ كلمة عالية التكرار تغنيك عن آلاف الكلمات المعزولة.
+كورس ذو صلة: [ابنِ مفرداتك من الاستخدام الفعلي لا الحفظ](https://www.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك ٥٠ كلمة عالية التكرار تغنيك عن آلاف الكلمات المعزولة.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

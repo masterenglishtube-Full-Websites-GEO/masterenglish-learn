@@ -41,9 +41,9 @@
 
 ---
 
-كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://learn.masterenglish.me/products/presentations.html), يشمل وحدة كاملة عن التعامل مع النقاش الحي.
+كورس ذو صلة: [أتقن العروض التقديمية بالإنجليزية في 10 أيام](https://www.masterenglish.me/products/presentations.html), يشمل وحدة كاملة عن التعامل مع النقاش الحي.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

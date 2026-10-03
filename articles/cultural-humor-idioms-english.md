@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [لماذا لا تفهم الإنجليزية في الأفلام؟](https://learn.masterenglish.me/articles/understand-movies-english.html)
-- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://learn.masterenglish.me/articles/understand-fast-english.html)
+- [لماذا لا تفهم الإنجليزية في الأفلام؟](https://www.masterenglish.me/articles/understand-movies-english.html)
+- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://www.masterenglish.me/articles/understand-fast-english.html)
 
 ---
 
-كورس ذو صلة: [افهم الإنجليزية الحقيقية غير المُعتنى بها](https://learn.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge يدربك على أنماط الكلام العفوي الحقيقي، لا الإنجليزية المدرسية فقط.
+كورس ذو صلة: [افهم الإنجليزية الحقيقية غير المُعتنى بها](https://www.masterenglish.me/products/commuter-challenge.html), The Commuter Challenge يدربك على أنماط الكلام العفوي الحقيقي، لا الإنجليزية المدرسية فقط.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

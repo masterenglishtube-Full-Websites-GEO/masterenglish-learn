@@ -41,9 +41,9 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي يدربك على الرد الفوري في مواقف محادثة حقيقية.
+كورس ذو صلة: [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html), نظام صوتي تفاعلي يدربك على الرد الفوري في مواقف محادثة حقيقية.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

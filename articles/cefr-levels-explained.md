@@ -31,14 +31,14 @@ A1-A2 (مبتدئ): فهم وإنتاج جمل بسيطة عن مواضيع مأ
 
 ## مقالات ذات صلة
 
-- [من أين أبدأ في تعلم الإنجليزية معي؟](https://learn.masterenglish.me/articles/where-to-start.html)
-- [كيف تصل إلى الطلاقة في الإنجليزية خلال أشهر لا سنوات؟](https://learn.masterenglish.me/articles/fluency-in-months-not-years.html)
+- [من أين أبدأ في تعلم الإنجليزية معي؟](https://www.masterenglish.me/articles/where-to-start.html)
+- [كيف تصل إلى الطلاقة في الإنجليزية خلال أشهر لا سنوات؟](https://www.masterenglish.me/articles/fluency-in-months-not-years.html)
 
 ---
 
-كورس ذو صلة: [لست متأكداً من أين تبدأ؟](https://learn.masterenglish.me/quiz.html), أجب عن سؤالين بسيطين، ونرشح لك نقطة البداية الأنسب لهدفك ومستواك.
+كورس ذو صلة: [لست متأكداً من أين تبدأ؟](https://www.masterenglish.me/quiz.html), أجب عن سؤالين بسيطين، ونرشح لك نقطة البداية الأنسب لهدفك ومستواك.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

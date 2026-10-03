@@ -28,7 +28,7 @@
 
 ## كيف تبني هذا التدريب كعادة يومية؟
 
-[نظام The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) يحوّل وقت تنقلك اليومي إلى تدريب منظم على الإنتاج النشط للغة، لا مجرد استماع سلبي.
+[نظام The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html) يحوّل وقت تنقلك اليومي إلى تدريب منظم على الإنتاج النشط للغة، لا مجرد استماع سلبي.
 
 ## أسئلة شائعة
 
@@ -43,9 +43,9 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), يدربك على الإنتاج النشط للغة.
+كورس ذو صلة: [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html), يدربك على الإنتاج النشط للغة.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

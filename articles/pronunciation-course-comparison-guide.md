@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟](https://learn.masterenglish.me/articles/american-accent-secrets.html)
-- [ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟](https://learn.masterenglish.me/articles/schwa-sound-explained.html)
+- [أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟](https://www.masterenglish.me/articles/american-accent-secrets.html)
+- [ما هو صوت الشوا (Schwa) ولماذا هو أهم صوت في الإنجليزية الأمريكية؟](https://www.masterenglish.me/articles/schwa-sound-explained.html)
 
 ---
 
-كورس ذو صلة: [نظام عميق وشامل، لا مقدمة سريعة فقط](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي: ٤٤ درساً مع تمارين عملية، ضمن منظومة تعليمية مستمرة مع نور ودعم مباشر بعد الشراء.
+كورس ذو صلة: [نظام عميق وشامل، لا مقدمة سريعة فقط](https://www.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي: ٤٤ درساً مع تمارين عملية، ضمن منظومة تعليمية مستمرة مع نور ودعم مباشر بعد الشراء.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

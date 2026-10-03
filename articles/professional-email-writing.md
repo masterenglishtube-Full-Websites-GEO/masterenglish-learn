@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟](https://learn.masterenglish.me/articles/business-meetings-english.html)
-- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://learn.masterenglish.me/articles/job-interview-english.html)
+- [كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟](https://www.masterenglish.me/articles/business-meetings-english.html)
+- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://www.masterenglish.me/articles/job-interview-english.html)
 
 ---
 
-كورس ذو صلة: [أتقن التواصل المهني بالإنجليزية بالكامل](https://learn.masterenglish.me/courses.html), اكتشف كورساتنا المتخصصة في إنجليزية العمل: المقابلات، العروض التقديمية، والاجتماعات.
+كورس ذو صلة: [أتقن التواصل المهني بالإنجليزية بالكامل](https://www.masterenglish.me/courses.html), اكتشف كورساتنا المتخصصة في إنجليزية العمل: المقابلات، العروض التقديمية، والاجتماعات.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

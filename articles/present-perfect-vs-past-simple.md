@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [أخطاء شائعة يقع فيها العرب عند تعلم الإنجليزية](https://learn.masterenglish.me/articles/common-arabic-speaker-mistakes.html)
-- [لماذا تبدو حروف الجر عشوائية؟](https://learn.masterenglish.me/articles/prepositions-mistakes.html)
+- [أخطاء شائعة يقع فيها العرب عند تعلم الإنجليزية](https://www.masterenglish.me/articles/common-arabic-speaker-mistakes.html)
+- [لماذا تبدو حروف الجر عشوائية؟](https://www.masterenglish.me/articles/prepositions-mistakes.html)
 
 ---
 
-كورس ذو صلة: [مفردات وقواعد عملية بدون تعقيد](https://learn.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات عملية للتحدث بثقة دون الغرق في تفاصيل نحوية.
+كورس ذو صلة: [مفردات وقواعد عملية بدون تعقيد](https://www.masterenglish.me/products/vocabulary-diet.html), قائمة دايت المفردات تعطيك أدوات عملية للتحدث بثقة دون الغرق في تفاصيل نحوية.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

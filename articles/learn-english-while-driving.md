@@ -41,9 +41,9 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), 30 ملفاً صوتياً تفاعلياً مصمم تحديداً لوقت التنقل.
+كورس ذو صلة: [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html), 30 ملفاً صوتياً تفاعلياً مصمم تحديداً لوقت التنقل.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

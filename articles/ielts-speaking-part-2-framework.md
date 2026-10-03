@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق](https://learn.masterenglish.me/articles/think-in-english.html)
-- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://learn.masterenglish.me/articles/stop-one-word-answers.html)
+- [كيف تفكر بالإنجليزية بدون توقف؟ تمرين الـ٥ دقائق](https://www.masterenglish.me/articles/think-in-english.html)
+- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://www.masterenglish.me/articles/stop-one-word-answers.html)
 
 ---
 
-كورس ذو صلة: [ابنِ الطلاقة التي تحتاجها لأي اختبار أو موقف](https://learn.masterenglish.me/courses.html), اكتشف الكورس المناسب لهدفك: من النطق إلى الطلاقة الكاملة تحت الضغط.
+كورس ذو صلة: [ابنِ الطلاقة التي تحتاجها لأي اختبار أو موقف](https://www.masterenglish.me/courses.html), اكتشف الكورس المناسب لهدفك: من النطق إلى الطلاقة الكاملة تحت الضغط.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

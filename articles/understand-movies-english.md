@@ -7,7 +7,7 @@
 مثال الافتتاح مأخوذ من مشهد حقيقي (مارك روفالو، Shutter Island) عند 00:19 (https://youtu.be/t0NNhn3MJh4?t=19).
 
 فيديو الشرح: https://www.youtube.com/watch?v=t0NNhn3MJh4
-صفحة الدرس الكاملة مع الاختبار وملف PDF: https://learn.masterenglish.me/articles/understand-movies-english.html
+صفحة الدرس الكاملة مع الاختبار وملف PDF: https://www.masterenglish.me/articles/understand-movies-english.html
 
 ## تصفح الدرس حسب الوقت
 
@@ -62,7 +62,7 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ## التدريب العملي
 
-المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html). ولتبسيط اختيار كلماتك بشكل عام: [قائمة دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html).
+المعرفة النظرية لا تكفي، الأذن واللسان يحتاجان تدريباً يومياً. للتدريب السريع أثناء التنقل: [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html). للإتقان الأكاديمي الكامل: [كورس أسرار النطق الأمريكي](https://www.masterenglish.me/products/pronunciation.html). ولتبسيط اختيار كلماتك بشكل عام: [قائمة دايت المفردات](https://www.masterenglish.me/products/vocabulary-diet.html).
 
 ## أسئلة شائعة
 
@@ -77,9 +77,9 @@ going to → gonna. الجملة الكاملة "What are you going to do?" تت
 
 ---
 
-ملف PDF مجاني بكل الأسرار (يُحمَّل من صفحة الدرس بعد تسجيل الدخول بحساب Google): https://learn.masterenglish.me/articles/understand-movies-english.html
+ملف PDF مجاني بكل الأسرار (يُحمَّل من صفحة الدرس بعد تسجيل الدخول بحساب Google): https://www.masterenglish.me/articles/understand-movies-english.html
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

@@ -26,7 +26,7 @@
 
 ## لماذا هذه العادة أهم من حفظ مفردات جديدة؟
 
-المشكلة هنا ليست في المفردات بل في عادة الرد نفسها. حتى بمفردات محدودة يمكنك تطبيق هذا الإطار وإنتاج محادثات طويلة ومريحة. [نظام The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) صُمم بالضبط لتدريبك على هذه العادة.
+المشكلة هنا ليست في المفردات بل في عادة الرد نفسها. حتى بمفردات محدودة يمكنك تطبيق هذا الإطار وإنتاج محادثات طويلة ومريحة. [نظام The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html) صُمم بالضبط لتدريبك على هذه العادة.
 
 ## أسئلة شائعة
 
@@ -41,9 +41,9 @@
 
 ---
 
-كورس ذو صلة: [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html), يدربك على الرد الكامل بدل الإجابة المقتضبة.
+كورس ذو صلة: [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html), يدربك على الرد الكامل بدل الإجابة المقتضبة.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

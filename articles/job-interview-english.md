@@ -18,7 +18,7 @@
 
 "Tell me about yourself" ليس دعوة لسرد سيرتك كاملة، بل قصة قصيرة: من أنت مهنياً الآن، أهم إنجاز يخص هذا الدور، ولماذا أنت هنا اليوم. "What's your biggest weakness?" الإجابة الذكية تذكر نقطة حقيقية بسيطة مع خطوة عملية تعمل عليها. "Why should we hire you?" يجب أن يربط مهارة محددة لديك بمشكلة محددة تعرف أن الشركة تواجهها.
 
-إذا كان ما يعيقك هو الثقة في نطق هذه الإجابات بصوت واضح تحت ضغط، هذا بالضبط ما يعالجه [كورس أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html).
+إذا كان ما يعيقك هو الثقة في نطق هذه الإجابات بصوت واضح تحت ضغط، هذا بالضبط ما يعالجه [كورس أسرار النطق الأمريكي](https://www.masterenglish.me/products/pronunciation.html).
 
 ## التفاوض على الراتب: عبارات جاهزة
 
@@ -41,9 +41,9 @@
 
 ---
 
-كورس ذو صلة: [من التوتر إلى التميز](https://learn.masterenglish.me/products/interview.html), دليل كامل للتحضير الذكي لمقابلات العمل.
+كورس ذو صلة: [من التوتر إلى التميز](https://www.masterenglish.me/products/interview.html), دليل كامل للتحضير الذكي لمقابلات العمل.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

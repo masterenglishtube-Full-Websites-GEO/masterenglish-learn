@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://learn.masterenglish.me/articles/job-interview-english.html)
-- [كيف تتفاوض على زيادة الراتب بالإنجليزية خطوة بخطوة؟](https://learn.masterenglish.me/articles/negotiate-salary-phrases.html)
+- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://www.masterenglish.me/articles/job-interview-english.html)
+- [كيف تتفاوض على زيادة الراتب بالإنجليزية خطوة بخطوة؟](https://www.masterenglish.me/articles/negotiate-salary-phrases.html)
 
 ---
 
-كورس ذو صلة: [تحضير كامل لأي سؤال صعب في المقابلة](https://learn.masterenglish.me/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات التفاوض على الراتب والرد على الأسئلة الحساسة بثقة.
+كورس ذو صلة: [تحضير كامل لأي سؤال صعب في المقابلة](https://www.masterenglish.me/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات التفاوض على الراتب والرد على الأسئلة الحساسة بثقة.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

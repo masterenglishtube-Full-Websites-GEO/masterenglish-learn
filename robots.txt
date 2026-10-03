@@ -44,4 +44,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://learn.masterenglish.me/sitemap.xml
+Sitemap: https://www.masterenglish.me/sitemap.xml

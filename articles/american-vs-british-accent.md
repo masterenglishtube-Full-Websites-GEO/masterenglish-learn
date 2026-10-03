@@ -48,9 +48,9 @@
 
 ---
 
-كورس ذو صلة: [أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html), 44 درساً لبناء نطق أمريكي واضح ومتسق.
+كورس ذو صلة: [أسرار النطق الأمريكي](https://www.masterenglish.me/products/pronunciation.html), 44 درساً لبناء نطق أمريكي واضح ومتسق.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

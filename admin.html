@@ -1147,7 +1147,7 @@
     const tbody = document.querySelector("#affiliatesTable tbody");
     tbody.innerHTML = "";
     (data.affiliates || []).forEach((a) => {
-      const dashboardUrl = `https://learn.masterenglish.me/affiliate.html?code=${a.code}&token=${a.access_token}`;
+      const dashboardUrl = `https://www.masterenglish.me/affiliate.html?code=${a.code}&token=${a.access_token}`;
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${a.name}</td>
@@ -1197,7 +1197,7 @@
       return;
     }
     resultEl.style.color = "#1f7a5c";
-    resultEl.textContent = `تمت الإضافة! رابط لوحة ${name}: https://learn.masterenglish.me/affiliate.html?code=${data.code}&token=${data.access_token}`;
+    resultEl.textContent = `تمت الإضافة! رابط لوحة ${name}: https://www.masterenglish.me/affiliate.html?code=${data.code}&token=${data.access_token}`;
     document.getElementById("affNameInput").value = "";
     document.getElementById("affCodeInput").value = "";
     document.getElementById("affEmailInput").value = "";

@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟](https://learn.masterenglish.me/articles/business-meetings-english.html)
-- [كيف تكتب بريداً إلكترونياً رسمياً بالإنجليزية دون أخطاء أو إحراج؟](https://learn.masterenglish.me/articles/professional-email-writing.html)
+- [كيف تتحدث بثقة في اجتماعات العمل بالإنجليزية؟](https://www.masterenglish.me/articles/business-meetings-english.html)
+- [كيف تكتب بريداً إلكترونياً رسمياً بالإنجليزية دون أخطاء أو إحراج؟](https://www.masterenglish.me/articles/professional-email-writing.html)
 
 ---
 
-كورس ذو صلة: [أتقن نبرة التواصل المهني الصحيحة](https://learn.masterenglish.me/products/presentations.html), أتقن العروض التقديمية يعطيك الأدوات للتواصل بثقة ووضوح في أي سياق مهني.
+كورس ذو صلة: [أتقن نبرة التواصل المهني الصحيحة](https://www.masterenglish.me/products/presentations.html), أتقن العروض التقديمية يعطيك الأدوات للتواصل بثقة ووضوح في أي سياق مهني.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

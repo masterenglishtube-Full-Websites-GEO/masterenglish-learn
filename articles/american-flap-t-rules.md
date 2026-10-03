@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟](https://learn.masterenglish.me/articles/american-accent-secrets.html)
-- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://learn.masterenglish.me/articles/understand-fast-english.html)
+- [أسرار النطق الأمريكي: كيف تتخلص من اللكنة العربية؟](https://www.masterenglish.me/articles/american-accent-secrets.html)
+- [كيف تفهم الإنجليزية المحكية بسرعة؟ ٤ قواعد ذهبية](https://www.masterenglish.me/articles/understand-fast-english.html)
 
 ---
 
-كورس ذو صلة: [أتقن تاء الرفرفة وكل قواعد النطق المتصل](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يشرح هذه القواعد بتمارين عملية مصممة للمتحدث العربي تحديداً.
+كورس ذو صلة: [أتقن تاء الرفرفة وكل قواعد النطق المتصل](https://www.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يشرح هذه القواعد بتمارين عملية مصممة للمتحدث العربي تحديداً.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

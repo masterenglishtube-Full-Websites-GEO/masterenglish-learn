@@ -18,16 +18,16 @@ In English: where to start learning English on this channel, out of 1,200+ free 
 
 ## خارطة الطريق حسب هدفك
 
-- 🗣️ **نطقك "يفضحك" رغم معرفتك بالكلمات؟** ابدأ بمقال [أسرار النطق الأمريكي](https://learn.masterenglish.me/articles/american-accent-secrets.html)، ثم كورس [أسرار النطق الأمريكي](https://learn.masterenglish.me/products/pronunciation.html) إذا أردت نظاماً كاملاً.
-- 👂 **تفهم الإنجليزية المكتوبة لكن لا تفهم الحديث السريع؟** ابدأ بمقال [كيف تفهم الإنجليزية المحكية بسرعة](https://learn.masterenglish.me/articles/understand-fast-english.html)، ثم [The Commuter Challenge](https://learn.masterenglish.me/products/commuter-challenge.html) للتدريب اليومي أثناء تنقلك.
-- 💼 **لديك مقابلة عمل قادمة بالإنجليزية؟** دليل [من التوتر إلى التميز](https://learn.masterenglish.me/products/interview.html) مبني تحديداً لهذا الموقف.
-- 📊 **تحتاج تقديم عروض بالإنجليزية في عملك أو دراستك؟** كورس [أتقن العروض التقديمية](https://learn.masterenglish.me/products/presentations.html) يعطيك العبارات والهيكل الجاهز.
-- 🌙 **تريد الاستمرار بالتعلم في رمضان دون مجهود إضافي؟** [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html) مبني تحديداً لهذا التوقيت.
-- 🔤 **تريد بداية سريعة ورخيصة قبل أي التزام أكبر؟** [قائمة دايت المفردات](https://learn.masterenglish.me/products/vocabulary-diet.html) بسعر ٧ دولارات فقط.
+- 🗣️ **نطقك "يفضحك" رغم معرفتك بالكلمات؟** ابدأ بمقال [أسرار النطق الأمريكي](https://www.masterenglish.me/articles/american-accent-secrets.html)، ثم كورس [أسرار النطق الأمريكي](https://www.masterenglish.me/products/pronunciation.html) إذا أردت نظاماً كاملاً.
+- 👂 **تفهم الإنجليزية المكتوبة لكن لا تفهم الحديث السريع؟** ابدأ بمقال [كيف تفهم الإنجليزية المحكية بسرعة](https://www.masterenglish.me/articles/understand-fast-english.html)، ثم [The Commuter Challenge](https://www.masterenglish.me/products/commuter-challenge.html) للتدريب اليومي أثناء تنقلك.
+- 💼 **لديك مقابلة عمل قادمة بالإنجليزية؟** دليل [من التوتر إلى التميز](https://www.masterenglish.me/products/interview.html) مبني تحديداً لهذا الموقف.
+- 📊 **تحتاج تقديم عروض بالإنجليزية في عملك أو دراستك؟** كورس [أتقن العروض التقديمية](https://www.masterenglish.me/products/presentations.html) يعطيك العبارات والهيكل الجاهز.
+- 🌙 **تريد الاستمرار بالتعلم في رمضان دون مجهود إضافي؟** [The 30-Day Fluency Challenge](https://www.masterenglish.me/products/ramadan-audio-club.html) مبني تحديداً لهذا التوقيت.
+- 🔤 **تريد بداية سريعة ورخيصة قبل أي التزام أكبر؟** [قائمة دايت المفردات](https://www.masterenglish.me/products/vocabulary-diet.html) بسعر ٧ دولارات فقط.
 
 ## لست متأكداً بعد؟ ابدأ من هنا مجاناً
 
-إذا كنت لا تريد الالتزام بأي شيء الآن، أفضل نقطة بداية هي تصفح [قسم الفيديوهات المجانية](https://learn.masterenglish.me/videos.html) أو [مكتبة المقالات](https://learn.masterenglish.me/articles/index.html) حسب الموضوع الذي يهمك، أو استخدام [البحث](https://learn.masterenglish.me/search.html) مباشرة إذا كان لديك سؤال محدد في ذهنك.
+إذا كنت لا تريد الالتزام بأي شيء الآن، أفضل نقطة بداية هي تصفح [قسم الفيديوهات المجانية](https://www.masterenglish.me/videos.html) أو [مكتبة المقالات](https://www.masterenglish.me/articles/index.html) حسب الموضوع الذي يهمك، أو استخدام [البحث](https://www.masterenglish.me/search.html) مباشرة إذا كان لديك سؤال محدد في ذهنك.
 
 **💡 نصيحة عملية:** لا تحاول التقدم في أكثر من مسار واحد في نفس الوقت. اختر هدفاً واحداً، اتبع مساره لمدة أسبوعين إلى ثلاثة، ثم انتقل للتالي إذا أردت. التركيز أهم من التنويع في المراحل الأولى.
 
@@ -44,14 +44,14 @@ In English: where to start learning English on this channel, out of 1,200+ free 
 
 ## مقالات ذات صلة
 
-- [تصفح جميع المقالات](https://learn.masterenglish.me/articles/index.html)
-- [ما هو الكورس المناسب لك؟](https://learn.masterenglish.me/quiz.html)
-- [تصفح جميع الكورسات](https://learn.masterenglish.me/courses.html)
-- [آراء طلاب حقيقيين](https://learn.masterenglish.me/testimonials.html)
+- [تصفح جميع المقالات](https://www.masterenglish.me/articles/index.html)
+- [ما هو الكورس المناسب لك؟](https://www.masterenglish.me/quiz.html)
+- [تصفح جميع الكورسات](https://www.masterenglish.me/courses.html)
+- [آراء طلاب حقيقيين](https://www.masterenglish.me/testimonials.html)
 
 ---
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

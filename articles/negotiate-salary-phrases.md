@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://learn.masterenglish.me/articles/job-interview-english.html)
-- [كيف تفرض شخصيتك في العمل بالإنجليزية؟ 5 مفاتيح للغة القادة](https://learn.masterenglish.me/articles/leadership-language-at-work.html)
+- [كيف تستعد لمقابلة عمل بالإنجليزية بثقة؟](https://www.masterenglish.me/articles/job-interview-english.html)
+- [كيف تفرض شخصيتك في العمل بالإنجليزية؟ 5 مفاتيح للغة القادة](https://www.masterenglish.me/articles/leadership-language-at-work.html)
 
 ---
 
-كورس ذو صلة: [تحضير ذكي لأي محادثة مهنية حاسمة](https://learn.masterenglish.me/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات كاملة للتفاوض بثقة والتعبير عن قيمتك بوضوح.
+كورس ذو صلة: [تحضير ذكي لأي محادثة مهنية حاسمة](https://www.masterenglish.me/products/interview.html), من التوتر إلى التميز يشمل استراتيجيات كاملة للتفاوض بثقة والتعبير عن قيمتك بوضوح.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

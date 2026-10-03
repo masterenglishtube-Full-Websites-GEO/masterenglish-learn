@@ -31,14 +31,14 @@
 
 ## مقالات ذات صلة
 
-- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://learn.masterenglish.me/articles/stop-one-word-answers.html)
-- [لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟](https://learn.masterenglish.me/articles/know-but-cant-speak.html)
+- [لماذا تدمر إجابات الكلمة الواحدة محادثتك بالإنجليزية؟](https://www.masterenglish.me/articles/stop-one-word-answers.html)
+- [لماذا تفهم الإنجليزية ولكن ينعقد لسانك عند التحدث؟](https://www.masterenglish.me/articles/know-but-cant-speak.html)
 
 ---
 
-كورس ذو صلة: [ابنِ ثقة النطق الصحيح من البداية](https://learn.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يقلل أخطاءك الأصلية، فتحتاج تصحيحاً أقل أثناء الكلام الفعلي.
+كورس ذو صلة: [ابنِ ثقة النطق الصحيح من البداية](https://www.masterenglish.me/products/pronunciation.html), كورس أسرار النطق الأمريكي يقلل أخطاءك الأصلية، فتحتاج تصحيحاً أقل أثناء الكلام الفعلي.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)

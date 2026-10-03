@@ -28,7 +28,7 @@
 
 ## لماذا هذا النهج يحضّرك بشكل أفضل لما بعد رمضان؟
 
-الحفاظ على تعرّض يومي بسيط يمنع التراجع. هذا الفكر بُني عليه [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html): سلسلة درامية صوتية "عمر وسارة"، حلقة قصيرة كل يوم تستمع إليها بلا مجهود ذهني إضافي.
+الحفاظ على تعرّض يومي بسيط يمنع التراجع. هذا الفكر بُني عليه [The 30-Day Fluency Challenge](https://www.masterenglish.me/products/ramadan-audio-club.html): سلسلة درامية صوتية "عمر وسارة"، حلقة قصيرة كل يوم تستمع إليها بلا مجهود ذهني إضافي.
 
 ## أسئلة شائعة
 
@@ -43,9 +43,9 @@
 
 ---
 
-كورس ذو صلة: [The 30-Day Fluency Challenge](https://learn.masterenglish.me/products/ramadan-audio-club.html), قصة يومية مشوقة مصممة للحظات طاقتك المنخفضة.
+كورس ذو صلة: [The 30-Day Fluency Challenge](https://www.masterenglish.me/products/ramadan-audio-club.html), قصة يومية مشوقة مصممة للحظات طاقتك المنخفضة.
 
 الكاتبة: نور، مؤسسة أتقن الإنجليزية. تعلّم الإنجليزية للعرب على يوتيوب منذ ٢٠١٦ (١٫٨٦ مليون مشترك): https://www.youtube.com/@MasterEnglish
 آخر تحديث: 2026-09-24
 
-المصدر: [Master English أتقن الإنجليزية](https://learn.masterenglish.me/)
+المصدر: [Master English أتقن الإنجليزية](https://www.masterenglish.me/)
