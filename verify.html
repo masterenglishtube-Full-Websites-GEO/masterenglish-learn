@@ -37,7 +37,10 @@
   const params = new URLSearchParams(location.search);
   const token = params.get("token");
   // Where to land after sign-in: only a page of this site (e.g. my-learning.html), never an outside URL.
-  const next = /^[a-z0-9-]+\.html$/.test(params.get("next") || "") ? params.get("next") : "index.html";
+  const page = /^[a-z0-9-]+\.html$/.test(params.get("next") || "") ? params.get("next") : "index.html";
+  // ?open=<course> rides along to my-learning.html, which then opens that course directly.
+  const open = /^[a-z0-9-]+$/.test(params.get("open") || "") ? params.get("open") : "";
+  const next = page === "my-learning.html" && open ? page + "?open=" + open : page;
 
   const titleEl = document.getElementById("verifyTitle");
   const subEl = document.getElementById("verifySub");
@@ -56,6 +59,10 @@
       .then((r) => r.json())
       .then((data) => {
         if (!data.ok) {
+          // A used link from the same browser is fine: that person is already signed in here.
+          let signedIn = false;
+          try { signedIn = !!localStorage.getItem("me_auth_token"); } catch (e) {}
+          if (signedIn) { location.href = next; return; }
           fail("هذا الرابط منتهي الصلاحية أو تم استخدامه من قبل. عد إلى الموقع واطلب رابطاً جديداً.");
           return;
         }

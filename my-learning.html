@@ -12,8 +12,6 @@
 <meta property="og:title" content="تقدّمي في التعلم">
 <meta property="og:description" content="صفحتك الخاصة على أتقن الإنجليزية: مستواك، الدروس التي أنهيتها، نتائج اختباراتك، والعبارات التي حفظتها.">
 <meta property="og:image" content="https://www.masterenglish.me/assets/images/og/my-learning.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.masterenglish.me/assets/images/og/my-learning.jpg">
@@ -174,6 +172,10 @@
     read.sort((a, b) => s.read[b] - s.read[a]).forEach((p) => rl.appendChild(li(`<a href="${esc(p.replace(/^\//, ""))}">${esc(title(p))}</a><span>✓</span>`)));
   }
 
+  // ?open=<course> (the links in the site-upgrade email): kept through sign-in, then that course opens directly.
+  const OPEN_KEY = "me_open_course";
+  try { const o = new URLSearchParams(location.search).get("open"); if (o && /^[a-z0-9-]+$/.test(o)) localStorage.setItem(OPEN_KEY, o); } catch (e) {}
+
   function loadCourses() {
     const t = token();
     if (!t) { el("mlSignin").hidden = false; renderGoogle(); return; }
@@ -192,6 +194,10 @@
         const link = c.watch_url ? `<a class="btn btn-primary" href="${esc(c.watch_url)}">▶ ادخل للكورس</a>` : c.download_url ? `<a class="btn btn-primary" href="${esc(c.download_url)}">⬇ حمّل الملفات</a>` : "";
         list.appendChild(li(`<span><strong>${esc(c.name)}</strong></span>${link}`));
       });
+      let want = null;
+      try { want = localStorage.getItem(OPEN_KEY); localStorage.removeItem(OPEN_KEY); } catch (e) {}
+      const hit = want && d.courses.find((c) => c.slug === want);
+      if (hit && (hit.watch_url || hit.download_url)) location.href = hit.watch_url || hit.download_url;
     }).catch(() => {});
   }
 
