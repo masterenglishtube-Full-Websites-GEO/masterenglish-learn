@@ -576,6 +576,16 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 .prose .article-cta h3 { margin: 0 0 10px; font-size: 22px; color: #fff; }
 .prose .article-cta p { color: rgba(255, 255, 255, .8); margin: 0 0 20px; }
+/* The price badge keeps dark text on its light background inside the dark box (the rule above
+   was turning it white-on-mint). The crossed-out "was" price stays light on the dark box. */
+.prose .article-cta .price-line, .prose .article-cta .price-line-compare .price-now { color: var(--accent-dark); margin: 4px 0 20px; }
+.prose .article-cta .price-line-compare { justify-content: center; }
+.prose .article-cta .price-line-compare .price-was { color: rgba(255, 255, 255, .75); }
+/* Light variant (inline background:transparent, e.g. "تصفح باقي الكورسات"): dark text, not white. */
+.prose .article-cta[style*="background:transparent"] { color: var(--ink); background-image: none; box-shadow: none; }
+.prose .article-cta[style*="background:transparent"] h3 { color: var(--ink); }
+.prose .article-cta[style*="background:transparent"] p { color: var(--ink-soft); }
+.prose .article-cta[style*="background:transparent"] .btn-outline { color: var(--accent-dark); border: 1.5px solid var(--accent); background: transparent; }
 .article-cta .btn-primary { background: var(--gold); color: var(--on-gold); box-shadow: 0 10px 24px -10px rgba(244, 184, 46, .9); }
 .article-cta .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, .55); margin: 8px 6px 0; }
 .article-cta .btn-outline:hover { background: rgba(255, 255, 255, .1); color: #fff; }
