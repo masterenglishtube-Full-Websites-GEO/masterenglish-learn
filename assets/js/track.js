@@ -93,6 +93,22 @@
     window.addEventListener(evt, () => { lastActiveAt = Date.now(); }, { passive: true });
   });
 
+  // A tagged link (?utm_source=telegram&utm_campaign=site_launch) becomes the visit's source,
+  // "utm:telegram/site_launch", so a post on Telegram, YouTube or by email can be measured even
+  // when the app sends no referrer. The dashboard's sources table groups it as "utm:telegram".
+  function sourceOf() {
+    try {
+      const q = new URLSearchParams(location.search);
+      const clean = (v, n) => (v || "").toLowerCase().replace(/[^a-z0-9_.-]/g, "").slice(0, n);
+      const src = clean(q.get("utm_source"), 40);
+      if (src) {
+        const camp = clean(q.get("utm_campaign"), 60);
+        return "utm:" + src + (camp ? "/" + camp : "");
+      }
+    } catch (e) {}
+    return document.referrer || "";
+  }
+
   fetch(API + "/track/pageview", {
     method: "POST",
     headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
@@ -100,7 +116,7 @@
       session_id: sessionId,
       visitor_id: visitorId,
       path: location.pathname,
-      referrer: document.referrer || "",
+      referrer: sourceOf(),
     }),
   })
     .then((r) => r.json())
