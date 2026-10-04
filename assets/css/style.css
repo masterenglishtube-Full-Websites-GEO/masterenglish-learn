@@ -1046,33 +1046,9 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
    sitting on top of content the entire way down -- hide them there only. */
 body.hide-floating-widgets #meContactBtn,
 body.hide-floating-widgets #meHelpBotBtn,
-body.hide-floating-widgets #meWhatsappBtn,
 body.hide-floating-widgets .me-fab-tooltip,
 body.hide-floating-widgets .me-fab-tooltip-right,
-body.hide-floating-widgets .me-wa-tooltip,
 body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
-
-/* Floating WhatsApp button (bottom-left, stacked above the contact button).
-   Only shown to visitors who've shown real intent -- see whatsapp-widget.js --
-   so it stays invisible (opacity/pointer-events off) until it gets .show. */
-#meWhatsappBtn {
-  position: fixed; bottom: 96px; left: 24px; z-index: 999;
-  width: 52px; height: 52px; border-radius: 50%;
-  background: #25d366; box-shadow: var(--shadow);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none; transform: scale(0.8);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-#meWhatsappBtn.show { opacity: 1; pointer-events: auto; transform: scale(1); }
-#meWhatsappBtn:hover { filter: brightness(1.05); }
-
-.me-wa-tooltip {
-  position: fixed; bottom: 106px; left: 84px; z-index: 998;
-  background: var(--ink); color: #fff; font-size: 12.5px; font-family: var(--font-body);
-  padding: 6px 12px; border-radius: 8px; white-space: nowrap;
-  opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
-}
-#meWhatsappBtn.show:hover + .me-wa-tooltip { opacity: 1; }
 
 /* Google-sign-in gate for free lesson PDFs (assets/js/pdf-gate.js) */
 .me-gate { position: fixed; inset: 0; z-index: 1000; background: rgba(20, 24, 30, .55); display: flex; align-items: center; justify-content: center; padding: 16px; }
@@ -1108,12 +1084,11 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
 
 /* Phones: one floating button instead of two covering the text on both sides.
    The help bot also forwards questions to Noor by email, so the separate contact
-   button is hidden; WhatsApp (qualified visitors only) takes its corner. */
+   button is hidden. */
 @media (max-width: 600px) {
   #meContactBtn, #meContactBtn + .me-fab-tooltip, #meContactPanel { display: none !important; }
   #meHelpBotBtn { bottom: 18px; right: 16px; width: 52px; height: 52px; font-size: 22px; }
-  #meWhatsappBtn { bottom: 18px; left: 16px; }
-  .me-wa-tooltip, .me-fab-tooltip-right { display: none; }
+  .me-fab-tooltip-right { display: none; }
 }
 
 /* Listen-to-English buttons (assets/js/learner.js) */
@@ -1264,8 +1239,6 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
   body.has-tabbar #meContactBtn, body.has-tabbar #meHelpBotBtn { bottom: calc(80px + env(safe-area-inset-bottom)); width: 50px; height: 50px; }
   body.has-tabbar .me-fab-tooltip, body.has-tabbar .me-fab-tooltip-right { bottom: calc(90px + env(safe-area-inset-bottom)); }
   body.has-tabbar #meContactPanel, body.has-tabbar .me-helpbot-nudge { bottom: calc(140px + env(safe-area-inset-bottom)); }
-  body.has-tabbar #meWhatsappBtn { bottom: calc(140px + env(safe-area-inset-bottom)); }
-  body.has-tabbar .me-wa-tooltip { bottom: calc(150px + env(safe-area-inset-bottom)); }
 }
 
 /* "Your next step" at the end of reading pages */
@@ -1304,8 +1277,8 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
 
 /* One help button (help-hub.js) replaces the separate floating buttons: the help bot,
    the contact form and WhatsApp open from its menu. The widgets' own buttons are hidden. */
-body.me-hub #meContactBtn, body.me-hub #meHelpBotBtn, body.me-hub #meWhatsappBtn,
-body.me-hub .me-fab-tooltip, body.me-hub .me-fab-tooltip-right, body.me-hub .me-wa-tooltip,
+body.me-hub #meContactBtn, body.me-hub #meHelpBotBtn,
+body.me-hub .me-fab-tooltip, body.me-hub .me-fab-tooltip-right,
 body.me-hub .me-helpbot-nudge { display: none !important; }
 body.me-hub #meContactPanel { left: auto; right: 24px; }
 #meHelpHub { position: fixed; bottom: 22px; right: 22px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
