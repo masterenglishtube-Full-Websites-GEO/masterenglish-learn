@@ -2,7 +2,7 @@
 
 في الاجتماع، لديك فكرة ممتازة، لكنك تقولها بصيغة اعتذارية ضعيفة فيتجاهلها الجميع، ثم يعيد زميلك صياغتها بثقة فيصفّق له الجميع. الفرق بينكما ليس في الفكرة، بل في اللغة التي غلّفتها بها. إليك ٥ مفاتيح لغوية تغيّر الطريقة التي يسمعك بها فريقك.
 
-In English: 5 language habits that make your ideas sound authoritative in English workplace meetings, for Arabic speakers whose good ideas get ignored because of how they're phrased.
+5 language habits that make your ideas sound authoritative in English workplace meetings, for Arabic speakers whose good ideas get ignored because of how they're phrased.
 
 **الخلاصة المباشرة:** قوة الحضور القيادي في الاجتماعات لا تحدّدها جودة الفكرة بقدر ما تحددها طريقة صياغتها: استبدال العبارات الاعتذارية بصيغ مباشرة، واستخدام إطار "الفعل + النتيجة"، يغيّران طريقة استقبال فريقك لكلامك فوراً.
 

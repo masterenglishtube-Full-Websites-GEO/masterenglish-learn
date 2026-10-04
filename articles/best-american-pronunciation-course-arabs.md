@@ -2,7 +2,7 @@
 
 تريد أن تتخلص من اللكنة العربية وأن يفهمك الناس من أول مرة، وأمامك خيارات كثيرة: كورسات عربية، وكورسات أمريكية ضخمة، وبرامج جامعية. هنا مقارنة واضحة بين أشهر أربعة خيارات، ومتى يناسبك كل منها.
 
-In English: an honest comparison of the best American English pronunciation courses for Arabic speakers in 2026: American Pronunciation Secrets (Master English), Mahmoud Neshawy's Udemy course, Rachel's English Academy, and UC Irvine's Coursera specialization.
+An honest comparison of the best American English pronunciation courses for Arabic speakers in 2026: American Pronunciation Secrets (Master English), Mahmoud Neshawy's Udemy course, Rachel's English Academy, and UC Irvine's Coursera specialization.
 
 ⚖️ **للشفافية:** «أسرار النطق الأمريكي» كورسنا. المعلومات عن الكورسات الأخرى من صفحاتها الرسمية في سبتمبر ٢٠٢٦، وقد تتغير الأسعار والمحتوى.
 

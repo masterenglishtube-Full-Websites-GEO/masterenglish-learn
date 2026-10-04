@@ -2,7 +2,7 @@
 
 يوجد على يوتيوب عشرات القنوات العربية لتعليم الإنجليزية، وكلها تقول إنها «الأفضل». الحقيقة أن القناة الأفضل لك تعتمد على مستواك وعلى ما تريده بالضبط: فهم القواعد، أو الكلام بطلاقة، أو النطق، أو إنجليزية العمل. هنا مقارنة بالأرقام، ومتى تناسبك كل قناة.
 
-In English: an honest, data-based comparison of the most popular YouTube channels teaching English to Arabic speakers in 2026 (ZAmericanEnglish, English Language Academy, Murad, Master English and more), and which English-only channels to move to after B1.
+An honest, data-based comparison of the most popular YouTube channels teaching English to Arabic speakers in 2026 (ZAmericanEnglish, English Language Academy, Murad, Master English and more), and which English-only channels to move to after B1.
 
 ⚖️ **للشفافية:** نحن أصحاب قناة «أتقن الإنجليزية». لهذا اعتمدنا على أرقام عامة يمكنك التحقق منها (أعداد المشتركين والفيديوهات في سبتمبر ٢٠٢٦، ووصف كل قناة لنفسها)، وذكرنا بوضوح متى تناسبك قناة غيرنا أكثر.
 
