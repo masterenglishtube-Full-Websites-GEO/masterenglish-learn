@@ -236,9 +236,11 @@
   let confirmedTypo = "";
   $("ptEmailForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = $("ptEmail").value.trim();
+    // A pasted link brings "mailto:" (one result bounced on 2026-10-04); spaces and <> too.
+    const email = $("ptEmail").value.trim().toLowerCase().replace(/^mailto:/, "").replace(/^<|>$/g, "").replace(/\s+/g, "");
+    $("ptEmail").value = email;
     $("ptSuggest").hidden = true;
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return status($("ptStatus"), ERRORS.invalid_email, true);
+    if (!/^[a-z0-9._%+'-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) return status($("ptStatus"), ERRORS.invalid_email, true);
     const fix = suggestion(email);
     if (fix && confirmedTypo !== email) {
       status($("ptStatus"), "");
