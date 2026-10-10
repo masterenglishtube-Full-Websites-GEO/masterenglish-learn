@@ -822,19 +822,24 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 .me-contact-body { padding: 16px 18px 18px; }
 .me-contact-hint { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
-#meContactForm { display: flex; flex-direction: column; gap: 8px; }
-#meContactForm label { font-size: 13px; font-weight: 700; color: var(--ink); }
-#meContactForm input, #meContactForm textarea {
+#meContactForm, #meContactCodeForm { display: flex; flex-direction: column; gap: 8px; }
+#meContactForm[hidden], #meContactCodeForm[hidden], #meContactSuggest[hidden] { display: none; }
+#meContactForm label, #meContactCodeForm label { font-size: 13px; font-weight: 700; color: var(--ink); }
+#meContactForm input, #meContactForm textarea, #meContactCodeForm input {
   font-family: var(--font-body); font-size: 14px; padding: 10px 12px;
   border: 1px solid var(--border); border-radius: var(--radius-sm); resize: vertical;
   background: var(--paper-soft); color: var(--ink);
 }
-#meContactSubmit {
+#meContactSubmit, #meContactCodeSubmit {
   margin-top: 6px; background: var(--gold); color: var(--ink); border: none;
   border-radius: 999px; padding: 11px; font-weight: 800; cursor: pointer; font-family: var(--font-head);
 }
-#meContactSubmit:disabled { opacity: 0.6; cursor: default; }
-#meContactStatus { font-size: 13px; margin: 6px 0 0; min-height: 16px; }
+#meContactSubmit:disabled, #meContactCodeSubmit:disabled { opacity: 0.6; cursor: default; }
+#meContactStatus, #meContactCodeStatus { font-size: 13px; margin: 6px 0 0; min-height: 16px; }
+#meContactCode { font-size: 22px !important; letter-spacing: 6px; text-align: center; }
+#meContactSuggest { font-size: 13px; margin: 0; }
+#meContactSuggest button { font: inherit; font-size: 12px; margin: 4px 4px 0 0; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--accent); background: transparent; color: var(--accent-dark); cursor: pointer; }
+#meContactSuggest button[data-fix="1"] { background: var(--accent); color: #fff; }
 .me-contact-success { color: var(--accent-dark); }
 .me-contact-error { color: #b23b3b; }
 
