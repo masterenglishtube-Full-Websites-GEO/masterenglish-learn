@@ -402,8 +402,22 @@
         <input type="number" id="filterMinSpent" min="0" step="1" style="width:90px;">
       </div>
       <div class="filter-field">
+        <label>التصنيف</label>
+        <select id="filterTier">
+          <option value="">الكل</option>
+          <option value="vip">مشترٍ مميز</option>
+          <option value="buyer">مشترٍ</option>
+          <option value="hot">قريب من الشراء</option>
+          <option value="warm">مهتم</option>
+          <option value="fan">متابع يراسلك</option>
+          <option value="cold">ضعيف التفاعل</option>
+          <option value="inactive">غير نشط</option>
+        </select>
+      </div>
+      <div class="filter-field">
         <label>الترتيب</label>
         <select id="filterSort">
+          <option value="rank_desc">الأعلى تقييماً (تفاعل + نية + قدرة شراء)</option>
           <option value="created_desc">الأحدث انضمامًا</option>
           <option value="created_asc">الأقدم انضمامًا</option>
           <option value="spent_desc">الأعلى إنفاقًا</option>
@@ -418,7 +432,7 @@
     <p id="customersMeta"></p>
 
     <table id="customersTable">
-      <thead><tr><th>البريد</th><th>الاسم</th><th>الهاتف</th><th>المصدر</th><th>المنتجات المشتراة</th><th>عدد الطلبات</th><th>إجمالي الإنفاق</th><th>آخر شراء</th><th>آخر ظهور</th></tr></thead>
+      <thead><tr><th>البريد</th><th>الاسم</th><th>التصنيف</th><th>رسائل منه</th><th>الهاتف</th><th>المصدر</th><th>المنتجات المشتراة</th><th>عدد الطلبات</th><th>إجمالي الإنفاق</th><th>آخر شراء</th><th>آخر ظهور</th></tr></thead>
       <tbody></tbody>
     </table>
   </div>
@@ -550,6 +564,18 @@
   }
 
   function money(cents) { return ((cents || 0) / 100).toFixed(2) + " $"; }
+  // Names, emails and subjects come from outside (forms, Podia, inbound mail): always escape.
+  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])); }
+  // Ranking tiers from site-audit/rank_customers.py (engagement + buying intent + buying ability)
+  const TIER = {
+    vip: ["مشترٍ مميز", "badge-green"], buyer: ["مشترٍ", "badge-green"], hot: ["قريب من الشراء", "badge-terracotta"],
+    warm: ["مهتم", "badge-gold"], fan: ["متابع يراسلك", "badge-gold"], cold: ["ضعيف التفاعل", "badge-grey"], inactive: ["غير نشط", "badge-grey"],
+  };
+  function tierBadge(t, score) {
+    if (!t) return "-";
+    const [label, cls] = TIER[t] || [t, "badge-grey"];
+    return `<span class="badge ${cls}">${label}</span>${score != null ? " " + score : ""}`;
+  }
 
   // Sales opportunities: lead score per person, with a draft Noor can edit and send.
   const escH = (t) => String(t == null ? "" : t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -1001,6 +1027,8 @@
     const joinedTo = document.getElementById("filterJoinedTo").value;
     const minSpent = document.getElementById("filterMinSpent").value;
     const sort = document.getElementById("filterSort").value;
+    const tier = document.getElementById("filterTier").value;
+    if (tier) params.set("tier", tier);
     if (product) params.set("product", product);
     if (source) params.set("source", source);
     if (hasPhone) params.set("has_phone", hasPhone);
@@ -1032,11 +1060,13 @@
     list.forEach((c) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td class="row-link" data-id="${c.id}">${c.email}</td>
-        <td>${c.name || "-"}</td>
-        <td>${c.phone || "-"}</td>
-        <td>${sourceBadge(c.source)}</td>
-        <td>${c.products_bought || "-"}</td>
+        <td class="row-link" data-id="${c.id}">${esc(c.email)}</td>
+        <td>${esc(c.name) || "-"}</td>
+        <td>${tierBadge(c.tier, c.rank_score)}</td>
+        <td>${c.emails_in || "-"}</td>
+        <td>${esc(c.phone) || "-"}</td>
+        <td>${sourceBadge(esc(c.source))}</td>
+        <td>${esc(c.products_bought) || "-"}</td>
         <td>${c.purchase_count}</td>
         <td>${money(c.total_spent_cents)}</td>
         <td>${c.last_purchase_at || "-"}</td>
@@ -1061,11 +1091,19 @@
   async function openDetail(id) {
     const data = await api("/admin/api/customer?id=" + id);
     const c = data.customer;
-    let html = `<h3>${c.email}</h3><p>${c.name || ""} &middot; هاتف: ${c.phone || "-"} &middot; مصدر: ${c.source} &middot; منذ: ${c.created_at}</p>`;
+    let html = `<h3>${esc(c.email)}</h3><p>${esc(c.name)} &middot; هاتف: ${esc(c.phone) || "-"} &middot; مصدر: ${esc(c.source)} &middot; منذ: ${esc(c.created_at)}</p>`;
+    if ((data.other_addresses || []).length) {
+      html += `<p>يراسلك أيضاً من: ${data.other_addresses.map((a) => esc(a.email)).join("، ")}</p>`;
+    }
+    const r = data.rank;
+    if (r) {
+      html += `<p>${tierBadge(r.tier, r.score)} &middot; التفاعل ${r.engagement} &middot; نية الشراء ${r.intent} &middot; القدرة على الشراء ${r.ability} &middot; آخر نشاط: ${esc(r.last_active) || "-"}</p>`;
+      if (r.reasons) html += `<p style="color:#666;font-size:13px;">${esc(r.reasons)}</p>`;
+    }
 
     html += "<h4>الطلبات</h4><table><thead><tr><th>المنتج</th><th>المبلغ</th><th>التاريخ</th></tr></thead><tbody>";
     (data.purchases || []).forEach((p) => {
-      html += `<tr><td>${p.product_name || p.product_slug}</td><td>${money(p.price_cents)}</td><td>${p.purchased_at}</td></tr>`;
+      html += `<tr><td>${esc(p.product_name || p.product_slug)}</td><td>${money(p.price_cents)}</td><td>${p.purchased_at}</td></tr>`;
     });
     html += "</tbody></table>";
 
@@ -1077,9 +1115,22 @@
 
     html += "<h4>سجل النشاط</h4><table><thead><tr><th>الحدث</th><th>التاريخ</th></tr></thead><tbody>";
     (data.activity || []).forEach((a) => {
-      html += `<tr><td>${a.event_type}</td><td>${a.created_at}</td></tr>`;
+      html += `<tr><td>${esc(a.event_type)}</td><td>${esc(a.created_at)}</td></tr>`;
     });
     html += "</tbody></table>";
+
+    const DIR = { in: "منه", out: "منكِ", draft: "مسودة في بريدك" };
+    html += `<h4>البريد (${(data.emails || []).length})</h4>`;
+    if ((data.emails || []).length) {
+      html += "<table><thead><tr><th>التاريخ</th><th></th><th>الموضوع وأول الرسالة</th></tr></thead><tbody>";
+      data.emails.forEach((m) => {
+        html += `<tr><td style="white-space:nowrap">${esc(m.date)}</td><td>${DIR[m.direction] || esc(m.direction)}</td>`
+          + `<td><b>${esc(m.subject) || "(بدون موضوع)"}</b><br><span style="color:#555;font-size:13px;">${esc(m.snippet)}</span></td></tr>`;
+      });
+      html += "</tbody></table>";
+    } else {
+      html += "<p>لا رسائل.</p>";
+    }
 
     document.getElementById("detailContent").innerHTML = html;
     document.getElementById("detailPanel").classList.add("open");
@@ -1260,7 +1311,8 @@
     document.getElementById("filterJoinedFrom").value = "";
     document.getElementById("filterJoinedTo").value = "";
     document.getElementById("filterMinSpent").value = "";
-    document.getElementById("filterSort").value = "created_desc";
+    document.getElementById("filterTier").value = "";
+    document.getElementById("filterSort").value = "rank_desc";
     loadCustomers(document.getElementById("searchBox").value);
   });
 
