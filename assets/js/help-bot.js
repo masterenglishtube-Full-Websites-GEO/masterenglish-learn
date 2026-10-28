@@ -1,7 +1,7 @@
 // Floating AI help bot (bottom-right). Clearly labeled as automated.
-// Requires an email before chatting (so every conversation is tied to a real
-// person in the CRM, same pattern as the contact widget and newsletter signup).
-// Proactively offers to forward the conversation to Noor by email.
+// Visitors type right away (2026-10-28): the old "email first" step stopped almost everyone.
+// Each question is saved with the page it was asked on, so Noor sees what people want
+// (admin.html, "ماذا يكتب الزوار"). The email is asked only when they want Noor to reply.
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
 
@@ -79,12 +79,7 @@
       <button type="button" id="meHelpBotClose" aria-label="إغلاق">&times;</button>
     </div>
     <div class="me-helpbot-body">
-      <div id="meHelpBotEmailStep">
-        <p class="me-helpbot-hint">هذا مساعد آلي يجيب عن أسئلة شائعة حول الكورسات والأسعار. أدخل بريدك الإلكتروني لبدء المحادثة.</p>
-        <input type="email" id="meHelpBotEmail" placeholder="بريدك الإلكتروني">
-        <button type="button" id="meHelpBotStart">ابدأ المحادثة</button>
-      </div>
-      <div id="meHelpBotChatStep" style="display:none;">
+      <div id="meHelpBotChatStep" style="display:flex;">
         <div id="meHelpBotMessages"></div>
         <form id="meHelpBotForm">
           <input type="text" id="meHelpBotQuestion" placeholder="اكتب سؤالك هنا..." autocomplete="off">
@@ -137,10 +132,16 @@
     const wrap = document.createElement("div");
     wrap.className = "me-helpbot-escalate";
     wrap.innerHTML = `
-      <p>هل تريد إرسال هذا السؤال إلى نور مباشرة عبر البريد الإلكتروني؟</p>
+      <p>هل تريد إرسال هذا السؤال إلى نور مباشرة؟ ستصلك إجابتها على بريدك.</p>
+      <input type="email" class="me-helpbot-escalate-email" placeholder="بريدك الإلكتروني" autocomplete="email" dir="ltr">
       <button type="button" class="me-helpbot-escalate-btn">نعم، أرسله إلى نور</button>
     `;
+    const emailField = wrap.querySelector("input");
+    if (visitorEmail) emailField.value = visitorEmail;
     wrap.querySelector("button").addEventListener("click", async () => {
+      const typed = emailField.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(typed)) { emailField.focus(); return; }
+      visitorEmail = typed;
       wrap.innerHTML = "<p>جارِ الإرسال...</p>";
       try {
         await fetch(API + "/help/escalate", {
@@ -215,18 +216,14 @@
     btn.addEventListener("click", () => { dismissNudge(); panel.classList.toggle("open"); });
     panel.querySelector("#meHelpBotClose").addEventListener("click", () => panel.classList.remove("open"));
 
-    panel.querySelector("#meHelpBotStart").addEventListener("click", () => {
-      const email = panel.querySelector("#meHelpBotEmail").value.trim();
-      if (!email || !email.includes("@")) {
-        panel.querySelector("#meHelpBotEmail").focus();
-        return;
-      }
-      visitorEmail = email;
-      panel.querySelector("#meHelpBotEmailStep").style.display = "none";
-      panel.querySelector("#meHelpBotChatStep").style.display = "flex";
-      addMessage("مرحباً! أنا مساعد آلي وليس نور شخصياً. اسألني عن الكورسات أو الأسعار أو سياسة الاسترجاع، وإذا لم أستطع الإجابة يمكنني إرسال سؤالك إلى نور مباشرة.", "bot");
-      panel.querySelector("#meHelpBotQuestion").focus();
-    });
+    addMessage("مرحباً! أنا مساعد آلي وليس نور شخصياً. اسألني عن الكورسات أو الأسعار أو من أين تبدأ، وإذا لم أستطع الإجابة يمكنني إرسال سؤالك إلى نور مباشرة.", "bot");
+    // Signed-in learners: their address is already known, for the "send to Noor" step.
+    try {
+      const token = localStorage.getItem("me_auth_token");
+      if (token) fetch(API + "/auth/me", { headers: { Authorization: "Bearer " + token } }).then((r) => r.json())
+        .then((d) => { if (d && d.logged_in && d.email) visitorEmail = d.email; }).catch(() => {});
+    } catch (e) {}
+    const ids = () => { try { return { visitor_id: localStorage.getItem("me_vid"), session_id: localStorage.getItem("me_sid") }; } catch (e) { return {}; } };
 
     panel.querySelector("#meHelpBotForm").addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -249,7 +246,7 @@
         const res = await fetch(API + "/help/ask", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: visitorEmail, question }),
+          body: JSON.stringify({ email: visitorEmail, question, page: location.pathname, ...ids() }),
         });
         const data = await res.json();
         thinking.remove();

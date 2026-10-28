@@ -986,7 +986,8 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .me-helpbot-body { padding: 16px 18px; display: flex; flex-direction: column; flex: 1; min-height: 0; }
 .me-helpbot-hint { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
 #meHelpBotEmailStep { display: flex; flex-direction: column; gap: 10px; }
-#meHelpBotEmail {
+.me-helpbot-escalate-email { display: block; width: 100%; box-sizing: border-box; margin: 0 0 8px; }
+#meHelpBotEmail, .me-helpbot-escalate-email {
   font-family: var(--font-body); font-size: 14px; padding: 10px 12px;
   border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--paper-soft);
 }
