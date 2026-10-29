@@ -74,6 +74,7 @@
 
   // ---- 1. phone tab bar ----
   function tabBar() {
+    if (/^\/products\//.test(PATH)) return; // course pages: no menu, the buy bar sits at the bottom instead
     const info = me();
     const tabs = [
       ["home", "index.html", "الرئيسية", '<path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/>'],

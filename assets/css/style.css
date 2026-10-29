@@ -1436,3 +1436,9 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .sticky-buy-on.has-tabbar #meHelpHub { bottom: 136px !important; }
 #meHelpHub { transition: bottom .3s ease; }
 @media (min-width: 900px) { .sticky-buy-on #meHelpHub { bottom: 120px !important; } }
+
+/* Course pages: slim header (sitegen.header_slim) */
+.site-header-slim .hdr-back { margin-inline-start: auto; font-weight: 700; font-size: 14px; color: var(--ink-soft); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px; }
+.site-header-slim .hdr-back:hover { color: var(--accent-dark); border-color: var(--accent); }
+.sticky-buy-on:not(.has-tabbar) #meHelpHub { bottom: 84px !important; }
+@media (max-width: 640px) { .site-header-slim .hdr-back { display: none; } }
