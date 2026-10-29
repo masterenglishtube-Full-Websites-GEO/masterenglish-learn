@@ -66,7 +66,7 @@
   function load() {
     try { return JSON.parse(store.get(KEY)) || {}; } catch (e) { return {}; }
   }
-  const EMPTY = () => ({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null, daily: {}, speak: {}, review: {}, badges: {}, levels: [], challenge: {}, rest: {} });
+  const EMPTY = () => ({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null, daily: {}, speak: {}, review: {}, badges: {}, levels: [], challenge: {}, rest: {}, goal: null, quest: {} });
   let state = Object.assign(EMPTY(), load());
   function fill() { const e = EMPTY(); for (const k of Object.keys(e)) if (state[k] == null) state[k] = e[k]; }
   fill();
@@ -150,6 +150,10 @@
       state.review[en] = { box, due: Date.now() + [0, 1, 2, 4, 8, 16][box] * 86400000, ts: Date.now() };
       save();
     },
+    setGoal(days) { state.goal = { days, ts: Date.now() }; save(); track("goal_set", String(days)); },
+    // Word of the week (play.js): the days this week the learner used the word.
+    questDay(week, day) { state.quest[week] = state.quest[week] || {}; if (state.quest[week][day]) return false; state.quest[week][day] = 1; save(); return true; },
+    dayKey,
     setFlag(field, key, value) { state[field] = state[field] || {}; if (state[field][key]) return false; state[field][key] = value || Date.now(); save(); return true; },
     // Days with any learning, and the streak. One missed day per 7 is a free rest day, so a busy
     // day doesn't break a long streak (the rest days used are saved, the weekly email reads them).
@@ -324,7 +328,7 @@
   // personal.js (phone tab bar, next step, homepage greeting) and play.js (streak, badges, progress,
   // phrase review) come with every page that has this file.
   function loadPersonal() {
-    for (const name of ["personal.js", "play.js"]) {
+    for (const name of ["personal.js", "play.js", "offers.js"]) {
       if (!SELF || document.querySelector(`script[src*="${name}"]`)) continue;
       const s = document.createElement("script");
       s.src = SELF.replace("learner.js", name);

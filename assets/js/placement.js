@@ -209,7 +209,7 @@
       : /yahoo/.test(domain) ? "https://mail.yahoo.com/" : /icloud|me\.com/.test(domain) ? "https://www.icloud.com/mail/" : "";
     $("ptOpenMail").hidden = !inbox;
     if (inbox) $("ptOpenMail").href = inbox;
-    if (window.MELearner) window.MELearner.setLevel(level, score, d && d.avatar ? { avatar: d.avatar, list: d.list } : null);
+    if (window.MELearner) window.MELearner.setLevel(level, score, d && d.avatar ? { avatar: d.avatar, list: d.list, rec: d.rec || null } : null);
   }
 
   // Typo check for common providers: "gmial.com" -> "gmail.com"

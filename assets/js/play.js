@@ -7,6 +7,10 @@
 //  6. Badges and review on my-learning.html
 //  7. daily.html: the 5-minute daily challenge (listen, say it, quick question, review)
 //  8. challenge.html: the monthly community challenge (one shared total, never a ranking)
+//  9. Weekly goal the learner picks (3, 5 or 7 days) with a ring that fills (my-learning, daily)
+// 10. Shareable achievement cards (streak, finished path) as an image for WhatsApp/Telegram
+// 11. End of each lesson: its 3 key phrases, saved with one tap
+// 12. Word of the week quest on daily.html; optional sound on right answers (off by default)
 // Loaded by learner.js after personal.js; reads and writes progress through window.MELearner.
 (function () {
   const SCRIPT = document.currentScript && document.currentScript.src;
@@ -50,6 +54,7 @@
     box.className = "mp-celebrate";
     box.setAttribute("role", "status");
     box.innerHTML = `<b>${esc(title)}</b>${text ? `<span>${esc(text)}</span>` : ""}`;
+    ding(true);
     document.body.appendChild(box);
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const colors = ["#f4b82e", "#1f7a5c", "#c9522a", "#3b82f6", "#e0a21a"];
@@ -63,6 +68,162 @@
     }
     requestAnimationFrame(() => box.classList.add("show"));
     setTimeout(() => { box.classList.remove("show"); setTimeout(() => box.remove(), 400); }, 4200);
+  }
+
+  // ---- sound on right answers (off unless the learner turns it on in my-learning) ----
+  const soundOn = () => { try { return localStorage.getItem("me_sound") === "1"; } catch (e) { return false; } };
+  let audio = null;
+  function ding(high) {
+    if (!soundOn()) return;
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      const o = audio.createOscillator(), g = audio.createGain();
+      o.type = "sine"; o.frequency.value = high ? 880 : 660;
+      g.gain.setValueAtTime(0.0001, audio.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.18, audio.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + 0.35);
+      o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.4);
+      if (navigator.vibrate) navigator.vibrate(30);
+    } catch (e) {}
+  }
+
+  // ---- weekly goal: days with learning this week (Monday to Sunday) ----
+  function weekStart() { const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d; }
+  function isoWeek() {
+    const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
+    const w1 = new Date(d.getFullYear(), 0, 4);
+    return `${d.getFullYear()}-W${String(1 + Math.round(((d - w1) / DAY - 3 + ((w1.getDay() + 6) % 7)) / 7)).padStart(2, "0")}`;
+  }
+  function weekProgress() {
+    const goal = (S().goal && +S().goal.days) || 0, start = weekStart(), act = L().activeDays();
+    let n = 0;
+    for (let i = 0; i < 7; i++) { const d = new Date(start.getTime() + i * DAY); if (act.has(L().dayKey(d))) n++; }
+    return { goal, n, reached: goal > 0 && n >= goal };
+  }
+  function goalRing(size) {
+    const { goal, n } = weekProgress(), r = size / 2 - 7, c = 2 * Math.PI * r, pct = goal ? Math.min(1, n / goal) : 0;
+    return `<svg class="mp-ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">
+      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="var(--border)" stroke-width="7"/>
+      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="#1f7a5c" stroke-width="7" stroke-linecap="round"
+        stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct)}" transform="rotate(-90 ${size / 2} ${size / 2})"/>
+      <text x="50%" y="56%" text-anchor="middle" font-size="${size / 4.5}" font-weight="800" fill="currentColor">${AR(n)}/${AR(goal || 0)}</text></svg>`;
+  }
+  function goalBox() {
+    const box = document.createElement("div");
+    box.className = "mp-goal";
+    const paint = () => {
+      const w = weekProgress();
+      box.innerHTML = w.goal
+        ? `${goalRing(78)}<div><b>${w.reached ? "🎯 حققت هدف الأسبوع!" : `هدفك: ${AR(w.goal)} أيام هذا الأسبوع`}</b>
+            <span>${w.reached ? "رائع. الأسبوع القادم: نفس الهدف أو أعلى؟" : `تعلّمت ${AR(w.n)} من ${AR(w.goal)}، بقي ${AR(w.goal - w.n)}`}</span>
+            <span class="mp-goal-pick">غيّر الهدف: ${[3, 5, 7].map((d) => `<button type="button" data-g="${d}"${d === w.goal ? ' aria-pressed="true"' : ""}>${AR(d)}</button>`).join("")}</span></div>`
+        : `<div><b>🎯 اختر هدفك لهذا الأسبوع</b><span>كم يوماً تريد أن تتعلم؟ الهدف الذي تختاره بنفسك يحفّزك أكثر.</span>
+            <span class="mp-goal-pick">${[3, 5, 7].map((d) => `<button type="button" data-g="${d}">${AR(d)} أيام</button>`).join("")}</span></div>`;
+      box.querySelectorAll("[data-g]").forEach((b) => b.addEventListener("click", () => { L().setGoal(+b.dataset.g); paint(); checkBadges(); }));
+    };
+    paint();
+    document.addEventListener("me:progress", paint);
+    return box;
+  }
+
+  // ---- shareable achievement card (canvas image; Web Share where available, else download) ----
+  function shareCard(big, line, sub, name) {
+    const cv = document.createElement("canvas");
+    cv.width = 1080; cv.height = 1080;
+    const x = cv.getContext("2d");
+    const g = x.createLinearGradient(0, 0, 1080, 1080);
+    g.addColorStop(0, "#0c3a2c"); g.addColorStop(1, "#145a43");
+    x.fillStyle = g; x.fillRect(0, 0, 1080, 1080);
+    x.fillStyle = "rgba(244,184,46,.12)"; x.beginPath(); x.arc(900, 180, 260, 0, 7); x.fill();
+    x.direction = "rtl"; x.textAlign = "center";
+    const font = (w, px) => `${w} ${px}px Tajawal, Cairo, Tahoma, Arial, sans-serif`;
+    x.fillStyle = "#f4b82e"; x.font = font(800, 54); x.fillText("أتقن الإنجليزية · Master English", 540, 150);
+    x.font = font(900, 210); x.fillText(big, 540, 470);
+    x.fillStyle = "#ffffff"; x.font = font(800, 66); x.fillText(line, 540, 610);
+    x.fillStyle = "#cfe3da"; x.font = font(600, 46); x.fillText(sub, 540, 700);
+    if (name) { x.fillStyle = "#ffffff"; x.font = font(700, 52); x.fillText(name, 540, 800); }
+    x.fillStyle = "#f4b82e"; x.font = font(700, 44); x.fillText("masterenglish.me", 540, 980);
+    cv.toBlob((blob) => {
+      if (!blob) return;
+      const file = new File([blob], "masterenglish-achievement.png", { type: "image/png" });
+      track("share_card", line.slice(0, 60));
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], text: `${line} · masterenglish.me` }).catch(() => {});
+      } else {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      }
+    }, "image/png");
+  }
+  function learnerName() {
+    const token = (() => { try { return localStorage.getItem("me_auth_token"); } catch (e) { return null; } })();
+    if (!token) return Promise.resolve("");
+    return fetch(API + "/auth/me", { headers: { Authorization: "Bearer " + token } }).then((r) => r.json()).then((d) => (d && d.name) || "").catch(() => "");
+  }
+
+  // ---- end of lesson: its 3 key phrases, saved with one tap ----
+  function recap() {
+    if (!/^\/(articles|lessons|guides)\/(?!index\.html)[\w-]+\.html$/.test(PATH)) return;
+    const seen = new Set(), list = [];
+    document.querySelectorAll(".article-body .me-say").forEach((el) => {
+      const t = ((el.firstChild && el.firstChild.nodeValue) || el.textContent).replace("🔊", "").trim();
+      const n = t.split(/\s+/).length;
+      if (n < 2 || n > 9 || seen.has(t.toLowerCase())) return;
+      seen.add(t.toLowerCase()); list.push(t);
+    });
+    // Real phrases first: 3+ words, not a Title Case name ("Shutter Island").
+    const good = list.filter((t) => t.split(/\s+/).length >= 3 && !/^([A-Z][\w'’-]*\s*)+[.?!]?$/.test(t));
+    const pool = good.length >= 3 ? good : list;
+    if (pool.length < 3) return;
+    const three = [pool[0], pool[Math.floor(pool.length / 2)], pool[pool.length - 1]];
+    const box = document.createElement("aside");
+    box.className = "mp-recap";
+    box.setAttribute("data-no-say", "");
+    box.innerHTML = `<div class="me-next-label">خلاصة الدرس</div><h2>٣ عبارات خذها معك</h2>
+      <ul>${three.map((t) => `<li><bdi lang="en">${esc(t)}</bdi> <button type="button" class="mp-recap-say" aria-label="استمع">🔊</button></li>`).join("")}</ul>
+      <button type="button" class="btn btn-primary mp-recap-save">☆ احفظ الثلاث في عباراتي</button>`;
+    box.querySelectorAll(".mp-recap-say").forEach((b, i) => b.addEventListener("click", () => L().speak(three[i])));
+    box.querySelector(".mp-recap-save").addEventListener("click", (e) => {
+      three.forEach((t) => L().savePhrase(t));
+      e.target.textContent = "✓ حُفظت، وستراجعها في لعبة البطاقات"; e.target.disabled = true;
+      track("recap_save", PATH); ding(true);
+    });
+    const next = document.querySelector(".me-next");
+    const anchor = document.querySelector(".article-body .wrap.prose") || document.querySelector(".article-body .wrap");
+    if (next) next.insertAdjacentElement("beforebegin", box); else if (anchor) anchor.appendChild(box);
+  }
+
+  // ---- word of the week ----
+  const WORDS = [
+    ["figure out", "يكتشف / يجد حلاً", "I'll figure it out."], ["catch up", "يلحق بـ / يعوّض ما فاته", "Let's catch up this weekend."],
+    ["get used to", "يعتاد على", "I'm getting used to the new job."], ["run out of", "ينفد منه", "We ran out of time."],
+    ["look forward to", "يتطلع بشوق إلى", "I'm looking forward to it."], ["come up with", "يبتكر / يأتي بفكرة", "She came up with a great idea."],
+    ["deal with", "يتعامل مع", "I can deal with it."], ["make sense", "يكون منطقياً", "That makes sense."],
+    ["on the same page", "متفقون على الفكرة نفسها", "Are we on the same page?"], ["give it a try", "يجرّب", "Just give it a try."],
+    ["keep in mind", "يأخذ بعين الاعتبار", "Keep in mind that it's late."], ["take your time", "خذ وقتك", "Take your time, no rush."],
+  ];
+  function wordOfWeek(host) {
+    const wk = isoWeek(), idx = parseInt(wk.slice(-2), 10) % WORDS.length, [w, ar, ex] = WORDS[idx];
+    const box = document.createElement("section");
+    box.className = "mp-step mp-quest";
+    const paint = () => {
+      const days = (S().quest || {})[wk] || {}, used = Object.keys(days).length, today = !!days[L().dayKey(new Date())];
+      box.innerHTML = `<h2>💬 كلمة الأسبوع</h2>
+        <div class="mp-phrase" lang="en" dir="ltr">${esc(w)}</div><p>${esc(ar)} · <bdi lang="en">${esc(ex)}</bdi> <button type="button" class="mp-recap-say" aria-label="استمع">🔊</button></p>
+        <p>المهمة: استعملها في جملة عن حياتك (بصوت عالٍ أو كتابة) في ٣ أيام مختلفة هذا الأسبوع.</p>
+        <div class="mp-quest-dots">${[0, 1, 2].map((i) => `<i class="${i < used ? "on" : ""}"></i>`).join("")}</div>
+        <button type="button" class="btn ${today ? "btn-ghost" : "btn-primary"}" id="mpQuestBtn"${today ? " disabled" : ""}>${today ? "✓ استعملتها اليوم" : "استعملتها اليوم"}</button>`;
+      box.querySelector(".mp-recap-say").addEventListener("click", () => L().speak(ex));
+      box.querySelector("#mpQuestBtn").addEventListener("click", () => {
+        if (!L().questDay(wk, L().dayKey(new Date()))) return;
+        ding(true);
+        if (Object.keys(S().quest[wk]).length === 3) track("quest_done", wk);
+        paint(); checkBadges();
+      });
+    };
+    paint();
+    host.appendChild(box);
   }
 
   // ---- 1. streak chip in the header ----
@@ -114,7 +275,14 @@
         <div class="mp-path-top"><b>${done ? `أنهيت ${AR(pct)}٪ من ${m[1] === "plans" ? "قائمتك" : "هذا المسار"}` : `${AR(items.length)} درساً في ${m[1] === "plans" ? "قائمتك" : "هذا المسار"}`}</b>
         <span>${!done ? "ابدأ بالدرس الأول، ويحفظ الموقع تقدّمك" : left === 0 ? "🏆 أنهيته كاملاً!" : left <= 3 ? `🏁 بقي ${AR(left)} ${left === 1 ? "درس واحد" : "دروس"} فقط!` : `${AR(done)} من ${AR(items.length)} · بقي ${AR(left)}`}</span></div>
         <div class="mp-bar"><span style="width:${Math.max(pct, done ? 3 : 0)}%"></span></div>
+        ${left === 0 ? `<button type="button" class="btn btn-primary mp-path-share">🏆 احصل على بطاقة إنجازك</button>` : ""}
       </div></div>`;
+      const ps = box.querySelector(".mp-path-share");
+      if (ps) ps.addEventListener("click", () => {
+        const title = ((document.querySelector("main h1") || {}).textContent || "").split(":")[0].trim().slice(0, 40);
+        const date = new Intl.DateTimeFormat("ar", { day: "numeric", month: "long", year: "numeric" }).format(new Date());
+        learnerName().then((nm) => shareCard("🏆", `أنهيت ${title}`, date, nm));
+      });
       if (!left && L().setFlag("badges", "path_done")) { track("badge", "path_done"); celebrate("🏆 أنهيت مساراً كاملاً!", "شارة جديدة في صفحة «حسابي»"); }
     };
     paint();
@@ -141,6 +309,8 @@
       return !!(prev && s.level && LEVELS.indexOf(s.level.level) > LEVELS.indexOf(prev.level));
     }],
     ["challenge", "🤝", "تحدي الشهر", "انضممت لتحدي الشهر", (s) => Object.keys(s.challenge || {}).length > 0],
+    ["word_week", "💬", "كلمة الأسبوع", "استعملت كلمة الأسبوع ٣ أيام", (s) => Object.values(s.quest || {}).some((d) => Object.keys(d || {}).length >= 3)],
+    ["goal_week", "🎯", "هدف الأسبوع", "حققت هدفك الأسبوعي", () => weekProgress().reached],
   ];
   function facts() {
     const s = S();
@@ -225,7 +395,7 @@
       host.querySelector(".mp-card-say").addEventListener("click", () => L().speak(p.en));
       host.querySelectorAll("[data-k]").forEach((b) => b.addEventListener("click", () => {
         const knew = b.dataset.k === "1";
-        if (knew) knewCount++;
+        if (knew) { knewCount++; ding(false); }
         L().reviewPhrase(p.en, knew);
         i++;
         show();
@@ -247,12 +417,20 @@
     review.innerHTML = `<h2>🧠 راجع عباراتك</h2><div id="mpReview"></div>`;
     stats.insertAdjacentElement("afterend", review);
     stats.insertAdjacentElement("afterend", badges);
+    const goalCard = document.createElement("div");
+    goalCard.className = "ml-card";
+    goalCard.appendChild(goalBox());
+    stats.insertAdjacentElement("afterend", goalCard);
     const paintBadges = () => {
       const s = S(), got = s.badges || {}, st = L().streak();
       const n = BADGES.filter(([id]) => got[id]).length;
       badges.innerHTML = `<h2>🏅 شاراتي (${AR(n)} من ${AR(BADGES.length)})</h2>
-        <p class="mp-streak-line">🔥 سلسلتك: <b>${AR(st.n)}</b> ${days(st.n)} متتالية${st.today ? " · أنهيت اليوم ✓" : ` · <a href="daily.html">تحدي اليوم (٥ دقائق)</a>`}</p>
+        <p class="mp-streak-line">🔥 سلسلتك: <b>${AR(st.n)}</b> ${days(st.n)} متتالية${st.today ? " · أنهيت اليوم ✓" : ` · <a href="daily.html">تحدي اليوم (٥ دقائق)</a>`}${st.n >= 2 ? ` · <button type="button" class="me-link" id="mpShareStreak">📤 شارك سلسلتك</button>` : ""}</p>
+        <p class="mp-sound"><label><input type="checkbox" id="mpSound"${soundOn() ? " checked" : ""}> 🔔 صوت عند الإجابة الصحيحة</label></p>
         <div class="mp-badges">${BADGES.map(([id, icon, name, how]) => `<div class="mp-badge${got[id] ? " got" : ""}" title="${esc(how)}"><span>${icon}</span><b>${esc(name)}</b><small>${esc(how)}</small></div>`).join("")}</div>`;
+      const sh = badges.querySelector("#mpShareStreak");
+      if (sh) sh.addEventListener("click", () => learnerName().then((nm) => shareCard(`🔥 ${AR(st.n)}`, `${AR(st.n)} ${days(st.n)} متتالية من الإنجليزية`, `و${AR(n)} شارات على أتقن الإنجليزية`, nm.split(/\s+/)[0])));
+      badges.querySelector("#mpSound").addEventListener("change", (e) => { try { localStorage.setItem("me_sound", e.target.checked ? "1" : "0"); } catch (x) {} ding(true); });
     };
     paintBadges();
     document.addEventListener("me:progress", paintBadges);
@@ -285,7 +463,11 @@
         <div class="mp-choices">${choices.map((c) => `<button type="button" class="mp-choice" data-ok="${c === ar ? 1 : 0}">${esc(c)}</button>`).join("")}</div>
         <div class="mp-quiz-result" id="mpQuizResult" role="status"></div></section>
       <section class="mp-step" data-step="review"><h2>٤. راجع عباراتك</h2><div id="mpDailyReview"></div></section>
-      <div class="mp-finish" id="mpFinish" hidden></div>`;
+      <div class="mp-finish" id="mpFinish" hidden></div>
+      <div id="mpDailyExtra"></div>`;
+    const extra = host.querySelector("#mpDailyExtra");
+    extra.appendChild(goalBox());
+    wordOfWeek(extra);
     const mark = (k) => {
       if (done[k]) return;
       done[k] = true;
@@ -323,7 +505,7 @@
       const ok = b.dataset.ok === "1";
       b.classList.add(ok ? "ok" : "no");
       host.querySelector("#mpQuizResult").textContent = ok ? "✓ صحيح!" : "ليست هذه. جرّب مرة أخرى.";
-      if (ok) { host.querySelectorAll(".mp-choice").forEach((x) => (x.disabled = true)); mark("quiz"); }
+      if (ok) { ding(true); host.querySelectorAll(".mp-choice").forEach((x) => (x.disabled = true)); mark("quiz"); }
     }));
     reviewGame(host.querySelector("#mpDailyReview"), 5, () => mark("review"));
     function finish() {
@@ -335,7 +517,8 @@
       const f = host.querySelector("#mpFinish");
       f.hidden = false;
       f.innerHTML = `<h2>🔥 أنهيت تحدي اليوم!</h2><p>سلسلتك الآن <b>${AR(s2.n)}</b> ${days(s2.n)} متتالية. تعال غداً لعبارة جديدة.</p>
-        <p><a class="btn btn-primary" href="${ROOT}my-learning.html">شاراتي وتقدّمي</a> <a class="btn btn-ghost" href="${ROOT}challenge.html">تحدي الشهر</a></p>`;
+        <p><button type="button" class="btn btn-primary" id="mpShare">📤 شارك إنجازك</button> <a class="btn btn-ghost" href="${ROOT}my-learning.html">شاراتي وتقدّمي</a> <a class="btn btn-ghost" href="${ROOT}challenge.html">تحدي الشهر</a></p>`;
+      f.querySelector("#mpShare").addEventListener("click", () => learnerName().then((nm) => shareCard(`🔥 ${AR(s2.n)}`, `${AR(s2.n)} ${days(s2.n)} متتالية من الإنجليزية`, "تحدي ٥ دقائق كل يوم مع نور", nm.split(/\s+/)[0])));
       celebrate("🔥 أنهيت تحدي اليوم!", `${AR(s2.n)} ${days(s2.n)} متتالية`);
       setTimeout(checkBadges, 4500);
     }
@@ -376,6 +559,7 @@
     myLearning();
     daily();
     challenge();
+    recap();
     setTimeout(checkBadges, 1500);
     let t = null;
     document.addEventListener("me:progress", () => { clearTimeout(t); t = setTimeout(checkBadges, 800); });
