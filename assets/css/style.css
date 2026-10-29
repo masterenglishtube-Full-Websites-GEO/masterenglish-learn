@@ -1411,3 +1411,8 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .mo-assure { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; margin: 12px 0 0; font-size: 13.5px; color: var(--ink-soft); }
 .mo-assure small { flex-basis: 100%; text-align: center; font-size: 12.5px; }
 .mo-yours { display: inline-block; background: #eef7f2; color: #145a43; border-radius: 999px; padding: 4px 14px; font-weight: 700; font-size: 14px; margin: 6px 0 0; }
+
+/* Stripe's embedded checkout needs the width: slim padding once it is open (checkout.js) */
+.article-cta.checkout-open { padding: 22px 14px; }
+.article-cta.checkout-open #checkoutMount { width: 100%; margin: 16px auto 0; }
+@media (max-width: 640px) { .article-cta.checkout-open { padding: 16px 6px; border-radius: 16px; } }

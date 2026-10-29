@@ -50,6 +50,10 @@
         const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.client_secret });
 
         step1.style.display = "none";
+        // Phones: the green box's side padding left Stripe's form too narrow, so it was cut off
+        // on the right (2026-10-29). The open box gets slim padding (style.css .checkout-open).
+        block.classList.add("checkout-open");
+        mount.dir = "ltr";
         mount.style.display = "block";
         checkout.mount(mount);
       } catch (e) {
