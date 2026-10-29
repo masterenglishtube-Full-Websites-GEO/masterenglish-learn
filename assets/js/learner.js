@@ -66,9 +66,10 @@
   function load() {
     try { return JSON.parse(store.get(KEY)) || {}; } catch (e) { return {}; }
   }
-  let state = Object.assign({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null, daily: {} }, load());
-  if (!state.watched) state.watched = {};
-  if (!state.daily) state.daily = {};
+  const EMPTY = () => ({ read: {}, watched: {}, quizzes: {}, phrases: [], level: null, last: null, daily: {}, speak: {}, review: {}, badges: {}, levels: [], challenge: {}, rest: {} });
+  let state = Object.assign(EMPTY(), load());
+  function fill() { const e = EMPTY(); for (const k of Object.keys(e)) if (state[k] == null) state[k] = e[k]; }
+  fill();
 
   function markWatched(id) {
     state.watched[id] = Date.now();
@@ -79,6 +80,7 @@
 
   function save() {
     store.set(KEY, JSON.stringify(state));
+    document.dispatchEvent(new CustomEvent("me:progress"));
     const token = store.get(TOKEN_KEY);
     if (!token) return;
     clearTimeout(syncTimer);
@@ -89,7 +91,7 @@
         body: JSON.stringify({ progress: state }),
         keepalive: true,
       }).then((r) => r.ok ? r.json() : null).then((d) => {
-        if (d && d.progress) { state = d.progress; store.set(KEY, JSON.stringify(state)); }
+        if (d && d.progress) { state = d.progress; fill(); store.set(KEY, JSON.stringify(state)); }
       }).catch(() => {});
     }, 1500);
   }
@@ -115,6 +117,7 @@
       track("quiz_done", key + ":" + score + "/" + total);
     },
     setLevel(level, score, extra) {
+      if (state.level && state.level.level) state.levels = (state.levels || []).filter((l) => l.ts !== state.level.ts).concat([{ level: state.level.level, score: state.level.score, ts: state.level.ts }]).slice(-20);
       state.level = Object.assign({ level, score, ts: Date.now() }, extra || {}); // extra: learner type + list id
       save();
       track("placement_done", level);
@@ -128,11 +131,52 @@
     },
     // "Today's 10 minutes" finished (personal.js): one mark per local day, for the streak.
     markDaily() {
-      const d = new Date(), key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      const key = dayKey(new Date());
       if (state.daily[key]) return;
       state.daily[key] = 1;
       save();
       track("daily_done", key);
+    },
+    // Speaking practice (speak.html, daily.html): keeps the best score per item; returns it with the old best.
+    recordSpeak(key, score) {
+      const prev = state.speak[key] || 0;
+      if (score > prev) { state.speak[key] = score; save(); }
+      return { best: Math.max(prev, score), prev };
+    },
+    // Phrase review (play.js flashcards): Leitner boxes 0-5, next review after 1, 2, 4, 8, 16 days.
+    reviewPhrase(en, knew) {
+      const cur = state.review[en] || { box: 0 };
+      const box = knew ? Math.min(5, cur.box + 1) : 0;
+      state.review[en] = { box, due: Date.now() + [0, 1, 2, 4, 8, 16][box] * 86400000, ts: Date.now() };
+      save();
+    },
+    setFlag(field, key, value) { state[field] = state[field] || {}; if (state[field][key]) return false; state[field][key] = value || Date.now(); save(); return true; },
+    // Days with any learning, and the streak. One missed day per 7 is a free rest day, so a busy
+    // day doesn't break a long streak (the rest days used are saved, the weekly email reads them).
+    activeDays() {
+      const days = new Set(Object.keys(state.daily || {}));
+      const add = (ts) => { if (ts) days.add(dayKey(new Date(+ts))); };
+      Object.values(state.read || {}).forEach(add);
+      Object.values(state.watched || {}).forEach(add);
+      Object.values(state.quizzes || {}).forEach((q) => add(q && q.ts));
+      return days;
+    },
+    streak() {
+      const days = api.activeDays(), rest = state.rest || {};
+      const d = new Date(), today = days.has(dayKey(d));
+      if (!today) d.setDate(d.getDate() - 1);
+      let n = 0, lastRest = -99, newRest = null;
+      for (let i = 0; i < 1000; i++) {
+        const k = dayKey(d);
+        if (days.has(k)) n++;
+        else if (rest[k] || (n > 0 && i - lastRest >= 7 && days.has(dayKey(new Date(d.getTime() - 86400000))))) {
+          lastRest = i;
+          if (!rest[k]) newRest = k;
+        } else break;
+        d.setDate(d.getDate() - 1);
+      }
+      if (newRest) { state.rest[newRest] = 1; store.set(KEY, JSON.stringify(state)); }
+      return { n, today, rested: !!newRest || Object.keys(rest).length > 0 };
     },
     removePhrase(en) {
       state.phrases = state.phrases.filter((p) => p.en !== en);
@@ -141,10 +185,11 @@
     track,
     speak,
   };
+  function dayKey(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
   window.MELearner = api;
 
-  // Article read = 60% scrolled after at least 25 seconds on the page.
-  const isArticle = /\/articles\/(?!index)[^/]+\.html$/.test(location.pathname);
+  // Article, lesson or guide read = 60% scrolled after at least 25 seconds on the page.
+  const isArticle = /\/(articles|lessons|guides)\/(?!index)[^/]+\.html$/.test(location.pathname);
   const pageTitle = (document.querySelector("h1") || {}).textContent || document.title;
   if (isArticle || /\/(products|paths|topics|lessons|guides)\//.test(location.pathname)) {
     state.last = { path: location.pathname, title: pageTitle.trim().slice(0, 160), ts: Date.now() };
@@ -276,12 +321,16 @@
     });
   }
 
-  // personal.js (phone tab bar, next step, homepage greeting) comes with every page that has this file.
+  // personal.js (phone tab bar, next step, homepage greeting) and play.js (streak, badges, progress,
+  // phrase review) come with every page that has this file.
   function loadPersonal() {
-    if (!SELF || document.querySelector('script[src*="personal.js"]')) return;
-    const s = document.createElement("script");
-    s.src = SELF.replace("learner.js", "personal.js");
-    document.body.appendChild(s);
+    for (const name of ["personal.js", "play.js"]) {
+      if (!SELF || document.querySelector(`script[src*="${name}"]`)) continue;
+      const s = document.createElement("script");
+      s.src = SELF.replace("learner.js", name);
+      s.async = false; // keep the order: play.js uses the tab bar personal.js builds
+      document.body.appendChild(s);
+    }
   }
 
   // One floating help button instead of several (help-hub.js), on pages that have the widgets.

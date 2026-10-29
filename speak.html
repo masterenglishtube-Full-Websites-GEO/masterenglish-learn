@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2026102801">
+<link rel="stylesheet" href="assets/css/style.css?v=2026102902">
 <style>
 .sp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
 .sp-chips button { border: 1px solid var(--border); background: var(--paper); border-radius: 999px; padding: 8px 16px; font: inherit; font-weight: 700; cursor: pointer; color: var(--ink); }
@@ -166,7 +166,12 @@
   let set = SETS[0], i = 0, tries = 0, wins = 0, listening = false, rec = null;
 
   function chips() {
-    $("spChips").innerHTML = SETS.map((s) => `<button type="button" role="tab" data-id="${s.id}" aria-pressed="${s === set}">${esc(s.title)}</button>`).join("");
+    // Beat your score (2026-10-29): each sound shows how many of its items you have said right.
+    const best = (window.MELearner && window.MELearner.get().speak) || {};
+    $("spChips").innerHTML = SETS.map((s) => {
+      const got = s.items.filter((it) => (best[s.id + ":" + it.say] || 0) >= 80).length;
+      return `<button type="button" role="tab" data-id="${s.id}" aria-pressed="${s === set}">${esc(s.title)}${got ? ` <small>${AR(got)}/${AR(s.items.length)}</small>` : ""}</button>`;
+    }).join("");
     $("spChips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { set = SETS.find((s) => s.id === b.dataset.id); i = 0; chips(); show(); }));
   }
   function show() {
@@ -191,6 +196,10 @@
       html = `<div class="${ok ? "ok" : "no"}">${ok ? "ممتاز! وصلت الجملة بوضوح" : "قريب! بعض الكلمات لم تصل بوضوح"} (${AR(pct)}٪)</div>`
         + `<div class="sp-words">${target.map((w) => `<span class="${said.has(w) ? "hit" : "miss"}">${esc(w)}</span>`).join("")}</div>`;
       track("speak_score", set.id + ":sentence:" + pct);
+      if (window.MELearner) {
+        const r = window.MELearner.recordSpeak(set.id + ":" + it.say, pct);
+        html += r.prev && pct > r.prev ? '<div class="ok">🎉 رقم قياسي جديد! (كان ' + AR(r.prev) + '٪)</div>' : r.prev ? '<div class="sp-heard">أفضل نتيجة لك: ' + AR(r.best) + '٪. حاول أن تتخطاها!</div>' : "";
+      }
     } else {
       const t = it.say.toLowerCase(), n = (it.not || "").toLowerCase();
       const hasT = alts.some((a) => words(a).includes(t)), hasN = n && alts.some((a) => words(a).includes(n));
@@ -201,6 +210,7 @@
       track("speak_score", set.id + ":" + it.say + ":" + (ok ? 1 : 0));
     }
     if (ok) wins++;
+    if (!it.sentence && window.MELearner) { window.MELearner.recordSpeak(set.id + ":" + it.say, ok ? 100 : 0); if (ok) chips(); }
     $("spResult").innerHTML = html + (heard ? `<div class="sp-heard">heard: “${esc(heard)}”</div>` : "");
     $("spScore").textContent = `${AR(i + 1)} / ${AR(set.items.length)} · نجحت في ${AR(wins)} من ${AR(tries)}`;
   }
@@ -308,11 +318,11 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2026102801"></script>
-<script src="assets/js/track.js?v=2026102801"></script>
-<script src="assets/js/learner.js?v=2026102801"></script>
-<script src="assets/js/auth.js?v=2026102801"></script>
-<script src="assets/js/contact-widget.js?v=2026102801"></script>
-<script src="assets/js/help-bot.js?v=2026102801"></script>
+<script src="assets/js/main.js?v=2026102902"></script>
+<script src="assets/js/track.js?v=2026102902"></script>
+<script src="assets/js/learner.js?v=2026102902"></script>
+<script src="assets/js/auth.js?v=2026102902"></script>
+<script src="assets/js/contact-widget.js?v=2026102902"></script>
+<script src="assets/js/help-bot.js?v=2026102902"></script>
 </body>
 </html>

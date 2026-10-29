@@ -36,6 +36,7 @@
   // ---- streak: consecutive days with any learning (read, watched, quiz, daily practice) ----
   function dayKey(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
   function streak() {
+    if (window.MELearner && window.MELearner.streak) return window.MELearner.streak(); // with the weekly rest day
     const s = state(), days = new Set(Object.keys(s.daily || {}));
     const add = (ts) => { if (ts) days.add(dayKey(new Date(+ts))); };
     Object.values(s.read || {}).forEach(add);
@@ -55,15 +56,16 @@
     if (nextCache) return nextCache;
     nextCache = fetch(info.listUrl).then((r) => r.text()).then((html) => {
       const doc = new DOMParser().parseFromString(html, "text/html"), s = state();
-      const items = doc.querySelectorAll("[data-stage] [data-article], [data-stage] [data-video]");
+      const items = [...doc.querySelectorAll("[data-stage] [data-article], [data-stage] [data-video]")];
+      const isDone = (a) => a.dataset.article
+        ? Object.keys(s.read || {}).some((p) => p.endsWith("/articles/" + a.dataset.article + ".html"))
+        : !!(s.watched || {})[a.dataset.video];
+      const left = items.filter((a) => !isDone(a)).length;
       for (const a of items) {
-        const done = a.dataset.article
-          ? Object.keys(s.read || {}).some((p) => p.endsWith("/articles/" + a.dataset.article + ".html"))
-          : !!(s.watched || {})[a.dataset.video];
-        if (done) continue;
+        if (isDone(a)) continue;
         const title = (a.querySelector("h3, .lib-title, strong") || a).textContent.trim().replace(/\s+/g, " ").slice(0, 120);
         const href = new URL(a.getAttribute("href"), info.listUrl).href;
-        return { title, href, video: a.dataset.video || null };
+        return { title, href, video: a.dataset.video || null, left, total: items.length };
       }
       return null;
     }).catch(() => null);
@@ -111,7 +113,8 @@
         <div class="me-next-actions"><a class="btn btn-primary" href="${info.listUrl}" data-next="list">افتح قائمتك</a></div>`;
       nextInList(info).then((n) => {
         const p = box.querySelector(".me-next-item");
-        if (n) p.innerHTML = `درسك التالي: <a href="${esc(n.href)}" data-next="lesson">${esc(n.title)}</a>`;
+        if (n) p.innerHTML = `درسك التالي: <a href="${esc(n.href)}" data-next="lesson">${esc(n.title)}</a>`
+          + `<span class="me-next-left">${n.left <= 3 ? `🏁 بقي ${AR(n.left)} ${n.left === 1 ? "درس واحد" : "دروس"} فقط لتنهي قائمتك!` : `أنهيت ${AR(n.total - n.left)} من ${AR(n.total)} درساً في قائمتك`}</span>`;
         else p.textContent = "أنهيت كل دروس قائمتك! حان وقت اختبار جديد لترى تقدّمك.";
       });
     } else {
@@ -172,6 +175,7 @@
       <div class="me-home-actions">
         <button type="button" class="btn btn-primary me-done-today"${st.today && (state().daily || {})[dayKey(new Date())] ? " disabled" : ""}>${(state().daily || {})[dayKey(new Date())] ? "أنهيت تمرين اليوم ✓" : "أنهيت تمرين اليوم"}</button>
         ${info ? `<a class="btn btn-ghost" href="${info.listUrl}" data-home="list">افتح ${esc(info.listTitle)}</a>` : ""}
+        <a class="btn btn-ghost" href="${ROOT}daily.html" data-home="daily">🔥 تحدي ٥ دقائق</a>
       </div>
     </div></div>`;
     const hero = document.querySelector("main .hero, .hero");
