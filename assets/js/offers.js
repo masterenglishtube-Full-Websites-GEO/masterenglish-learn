@@ -4,6 +4,7 @@
 //     a calm preview of what the full course adds (🔒), stronger once the list is finished
 //  2. courses.html and my-learning.html: "suggested for you" with the reason from the test
 //  3. Product pages: reassurance under the buy button, and "your test suggested this course"
+//  4. Product pages: buy shortcuts (hero, a third and two thirds down, a bar fixed at the bottom)
 // Never shows a course the learner already owns (signed-in learners: /learner/courses).
 // The suggestion: the course the placement test recommended, else the path's topic, else the
 // learner type's usual course.
@@ -156,7 +157,65 @@
     }
   }
 
+  // ---- 4. buy shortcuts on product pages (Noor, 2026-10-29: "the buy button is way down") ----
+  // A button in the hero, one about a third and two thirds down the page, and a slim bar fixed at
+  // the bottom of the screen while the payment box is out of view. Each one scrolls to the payment
+  // box and puts the cursor in the email field.
+  function buyShortcuts() {
+    const m = PATH.match(/^\/products\/([\w-]+)\.html$/);
+    const block = document.querySelector("[data-price-slug]");
+    if (!m || !block) return;
+    const c = COURSES[m[1]];
+    const price = c ? `${c.price}$` : ((block.querySelector(".price-line") || {}).textContent || "").trim();
+    const name = c ? c.name : ((document.querySelector("main h1") || {}).textContent || "").split(":")[0];
+    const go = (where) => {
+      track("offer_click", "buy_shortcut:" + where + ":" + m[1]);
+      block.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => { const e = block.querySelector("#checkoutEmail"); if (e && e.offsetParent) e.focus({ preventScroll: true }); }, 700);
+    };
+    const hero = document.querySelector("main .article-hero .wrap");
+    if (hero) {
+      const h = document.createElement("div");
+      h.className = "mo-hero-buy";
+      h.innerHTML = `<button type="button" class="btn btn-primary">ابدأ الآن · ${esc(price)}</button><span>دفعة واحدة · وصول فوري مدى الحياة</span>`;
+      h.querySelector("button").addEventListener("click", () => go("hero"));
+      hero.appendChild(h);
+    }
+    const heads = [...document.querySelectorAll("main .article-body h2")].filter((h) => !block.contains(h) && h.compareDocumentPosition(block) & Node.DOCUMENT_POSITION_FOLLOWING);
+    const spots = heads.length >= 4 ? [Math.round(heads.length * 0.33), Math.round(heads.length * 0.66)] : heads.length >= 2 ? [Math.round(heads.length / 2)] : [];
+    [...new Set(spots)].forEach((i, k) => {
+      const at = heads[i];
+      if (!at) return;
+      const box = document.createElement("div");
+      box.className = "mo-mid-buy";
+      box.innerHTML = `<div><b>${k ? "مقتنع؟ ابدأ اليوم" : "جاهز تبدأ؟"}</b><span>«${esc(name)}» · ${esc(price)} مرة واحدة</span></div><button type="button" class="btn btn-primary">ابدأ الآن</button>`;
+      box.querySelector("button").addEventListener("click", () => go(k ? "mid2" : "mid1"));
+      at.insertAdjacentElement("beforebegin", box);
+    });
+    const bar = document.createElement("div");
+    bar.className = "mo-sticky-buy";
+    bar.innerHTML = `<div><b>${esc(name)}</b><span>${esc(price)} · دفعة واحدة · وصول مدى الحياة</span></div><button type="button" class="btn btn-primary">ابدأ الآن</button>`;
+    bar.querySelector("button").addEventListener("click", () => go("sticky"));
+    document.body.appendChild(bar);
+    document.body.classList.add("has-sticky-buy");
+    // Shown once the hero has scrolled away, hidden while the payment box itself is on screen.
+    const heroEl = document.querySelector("main .article-hero");
+    const paint = () => {
+      const r = block.getBoundingClientRect(), vh = window.innerHeight;
+      const blockSeen = r.top < vh && r.bottom > 0;
+      const pastHero = !heroEl || heroEl.getBoundingClientRect().bottom < 0;
+      bar.classList.toggle("show", pastHero && !blockSeen);
+      document.body.classList.toggle("sticky-buy-on", pastHero && !blockSeen); // lifts the help button above the bar
+    };
+    let ticking = false;
+    // Capture phase: catches the page scrolling whichever element scrolls (window, html or body).
+    document.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; paint(); }); } }, { passive: true, capture: true });
+    window.addEventListener("resize", paint);
+    paint();
+  }
+
   function init() {
+    buyShortcuts();
     productPage();
     owned().then((have) => { pathPages(have); suggested(have); });
   }

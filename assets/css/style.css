@@ -1416,3 +1416,23 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .article-cta.checkout-open { padding: 22px 14px; }
 .article-cta.checkout-open #checkoutMount { width: 100%; margin: 16px auto 0; }
 @media (max-width: 640px) { .article-cta.checkout-open { padding: 16px 6px; border-radius: 16px; } }
+
+/* ---------- buy shortcuts on product pages (offers.js, 2026-10-29) ---------- */
+.mo-hero-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 18px; }
+.mo-hero-buy .btn { font-size: 17px; padding: 13px 28px; }
+.mo-hero-buy span { color: rgba(255,255,255,.85); font-size: 14px; }
+.mo-mid-buy { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin: 30px 0; padding: 16px 18px;
+  border-radius: var(--radius-sm); background: #fff7e6; border: 1px solid #f4b82e; }
+.mo-mid-buy b { display: block; font-size: 17px; }
+.mo-mid-buy span { color: var(--ink-soft); font-size: 14px; }
+.mo-sticky-buy { position: fixed; inset-inline: 0; bottom: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 16px; background: #0c3a2c; color: #fff; box-shadow: 0 -6px 24px rgba(0,0,0,.18); transform: translateY(110%); transition: transform .3s ease; }
+.mo-sticky-buy.show { transform: none; }
+.mo-sticky-buy b { display: block; font-size: 15px; }
+.mo-sticky-buy span { display: block; font-size: 12.5px; color: #cfe3da; }
+.mo-sticky-buy .btn { flex: 0 0 auto; padding: 10px 22px; }
+.has-tabbar .mo-sticky-buy { bottom: 64px; }
+@media (min-width: 900px) { .mo-sticky-buy { inset-inline: auto 24px; bottom: 24px; max-width: 460px; border-radius: 16px; } }
+.sticky-buy-on.has-tabbar #meHelpHub { bottom: 136px !important; }
+#meHelpHub { transition: bottom .3s ease; }
+@media (min-width: 900px) { .sticky-buy-on #meHelpHub { bottom: 120px !important; } }
