@@ -1442,3 +1442,8 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .site-header-slim .hdr-back:hover { color: var(--accent-dark); border-color: var(--accent); }
 .sticky-buy-on:not(.has-tabbar) #meHelpHub { bottom: 84px !important; }
 @media (max-width: 640px) { .site-header-slim .hdr-back { display: none; } }
+
+/* Course trailer on product pages (2026-10-29) */
+.course-trailer { margin: 0 0 28px; }
+.course-trailer video { display: block; width: 100%; height: auto; border-radius: 18px; background: #0c3a2c; box-shadow: var(--shadow); }
+.course-trailer figcaption { text-align: center; font-size: 14px; color: var(--ink-soft); margin-top: 8px; }

@@ -214,7 +214,17 @@
     paint();
   }
 
+  // Course trailer plays (product pages): one event per visit, to compare plays with checkouts.
+  function trailerTracking() {
+    const v = document.getElementById("courseTrailer");
+    if (!v) return;
+    let sent = false, done = false;
+    v.addEventListener("play", () => { if (!sent) { sent = true; track("video_play", "trailer:" + PATH); } });
+    v.addEventListener("ended", () => { if (!done) { done = true; track("video_play", "trailer_end:" + PATH); } });
+  }
+
   function init() {
+    trailerTracking();
     buyShortcuts();
     productPage();
     owned().then((have) => { pathPages(have); suggested(have); });
