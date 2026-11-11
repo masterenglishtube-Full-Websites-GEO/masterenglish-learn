@@ -170,6 +170,7 @@
     const name = c ? c.name : ((document.querySelector("main h1") || {}).textContent || "").split(":")[0];
     const go = (where) => {
       track("offer_click", "buy_shortcut:" + where + ":" + m[1]);
+      document.dispatchEvent(new Event("me:buy")); // checkout.js starts building Stripe's form now
       block.scrollIntoView({ behavior: "smooth", block: "center" });
       setTimeout(() => { const e = block.querySelector("#checkoutEmail"); if (e && e.offsetParent) e.focus({ preventScroll: true }); }, 700);
     };

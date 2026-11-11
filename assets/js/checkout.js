@@ -1,4 +1,4 @@
-// Embedded Stripe Checkout with an email-capture step first.
+// Embedded Stripe Checkout, built before the visitor reaches the payment box (email step only as a fallback).
 // Looks for a container with [data-price-slug], containing:
 //   #checkoutStep1 (email input + start button) and #checkoutMount (embed target).
 (function () {
@@ -18,6 +18,52 @@
 
     if (!step1 || !mount || !emailInput || !startBtn) return;
 
+    const siteRoot = location.href.replace(/products\/[^/]*$/, "").replace(/[?#].*$/, "");
+    let refCode = null;
+    try { refCode = localStorage.getItem("me_ref_code"); } catch (e) {}
+
+    // Asks our server for a Stripe session and mounts Stripe's form in the page.
+    // email is optional: without it, Stripe's own form asks for it.
+    let opening = null;
+    function open(email) {
+      if (opening) return opening;
+      const stripeReady = loadStripeJs();
+      return (opening = (async () => {
+        const res = await fetch(API + "/checkout/create", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug, email: email || undefined, origin: siteRoot, ref_code: refCode || undefined }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.client_secret) throw new Error(data.error || "checkout_failed");
+        await stripeReady;
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+        const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.client_secret });
+        step1.style.display = "none";
+        // Phones: the green box's side padding left Stripe's form too narrow, so it was cut off
+        // on the right (2026-10-29). The open box gets slim padding (style.css .checkout-open).
+        block.classList.add("checkout-open");
+        mount.dir = "ltr";
+        mount.style.display = "block";
+        checkout.mount(mount);
+      })().catch((e) => { opening = null; throw e; }));
+    }
+
+    // Noor, 2026-11-11: the form should be there already, not a grey loading screen after a click.
+    // Stripe needs 2 to 4 seconds to build its form, so it is built before the visitor reaches the
+    // box: when the box is about two screens away, or at once when a buy shortcut is pressed.
+    // Stripe's form asks for the email itself. If this fails, the email step below stays as before.
+    const early = () => open().catch(() => {});
+    document.addEventListener("me:buy", early);
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io.disconnect(); early(); }
+      }, { rootMargin: "200% 0px" });
+      io.observe(block);
+    } else {
+      early();
+    }
+
     startBtn.addEventListener("click", async () => {
       const email = emailInput.value.trim();
       errorEl.textContent = "";
@@ -29,35 +75,8 @@
 
       startBtn.disabled = true;
       startBtn.textContent = "جارِ التحضير...";
-      // Stripe's script downloads at the same time as our server call, not after it (2026-11-11).
-      const stripeReady = loadStripeJs();
-
-      const siteRoot = location.href.replace(/products\/[^/]*$/, "");
-      let refCode = null;
-      try { refCode = localStorage.getItem("me_ref_code"); } catch (e) {}
-
       try {
-        const res = await fetch(API + "/checkout/create", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slug, email, origin: siteRoot, ref_code: refCode || undefined }),
-        });
-        const data = await res.json();
-        if (!res.ok || !data.client_secret) {
-          throw new Error(data.error || "checkout_failed");
-        }
-
-        await stripeReady;
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-        const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.client_secret });
-
-        step1.style.display = "none";
-        // Phones: the green box's side padding left Stripe's form too narrow, so it was cut off
-        // on the right (2026-10-29). The open box gets slim padding (style.css .checkout-open).
-        block.classList.add("checkout-open");
-        mount.dir = "ltr";
-        mount.style.display = "block";
-        checkout.mount(mount);
+        await open(email);
       } catch (e) {
         errorEl.textContent = "حدث خطأ أثناء تحضير الدفع. حاول مرة أخرى أو راسلنا على noor@masterenglish.me";
         startBtn.disabled = false;
