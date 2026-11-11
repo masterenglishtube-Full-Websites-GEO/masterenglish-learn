@@ -29,6 +29,8 @@
 
       startBtn.disabled = true;
       startBtn.textContent = "جارِ التحضير...";
+      // Stripe's script downloads at the same time as our server call, not after it (2026-11-11).
+      const stripeReady = loadStripeJs();
 
       const siteRoot = location.href.replace(/products\/[^/]*$/, "");
       let refCode = null;
@@ -45,7 +47,7 @@
           throw new Error(data.error || "checkout_failed");
         }
 
-        await loadStripeJs();
+        await stripeReady;
         const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.client_secret });
 
@@ -64,14 +66,19 @@
     });
   });
 
+  let stripeJs = null;
   function loadStripeJs() {
-    return new Promise((resolve, reject) => {
+    if (stripeJs) return stripeJs;
+    return (stripeJs = new Promise((resolve, reject) => {
       if (window.Stripe) return resolve();
       const script = document.createElement("script");
       script.src = "https://js.stripe.com/v3/";
       script.onload = resolve;
-      script.onerror = reject;
+      script.onerror = () => { stripeJs = null; reject(); };
       document.head.appendChild(script);
-    });
+    }));
   }
+  // Fetch Stripe's script as soon as the page is idle, so the form opens quickly after the email.
+  const warm = () => { if (document.querySelector("[data-price-slug]")) loadStripeJs().catch(() => {}); };
+  if (window.requestIdleCallback) requestIdleCallback(warm, { timeout: 3000 }); else setTimeout(warm, 1500);
 })();
