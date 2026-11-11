@@ -29,9 +29,12 @@
       if (opening) return opening;
       const stripeReady = loadStripeJs();
       return (opening = (async () => {
+        // Signed-in visitors send their login, so the server fills in their email (2026-11-11).
+        const headers = { "Content-Type": "application/json" };
+        try { const t = localStorage.getItem("me_auth_token"); if (t) headers.Authorization = "Bearer " + t; } catch (e) {}
         const res = await fetch(API + "/checkout/create", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers,
           body: JSON.stringify({ slug, email: email || undefined, origin: siteRoot, ref_code: refCode || undefined }),
         });
         const data = await res.json();
