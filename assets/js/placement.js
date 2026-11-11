@@ -137,10 +137,19 @@
   });
   const goals = () => Object.fromEntries(gPath.filter((id) => gAns[id] !== undefined).map((id) => [id, gAns[id]]));
 
+  // Listening questions play a real recording (q.audio). The device's own text-to-speech
+  // (Arabic or robotic voices on many phones, sometimes silence) is only the fallback.
+  let player = null;
   $("ptSay").addEventListener("click", () => {
     const q = QUESTIONS[i];
-    const ok = window.MELearner && window.MELearner.speak(q.say);
-    if (!ok) { $("ptSayFallback").hidden = false; $("ptSayFallback").textContent = "(متصفحك لا يدعم الصوت، الجملة: " + q.say + ")"; }
+    const fallback = () => {
+      const ok = window.MELearner && window.MELearner.speak(q.say);
+      if (!ok) { $("ptSayFallback").hidden = false; $("ptSayFallback").textContent = "(متصفحك لا يدعم الصوت، الجملة: " + q.say + ")"; }
+    };
+    if (!q.audio) return fallback();
+    if (player) player.pause();
+    player = new Audio(q.audio);
+    player.play().catch(fallback);
   });
 
   function levelFor(s) { return s <= 5 ? "A1" : s <= 10 ? "A2" : s <= 15 ? "B1" : s <= 20 ? "B2" : "C1"; }
