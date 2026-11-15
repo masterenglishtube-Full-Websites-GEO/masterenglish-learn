@@ -52,6 +52,26 @@
   .pace-case blockquote { margin: 0; padding: 10px 12px; background: var(--paper); border-radius: 10px; font-size: 14.5px; line-height: 1.7; }
   .pace-case blockquote[lang="en"] { direction: ltr; text-align: left; }
   .pace-case .when { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+
+  .pace-why { counter-reset: why; list-style: none; padding: 0; margin: 14px 0 30px; display: grid; gap: 12px; }
+  .pace-why li { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px 14px 16px; padding-inline-start: 58px; position: relative; line-height: 1.8; }
+  .pace-why li::before { counter-increment: why; content: counter(why); position: absolute; inset-inline-start: 16px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; display: grid; place-items: center; }
+  .pace-why b { display: block; font-size: 16.5px; margin-bottom: 2px; }
+  .pace-train { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 14px 0 30px; }
+  .pace-train div { background: var(--paper); border-radius: var(--radius); padding: 14px 16px; }
+  .pace-train h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .pace-train ul { margin: 0; padding-inline-start: 20px; }
+  .pace-steps { display: grid; gap: 12px; margin: 14px 0 26px; }
+  .pace-step { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .pace-step .n { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); color: var(--accent-dark); font-weight: 800; font-size: 20px; display: grid; place-items: center; }
+  .pace-step h3 { margin: 0 0 4px; font-size: 16.5px; }
+  .pace-step p { margin: 0; line-height: 1.8; }
+  .pace-expect { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 14px 0 26px; }
+  .pace-expect > div { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .pace-expect h3 { margin: 0 0 8px; font-size: 16.5px; }
+  .pace-expect ul { margin: 0; padding-inline-start: 20px; }
+  .pace-expect li { margin-bottom: 6px; line-height: 1.75; }
+  .pace-notfor { background: var(--paper); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 30px; }
 </style>
 </head>
 <body>
@@ -119,33 +139,24 @@
       <p><strong>PACE لا يضيف مفردات. يبني طريقاً مباشراً من الفكرة إلى الإنجليزية، تحت الضغط.</strong></p>
     </section>
 
-    <h2>كيف يعمل PACE</h2>
-    <div class="pace-two">
-      <div class="pace-box">
-        <h3>لا كتب ولا محاضرات قواعد</h3>
-        <ul>
-          <li>كل جلسة مبنية على عملك أنت: وصفك الوظيفي، عقودك، إيميلاتك، عروضك، والأزمة القادمة في جدولك.</li>
-          <li>الجلسة هي المختبر، وأسبوع عملك هو الميدان.</li>
-          <li>ما يواجهك في العمل هذا الأسبوع يصبح موضوع جلستك القادمة.</li>
-        </ul>
-      </div>
-      <div class="pace-box">
-        <h3>تدريب تحت الضغط، لا في الراحة</h3>
-        <ul>
-          <li>أقاطعك في منتصف الجملة كما يفعل مدير تنفيذي مستعجل.</li>
-          <li>أستعمل الصمت المقصود لأرى إن كنت ستشرح أكثر من اللازم.</li>
-          <li>ندرّب نبرة الصوت والسرعة والوقفة، والدفاع عن قرارك دون اعتذار.</li>
-        </ul>
-      </div>
-      <div class="pace-box">
-        <h3>اللهجات الحقيقية في عملك</h3>
-        <ul>
-          <li>الكلام الأمريكي السريع والمتصل في المكالمات والاجتماعات.</li>
-          <li>زملاء ومورّدون من الصين والهند وأفريقيا، وقواعد فهم كل لهجة.</li>
-          <li>الاستماع الاستراتيجي: ما المطلوب، وما الوضع، وما الخطوة التالية.</li>
-        </ul>
-      </div>
+    <h2>لماذا PACE هو الخيار الأفضل لك؟</h2>
+    <p class="section-sub">إذا كنت تفهم الإنجليزية جيداً وتكتب تقاريرك ورسائلك بسهولة، لكنك تتردد، أو تترجم في ذهنك، أو تلتزم الصمت في الاجتماعات السريعة والمواقف المفاجئة، فأنت لا تحتاج إلى دورة لغة إنجليزية تقليدية. PACE مصمم للمدراء والخبراء الذين يملكون الكفاءة في عملهم، ويريدون أن يعكس حديثهم بالإنجليزية القوة والوضوح نفسيهما.</p>
+    <ol class="pace-why">
+      <li><b>ليس دورة قواعد ولا كتباً مدرسية</b>لا نضيع وقتك في حفظ مفردات عامة أو تمارين أكاديمية. نركز مباشرة على كسر الترجمة الذهنية من العربية إلى الإنجليزية، لتخرج أفكارك بوضوح وثقة في اللحظة نفسها.</li>
+      <li><b>مبني بالكامل على واقع عملك</b>لا أمثلة وهمية. كل جلسة مصممة على اجتماعاتك الفعلية، وعروضك التقديمية، ومفاوضاتك، وعملائك، واللكنات التي تتعامل معها يومياً.</li>
+      <li><b>تدريب عملي تحت الضغط الحقيقي</b>نحاكي المواقف الصعبة التي تواجهها فعلاً، ونتدرب على أدوات عملية واضحة تمنحك السيطرة والهدوء في الغرفة.</li>
+      <li><b>حلقة التطبيق بين الجلسة والعمل</b>جلستان كل أسبوع. بين الجلستين تطبّق ما تدربنا عليه في اجتماعاتك الحقيقية، ثم تخبرني ماذا نجح، وماذا كان صعباً، وماذا ينقصك، فتُبنى الجلسة التالية على ما تحتاجه بالضبط. وإذا جاءك اجتماع مهم ومفاجئ بين الجلستين، أحاول أن أكون معك برسالة قصيرة تساعدك أن تركّز على نقطتك.</li>
+      <li><b>سري تماماً ومجرَّب مع قياديين بمستواك</b>كل الجلسات فردية وسرية بالكامل. وقد جرّبه قياديون في مجالات حساسة، منهم: دكتور مقيم في بريطانيا يدرّب وزراء وأمراء في دول الخليج، ومدير ميزانية في شركة دولية متعددة الجنسيات، ومسؤولة برامج وشراكات في منظمة إنسانية دولية، ومتخصصة عمليات في بنك إسلامي دولي، ومهندسة أنظمة اتصالات تتعامل مع مورّدين دوليين.</li>
+    </ol>
+
+    <h2>ما ندرّبك عليه</h2>
+    <p class="section-sub">المواقف التي تتجنبها الدورات العادية، هي بالضبط ما نتدرب عليه.</p>
+    <div class="pace-train">
+      <div><h3>تحت الضغط</h3><ul><li>الأسئلة المفاجئة من الإدارة أو العميل</li><li>المقاطعة في منتصف كلامك</li><li>الاعتراضات الحادة</li><li>الصمت الضاغط بعد إجابتك</li></ul></div>
+      <div><h3>اللكنات التي تعمل معها</h3><ul><li>الكلام الأمريكي السريع والمتصل</li><li>الزملاء والمورّدون من آسيا والصين</li><li>الفرق الهندية والأفريقية</li><li>الاستماع الاستراتيجي: ما المطلوب، وما الوضع، وما الخطوة التالية</li></ul></div>
+      <div><h3>حضورك أنت</h3><ul><li>نبرة الصوت والسرعة والوقفة</li><li>الدفاع عن قرارك دون اعتذار</li><li>كلمات دقيقة بدل الضعيفة (big, nice, I think)</li><li>إيميلات قصيرة ومباشرة</li></ul></div>
     </div>
+
 
     <h2>أدوات تستعملها في أي اجتماع، لا نصوص تحفظها</h2>
     <p class="section-sub">النص المحفوظ ينهار حين يتغيّر السؤال. لذلك نبني لك أطراً قصيرة تعمل في أي موقف: للوضوح، ولاستعادة السيطرة، وللرد على الاعتراض.</p>
@@ -170,7 +181,7 @@
 
       <article class="pace-case">
         <div class="role">مدرّب تنفيذي ومستشار يحمل الدكتوراه</div>
-        <div class="field">القيادة والموارد البشرية والاستشارات · بريطانيا والخليج</div>
+        <div class="field">القيادة والموارد البشرية والاستشارات · مقيم في بريطانيا، يدرّب وزراء وأمراء في الخليج</div>
         <span class="label">قبل</span>
         <p>يقود قاعات من مئات الحضور بالعربية منذ عقود، لكنه يشعر «بضعف» وفقدان سيطرة بالإنجليزية: صعوبة في بدء الجملة، وشرح زائد حين يبحث عن كلمة، واعتماد على قراءة الشرائح.</p>
         <span class="label">بعد</span>
@@ -193,7 +204,7 @@
 
       <article class="pace-case">
         <div class="role">مسؤولة شراكات وبرامج في منظمة إنسانية دولية</div>
-        <div class="field">العمل الإنساني وامتثال المانحين · الشرق الأوسط</div>
+        <div class="field">العمل الإنساني وحماية الطفل وامتثال المانحين · فلسطين</div>
         <span class="label">قبل</span>
         <p>تقرأ وتكتب التقارير بالإنجليزية بقوة، لكنها تتعب بسرعة في الكلام، وكانت «مشاركة صامتة» في اجتماعات المانحين متعددة الدول.</p>
         <span class="label">بعد</span>
@@ -203,8 +214,8 @@
       </article>
 
       <article class="pace-case">
-        <div class="role">أخصائية عمليات مصرفية أولى</div>
-        <div class="field">مصرفية دولية، تنسيق مع فرق في الهند ونيجيريا وبريطانيا · الخليج</div>
+        <div class="role">أخصائية أولى في العمليات المصرفية والرواتب</div>
+        <div class="field">مصرفية إسلامية دولية، تنسيق مع فرق في الهند ونيجيريا وبريطانيا وأمريكا الشمالية · السعودية</div>
         <span class="label">قبل</span>
         <p>بدأت دون خلفية إنجليزية رسمية، تترجم كل إيميل، وتسجّل الاجتماعات لتترجمها لاحقاً، وقضت ستة أشهر في معهد لغة دون تقدم في الكلام، ولا تفهم اللهجات الهندية والأفريقية.</p>
         <span class="label">بعد</span>
@@ -225,7 +236,30 @@
       </article>
 
     </div>
-<div class="faq-block pace-objection">
+
+    <h2>ماذا سيحدث؟ الخطوات</h2>
+    <div class="pace-steps">
+      <div class="pace-step"><span class="n">١</span><div><h3>التقديم ومكالمة التشخيص (١٥ دقيقة)</h3><p>بعد تعبئة طلب التقديم، نلتقي في مكالمة قصيرة على Zoom أستمع فيها إلى لغتك على طبيعتها وتحت ضغط بسيط، لأعطيك تقييماً صريحاً: هل البرنامج مناسب لوضعك وأهدافك.</p></div></div>
+      <div class="pace-step"><span class="n">٢</span><div><h3>جلسة الانطلاق والتقييم المفصل</h3><p>بعد التسجيل نبدأ بجلسة موسعة أجمع فيها كل التفاصيل عن عملك ومستواك وطريقة حديثك ومواقفك أو عروضك القادمة، لنبني خطتك المخصصة بالكامل.</p></div></div>
+      <div class="pace-step"><span class="n">٣</span><div><h3>جلستان كل أسبوع، والتطبيق في عملك</h3><p>كل جلسة حتى ساعة ونصف، أضغط عليك فيها إلى أقصى حد في محاكاة دقيقة لعملك. وبقية الأسبوع تطبّق في عملك الحقيقي، وأتابع أداءك وأساعدك في المواقف الطارئة بين الجلسات.</p></div></div>
+    </div>
+
+    <h2>التوقعات من الطرفين</h2>
+    <div class="pace-expect">
+      <div><h3>ما تتوقعه مني</h3><ul>
+        <li><b>سرية تامة:</b> اسمك وشركتك وكل تفاصيل عملك محمية بالكامل، ولا تُشارك مع أي طرف.</li>
+        <li><b>تخصيص حقيقي:</b> لا منهج جامد. كل جلسة تتكيف مع تطورات عملك أسبوعاً بأسبوع.</li>
+        <li><b>توجيه عملي صريح:</b> نركز على توصيل الفكرة بوضوح وقوة ونبرة قيادية، دون أن نعطّل طلاقتك بالهوس بأخطاء القواعد.</li>
+      </ul></div>
+      <div><h3>ما أتوقعه منك</h3><ul>
+        <li><b>المجهود الذهني:</b> هذا ليس برنامجاً مريحاً للمشاهدة أو الاستماع. التدريب مكثف وشاق لأنه يهدف إلى تغيير دائم.</li>
+        <li><b>التطبيق في عملك:</b> أن تجرّب ما تدربنا عليه فوراً في اجتماعاتك ومكالماتك، وتخبرني ما نجح وما صعب عليك.</li>
+        <li><b>ترك المثالية:</b> ألا تتوقف عن الكلام خوفاً من الخطأ، وأن تثق بالمنهجية وتستمر.</li>
+      </ul></div>
+    </div>
+    <p class="pace-notfor"><strong>لمن لا يناسب PACE:</strong> المبتدئين من الصفر في الإنجليزية، ومن يبحث عن دروس قواعد أكاديمية تقليدية أو شهادة حضور دون التزام بالتطبيق في العمل.</p>
+
+    <div class="faq-block pace-objection">
       <h2>قبل أن تقدّم</h2>
       <div class="faq-item">
         <h3>أعمل مع مدرب أو معلم لغة آخر، هل يناسبني PACE؟</h3>
