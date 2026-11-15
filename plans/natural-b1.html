@@ -155,6 +155,11 @@
   </section>
   <section class="article-body">
     <div class="wrap prose" style="max-width:1100px;">
+      <div class="next-up" id="nextUp" style="background:var(--accent-light); border-radius:var(--radius); padding:16px 18px; margin:0 0 22px;">
+        <h2 style="margin:0 0 6px; font-size:19px;">ابدأ من هنا: الخطوة الأولى</h2>
+        <p style="margin:0 0 12px;">أخطاؤك المتكررة</p>
+        <a class="btn btn-primary" href="#stage-1">ابدأ الخطوة الأولى</a>
+      </div>
       <div class="type-card">
         <h2>أنت «المتكلّم العفوي» <span lang="en" dir="ltr" style="font-size:15px; color:var(--ink-soft);">(The Natural Speaker)</span></h2>
         <p style="margin:0;">التقطت الإنجليزية من الأفلام أو العمل أو السفر. تفهم وتتكلم وتوصل فكرتك، لكن أخطاء القواعد تتكرر في كلامك.</p>
@@ -285,8 +290,24 @@
       if (txt) txt.textContent = done ? `أنهيت ${String(done).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d])} من ${String(items.length).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d])}` : "";
     });
   }
-  document.addEventListener("DOMContentLoaded", tick);
-  document.addEventListener("me:progress", tick);
+  // "Start here" card on plan pages (2026-11-15: 70% left plan pages after one look at a long list):
+  // it points to the first lesson not finished yet, so the first click is obvious.
+  function nextUp() {
+    const box = document.getElementById("nextUp"); if (!box) return;
+    const items = [...document.querySelectorAll("[data-stage] [data-video], [data-stage] [data-article]")];
+    const next = items.find((a) => !a.querySelector(".done"));
+    const AR = (n) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+    const doneN = items.length - items.filter((a) => !a.querySelector(".done")).length;
+    if (!next) { box.querySelector("h2").textContent = "أنهيت القائمة كاملة 🎉"; box.querySelector("p").textContent = "أحسنت! خذ الاختبار مجدداً لترى تقدّمك."; box.querySelector("a").href = "../placement-test.html"; box.querySelector("a").textContent = "اختبر مستواك من جديد"; return; }
+    const t = (next.querySelector("strong, h3, .lib-title") || next).textContent.trim().replace(/✓.*$/, "").slice(0, 110);
+    box.querySelector("h2").textContent = doneN ? "تابع من حيث توقفت" : "ابدأ من هنا: الخطوة الأولى";
+    box.querySelector("p").textContent = (doneN ? `أنهيت ${AR(doneN)} من ${AR(items.length)}. التالي: ` : "") + t;
+    const a = box.querySelector("a"); a.href = next.getAttribute("href"); if (next.target) a.target = next.target;
+    a.textContent = next.dataset.video ? "▶ شاهد الدرس" : "📖 اقرأ الدرس";
+    a.onclick = () => window.MELearner && window.MELearner.track("next_step", "plan_next:" + location.pathname.split("/").pop());
+  }
+  document.addEventListener("DOMContentLoaded", () => { tick(); nextUp(); });
+  document.addEventListener("me:progress", () => { tick(); nextUp(); });
 })();
 </script>
 </main>
