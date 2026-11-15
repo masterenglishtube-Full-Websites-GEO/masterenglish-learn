@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://www.masterenglish.me/pace-executive.html">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2026111501">
+<link rel="stylesheet" href="assets/css/style.css?v=2026111502">
 <style>
   .pace-wrap { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
   .pace-criteria { background: var(--paper-soft); border-radius: var(--radius); padding: 26px 28px; margin: 30px 0; }
@@ -72,9 +72,60 @@
   .pace-expect ul { margin: 0; padding-inline-start: 20px; }
   .pace-expect li { margin-bottom: 6px; line-height: 1.75; }
   .pace-notfor { background: var(--paper); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 30px; }
+
+  /* ---- Executive theme (2026-11-15) ---- */
+  body.pace-pro { --pro-ink: #0f1a16; --pro-ink-2: #1b2a24; --pro-gold: #c9a24a; --pro-gold-soft: #f6efdc; --pro-line: #e6e1d6; --pro-page: #f7f5f0; background: var(--pro-page); }
+  body.pace-pro .pace-wrap { max-width: 780px; padding-top: 0; }
+  .pace-hero { background: radial-gradient(120% 140% at 85% 0%, #22382f 0%, var(--pro-ink) 55%); color: #fff; margin: 0 0 40px; padding: 64px 20px 54px; border-bottom: 1px solid #2b3b34; }
+  .pace-hero .inner { max-width: 780px; margin: 0 auto; }
+  .pace-hero .eyebrow { color: var(--pro-gold); background: none; padding: 0; font-size: 13px; letter-spacing: .08em; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
+  .pace-hero .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--pro-gold); display: inline-block; }
+  .pace-hero h1 { color: #fff; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.25; margin: 18px 0 16px; font-weight: 800; letter-spacing: -.3px; }
+  .pace-hero h1 b { color: var(--pro-gold); font-weight: 800; }
+  .pace-hero .section-sub { color: rgba(255,255,255,.78); font-size: 17.5px; line-height: 1.9; max-width: 680px; margin: 0; }
+  .pace-trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 26px 0 28px; padding: 16px 0 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; color: rgba(255,255,255,.82); }
+  .pace-trust span { display: inline-flex; align-items: center; gap: 8px; }
+  .pace-trust span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--pro-gold); }
+  .pace-apply { display: inline-flex; align-items: center; gap: 10px; background: var(--pro-gold); color: #1a1405; font-weight: 800; padding: 13px 26px; border-radius: 8px; font-family: var(--font-head); }
+  .pace-apply:hover { background: #d8b45e; }
+  .pace-apply-note { display: block; margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.6); }
+
+  body.pace-pro h2 { font-size: clamp(22px, 2.6vw, 27px); font-weight: 800; color: var(--pro-ink); margin: 52px 0 12px; position: relative; padding-top: 16px; }
+  body.pace-pro h2::before { content: ""; position: absolute; top: 0; inset-inline-start: 0; width: 34px; height: 2px; background: var(--pro-gold); }
+  body.pace-pro .section-sub { color: #5d635f; }
+  body.pace-pro .pace-hero .section-sub { color: rgba(255,255,255,.86); }
+  body.pace-pro .pace-pillars { gap: 12px; }
+  body.pace-pro .pace-pillar { background: var(--pro-ink); color: #fff; border-radius: 10px; padding: 22px; }
+  body.pace-pro .pace-pillar-letter { background: none; border: 1px solid var(--pro-gold); color: var(--pro-gold); border-radius: 6px; }
+  body.pace-pro .pace-pillar h3 { color: #fff; }
+  body.pace-pro .pace-pillar h3 .pace-pillar-ar { color: rgba(255,255,255,.6); }
+  body.pace-pro .pace-pillar p { color: rgba(255,255,255,.75); }
+  body.pace-pro .pace-diagnosis { background: #fff; border: 1px solid var(--pro-line); border-inline-start: 3px solid var(--pro-gold); border-radius: 10px; padding: 26px 26px 20px; }
+  body.pace-pro .pace-diagnosis h2 { margin-top: 0; padding-top: 0; }
+  body.pace-pro .pace-diagnosis h2::before { display: none; }
+  body.pace-pro .pace-loop span { border-radius: 6px; border-color: var(--pro-line); background: var(--pro-page); }
+  body.pace-pro .pace-loop b { color: var(--pro-ink); }
+  body.pace-pro .pace-why li, body.pace-pro .pace-step, body.pace-pro .pace-expect > div, body.pace-pro .pace-case { border-radius: 10px; border-color: var(--pro-line); box-shadow: none; }
+  body.pace-pro .pace-why li::before { background: none; border: 1px solid var(--pro-gold); color: #8a6a1f; border-radius: 6px; }
+  body.pace-pro .pace-train div { background: #fff; border: 1px solid var(--pro-line); border-radius: 10px; }
+  body.pace-pro .pace-tools span { background: #fff; border: 1px solid var(--pro-line); border-radius: 6px; color: var(--pro-ink); }
+  body.pace-pro .pace-criteria { background: var(--pro-gold-soft); border-radius: 10px; border: 1px solid #ecdfb9; }
+  body.pace-pro .pace-case { border-top: 3px solid var(--pro-gold); }
+  body.pace-pro .pace-case .label { color: #8a6a1f; letter-spacing: .06em; }
+  body.pace-pro .pace-case blockquote { background: none; border-inline-start: 2px solid var(--pro-gold); border-radius: 0; padding: 4px 12px; color: #2c332f; }
+  body.pace-pro .pace-step .n { background: var(--pro-ink); color: var(--pro-gold); border-radius: 8px; }
+  body.pace-pro .pace-notfor { background: #fff; border: 1px solid var(--pro-line); border-radius: 10px; }
+  body.pace-pro .faq-item { border-radius: 10px; }
+  body.pace-pro .pace-form { background: var(--pro-ink); color: #fff; border-radius: 12px; padding: 30px 28px; scroll-margin-top: 90px; }
+  body.pace-pro .pace-form h3 { color: #fff; font-size: 22px; margin-top: 0; }
+  body.pace-pro .pace-form label { color: rgba(255,255,255,.85); }
+  body.pace-pro .pace-form input, body.pace-pro .pace-form textarea { border-radius: 8px; border-color: #33463e; background: #fff; }
+  body.pace-pro .pace-form .btn-primary { background: var(--pro-gold); color: #1a1405; border-radius: 8px; width: 100%; font-weight: 800; }
+  body.pace-pro #paceResult { color: #fff; }
+  @media (max-width: 560px) { .pace-hero { padding: 44px 18px 40px; } body.pace-pro h2 { margin-top: 42px; } }
 </style>
 </head>
-<body>
+<body class="pace-pro">
 
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
@@ -102,10 +153,17 @@
 </header>
 
 <main>
+  <header class="pace-hero">
+    <div class="inner">
+      <span class="eyebrow">بالتقديم فقط · Executive Coaching</span>
+      <h1>PACE: <b>تدريب تنفيذي فردي</b> للقياديين الناطقين بالعربية</h1>
+      <p class="section-sub">هذا ليس كورساً. PACE هو تدريب فردي مكثف، مباشر معي بالكامل (وتُسجَّل كل جلسة لك لمراجعة تقدمك لاحقاً)، لعدد محدود جداً من القياديين والمدراء التنفيذيين الناطقين بالعربية الذين وصلوا لمرحلة يحتاجون فيها إجادة تامة للتحدث بالإنجليزية في الاجتماعات عالية المستوى، لا المزيد من الدروس.</p>
+      <div class="pace-trust"><span>جلسات فردية مباشرة مع نور</span><span>جلستان كل أسبوع</span><span>سرية تامة</span><span>عدد محدود من القياديين</span></div>
+      <a class="pace-apply" href="#apply">قدّم طلبك</a>
+      <span class="pace-apply-note">مكالمة تشخيص قصيرة أولاً (١٥ دقيقة) لنعرف إن كان البرنامج مناسباً لك.</span>
+    </div>
+  </header>
   <div class="pace-wrap">
-    <span class="eyebrow">بالتقديم فقط · Private Briefing</span>
-    <h1>PACE: تدريب تنفيذي فردي مباشر معي</h1>
-    <p class="section-sub">هذا ليس كورساً. PACE هو تدريب فردي مكثف، مباشر معي بالكامل (وتُسجَّل كل جلسة لك لمراجعة تقدمك لاحقاً)، لعدد محدود جداً من القياديين والمدراء التنفيذيين الناطقين بالعربية الذين وصلوا لمرحلة يحتاجون فيها إجادة تامة للتحدث بالإنجليزية في الاجتماعات عالية المستوى، لا المزيد من الدروس.</p>
 
     <div class="pace-pillars">
       <div class="pace-pillar">
@@ -267,7 +325,7 @@
       </div>
     </div>
 
-    <div class="pace-form">
+    <div class="pace-form" id="apply">
       <h3>أرسل طلبك</h3>
       <label for="paceName">الاسم الكامل</label>
       <input type="text" id="paceName" autocomplete="name" required>
@@ -334,9 +392,9 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2026111501"></script>
-<script src="assets/js/track.js?v=2026111501"></script>
-<script src="assets/js/learner.js?v=2026111501"></script>
+<script src="assets/js/main.js?v=2026111502"></script>
+<script src="assets/js/track.js?v=2026111502"></script>
+<script src="assets/js/learner.js?v=2026111502"></script>
 <script>
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
