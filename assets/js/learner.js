@@ -226,13 +226,14 @@
     voice = pickVoice();
     speechSynthesis.onvoiceschanged = () => { voice = pickVoice(); };
   }
-  function speak(text) {
+  function speak(text, onEnd) {
     if (!("speechSynthesis" in window)) return false;
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "en-US";
     if (voice) u.voice = voice;
     u.rate = 0.9;
+    if (onEnd) u.onend = u.onerror = onEnd;
     speechSynthesis.speak(u);
     return true;
   }
@@ -276,6 +277,31 @@
     if (document.documentElement.lang === "en") return; // English pages: everything is English, no buttons
     const roots = document.querySelectorAll(".article-body .prose, .guide-body");
     roots.forEach((root) => {
+      // Dialogue lines and phrase lists: one 🔊 per line that reads the whole line and highlights it
+      // while it plays (2026-11-15: a line used to get a button after every half-sentence).
+      root.querySelectorAll(".dlg p, .phrases li").forEach((el) => {
+        const src = el.matches(".phrases li") ? el.querySelector(".en") : el;
+        if (!src) return;
+        const clone = src.cloneNode(true);
+        clone.querySelectorAll("b, .me-say-btn").forEach((x) => x.remove()); // not the speaker's name
+        const line = clone.textContent.replace(/\s+/g, " ").trim();
+        if (!/[A-Za-z]{3}/.test(line)) return;
+        el.setAttribute("data-no-say", "");
+        el.classList.add("me-line");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "me-say-btn";
+        btn.setAttribute("aria-label", "استمع: " + line);
+        btn.textContent = "🔊";
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".me-line.speaking").forEach((x) => x.classList.remove("speaking"));
+          el.classList.add("speaking");
+          speak(line, () => el.classList.remove("speaking"));
+          showToast(line);
+          track("tts_play", line.slice(0, 120));
+        });
+        src.appendChild(btn);
+      });
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
         acceptNode(node) {
           const p = node.parentElement;

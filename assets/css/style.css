@@ -1100,6 +1100,8 @@ body.hide-floating-widgets .me-helpbot-nudge { display: none !important; }
 
 /* Listen-to-English buttons (assets/js/learner.js) */
 .me-say { unicode-bidi: isolate; white-space: normal; }
+.me-line { transition: background .2s ease; border-radius: 8px; }
+.me-line.speaking { background: var(--gold-light); box-shadow: 0 0 0 6px var(--gold-light); }
 .me-say-btn {
   display: inline-flex; align-items: center; justify-content: center; margin-inline-start: 3px;
   width: 22px; height: 22px; padding: 0; border: 1px solid var(--border); border-radius: 50%;
@@ -1300,7 +1302,9 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .me-hub-menu span { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
 @media (max-width: 600px) {
   #meHelpHub { bottom: 16px; right: 14px; }
-  .me-hub-btn { padding: 11px 15px; font-size: 14px; }
+  /* Phones: a small round button, so it doesn't cover cards and buttons (2026-11-15). */
+  .me-hub-btn { padding: 0; width: 48px; height: 48px; justify-content: center; }
+  .me-hub-btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   body.me-hub #meContactPanel { left: 12px; right: 12px; width: auto; }
   body.me-hub #meContactPanel.open { display: flex !important; }
 }
