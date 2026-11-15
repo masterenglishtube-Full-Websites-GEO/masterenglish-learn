@@ -67,6 +67,35 @@
   ]
 }
 </script>
+<style>
+  /* 2026-11-15 hero: lesson moment + three doors */
+  .hero-thumb.hero-lesson { background: #fff; color: var(--ink); padding: 12px 14px 10px; text-align: right; }
+  .hero-lesson .hl-tag { position: static; display: inline-block; font-size: 11.5px; font-weight: 800; color: var(--accent-dark); background: var(--accent-light); border-radius: 999px; padding: 1px 9px; margin-bottom: 6px; }
+  .hero-lesson .hl-en { direction: ltr; text-align: left; font-family: var(--font-head); font-weight: 800; font-size: 16px; line-height: 1.35; margin: 0 0 4px; color: var(--ink); }
+  .hero-lesson .hl-ar { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 8px; line-height: 1.5; }
+  .hero-lesson .hl-row { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .hero-lesson button { font: inherit; font-size: 13px; font-weight: 700; border: 0; background: var(--gold); color: var(--on-gold); border-radius: 999px; padding: 3px 11px; cursor: pointer; }
+  .hero-lesson a { font-size: 12.5px; font-weight: 700; color: var(--accent); }
+  .doors { margin: 34px auto 0; }
+  .doors h2 { text-align: center; font-size: clamp(22px, 2.6vw, 30px); margin: 0 0 6px; }
+  .doors > p { text-align: center; color: var(--ink-soft); margin: 0 0 18px; }
+  .doors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .door { display: flex; flex-direction: column; gap: 6px; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; color: var(--ink); transition: transform .15s ease, border-color .15s ease; }
+  .door:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .door .d-ic { font-size: 26px; }
+  .door strong { font-family: var(--font-head); font-size: 18px; }
+  .door span { color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; }
+  .door em { font-style: normal; color: var(--accent); font-weight: 700; font-size: 14px; margin-top: auto; }
+  .home-en-note { max-width: 860px; margin: 18px auto 0; text-align: center; }
+  @media (max-width: 760px) {
+    .doors-grid { grid-template-columns: 1fr; }
+    .hero-thumb.hero-lesson { padding: 9px 10px 8px; }
+    .hero-lesson .hl-en { font-size: 13.5px; }
+    .hero-lesson .hl-ar { font-size: 12px; margin-bottom: 5px; }
+    .hero-lesson a, .hero-lesson .hl-tag { display: none; }
+    .hero-thumb.t2.hero-lesson { top: 128px; width: 160px; }
+  }
+</style>
 </head>
 <body>
 
@@ -100,10 +129,9 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="hero-pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></svg> منصة تعلّم الإنجليزية للناطقين بالعربية منذ ٢٠١٦</span>
-        <h1>تعلّم اللغة الإنجليزية <span class="hl">وتحدّث بها بطلاقة</span></h1>
-        <p class="hero-sub">تعرف الكلمات، لكن لسانك يتجمد لحظة الكلام؟ المشكلة ليست في معلوماتك، بل في التدريب. تدرّب معي بهذه الطريقة، خطوة خطوة، وستبدأ بالتحدث بطلاقة وثقة تكفي لتتصدر أي اجتماع أو مقابلة.</p>
-        <p class="en-note" lang="en">Master English (أتقن الإنجليزية) helps Arabic speakers truly own the English language, not just its pronunciation, so they can use it as naturally as they use Arabic. Courses, 1,200+ free lessons, and a YouTube channel of 1.86M+ subscribers, led by Noor.</p>
+        <span class="hero-pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></svg> ١٫٨٦ مليون متعلّم على يوتيوب · منذ ٢٠١٦</span>
+        <h1>من فهم الإنجليزية <span class="hl">إلى التكلّم بها بثقة</span></h1>
+        <p class="hero-sub">تعرف الكلمات، لكن لسانك يتجمّد لحظة الكلام؟ تعلّم الإنجليزية معي بالعربية، وتدرّب خطوة خطوة حتى تتكلم بطلاقة في أي موقف.</p>
         <div class="hero-cta">
           <a href="placement-test.html" class="btn btn-gold btn-lg"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg> ابدأ باختبار المستوى المجاني</a>
           <a href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><span style="color:#ff4d42;display:inline-flex"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg></span> ابدأ مجاناً على يوتيوب</a>
@@ -118,7 +146,7 @@
         <div class="hero-ring" aria-hidden="true"></div>
         <figure class="hero-portrait"><img src="assets/images/profile.jpg" alt="نور - أتقن الإنجليزية" width="800" height="800"></figure>
         <a class="hero-thumb t1" href="https://www.youtube.com/watch?v=I46cCtKzWps" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/I46cCtKzWps/mqdefault.jpg" alt="درس تعلم الإنجليزية من خلال قصة مسلية بالصوت والصورة" width="320" height="180"><span>٤٫٤ مليون مشاهدة</span></a>
-        <a class="hero-thumb t2" href="https://www.youtube.com/watch?v=4Qhuihinog4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4Qhuihinog4/mqdefault.jpg" alt="سلسلة أشهر ١٠٠٠ كلمة في الإنجليزية: الجزء الأول" width="320" height="180"><span>٢٫٥ مليون مشاهدة</span></a>
+        <div class="hero-thumb t2 hero-lesson"><span class="hl-tag">جملة من دروسي</span><p class="hl-en" lang="en">I'm running late for the meeting.</p><p class="hl-ar">أنا أتأخر عن الاجتماع.</p><div class="hl-row"><button type="button" onclick="window.MELearner &amp;&amp; window.MELearner.speak('I\'m running late for the meeting.')" aria-label="استمع إلى الجملة">🔊 استمع</button><a href="lessons/speak-fluently-punctual-running-late.html">الدرس كاملاً</a></div></div>
         <a class="yt-badge" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg></span><div>١٫٨٦ مليون مشترك<small>اشترك في القناة</small></div></a>
       </div>
     </div>
@@ -132,6 +160,18 @@
       <div class="stat"><span class="stat-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"/><path d="M16 3v4"/><path d="M8 3v4"/><path d="M4 11h16"/><path d="M11 15h1"/><path d="M12 15v3"/></svg></span><div><strong>١٠ سنوات</strong><span>من التدريب المستمر</span></div></div>
     </div>
   </div>
+
+  <section class="wrap doors" aria-labelledby="doorsTitle">
+    <h2 id="doorsTitle">من أين تبدأ؟</h2>
+    <p>اختر ما يشبهك، وستجد مساراً مجانياً مرتباً لك خطوة خطوة.</p>
+    <div class="doors-grid">
+      <a class="door" href="paths/intermediate.html"><span class="d-ic">💬</span><strong>أريد أن أتكلم بثقة</strong><span>تفهم الإنجليزية لكنك تتردد أو تترجم في رأسك قبل أن تتكلم.</span><em>ابدأ مسار الطلاقة</em></a>
+      <a class="door" href="paths/work.html"><span class="d-ic">💼</span><strong>للعمل والاجتماعات</strong><span>اجتماعات، مقابلات، عروض وإيميلات بثقة واحتراف.</span><em>ابدأ مسار العمل</em></a>
+      <a class="door" href="paths/beginner.html"><span class="d-ic">🌱</span><strong>أبدأ من الصفر</strong><span>الكلمات والجمل الأساسية، بالعربية وخطوة خطوة.</span><em>ابدأ مسار المبتدئين</em></a>
+    </div>
+    <p class="en-note home-en-note" lang="en">Master English (أتقن الإنجليزية) helps Arabic speakers truly own the English language, not just its pronunciation, so they can use it as naturally as they use Arabic. Courses, 1,200+ free lessons, and a YouTube channel of 1.86M+ subscribers, led by Noor.</p>
+  </section>
+
 
   <section class="about" id="about">
     <div class="wrap about-grid">
