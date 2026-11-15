@@ -219,6 +219,88 @@
     $("ptOpenMail").hidden = !inbox;
     if (inbox) $("ptOpenMail").href = inbox;
     if (window.MELearner) window.MELearner.setLevel(level, score, d && d.avatar ? { avatar: d.avatar, list: d.list, rec: d.rec || null } : null);
+    sampleLesson();
+  }
+
+  // A 2-minute free lesson right after the result (Noor, 2026-11-15): celebrate finishing the test,
+  // teach one surprising thing (the American flap T), give one thing to solve, celebrate the try,
+  // then celebrate the right answer. Ends with the full lesson and the pronunciation course.
+  function sampleLesson() {
+    if ($("ptSample")) return;
+    const T = (type, target) => window.MELearner && window.MELearner.track(type, target);
+    const say = (t) => window.MELearner && window.MELearner.speak(t);
+    const css = document.createElement("style");
+    css.textContent = `
+      #ptSample { margin: 26px 0 0; text-align: right; }
+      #ptSample .ps-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 16px; margin: 0 0 14px; animation: psIn .45s ease both; }
+      #ptSample .ps-cheer { background: var(--accent-light); border: none; text-align: center; }
+      #ptSample .ps-cheer .big { font-size: 34px; display: block; animation: psPop .6s ease both; }
+      #ptSample h3 { margin: 0 0 8px; font-size: 18px; }
+      #ptSample p { margin: 0 0 10px; line-height: 1.8; }
+      #ptSample .ps-say { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 4px; }
+      #ptSample .ps-say button, #ptSample .ps-opts button { font: inherit; border: 1px solid var(--border); background: var(--paper); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+      #ptSample .ps-say button span, #ptSample .ps-opts button { direction: ltr; unicode-bidi: isolate; }
+      #ptSample .ps-opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 10px 0; }
+      #ptSample .ps-opts button { border-radius: 12px; font-weight: 700; font-size: 17px; }
+      #ptSample .ps-opts button.right { background: #e3f4ea; border-color: #2e8b57; }
+      #ptSample .ps-opts button.wrong { background: #fbe9e7; border-color: #d9534f; }
+      #ptSample .ps-msg { min-height: 1em; margin: 6px 0 0; font-weight: 700; }
+      #ptSample .ps-msg.win { animation: psPop .5s ease both; }
+      #ptSample .ps-next { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+      @keyframes psIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @keyframes psPop { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.12); opacity: 1; } 100% { transform: scale(1); } }
+      @media (prefers-reduced-motion: reduce) { #ptSample * { animation: none !important; } }`;
+    document.head.appendChild(css);
+
+    const box = document.createElement("div");
+    box.id = "ptSample";
+    box.innerHTML = `
+      <div class="ps-card ps-cheer"><span class="big">🎉</span><h3>أحسنت! أنهيت الاختبار كاملاً</h3>
+        <p>كثيرون يبدؤون ولا يكملون، وأنت أكملت. وأثناء انتظار رسالتك، خذ هدية صغيرة: درس من دقيقتين.</p></div>
+      <div class="ps-card"><h3>لماذا يقول الأمريكي water «وُدَر»؟</h3>
+        <p>حين يأتي حرف T بين حرفين متحركين، ولا يكون في مقطع مشدد، يلفظه الأمريكيون مثل D خفيفة وسريعة. لهذا قد لا تعرف كلمة تحفظها جيداً حين تسمعها في فيلم.</p>
+        <div class="ps-say">
+          <button type="button" data-say="water"><span>🔊 water</span></button>
+          <button type="button" data-say="better"><span>🔊 better</span></button>
+          <button type="button" data-say="get it"><span>🔊 get it</span></button>
+        </div>
+        <p style="font-size:14px; color:var(--ink-soft); margin:6px 0 0;">لكن في أول الكلمة تبقى T قوية: <span lang="en">time, table</span>.</p></div>
+      <div class="ps-card" id="psQ"><h3>دورك: في أي كلمة تُلفظ T مثل D خفيفة؟</h3>
+        <div class="ps-opts">
+          <button type="button" data-a="time">time</button><button type="button" data-a="city">city</button>
+          <button type="button" data-a="stop">stop</button><button type="button" data-a="street">street</button>
+        </div>
+        <p class="ps-msg" id="psMsg" role="status" aria-live="polite"></p>
+        <p class="ps-msg" id="psWin" role="status" aria-live="polite"></p></div>`;
+    $("ptSent").appendChild(box);
+
+    box.querySelectorAll("[data-say]").forEach((b) => b.addEventListener("click", () => say(b.dataset.say)));
+    let tried = false;
+    box.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => {
+      const right = b.dataset.a === "city";
+      if (!tried) { tried = true; $("psMsg").textContent = "👏 رائع أنك جرّبت! كل محاولة تدرّب أذنك."; }
+      b.classList.add(right ? "right" : "wrong");
+      say(b.dataset.a);
+      if (!right) {
+        $("psWin").className = "ps-msg";
+        $("psWin").textContent = b.dataset.a === "time" ? "في time حرف T في أول الكلمة، فيبقى قوياً. جرّب كلمة أخرى." : `في ${b.dataset.a} حرف T بجانب حرف ساكن (s أو r)، فيبقى قوياً. جرّب كلمة أخرى.`;
+        T("quiz_done", "sample_flap_t:wrong:" + b.dataset.a);
+        return;
+      }
+      box.querySelectorAll("[data-a]").forEach((x) => { x.disabled = true; });
+      $("psWin").className = "ps-msg win";
+      $("psWin").innerHTML = "✅ إجابة صحيحة! <span lang=\"en\">city</span> تُسمع «سِدي». أذنك الآن تلتقط ما لا ينتبه له أغلب المتعلمين.";
+      T("quiz_done", "sample_flap_t:right");
+      const next = document.createElement("div");
+      next.className = "ps-card";
+      next.innerHTML = `<h3>هذا درس واحد من طريقة كاملة</h3>
+        <p>في كورس «أسرار النطق الأمريكي» ٤٤ درساً مثل هذا، بالشرح العربي وخطوة بخطوة، لتفهم الأمريكيين ويفهموك من أول مرة.</p>
+        <div class="ps-next"><a class="btn btn-primary" href="products/pronunciation.html" data-next="sample:course">شاهد الكورس</a>
+        <a class="btn btn-ghost" href="lessons/american-t-sound-pronunciation.html" data-next="sample:lesson">الدرس المجاني الكامل عن T</a></div>`;
+      $("psQ").after(next);
+      next.querySelectorAll("[data-next]").forEach((a) => a.addEventListener("click", () => T("next_step", a.dataset.next)));
+    }));
+    T("next_step", "sample:shown");
   }
 
   // Typo check for common providers: "gmial.com" -> "gmail.com"
