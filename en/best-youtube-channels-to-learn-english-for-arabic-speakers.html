@@ -47,6 +47,9 @@
   .en-wrap { overflow-x: auto; }
   .en-note { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
   .en-answer { background: var(--accent-light); border-radius: var(--radius-sm); padding: 14px 16px; }
+  .ar-switch { direction: rtl; text-align: right; background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 22px; }
+  .ar-switch p { margin: 0 0 10px; font-size: 16px; line-height: 1.8; }
+  .ar-switch .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Best YouTube Channels to Learn English for Arabic Speakers in 2026", "description": "An honest, data-based 2026 comparison of the most popular YouTube channels that teach English to Arabic speakers (ZAmericanEnglish, English Language Academy, Murad, Master English and more), and which English-only channels to add after B1.", "url": "https://www.masterenglish.me/en/best-youtube-channels-to-learn-english-for-arabic-speakers.html", "inLanguage": "en", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Noor", "alternateName": "نور", "url": "https://www.masterenglish.me/articles/my-story.html", "sameAs": ["https://www.youtube.com/@MasterEnglish"]}, "publisher": {"@type": "EducationalOrganization", "name": "Master English أتقن الإنجليزية", "alternateName": ["Master English", "أتقن الإنجليزية"], "url": "https://www.masterenglish.me/", "foundingDate": "2016", "founder": {"@type": "Person", "name": "Noor", "alternateName": "نور"}, "sameAs": ["https://www.youtube.com/@MasterEnglish"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best YouTube channel to learn English for Arabic speakers?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single best channel for everyone. For beginners who want grammar explained logically: ZAmericanEnglish (the largest Arabic channel). For numbered levels: Murad. For learners who understand English but can't speak, or who want American pronunciation and business English: Master English with Noor. After intermediate level, move to English-only channels such as BBC Learning English and English with Lucy."}}, {"@type": "Question", "name": "Should Arabic speakers learn from an Arabic channel or an English one?", "acceptedAnswer": {"@type": "Answer", "text": "Start with a channel that explains in Arabic until about B1, because understanding the explanation speeds up the start a lot. Then add English-only channels to train your listening."}}, {"@type": "Question", "name": "Should I follow several channels at once?", "acceptedAnswer": {"@type": "Answer", "text": "Better one main channel followed in order, plus a second one for listening or one specific skill. Jumping between many channels wastes the most time."}}, {"@type": "Question", "name": "Are these numbers up to date?", "acceptedAnswer": {"@type": "Answer", "text": "Subscriber and video counts are from the channels' public pages in September 2026 and will change over time."}}]}</script>
@@ -81,6 +84,10 @@
   </section>
   <section class="article-body">
     <div class="wrap prose">
+      <div class="ar-switch" lang="ar" dir="rtl">
+        <p><strong>تتكلم العربية؟</strong> أهلاً بك. Master English يعلّم الإنجليزية بالعربية مع نور منذ ٢٠١٦. ابدأ باختبار مستوى مجاني (١٠ دقائق) يعطيك خطة دروس مرتبة باسمك.</p>
+        <div class="btns"><a class="btn btn-primary" href="../placement-test.html" data-track="ar_switch:test">اختبر مستواك مجاناً</a><a class="btn btn-ghost" href="../articles/best-youtube-channels-learn-english-arabic.html" data-track="ar_switch:article">اقرأ هذه الصفحة بالعربية</a></div>
+      </div>
 
       <p class="lead">There are dozens of Arabic YouTube channels teaching English, and all of them say they are “the best”. The best channel for you depends on your level and on exactly what you want: understanding grammar, speaking fluently, pronunciation, or English at work. Here is a comparison with numbers, and who each channel suits.</p>
       <p class="en-note">Disclosure: we run the Master English channel. That is why this comparison uses public numbers you can check (subscriber and video counts in September 2026, and each channel's own description) and says clearly when another channel suits you better.</p>
@@ -153,5 +160,6 @@
 <script src="../assets/js/main.js?v=2026111103"></script>
 <script src="../assets/js/track.js?v=2026111103"></script>
 <script src="../assets/js/learner.js?v=2026111103"></script>
+<script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </body>
 </html>

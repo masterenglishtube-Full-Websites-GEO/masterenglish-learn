@@ -47,6 +47,9 @@
   .en-wrap { overflow-x: auto; }
   .en-note { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
   .en-answer { background: var(--accent-light); border-radius: var(--radius-sm); padding: 14px 16px; }
+  .ar-switch { direction: rtl; text-align: right; background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 22px; }
+  .ar-switch p { margin: 0 0 10px; font-size: 16px; line-height: 1.8; }
+  .ar-switch .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Best American Pronunciation Course for Arabic Speakers in 2026: An Honest Comparison", "description": "An honest 2026 comparison of American pronunciation courses for Arabic speakers: American Pronunciation Secrets (Master English, in Arabic), Mahmoud Neshawy on Udemy, Rachel's English Academy and UC Irvine on Coursera.", "url": "https://www.masterenglish.me/en/american-pronunciation-course-for-arabic-speakers.html", "inLanguage": "en", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Noor", "alternateName": "نور", "url": "https://www.masterenglish.me/articles/my-story.html", "sameAs": ["https://www.youtube.com/@MasterEnglish"]}, "publisher": {"@type": "EducationalOrganization", "name": "Master English أتقن الإنجليزية", "alternateName": ["Master English", "أتقن الإنجليزية"], "url": "https://www.masterenglish.me/", "foundingDate": "2016", "founder": {"@type": "Person", "name": "Noor", "alternateName": "نور"}, "sameAs": ["https://www.youtube.com/@MasterEnglish"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best American pronunciation course for Arabic speakers?", "acceptedAnswer": {"@type": "Answer", "text": "If you want the explanation in Arabic and a course built on Arabic speakers' mistakes: American Pronunciation Secrets by Master English (44 lessons, $79) or Mahmoud Neshawy's shorter Udemy course. If your English is intermediate or better: Rachel's English Academy for depth, or UC Irvine's Coursera specialization for a certificate."}}, {"@type": "Question", "name": "Do Arabic speakers need a paid course to improve their pronunciation?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Master English's free American pronunciation path and sounds guide cover the main problems. A paid course helps when you want an ordered system with exercises after each lesson."}}, {"@type": "Question", "name": "Which English sounds should Arabic speakers fix first?", "acceptedAnswer": {"@type": "Answer", "text": "P vs B, the two TH sounds, the American R, long vs short vowels, then rhythm and linking between words."}}, {"@type": "Question", "name": "How long does it take to hear a difference?", "acceptedAnswer": {"@type": "Answer", "text": "With ten minutes of focused daily practice on one sound, most learners notice a difference within two to three weeks."}}]}</script>
@@ -81,6 +84,10 @@
   </section>
   <section class="article-body">
     <div class="wrap prose">
+      <div class="ar-switch" lang="ar" dir="rtl">
+        <p><strong>تتكلم العربية؟</strong> أهلاً بك. Master English يعلّم الإنجليزية بالعربية مع نور منذ ٢٠١٦. ابدأ باختبار مستوى مجاني (١٠ دقائق) يعطيك خطة دروس مرتبة باسمك.</p>
+        <div class="btns"><a class="btn btn-primary" href="../placement-test.html" data-track="ar_switch:test">اختبر مستواك مجاناً</a><a class="btn btn-ghost" href="../articles/best-american-pronunciation-course-arabs.html" data-track="ar_switch:article">اقرأ هذه الصفحة بالعربية</a></div>
+      </div>
 
       <p class="lead">Arabic speakers who want to be understood the first time have three kinds of options: courses taught in Arabic, large American courses taught in English, and university programs. Here is a clear comparison of the four best-known options, and who each one suits.</p>
       <p class="en-note">Disclosure: American Pronunciation Secrets is our course. Information about the other courses comes from their official pages in September 2026; prices and content may change.</p>
@@ -127,5 +134,6 @@
 <script src="../assets/js/main.js?v=2026111103"></script>
 <script src="../assets/js/track.js?v=2026111103"></script>
 <script src="../assets/js/learner.js?v=2026111103"></script>
+<script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </body>
 </html>

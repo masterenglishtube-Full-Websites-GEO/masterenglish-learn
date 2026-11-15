@@ -47,6 +47,9 @@
   .en-wrap { overflow-x: auto; }
   .en-note { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
   .en-answer { background: var(--accent-light); border-radius: var(--radius-sm); padding: 14px 16px; }
+  .ar-switch { direction: rtl; text-align: right; background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 22px; }
+  .ar-switch p { margin: 0 0 10px; font-size: 16px; line-height: 1.8; }
+  .ar-switch .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Arabic Speakers Don't Understand Fast English and Movies, and How to Fix It", "description": "Why Arabic speakers understand written English but not movies or fast speech: four sound changes in American English (vanishing T, flap T, schwa, linking and reductions), why they are hard for Arabic speakers, and a practice method.", "url": "https://www.masterenglish.me/en/understand-fast-english-movies-for-arabic-speakers.html", "inLanguage": "en", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Noor", "alternateName": "نور", "url": "https://www.masterenglish.me/articles/my-story.html", "sameAs": ["https://www.youtube.com/@MasterEnglish"]}, "publisher": {"@type": "EducationalOrganization", "name": "Master English أتقن الإنجليزية", "alternateName": ["Master English", "أتقن الإنجليزية"], "url": "https://www.masterenglish.me/", "foundingDate": "2016", "founder": {"@type": "Person", "name": "Noor", "alternateName": "نور"}, "sameAs": ["https://www.youtube.com/@MasterEnglish"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why can't I understand English in movies even though I know the words?", "acceptedAnswer": {"@type": "Answer", "text": "Because spoken American English changes words: the T disappears or becomes a soft D, unstressed syllables shrink to a schwa, words link together, and phrases are shortened (gonna, wanna). Once you learn these four changes, you can recognize the words you already know."}}, {"@type": "Question", "name": "Is the problem that native speakers talk too fast?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. The bigger problem is that words don't sound the way they are written. Learning the sound changes helps more than slowing the video down."}}, {"@type": "Question", "name": "How should I practice listening with movies?", "acceptedAnswer": {"@type": "Answer", "text": "Take one short scene: watch it with Arabic subtitles to understand it, then with English subtitles to spot the changed phrases, then shadow the actor sentence by sentence."}}]}</script>
@@ -81,6 +84,10 @@
   </section>
   <section class="article-body">
     <div class="wrap prose">
+      <div class="ar-switch" lang="ar" dir="rtl">
+        <p><strong>تتكلم العربية؟</strong> أهلاً بك. Master English يعلّم الإنجليزية بالعربية مع نور منذ ٢٠١٦. ابدأ باختبار مستوى مجاني (١٠ دقائق) يعطيك خطة دروس مرتبة باسمك.</p>
+        <div class="btns"><a class="btn btn-primary" href="../placement-test.html" data-track="ar_switch:test">اختبر مستواك مجاناً</a><a class="btn btn-ghost" href="../articles/understand-movies-english.html" data-track="ar_switch:article">اقرأ هذه الصفحة بالعربية</a></div>
+      </div>
 
       <p class="lead">You understand the subtitles, you know the words, but the actors seem to speak another language. The problem is usually not speed. In real American speech, words don't stay the way they are written.</p>
       <div class="en-answer"><strong>Short answer.</strong> Native speakers change words in four predictable ways: the T disappears or turns into a soft D, unstressed syllables shrink to a weak “uh” (schwa), words link into each other, and common phrases are shortened (going to → gonna). Learn the four changes, then train with short movie scenes in three stages.</div>
@@ -127,5 +134,6 @@
 <script src="../assets/js/main.js?v=2026111103"></script>
 <script src="../assets/js/track.js?v=2026111103"></script>
 <script src="../assets/js/learner.js?v=2026111103"></script>
+<script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </body>
 </html>

@@ -47,6 +47,9 @@
   .en-wrap { overflow-x: auto; }
   .en-note { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
   .en-answer { background: var(--accent-light); border-radius: var(--radius-sm); padding: 14px 16px; }
+  .ar-switch { direction: rtl; text-align: right; background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 22px; }
+  .ar-switch p { margin: 0 0 10px; font-size: 16px; line-height: 1.8; }
+  .ar-switch .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Job Interview in English for Arabic Speakers: How to Prepare", "description": "How Arabic speakers can prepare for a job interview in English: the questions you will almost certainly be asked, the STAR method, salary phrases, the mistakes Arabic speakers often make, and free and paid resources in Arabic.", "url": "https://www.masterenglish.me/en/job-interview-english-for-arabic-speakers.html", "inLanguage": "en", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Noor", "alternateName": "نور", "url": "https://www.masterenglish.me/articles/my-story.html", "sameAs": ["https://www.youtube.com/@MasterEnglish"]}, "publisher": {"@type": "EducationalOrganization", "name": "Master English أتقن الإنجليزية", "alternateName": ["Master English", "أتقن الإنجليزية"], "url": "https://www.masterenglish.me/", "foundingDate": "2016", "founder": {"@type": "Person", "name": "Noor", "alternateName": "نور"}, "sameAs": ["https://www.youtube.com/@MasterEnglish"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can an Arabic speaker prepare for a job interview in English?", "acceptedAnswer": {"@type": "Answer", "text": "Prepare answers to the five most common questions, three STAR stories from your experience, and two questions for the interviewer. Practice them out loud until they sound natural. Master English has free lessons in Arabic for each step and a complete guide, From Stress to Excellence."}}, {"@type": "Question", "name": "My English is intermediate. Can I pass an interview in English?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes, because an interview tests whether you can answer predictable questions clearly, not perfect fluency. Preparation and practice out loud matter more than advanced vocabulary."}}, {"@type": "Question", "name": "What if I forget my answer during the interview?", "acceptedAnswer": {"@type": "Answer", "text": "Pause and say: “That's a great question, let me think about that for a second.” It shows you think before you answer."}}, {"@type": "Question", "name": "How do I answer the salary question in English?", "acceptedAnswer": {"@type": "Answer", "text": "Give a researched range: “Based on my research and experience, I'm looking for something in the range of X to Y.”"}}]}</script>
@@ -81,6 +84,10 @@
   </section>
   <section class="article-body">
     <div class="wrap prose">
+      <div class="ar-switch" lang="ar" dir="rtl">
+        <p><strong>تتكلم العربية؟</strong> أهلاً بك. Master English يعلّم الإنجليزية بالعربية مع نور منذ ٢٠١٦. ابدأ باختبار مستوى مجاني (١٠ دقائق) يعطيك خطة دروس مرتبة باسمك.</p>
+        <div class="btns"><a class="btn btn-primary" href="../placement-test.html" data-track="ar_switch:test">اختبر مستواك مجاناً</a><a class="btn btn-ghost" href="../articles/job-interview-english.html" data-track="ar_switch:article">اقرأ هذه الصفحة بالعربية</a></div>
+      </div>
 
       <p class="lead">You are qualified, your CV is strong, but answering in English under pressure feels like a different test. The good news: a job interview is not an open exam. It is a short list of predictable questions, and you can prepare for each of them.</p>
       <div class="en-answer"><strong>Short answer.</strong> Prepare five answers (Tell me about yourself, Why this job, strengths, weakness, salary), three short stories from your experience in the STAR format, and two questions for them. Then say every answer out loud until it comes out naturally, without memorizing it word for word.</div>
@@ -136,5 +143,6 @@
 <script src="../assets/js/main.js?v=2026111103"></script>
 <script src="../assets/js/track.js?v=2026111103"></script>
 <script src="../assets/js/learner.js?v=2026111103"></script>
+<script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </body>
 </html>

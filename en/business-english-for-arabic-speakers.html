@@ -47,6 +47,9 @@
   .en-wrap { overflow-x: auto; }
   .en-note { background: var(--paper-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; }
   .en-answer { background: var(--accent-light); border-radius: var(--radius-sm); padding: 14px 16px; }
+  .ar-switch { direction: rtl; text-align: right; background: var(--paper); border: 2px solid var(--accent); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 22px; }
+  .ar-switch p { margin: 0 0 10px; font-size: 16px; line-height: 1.8; }
+  .ar-switch .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Business English for Arabic Speakers: Free Path, Courses and Coaching", "description": "Business English for Arabic speakers, explained in Arabic: a free English at work path (emails, meetings, presentations, interviews), short courses for presentations and job interviews, and private coaching for executives.", "url": "https://www.masterenglish.me/en/business-english-for-arabic-speakers.html", "inLanguage": "en", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Noor", "alternateName": "نور", "url": "https://www.masterenglish.me/articles/my-story.html", "sameAs": ["https://www.youtube.com/@MasterEnglish"]}, "publisher": {"@type": "EducationalOrganization", "name": "Master English أتقن الإنجليزية", "alternateName": ["Master English", "أتقن الإنجليزية"], "url": "https://www.masterenglish.me/", "foundingDate": "2016", "founder": {"@type": "Person", "name": "Noor", "alternateName": "نور"}, "sameAs": ["https://www.youtube.com/@MasterEnglish"]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best way for Arabic speakers to learn business English?", "acceptedAnswer": {"@type": "Answer", "text": "Start with a free, ordered path explained in Arabic, such as Master English's English at work path, then take a short course for your next real deadline (a presentation or interview). Practice the phrases out loud before you need them."}}, {"@type": "Question", "name": "Is there business English coaching for Arab executives?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. PACE by Noor is private, live, one-to-one coaching for Arabic-speaking executives whose English is already good, by application only."}}, {"@type": "Question", "name": "Do I need advanced grammar for business English?", "acceptedAnswer": {"@type": "Answer", "text": "No. Clear structure, ready phrases and confident delivery matter more than advanced grammar in most meetings and emails."}}]}</script>
@@ -81,6 +84,10 @@
   </section>
   <section class="article-body">
     <div class="wrap prose">
+      <div class="ar-switch" lang="ar" dir="rtl">
+        <p><strong>تتكلم العربية؟</strong> أهلاً بك. Master English يعلّم الإنجليزية بالعربية مع نور منذ ٢٠١٦. ابدأ باختبار مستوى مجاني (١٠ دقائق) يعطيك خطة دروس مرتبة باسمك.</p>
+        <div class="btns"><a class="btn btn-primary" href="../placement-test.html" data-track="ar_switch:test">اختبر مستواك مجاناً</a><a class="btn btn-ghost" href="../paths/work.html" data-track="ar_switch:article">اقرأ هذه الصفحة بالعربية</a></div>
+      </div>
 
       <p class="lead">Many Arabic-speaking professionals read English emails without trouble but hesitate in meetings, presentations and calls. Business English is not more grammar: it is a set of ready phrases, a clear structure, and enough practice to say them under pressure.</p>
       <div class="en-answer"><strong>Short answer.</strong> Start with the free <b>English at work path</b> (in Arabic). For a specific deadline, take the short course for it: <b>presentations</b> or <b>job interviews</b>. If you are a senior leader who already speaks good English but loses presence in high-stakes meetings, <b>PACE private coaching</b> is built for that.</div>
@@ -124,5 +131,6 @@
 <script src="../assets/js/main.js?v=2026111103"></script>
 <script src="../assets/js/track.js?v=2026111103"></script>
 <script src="../assets/js/learner.js?v=2026111103"></script>
+<script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </body>
 </html>
