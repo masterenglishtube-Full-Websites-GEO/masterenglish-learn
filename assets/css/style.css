@@ -17,6 +17,7 @@
   --cream: #ffffff;
   --paper: #ffffff;
   --paper-soft: #f4f7f5;
+  --band: #ecf2ed; /* section bands: visibly different from white (2026-11-15) */
   --accent: #1f7a5c;
   --accent-dark: #145a43;
   --accent-light: #e3f1eb;
@@ -294,7 +295,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 }
 
 /* About */
-.about { padding: 96px 0 20px; }
+.about { padding: 80px 0 84px; background: var(--band); margin-top: 0; }
 .about-text { max-width: 760px; margin: 0 auto; }
 .about-text h2 { font-size: 32px; margin-top: 0; margin-bottom: 18px; }
 .about-lead { font-size: 20px; color: var(--ink); font-weight: 500; }
@@ -372,7 +373,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .cc-night .price, .cc-night .card-cta { color: #2b3a6e; }
 
 /* Testimonials */
-.testimonials { padding: 90px 0; background: var(--paper-soft); }
+.testimonials { padding: 90px 0; background: var(--band); }
 .testimonials h2 { font-size: clamp(28px, 3.2vw, 38px); font-weight: 800; margin: 0 0 50px; }
 .testimonial-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
@@ -415,7 +416,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 @media (max-width: 860px) { .yt-grid { grid-template-columns: 1fr; } }
 
 /* Contact */
-.contact { padding: 80px 0 100px; text-align: center; }
+.contact { padding: 80px 0 100px; text-align: center; background: var(--band); }
 .contact h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; margin: 0 0 34px; }
 .contact-methods {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -472,7 +473,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .video-card h3 { font-size: 16px; margin: 0; padding: 16px 18px; line-height: 1.6; }
 .video-more { text-align: center; margin-top: 60px; }
 .video-more p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 20px; }
-.alt-bg { background: var(--paper-soft); }
+.alt-bg { background: var(--band); }
 
 /* Footer sitemap */
 .footer-sitemap {
@@ -508,6 +509,9 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .prose { max-width: 760px; margin: 0 auto; }
 .prose .lead { font-size: 19px; font-weight: 500; color: var(--ink); background: var(--paper); border-inline-start: 5px solid var(--accent); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); padding: 22px 26px; margin: 0 0 36px; }
 .prose h2 { font-size: 24px; margin: 44px 0 16px; }
+/* Long pages: each main heading opens a new part, so the eye sees where a part starts (2026-11-15) */
+.prose > h2:not(:first-child) { margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--border); position: relative; }
+.prose > h2:not(:first-child)::before { content: ""; position: absolute; top: -2px; inset-inline-start: 0; width: 44px; height: 3px; border-radius: 2px; background: var(--gold, #c9a24a); }
 .prose h3 { font-size: 19px; margin: 30px 0 12px; }
 .prose p { color: var(--ink); margin: 0 0 18px; }
 .prose ul, .prose ol { margin: 0 0 18px; padding-inline-start: 24px; color: var(--ink); }
@@ -709,9 +713,9 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
 .article-index-card h3 { margin: 0; font-size: 18px; line-height: 1.55; }
 .article-index-card p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
 
-/* The full menu needs ~1080px; below that it folds into the menu button */
+/* The full menu needs ~1200px (6 items since 2026-11-15); below that it folds into the menu button */
 .nav-cta-mobile, .nav-mobile-only { display: none; }
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   .main-nav { display: none; }
   .nav-toggle { display: flex; }
   .main-nav.open {
@@ -722,6 +726,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 800; }
   .main-nav.open a { padding: 10px 0; border-bottom: 1px solid var(--border); }
   .main-nav.open a::after { display: none; }
   .main-nav.open .nav-mobile-only { display: block; }
+  .main-nav.open .nav-exec { margin-top: 6px; border: 1px solid #c9a24a; border-radius: 10px; padding: 10px 14px; text-align: center; }
   .main-nav.open .nav-cta-mobile { display: block; margin-top: 10px; border: 0; text-align: center; background: var(--accent); color: #fff; border-radius: 999px; font-family: var(--font-head); font-weight: 800; }
 }
 @media (max-width: 640px) {
@@ -1452,3 +1457,28 @@ body.me-hub #meContactPanel { left: auto; right: 24px; }
 .course-trailer { margin: 0 0 28px; }
 .course-trailer video { display: block; width: 100%; height: auto; border-radius: 18px; background: #0c3a2c; box-shadow: var(--shadow); }
 .course-trailer figcaption { text-align: center; font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+
+/* PACE in the menu and footer (2026-11-15): executive coaching should be findable, not stumbled on */
+.main-nav a.nav-exec { color: #7a5c14; border: 1px solid #c9a24a; border-radius: 999px; padding: 6px 14px; margin-block: -1px; font-weight: 700; background: #fbf6e8; }
+.main-nav a.nav-exec::after { display: none; }
+.main-nav a.nav-exec:hover, .main-nav a.nav-exec[aria-current="page"] { background: #12201b; color: #e2c172; border-color: #12201b; }
+.footer-col a.footer-exec { color: #e2c172; font-weight: 700; }
+
+/* Courses page: one band per group so the eye knows where a group starts and ends (2026-11-15) */
+.course-group { padding: 64px 0; }
+.course-group.alt { background: var(--band); }
+.course-group.exec { background: radial-gradient(120% 140% at 85% 0%, #22382f 0%, #12201b 60%); color: #fff; }
+.course-group.exec h2 { color: #fff; }
+.course-group.exec .section-sub { color: rgba(255,255,255,.78); }
+.course-group.exec .eyebrow { color: #c9a24a; background: none; padding: 0; }
+.courses-exec-strip { background: #12201b; color: rgba(255,255,255,.88); font-size: 15px; }
+.courses-exec-strip .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 16px; padding-block: 12px; text-align: center; }
+.courses-exec-strip b { color: #e2c172; }
+.courses-exec-strip a { color: #e2c172; font-weight: 700; border-bottom: 1px solid rgba(226,193,114,.5); }
+.course-group.exec .course-card { color: var(--ink); }
+.course-group.exec .course-card h3 { color: var(--ink); }
+/* Sales pages: neighbouring tinted sections look alike since the palette change; a line and a
+   gold marker show where each part starts (2026-11-15) */
+.content-section + .content-section { border-top: 1px solid var(--border); }
+.content-section .prose > h2:first-child { position: relative; padding-top: 16px; }
+.content-section .prose > h2:first-child::before { content: ""; position: absolute; top: 0; inset-inline-start: 0; width: 44px; height: 3px; border-radius: 2px; background: var(--gold); }

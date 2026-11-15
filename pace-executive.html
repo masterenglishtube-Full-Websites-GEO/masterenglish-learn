@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://www.masterenglish.me/pace-executive.html">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2026111504">
+<link rel="stylesheet" href="assets/css/style.css?v=2026111505">
 <style>
   .pace-wrap { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
   .pace-criteria { background: var(--paper-soft); border-radius: var(--radius); padding: 26px 28px; margin: 30px 0; }
@@ -127,6 +127,38 @@
   body.pace-pro .pace-form .btn-primary { background: var(--pro-gold); color: #1a1405; border-radius: 8px; width: 100%; font-weight: 800; }
   body.pace-pro #paceResult { color: #fff; }
   @media (max-width: 560px) { .pace-hero { padding: 44px 18px 40px; } body.pace-pro h2 { margin-top: 42px; } }
+
+  /* bands: each part of the page gets its own background and label (2026-11-15) */
+  main { overflow-x: clip; }
+  body.pace-pro .pace-wrap { padding-top: 0; padding-bottom: 0; }
+  body.pace-pro .pace-hero { margin-bottom: 0; }
+  .pace-band { position: relative; isolation: isolate; padding: 56px 0 60px; }
+  .pace-band::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 50vw); right: calc(50% - 50vw); z-index: -1; background: #fff; }
+  .pace-band.b-soft::before { background: #efe9da; }
+  .pace-band.b-dark::before { background: var(--pro-ink); }
+  .pace-band.b-gold::before { background: linear-gradient(180deg, #efe9da, #e6dbbd); }
+  .pace-band + .pace-band { border-top: 1px solid var(--pro-line); }
+  .pace-kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: .06em; color: #8a6a1f; margin-bottom: 6px; }
+  .pace-kicker::before { content: ""; width: 26px; height: 2px; background: var(--pro-gold); }
+  body.pace-pro .pace-band > h2:first-of-type, body.pace-pro .pace-band .faq-block h2 { margin-top: 4px; }
+  body.pace-pro .pace-band .pace-diagnosis { margin-top: 26px; }
+  .pace-band.b-dark .pace-kicker { color: var(--pro-gold); }
+  body.pace-pro .pace-band.b-dark .pace-criteria { background: none; border: 0; padding: 0; color: rgba(255,255,255,.86); }
+  body.pace-pro .pace-band.b-dark .pace-criteria h3 { color: #fff; font-size: clamp(22px, 2.6vw, 27px); margin-top: 4px; }
+  body.pace-pro .pace-band.b-dark .pace-criteria li { color: #fff; }
+  body.pace-pro .pace-band.b-dark .pace-criteria li::marker { color: var(--pro-gold); }
+  .pace-band .pace-apply { margin-top: 18px; }
+  .pace-next { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 30px 0 0; }
+  .pace-next .pace-apply { margin-top: 0; }
+  .pace-next span { color: #5d635f; font-size: 14px; }
+  body.pace-pro .pace-band.b-gold .pace-form { max-width: 640px; margin: 10px auto 0; box-shadow: 0 18px 40px rgba(18,32,27,.18); }
+  .pace-band.b-gold .pace-kicker { display: flex; justify-content: center; }
+  /* sticky apply bar */
+  .pace-stick { position: fixed; z-index: 60; inset-inline: 0; bottom: 0; display: flex; align-items: center; justify-content: center; gap: 14px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(18,32,27,.96); color: #fff; font-size: 14px; transform: translateY(110%); transition: transform .25s ease; }
+  .pace-stick.on { transform: none; }
+  .pace-stick b { color: var(--pro-gold); }
+  .pace-stick .pace-apply { padding: 9px 20px; }
+  @media (max-width: 560px) { .pace-band { padding: 42px 0 46px; } .pace-stick span { display: none; } .pace-stick .pace-apply { flex: 1; justify-content: center; } }
 </style>
 </head>
 <body class="pace-pro">
@@ -143,6 +175,7 @@
       <a href="articles/index.html">المقالات</a>
       <a href="courses.html">الكورسات</a>
       <a href="about.html">عن نور</a>
+      <a href="pace-executive.html" class="nav-exec" aria-current="page">للمدراء والتنفيذيين</a>
       <a href="search.html" class="nav-mobile-only">بحث في الموقع</a>
       <a href="placement-test.html" class="nav-cta-mobile">اختبر مستواك مجاناً</a>
     </nav>
@@ -169,6 +202,8 @@
   </header>
   <div class="pace-wrap">
 
+    <section class="pace-band b-white" id="diagnosis" aria-label="التشخيص">
+    <span class="pace-kicker">التشخيص</span>
     <div class="pace-pillars">
       <div class="pace-pillar">
         <span class="pace-pillar-letter">P</span>
@@ -201,6 +236,9 @@
       <p><strong>PACE لا يضيف مفردات. يبني طريقاً مباشراً من الفكرة إلى الإنجليزية، تحت الضغط.</strong></p>
     </section>
 
+    </section>
+    <section class="pace-band b-soft" id="why" aria-label="لماذا PACE">
+    <span class="pace-kicker">لماذا PACE</span>
     <h2>لماذا PACE هو الخيار الأفضل لك؟</h2>
     <p class="section-sub">إذا كنت تفهم الإنجليزية جيداً وتكتب تقاريرك ورسائلك بسهولة، لكنك تتردد، أو تترجم في ذهنك، أو تلتزم الصمت في الاجتماعات السريعة والمواقف المفاجئة، فأنت لا تحتاج إلى دورة لغة إنجليزية تقليدية. PACE مصمم للمدراء والخبراء الذين يملكون الكفاءة في عملهم، ويريدون أن يعكس حديثهم بالإنجليزية القوة والوضوح نفسيهما.</p>
     <ol class="pace-why">
@@ -211,6 +249,9 @@
       <li><b>سري تماماً ومجرَّب مع قياديين بمستواك</b>كل الجلسات فردية وسرية بالكامل. وقد جرّبه قياديون في مجالات حساسة، منهم: دكتور مقيم في بريطانيا يدرّب وزراء وأمراء في دول الخليج، ومدير ميزانية في شركة دولية متعددة الجنسيات، ومسؤولة برامج وشراكات في منظمة إنسانية دولية، ومتخصصة عمليات في بنك إسلامي دولي، ومهندسة أنظمة اتصالات تتعامل مع مورّدين دوليين.</li>
     </ol>
 
+    </section>
+    <section class="pace-band b-white" id="train" aria-label="على ماذا نتدرّب">
+    <span class="pace-kicker">على ماذا نتدرّب</span>
     <h2>ما ندرّبك عليه</h2>
     <p class="section-sub">المواقف التي تتجنبها الدورات العادية، هي بالضبط ما نتدرب عليه.</p>
     <div class="pace-train">
@@ -224,6 +265,9 @@
     <p class="section-sub">النص المحفوظ ينهار حين يتغيّر السؤال. لذلك نبني لك أطراً قصيرة تعمل في أي موقف: للوضوح، ولاستعادة السيطرة، وللرد على الاعتراض.</p>
     <div class="pace-tools"><span>BLUF</span><span>P.R.E.</span><span>A.R.E.</span><span>Rule of Three</span><span>Status, Risk, Action</span><span>The Power Pause</span><span>Downward Pitch</span><span>Structural Interruption</span><span>Hard Pivot</span><span>Circumlocution</span><span>Conditional Yes</span><span>Condition &amp; Cure</span><span>Scope Shield</span></div>
 
+    </section>
+    <section class="pace-band b-dark" id="fit" aria-label="هل هذا أنت؟">
+    <span class="pace-kicker">هل هذا أنت؟</span>
     <div class="pace-criteria">
       <h3>هذا البرنامج ليس لكل شخص</h3>
       <p>لأن PACE مرتبط بوقتي الفعلي مباشرة، أقبل عدداً محدوداً جداً من الحالات، وأفضّل أن أعرف أولاً أن هذا البرنامج مناسب فعلاً لوضعك قبل أي حديث عن التفاصيل أو السعر. أنسب المرشحين لهذا البرنامج عادة:</p>
@@ -234,9 +278,13 @@
         <li>مستعدون لالتزام ثلاثة أشهر من الجلسات المباشرة المكثفة (كل جلسة تُسجَّل لك لمتابعة تقدمك).</li>
       </ul>
       <p>إذا كان هذا يصفك، أرسل طلبك أدناه وسأراجعه شخصياً. إذا كان مناسباً، سنتواصل معك لتفاصيل أكثر.</p>
+      <a class="pace-apply" href="#apply">هذا يصفني، أريد التقديم</a>
     </div>
 
 
+    </section>
+    <section class="pace-band b-soft" id="results" aria-label="نتائج حقيقية">
+    <span class="pace-kicker">نتائج حقيقية</span>
     <h2 class="pace-proof-heading">خمس رحلات حقيقية في PACE</h2>
     <p class="section-sub">من جلسات حقيقية، مجهّلة الهوية بالكامل: المجال والمنطقة فقط، دون أسماء أو جهات عمل. الاقتباسات بكلمات أصحابها كما قالوها في الجلسات.</p>
     <div class="pace-cases">
@@ -299,6 +347,10 @@
 
     </div>
 
+    <p class="pace-next"><a class="pace-apply" href="#apply">قدّم طلبك</a><span>مكالمة تشخيص قصيرة أولاً (١٥ دقيقة)</span></p>
+    </section>
+    <section class="pace-band b-white" id="how" aria-label="كيف يسير البرنامج">
+    <span class="pace-kicker">كيف يسير البرنامج</span>
     <h2>ماذا سيحدث؟ الخطوات</h2>
     <div class="pace-steps">
       <div class="pace-step"><span class="n">١</span><div><h3>التقديم ومكالمة التشخيص (١٥ دقيقة)</h3><p>بعد تعبئة طلب التقديم، نلتقي في مكالمة قصيرة على Zoom أستمع فيها إلى لغتك على طبيعتها وتحت ضغط بسيط، لأعطيك تقييماً صريحاً: هل البرنامج مناسب لوضعك وأهدافك.</p></div></div>
@@ -321,6 +373,9 @@
     </div>
     <p class="pace-notfor"><strong>لمن لا يناسب PACE:</strong> المبتدئين من الصفر في الإنجليزية، ومن يبحث عن دروس قواعد أكاديمية تقليدية أو شهادة حضور دون التزام بالتطبيق في العمل.</p>
 
+    </section>
+    <section class="pace-band b-soft" id="faq" aria-label="قبل أن تقدّم">
+    <span class="pace-kicker">قبل أن تقدّم</span>
     <div class="faq-block pace-objection">
       <h2>قبل أن تقدّم</h2>
       <div class="faq-item">
@@ -329,6 +384,9 @@
       </div>
     </div>
 
+    </section>
+    <section class="pace-band b-gold" id="apply-band" aria-label="الخطوة الأخيرة">
+    <span class="pace-kicker">الخطوة الأخيرة</span>
     <div class="pace-form" id="apply">
       <h3>أرسل طلبك</h3>
       <label for="paceName">الاسم الكامل</label>
@@ -344,8 +402,23 @@
       <button type="button" id="paceSubmitBtn" class="btn btn-primary">إرسال الطلب</button>
       <p id="paceResult" role="status" aria-live="polite"></p>
     </div>
+    </section>
   </div>
 </main>
+<div class="pace-stick" id="paceStick" aria-hidden="true"><span><b>PACE</b> · تدريب فردي للمدراء والتنفيذيين، بالتقديم فقط</span><a class="pace-apply" href="#apply" tabindex="-1">قدّم طلبك</a></div>
+<script>
+(function () {
+  var bar = document.getElementById("paceStick"), hero = document.querySelector(".pace-hero"), form = document.getElementById("apply");
+  if (!bar || !hero || !form) return;
+  function set() {
+    var h = hero.getBoundingClientRect().bottom, f = form.closest(".pace-band").getBoundingClientRect().top;
+    var on = h < 0 && f > innerHeight * 0.85;
+    bar.classList.toggle("on", on); bar.setAttribute("aria-hidden", on ? "false" : "true"); bar.querySelector("a").tabIndex = on ? 0 : -1;
+  }
+  addEventListener("scroll", set, { passive: true }); addEventListener("resize", set); set();
+})();
+</script>
+
 
 <footer class="site-footer">
   <div class="wrap">
@@ -370,6 +443,7 @@
       </div>
       <div class="footer-col">
         <strong>الكورسات</strong>
+        <a href="pace-executive.html" class="footer-exec">PACE: تدريب فردي للمدراء والتنفيذيين</a>
         <a href="products/pronunciation.html">أسرار النطق الأمريكي</a>
         <a href="products/commuter-challenge.html">The Commuter Challenge</a>
         <a href="products/presentations.html">أتقن العروض التقديمية</a>
@@ -396,9 +470,9 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2026111504"></script>
-<script src="assets/js/track.js?v=2026111504"></script>
-<script src="assets/js/learner.js?v=2026111504"></script>
+<script src="assets/js/main.js?v=2026111505"></script>
+<script src="assets/js/track.js?v=2026111505"></script>
+<script src="assets/js/learner.js?v=2026111505"></script>
 <script>
 (function () {
   const API = "https://soft-wave-c3e8-masterenglish-fulfillment.masterenglishtube.workers.dev";
