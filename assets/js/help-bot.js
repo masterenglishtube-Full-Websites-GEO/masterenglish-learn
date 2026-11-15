@@ -95,6 +95,24 @@
     "videos.html": "الفيديوهات",
     "testimonials.html": "آراء الطلاب",
     "search.html": "البحث",
+    "placement-test.html": "اختبار تحديد المستوى",
+    "pace-executive.html": "صفحة PACE",
+    "pace-executive.html#apply": "نموذج التقديم على PACE",
+    "my-learning.html": "صفحة تقدّمي",
+    "daily.html": "تحدي اليوم",
+    "challenge.html": "تحدي الشهر",
+    "speak.html": "تمرين النطق بالصوت",
+    "paths/index.html": "مسارات التعلم",
+    "paths/beginner.html": "مسار المبتدئين",
+    "paths/intermediate.html": "المسار المتوسط",
+    "paths/advanced.html": "المسار المتقدم",
+    "paths/pronunciation.html": "مسار النطق الأمريكي",
+    "paths/work.html": "مسار إنجليزية العمل",
+    "plans/index.html": "خطط حسب نوعك",
+    "lessons/index.html": "الدروس المكتوبة",
+    "guides/index.html": "المراجع",
+    "faq.html": "الأسئلة الشائعة",
+    "about.html": "عن نور",
   };
 
   function escapeHtml(s) {
@@ -107,7 +125,8 @@
   // which is exactly what caused 404s when people dropped the "articles/" folder.
   function linkifyPaths(text) {
     const escaped = escapeHtml(text);
-    const pathPattern = /['"`]?((?:articles|products)\/[a-zA-Z0-9_-]+\.html|quiz\.html|courses\.html|videos\.html|testimonials\.html|search\.html)['"`]?/g;
+    // Any site page: "placement-test.html", "/paths/work.html", "pace-executive.html#apply" (2026-11-15)
+    const pathPattern = /['"`]?(?:https?:\/\/(?:www\.)?masterenglish\.me)?\/?((?:[a-z0-9-]+\/)?[a-z0-9_-]+\.html(?:#[a-z0-9-]+)?)['"`]?/gi;
     return escaped.replace(pathPattern, (match, path) => {
       const label = PAGE_LABELS[path] || path;
       return `<a href="/${path}">${label}</a>`;
