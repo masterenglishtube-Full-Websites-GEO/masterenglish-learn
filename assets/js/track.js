@@ -102,7 +102,9 @@
       const clean = (v, n) => (v || "").toLowerCase().replace(/[^a-z0-9_.-]/g, "").slice(0, n);
       const src = clean(q.get("utm_source"), 40);
       if (src) {
-        const camp = clean(q.get("utm_campaign"), 60);
+        // utm_medium counts too when there is no campaign (2026-11-15: profile links use
+        // ?utm_source=linkedinfeature&utm_medium=channel_link)
+        const camp = clean(q.get("utm_campaign"), 60) || clean(q.get("utm_medium"), 60);
         return "utm:" + src + (camp ? "/" + camp : "");
       }
     } catch (e) {}
