@@ -121,6 +121,25 @@
   .home-exec-proof span { color: rgba(255,255,255,.85); font-size: 14.5px; padding-inline-start: 14px; border-inline-start: 2px solid rgba(201,162,74,.5); }
   @media (max-width: 860px) { .home-exec-inner { grid-template-columns: 1fr; gap: 26px; } .home-exec { padding: 48px 0; } }
   @media (max-width: 560px) { .home-exec-apply { flex: 1; text-align: center; } }
+  /* hero v2 (2026-11-23): face line, single CTA, learner quote */
+  .hero-me { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 6px 16px 6px 6px; }
+  .hero-me img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; }
+  .hero-me b { display: block; font-size: 15px; color: #fff; }
+  .hero-me span { display: block; font-size: 13px; color: rgba(255,255,255,.72); }
+  .hero-yt-link { display: table; color: rgba(255,255,255,.82); font-weight: 700; margin: -10px 0 22px; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(255,255,255,.3); }
+  .hero-yt-link:hover { color: #fff; }
+  .hero-quote { background: #fff; color: var(--ink); padding: 16px 18px; border-radius: 14px; width: 230px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.55); }
+  .hero-quote p { margin: 0 0 8px; font-size: 15.5px; line-height: 1.7; font-weight: 700; }
+  .hero-quote em { font-style: normal; font-size: 13px; color: var(--accent); font-weight: 700; }
+  @media (max-width: 860px) {
+    .hero { padding-top: 22px; }
+    .hero-me { padding: 6px 6px 6px 14px; border-radius: 18px; }
+    .hero-me img { width: 64px; height: 64px; }
+    .hero-me b { font-size: 16px; }
+    .hero h1 { margin-top: 16px; }
+    .hero-quote { width: 165px; padding: 12px 14px; }
+    .hero-quote p { font-size: 13.5px; }
+  }
 </style>
 <script>document.addEventListener("click", function (e) { var a = e.target.closest("[data-track]"); if (a && window.MELearner) window.MELearner.track("next_step", a.dataset.track); });</script>
 </head>
@@ -157,19 +176,19 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="hero-pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></svg> Master English أتقن الإنجليزية · ١٫٨٦ مليون متعلّم على يوتيوب · منذ ٢٠١٦</span>
+        <div class="hero-me"><img src="assets/images/avatar-96.jpg" alt="نور" width="96" height="96"><div><b>نور · أتقن الإنجليزية</b><span>١٫٨٦ مليون متعلّم على يوتيوب · منذ ٢٠١٦</span></div></div>
         <h1>من فهم الإنجليزية <span class="hl">إلى التكلّم بها بثقة</span></h1>
         <p class="hero-sub">تعرف الكلمات، لكن لسانك يتجمّد لحظة الكلام؟ تعلّم الإنجليزية معي بالعربية، وتدرّب خطوة خطوة حتى تتكلم بطلاقة في أي موقف.</p>
         <div class="hero-cta">
           <a href="placement-test.html" class="btn btn-gold btn-lg"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M12 7a5 5 0 1 0 5 5"/><path d="M13 3.055a9 9 0 1 0 7.941 7.945"/><path d="M15 6v3h3l3 -3h-3v-3z"/><path d="M15 9l-3 3"/></svg> ابدأ باختبار المستوى المجاني</a>
-          <a href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><span style="color:#ff4d42;display:inline-flex"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg></span> ابدأ مجاناً على يوتيوب</a>
         </div>
+        <a class="hero-yt-link" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener" data-track="home_hero:youtube">أو شاهد دروسي المجانية على يوتيوب ←</a>
         <a class="hero-exec-link" href="pace-executive.html" data-track="home_exec:hero"><b>للمدراء والتنفيذيين:</b> تدريب فردي مع نور (PACE) ←</a>
       </div>
       <div class="hero-visual">
         <div class="hero-ring" aria-hidden="true"></div>
         <figure class="hero-portrait"><img src="assets/images/profile.jpg" alt="نور - أتقن الإنجليزية" width="800" height="800"></figure>
-        <a class="hero-thumb t1" href="https://www.youtube.com/watch?v=I46cCtKzWps" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/I46cCtKzWps/mqdefault.jpg" alt="درس تعلم الإنجليزية من خلال قصة مسلية بالصوت والصورة" width="320" height="180"><span>٤٫٤ مليون مشاهدة</span></a>
+        <div class="hero-thumb t1 hero-quote"><p>«أنا كنت قبل بس أقعد ساكتة… هلأ صرت بحب أشارك.»</p><em>متدربة مع نور</em></div>
         <div class="hero-thumb t2 hero-lesson"><span class="hl-tag">جملة من دروسي</span><p class="hl-en" lang="en">I'm running late for the meeting.</p><p class="hl-ar">أنا أتأخر عن الاجتماع.</p><div class="hl-row"><button type="button" onclick="window.MELearner &amp;&amp; window.MELearner.speak('I\'m running late for the meeting.')" aria-label="استمع إلى الجملة">🔊 استمع</button><a href="lessons/speak-fluently-punctual-running-late.html">الدرس كاملاً</a></div></div>
         <a class="yt-badge" href="https://www.youtube.com/@MasterEnglish?sub_confirmation=1" target="_blank" rel="noopener"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z"/><path d="M10 9l5 3l-5 3z"/></svg></span><div>١٫٨٦ مليون مشترك<small>اشترك في القناة</small></div></a>
       </div>
