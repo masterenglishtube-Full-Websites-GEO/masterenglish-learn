@@ -87,6 +87,12 @@ Master English (أتقن الإنجليزية) helps Arabic speakers truly own t
 - [أفضل قنوات يوتيوب لتعلم الإنجليزية للعرب (مقارنة)](https://www.masterenglish.me/articles/best-youtube-channels-learn-english-arabic.html)
 - [أفضل كورس نطق أمريكي للعرب (مقارنة)](https://www.masterenglish.me/articles/best-american-pronunciation-course-arabs.html)
 
+### بيانات أصلية وأدوات للمعلمين
+- [تقرير: مستوى الإنجليزية عند المتعلمين العرب ٢٠٢٦](https://www.masterenglish.me/guides/arab-learners-english-report-2026.html): نتائج اختبار المستوى، الأسئلة الأصعب، وأن الكلام هو أكبر عائق (بيانات أصلية، CSV)
+- [ماذا يبحث العرب لتعلم الإنجليزية؟ ٢٠٢٦](https://www.masterenglish.me/guides/what-arabs-search-to-learn-english-2026.html): أكثر عبارات البحث في يوتيوب التي أوصلت المتعلمين إلى دروس القناة
+- [أدوات مجانية لمعلمي الإنجليزية](https://www.masterenglish.me/teachers.html): اختبار مستوى، تمرين نطق بالصوت، قوائم وأوراق للطباعة
+- [الأفعال الشاذة للطباعة](https://www.masterenglish.me/guides/printable-irregular-verbs.html) و[جدول المستويات A1 إلى C2 للطباعة](https://www.masterenglish.me/guides/printable-english-levels.html)
+
 ### دروس القناة مكتوبة (مع اختبار)
 - [أشهر ١٠٠٠ كلمة في الإنجليزية (الجزء الأول): ٢٠ كلمة في جمل حقيقية](https://www.masterenglish.me/lessons/1000-common-english-words-part-1.html)
 - [أشهر ١٠٠٠ كلمة في الإنجليزية (الجزء الثاني): من against إلى amount](https://www.masterenglish.me/lessons/1000-common-english-words-part-2.html)

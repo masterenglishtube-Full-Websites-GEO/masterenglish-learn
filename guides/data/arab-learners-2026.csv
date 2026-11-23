@@ -1,0 +1,42 @@
+﻿section,item,value
+level,A1,10%
+level,A2,22%
+level,B1,37%
+level,B2,26%
+level,C1,4%
+hardest_thing,speak,44%
+hardest_thing,listen,27%
+hardest_thing,words,13%
+hardest_thing,habit,11%
+hardest_thing,situations,2%
+hardest_thing,pron,1%
+hardest_thing,writing,1%
+goal,work,36%
+goal,life,36%
+goal,travel,10%
+goal,study,17%
+question_1_A1 (is / are / am مع الفاعل),pct_right,99%
+question_2_A1 (توافق الفعل مع الفاعل في المضارع البسيط),pct_right,66%
+question_3_A1 (عكس صفة شائعة),pct_right,95%
+question_4_A1 (There is / There are),pct_right,90%
+question_5_A1 (تكوين السؤال في المضارع البسيط),pct_right,55%
+question_6_A2 (ماضي فعل شاذ شائع),pct_right,78%
+question_7_A2 (المقارنة بين شيئين),pct_right,82%
+question_8_A2 (حروف الزمن since / for / from),pct_right,64%
+question_9_A2 (الفعل بعد could),pct_right,66%
+question_10_A2 (معنى عبارة شائعة (look forward to)),pct_right,63%
+question_11_B1 (الحالة الشرطية الأولى),pct_right,83%
+question_12_B1 (حرف الجر مع المدة في المضارع التام),pct_right,55%
+question_13_B1 (صيغة الفعل بعد suggest),pct_right,33%
+question_14_B1 (استماع: فهم جملة قصيرة),pct_right,89%
+question_15_B1 (فعل مركب (Phrasal verb)),pct_right,78%
+question_16_B2 (ترتيب حدثين في الماضي),pct_right,32%
+question_17_B2 (wish عن الحاضر),pct_right,21%
+question_18_B2 (صيغة الفعل بعد deny),pct_right,26%
+question_19_B2 (استماع: فهم سؤال),pct_right,53%
+question_20_B2 (impact / affect / effect),pct_right,43%
+question_21_C1 (التقديم والتأخير بعد Hardly),pct_right,12%
+question_22_C1 (It's high time),pct_right,15%
+question_23_C1 (معنى تعبير اصطلاحي),pct_right,74%
+question_24_C1 (التقديم والتأخير بعد Not only),pct_right,11%
+question_25_C1 (طلب مهذب في إيميل عمل),pct_right,81%
