@@ -113,6 +113,9 @@
     "guides/index.html": "المراجع",
     "faq.html": "الأسئلة الشائعة",
     "about.html": "عن نور",
+    "index.html": "الصفحة الرئيسية",
+    "articles/index.html": "المقالات",
+    "teachers.html": "أدوات للمعلمين",
   };
 
   function escapeHtml(s) {
@@ -123,14 +126,32 @@
   // relative path in quotes (e.g. "articles/where-to-start.html") -- turn those
   // into real clickable links instead of leaving visitors to copy/retype a path,
   // which is exactly what caused 404s when people dropped the "articles/" folder.
+  // 2026-11-26: the server now sends FULL links (https://www.masterenglish.me/...). Every link is
+  // clickable: our pages show their name (or the full address when we have no name for it), other
+  // sites (YouTube...) open in a new tab. Old-style relative paths are still understood.
+  const PLAN_NAMES = { builder: "الباني", silent: "الفاهم الصامت", natural: "المتكلّم العفوي", pro: "المحترف الطموح" };
+  function siteLabel(path) {
+    if (PAGE_LABELS[path]) return PAGE_LABELS[path];
+    const m = path.match(/^plans\/([a-z]+)-([abc][12])\.html$/);
+    if (m && PLAN_NAMES[m[1]]) return `قائمة «${PLAN_NAMES[m[1]]}» ${m[2].toUpperCase()}`;
+    return "https://www.masterenglish.me/" + path;
+  }
   function linkifyPaths(text) {
     const escaped = escapeHtml(text);
-    // Any site page: "placement-test.html", "/paths/work.html", "pace-executive.html#apply" (2026-11-15)
-    const pathPattern = /['"`]?(?:https?:\/\/(?:www\.)?masterenglish\.me)?\/?((?:[a-z0-9-]+\/)?[a-z0-9_-]+\.html(?:#[a-z0-9-]+)?)['"`]?/gi;
-    return escaped.replace(pathPattern, (match, path) => {
-      const label = PAGE_LABELS[path] || path;
-      return `<a href="/${path}">${label}</a>`;
+    const urlPattern = /(https?:\/\/[^\s<>"'«»()،,]+[^\s<>"'«»()،,.!?؟:])|(?:^|(?<=[\s(«"'`:،,]))\/?((?:[a-z0-9-]+\/)?[a-z0-9_-]+\.html(?:#[a-z0-9-]+)?)(?=$|[\s)»"'`.,،؛!?؟:])/gim;
+    const html = escaped.replace(urlPattern, (match, url, rel) => {
+      let path = rel;
+      if (url) {
+        const site = url.match(/^https?:\/\/(?:www\.)?masterenglish\.me\/?(.*)$/i);
+        if (!site) {
+          const yt = /youtube\.com|youtu\.be/i.test(url);
+          return `<a href="${url}" target="_blank" rel="noopener">${yt ? "الفيديو على يوتيوب ↗" : url}</a>`;
+        }
+        path = site[1] || "index.html";
+      }
+      return `<a href="https://www.masterenglish.me/${path}">${siteLabel(path)}</a>`;
     });
+    return html.replace(/\bnoor@masterenglish\.me\b/g, '<a href="mailto:noor@masterenglish.me">noor@masterenglish.me</a>').replace(/\n/g, "<br>");
   }
 
   function addMessage(text, who) {
@@ -243,6 +264,13 @@
         .then((d) => { if (d && d.logged_in && d.email) visitorEmail = d.email; }).catch(() => {});
     } catch (e) {}
     const ids = () => { try { return { visitor_id: localStorage.getItem("me_vid"), session_id: localStorage.getItem("me_sid") }; } catch (e) { return {}; } };
+    // level + personal list from the placement test (learner.js), so the bot can answer "where are my lessons" exactly (2026-11-26)
+    const levelInfo = () => {
+      try {
+        const l = window.MELearner && window.MELearner.get().level;
+        return l && l.level ? { level: l.level, list: l.list || "" } : {};
+      } catch (e) { return {}; }
+    };
 
     panel.querySelector("#meHelpBotForm").addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -265,7 +293,7 @@
         const res = await fetch(API + "/help/ask", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: visitorEmail, question, page: location.pathname, ...ids() }),
+          body: JSON.stringify({ email: visitorEmail, question, page: location.pathname, ...ids(), ...levelInfo() }),
         });
         const data = await res.json();
         thinking.remove();
